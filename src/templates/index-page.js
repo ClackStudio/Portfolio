@@ -6,10 +6,9 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-import BarCode from "../components/BarCode/BarCode";
 import FiberBarCode from "../components/FiberBarCode/FiberBarCode";
 
-import LaserBackground from "../components/LaserBackground/LaserBackground";
+// import LaserBackground from "../components/LaserBackground/LaserBackground";
 
 import FullWidthImage from "../components/FullWidthImage";
 
@@ -25,14 +24,13 @@ export const IndexPageTemplate = ({
   description,
   intro,
 }) => {
-  const heroImage = getImage(image) || image;
+  // const heroImage = getImage(image) || image;
 
   return (
     <div>
       {/* <FullWidthImage img={heroImage} title={title} subheading={subheading} /> */}
       {/* <LaserBackground></LaserBackground> */}
       <section className="section" style={{padding: 0}} >
-          {/* <BarCode></BarCode> */}
           <FiberBarCode></FiberBarCode>
       </section>
     </div>
@@ -52,18 +50,18 @@ IndexPageTemplate.propTypes = {
 };
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+  // const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        // image={frontmatter.image}
+        // title={frontmatter.title}
+        // heading={frontmatter.heading}
+        // subheading={frontmatter.subheading}
+        // mainpitch={frontmatter.mainpitch}
+        // description={frontmatter.description}
+        // intro={frontmatter.intro}
       />
 
       
@@ -81,36 +79,36 @@ IndexPage.propTypes = {
 
 export default IndexPage;
 
-export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        title
-        image {
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-          }
-        }
-        heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
-              }
-            }
-            text
-          }
-          heading
-          description
-        }
-      }
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query IndexPageTemplate {
+//     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+//       frontmatter {
+//         title
+//         image {
+//           childImageSharp {
+//             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+//           }
+//         }
+//         heading
+//         subheading
+//         mainpitch {
+//           title
+//           description
+//         }
+//         description
+//         intro {
+//           blurbs {
+//             image {
+//               childImageSharp {
+//                 gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+//               }
+//             }
+//             text
+//           }
+//           heading
+//           description
+//         }
+//       }
+//     }
+//   }
+// `;
