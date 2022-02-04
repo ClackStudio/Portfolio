@@ -138,7 +138,13 @@ const Bar = ({width, index, height, position, scale, map, barCodePatternProps,  
       }
       const moveBarToRightWithScale = () => {
         ref.current.material.scale = ref.current.scale.x = damp(ref.current.scale.x, width * scalePercentage, lambda, delta)
-        ref.current.position.x = damp(ref.current.position.x, position[0] + ((halfOpenWidth * scalePercentage) ) , lambda, delta)
+        if (!isLastOne) {
+          ref.current.position.x = damp(ref.current.position.x, position[0] + ((halfOpenWidth * scalePercentage) ) , lambda, delta)
+
+        } else {
+          ref.current.position.x = damp(ref.current.position.x, position[0] + ((halfOpenWidth * scalePercentage) ) -width , lambda, delta)
+
+        }
       }
 
       const moveBarToRight = () => {
