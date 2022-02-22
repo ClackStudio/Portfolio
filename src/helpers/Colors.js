@@ -1,3 +1,3 @@
-const GRAY = '#E2E2E2'
+const GRAY = '#E5E5E5'
 
 export {GRAY}

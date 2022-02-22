@@ -4,9 +4,7 @@ import { Link, graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
-import BlogRoll from "../components/BlogRoll";
-import FiberBarCode from "../components/FiberBarCode/FiberBarCode";
+import ProjectBarCode from "../components/ProjectBarCode/ProjectBarCode";
 
 // import LaserBackground from "../components/LaserBackground/LaserBackground";
 
@@ -30,8 +28,8 @@ export const IndexPageTemplate = ({
     <div>
       {/* <FullWidthImage img={heroImage} title={title} subheading={subheading} /> */}
       {/* <LaserBackground></LaserBackground> */}
-      <section className="section" style={{padding: 0}} >
-          <FiberBarCode></FiberBarCode>
+      <section className="section is-full-height" style={{padding: 0}} >
+          <ProjectBarCode></ProjectBarCode>
       </section>
     </div>
   );
@@ -49,11 +47,11 @@ IndexPageTemplate.propTypes = {
   }),
 };
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, location }) => {
   // const { frontmatter } = data.markdownRemark;
 
   return (
-    <Layout>
+    <Layout location={location}>
       <IndexPageTemplate
         // image={frontmatter.image}
         // title={frontmatter.title}

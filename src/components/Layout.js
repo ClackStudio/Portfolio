@@ -5,11 +5,14 @@ import Navbar from "../components/Navbar";
 import "./all.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
+import { useTransition, animated } from 'react-spring'
 
-const TemplateWrapper = ({ children }) => {
+
+const TemplateWrapper = ({ location, children }) => {
   const { title, description } = useSiteMetadata();
+
   return (
-    <div>
+    <div className='layout'>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -48,11 +51,13 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix("/")}img/og-image.jpg`}
         />
       </Helmet>
-      {/* <Navbar /> */}
-      <div>{children}</div>
-      {/* <Footer /> */}
-    </div>
+      <Navbar />
+        <div>
+        {children}
+
+        </div>
+      </div>
   );
-};
+}
 
 export default TemplateWrapper;

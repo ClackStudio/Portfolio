@@ -11,7 +11,6 @@ const backgroundStore = state => ({
     currentHoveredBar: null,
     setCurrentHoveredBar: (key) => {
         state.currentHoveredBar = key;
-        state.animating = true
     },
     setAnimatingDone: () => {state.animating = false}
 });

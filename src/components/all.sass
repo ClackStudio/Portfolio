@@ -1,5 +1,3 @@
-@import "~bulma/sass/utilities/initial-variables"
-
 // Config vars
 // Kaldi logo brand color: #FD461E
 $kaldi-red: #D64000
@@ -8,10 +6,121 @@ $kaldi-red-invert: #fff
 $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
 $body-color: #333
-$black: #2b2523
+$black: #000000
+$dark-gray: #515151
 
-.navbar .navbar-menu
+$background: #f2f2f2
+
+$desktop-max-width: 2000px
+$standard-padding: 10px
+
+$huge-font-size: 4rem
+
+@import "~bulma"
+
+html, body
+  font-family: 'Helvetica Neue', sans-serif
+  color: $black
+  cursor: url('/img/arrow.svg') 0 0, move
+  background: $background
+  
+::selection
+  color: $background
+  background: $black
+
+
+canvas
+  cursor: url('/img/cursor2.svg') 12 12, move!important
+
+
+button, a
+  cursor: url('/img/arrow2.svg') 0 0, move!important
+  font-size: 1rem
+  color: $black
+
+button
+  position: relative
+  margin: 0 $standard-padding
+  padding: 0
+  &:hover
+    .crossed-line
+      position: absolute
+      height: 1px
+      background: $black
+      bottom: 35%
+      width: 100%
+
+.container
+  background: $background
+  max-width: 100vw!important
+  width: 100%
+  display: flex
+  justify-content: center
+
+.layout, .section
+    background: $background
+
+.navbar
+    background: none
+    // position: fixed
+    top:0
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 48px
+    width: 100%
+
+.navbar-menu
+  width: 100%
   box-shadow: none !important
+  background: $background
+  display: flex
+
+.navbar-item
+  // margin-right: 20px
+  padding: $standard-padding
+
+a
+  text-decoration: none
+
+.project-navigation
+  width: 100%
+  min-width: 100%
+  padding: $standard-padding
+  align-items: flex-end
+
+  button
+    border: none
+    border-width: none
+
+  &-numbers
+    font-size: $huge-font-size
+    .project-number
+      line-height: 88px
+      width: 45px
+      height: 88px
+      text-align: center
+      position: relative
+      cursor: url('/img/cursor2.svg') 12 12, move!important
+      // &:hover
+      //   color: $dark-gray
+      &:hover
+        .vertical-line
+          position: absolute
+          top: 0
+          left: 0px
+          width: 4px
+          background: $black
+          height: 100%
+    .active
+        .horicontal-line
+          position: absolute
+          bottom: 0
+          // left: -3.5px
+          height: 4px
+          background: $black
+          width: 100%
+
 
 .content .taglist
   list-style: none
@@ -85,13 +194,13 @@ footer.footer
   background-color: transparent
 
 //Menu overrides
-$menu-item-color: $white-ter
+$menu-item-color: white
 $menu-item-hover-color: $black !important
 $menu-item-hover-background-color: $black
 $menu-item-active-color: $kaldi-red-invert
 $menu-item-active-background-color:	$kaldi-red-invert
 $menu-list-border-left: 1px solid $kaldi-red-invert
-$menu-label-color: $white-ter
+$menu-label-color: white
 
 
 .menu-label
@@ -105,7 +214,7 @@ $menu-label-color: $white-ter
 .social a
     padding: .5em .5em .3em .5em
     border-radius: 1em
-    background-color: $white-ter
+    background-color: white
     margin: .5em
     width: 1em
     height: 1em
@@ -123,18 +232,15 @@ $menu-label-color: $white-ter
   margin: 0 1.5em 0 0
 
 
-@import "~bulma"
+// // responsiveness
+// +tablet-only
+//   .blog-list-item .featured-thumbnail
+//     flex-basis: 50%
 
-
-// responsiveness
-+tablet-only
-  .blog-list-item .featured-thumbnail
-    flex-basis: 50%
-
-+mobile
-  .blog-list-item header
-    display: block
-  .blog-list-item .featured-thumbnail
-    text-align: center
-    max-width: 70%
-    margin: 0 0 1em
+// +mobile
+//   .blog-list-item header
+//     display: block
+//   .blog-list-item .featured-thumbnail
+//     text-align: center
+//     max-width: 70%
+//     margin: 0 0 1em
