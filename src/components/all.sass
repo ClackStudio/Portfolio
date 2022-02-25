@@ -16,13 +16,18 @@ $standard-padding: 10px
 
 $huge-font-size: 4rem
 
+@font-face
+  font-family: "ABC Diatype"
+  src: url("../../static/fonts/ABCDiatype-Medium.woff2"), url("../../static/fonts/ABCDiatype-Medium.woff")
+
 @import "~bulma"
 
 html, body
-  font-family: 'Helvetica Neue', sans-serif
+  font-family: 'ABC Diatype', 'Helvetica Neue', sans-serif
   color: $black
   cursor: url('/img/arrow.svg') 0 0, move
   background: $background
+  -webkit-font-smoothing: antialiased
   
 ::selection
   color: $background
@@ -47,8 +52,57 @@ button
       position: absolute
       height: 1px
       background: $black
-      bottom: 35%
+      bottom: 50%
       width: 100%
+
+.section
+    padding: 0px
+
+.is-full-height
+    margin: auto
+    min-height: 100vh!important
+    // max-width: 2000px
+
+.fill-container
+    width: 100%
+    min-height: 100%
+
+.column, .columns
+    padding: 0
+    margin: 0
+    &:last-child
+        margin-bottom: 0
+    &:not(:last-child)
+        margin-bottom: 0
+.container
+    max-width: 100vw
+    max-height: 100vh
+
+
+// Data Lists
+
+.meta-table
+    marging-top: auto
+    padding: $standard-padding
+
+    .columns
+      position: relative
+    .table-cross-line
+      position: absolute
+      height: 1px
+      bottom: 50%
+      width: 100%
+
+    .crossed
+      &:hover
+        .table-cross-line
+          background: $black
+
+
+.meta-title
+    color: $dark-gray
+.meta-data
+    text-align: end
 
 .container
   background: $background
@@ -160,22 +214,6 @@ a
     justify-content: center
     align-items: center
 
-.btn
-    display: inline-block
-    padding: 12px 16px 10px
-    font-size: 18px
-    font-size: 1rem
-    line-height: 1.25
-    background-color: #fff
-    border-radius: .25rem
-    text-decoration: none
-    font-weight: 700
-    color: #CC3700
-    text-align: center
-    -webkit-box-shadow: inset 0 0 0 2px #CC3700
-    box-shadow: inset 0 0 0 2px #f40
-    -webkit-transition: all .15s ease
-    transition: all .15s ease
 
 .margin-top-0
   margin-top: 0 !important
@@ -192,55 +230,3 @@ a
 footer.footer
   padding: 3rem 0rem 0rem
   background-color: transparent
-
-//Menu overrides
-$menu-item-color: white
-$menu-item-hover-color: $black !important
-$menu-item-hover-background-color: $black
-$menu-item-active-color: $kaldi-red-invert
-$menu-item-active-background-color:	$kaldi-red-invert
-$menu-list-border-left: 1px solid $kaldi-red-invert
-$menu-label-color: white
-
-
-.menu-label
-  font-size: 1em !important
-  text-align: left
-.menu-list
-  list-style: none !important
-  text-align: left
-.social
-  padding: 2em
-.social a
-    padding: .5em .5em .3em .5em
-    border-radius: 1em
-    background-color: white
-    margin: .5em
-    width: 1em
-    height: 1em
-    vertical-align: middle
-    display: inline
-
-// blog roll
-.blog-list-item.is-featured
-  background-color: #d6400033
-.blog-list-item header
-  display: flex
-  margin-bottom: 1em
-.blog-list-item .featured-thumbnail
-  flex-basis: 35%
-  margin: 0 1.5em 0 0
-
-
-// // responsiveness
-// +tablet-only
-//   .blog-list-item .featured-thumbnail
-//     flex-basis: 50%
-
-// +mobile
-//   .blog-list-item header
-//     display: block
-//   .blog-list-item .featured-thumbnail
-//     text-align: center
-//     max-width: 70%
-//     margin: 0 0 1em

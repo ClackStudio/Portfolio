@@ -6,9 +6,8 @@ featuredpost: true
 featuredimage: /img/nikeFreeRunTrail/02.jpg
 description: one of clack’s favourite project. it was a pleasure to work with such an amazing team, and being able to follow all our ideas we had from the beginning on.
 lastImage: /img/nikeFreeRunTrail/05.jpg
+client: nike
 additionalData:
-    - title: client
-      data: nike
     - title: photographer
       data: hannes meier
 

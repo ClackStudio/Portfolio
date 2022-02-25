@@ -8,35 +8,13 @@ import ProjectNavigation from "../components/ProjectNavigation";
 
 import Content, { HTMLContent } from "../components/Content";
 import { getImage } from "gatsby-plugin-image";
+import {TableLayout, TableRowComponent} from '../components/TableComponent'
+import SectionTemplate from "../components/SectionTemplate";
 import './styles.sass'
 
 
 import BigImage from "../components/BigImage";
 
-const SectionTemplate = ({children}) => (
-  <section className="section is-full-height is-flex is-flex-direction-column justify-content-center fill-container">
-    <div className="container is-max-desktop fill-container">
-      {children}
-    </div>
-  </section>  
-)
-
-const MetaTableTemplate = ({children}) => (
-  <div className="meta-table" >
-    {children}
-  </div>
-)
-const MetaTableRowTemplate = ({ title, data }) => (
-  <div className="columns">
-
-    <div className="column is-6 meta-title">
-      {title}
-    </div>
-    <div className="column is-6 meta-data">
-      {data}
-    </div>
-  </div>
-)
 
 const TitleTemplate = ({ title }) => (
   <div className="columns">
@@ -108,17 +86,19 @@ export const ProjectPostTemplate = ({
   description,
   date,
   tags,
+  client,
   additionalData,
   lastImage,
   title,
   helmet,
   featuredImage,
-  sections
+  sections,
 }) => {
   const PostContent = contentComponent || Content;
   const firstImage = featuredImage && (getImage(featuredImage) || featuredImage)
   const lastSectionImage = lastImage && (getImage(lastImage) || lastImage)
 
+  console.log(sections)
 
   return (
     <>
@@ -129,15 +109,16 @@ export const ProjectPostTemplate = ({
               <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container" >
                 <HalfPageNavbar />
                 {/* date */}
-                <MetaTableTemplate>
-                  {additionalData && additionalData.map(({ title, data }, index) => (
-                    <MetaTableRowTemplate title={title} data={data} key={`key_add_data_${index}`} />
+                <TableLayout>
+                  <TableRowComponent leftData={"client"} rightData={client} />
+                    {additionalData && additionalData.map(({ title, data }, index) => (
+                      <TableRowComponent leftData={title} rightData={data} key={`key_add_data_${index}`} />
 
-                  ))}
-                  <MetaTableRowTemplate title={"date"} data={date} />
+                    ))}
+                  <TableRowComponent leftData={"date"} rightData={date} />
                   <ServicesListTemplate services={tags}/>
                   <TitleTemplate title={title}></TitleTemplate>
-                </MetaTableTemplate>
+                </TableLayout>
               </div>
             </div>
 
@@ -160,9 +141,9 @@ export const ProjectPostTemplate = ({
             <BigImage img={lastSectionImage} ></BigImage>
             </div>
             <div className="column is-6 is-flex is-justify-content-space-between is-flex-direction-column fill-container">
-              <MetaTableTemplate>
-                <p>{description}</p>
-              </MetaTableTemplate>
+              <TableLayout>
+              <PostContent content={content} /> 
+              </TableLayout>
               <ProjectNavigation currentProjectId={id} />
             </div>
         </div>  
@@ -191,6 +172,7 @@ const ProjectPost = ({ data, location }) => {
       description={post.frontmatter.description}
       sections={post.frontmatter.sections}
       lastImage={post.frontmatter.lastImage}
+      client={post.frontmatter.client}
       additionalData={post.frontmatter.additionalData}
       featuredImage={post.frontmatter.featuredimage}
       lastImage={post.frontmatter.lastImage}
@@ -227,6 +209,7 @@ export const pageQuery = graphql`
         date(formatString: "YYYY")
         title
         description
+        client
         additionalData {
           title
           data
@@ -241,7 +224,7 @@ export const pageQuery = graphql`
           childImageSharp {
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
-      }
+        }
         sections {
           section {
             image {

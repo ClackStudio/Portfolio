@@ -49,7 +49,7 @@ const ProjectBarCode = () => {
   return (
     <StaticQuery
       query={graphql`
-        query ProjectRollQuery {
+        query BarCodeQuery {
           allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
             filter: { frontmatter: { templateKey: { eq: "project-post" } } }
@@ -86,11 +86,6 @@ const ProjectBarCode = () => {
     />
   );
 }
-
-
-
-
-
 
 
 ProjectBarCode.propTypes = {
