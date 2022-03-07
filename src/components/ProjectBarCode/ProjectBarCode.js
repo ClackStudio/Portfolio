@@ -1,5 +1,5 @@
 import React, {Suspense, useEffect, useRef, useCallback} from 'react'
-import './styles.sass'
+import '../all.sass'
 import PropTypes from 'prop-types'
 import { Canvas } from '@react-three/fiber'
 import { Stats, AdaptiveEvents } from '@react-three/drei'
@@ -13,11 +13,10 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 const ProjectBarCodeTemplate = ({data}) => {
   const { edges: projects } = data.allMarkdownRemark
 
-
     return (
       <>
       <div className='container' style={{display: 'block'}}>
-<div className="canvas-wrapper">
+        <div className="canvas-wrapper">
             <Canvas dpr={[1, 1.5]} resize={{ debounce: 0, scroll: false }}>
             {/* <color attach="background" args={['transparent']} /> */}
 
@@ -39,7 +38,7 @@ const ProjectBarCodeTemplate = ({data}) => {
         </div>
 
       </div>
-      <BarcodeNumbers></BarcodeNumbers>
+      <BarcodeNumbers projects={projects}></BarcodeNumbers>
 
       </>
         )

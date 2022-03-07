@@ -1,5 +1,4 @@
 import React, {useState, useRef, Suspense, useEffect, useMemo} from 'react'
-import './styles.sass'
 import PropTypes from 'prop-types'
 import { Canvas, useFrame, useThree, mesh, boxGeometry, meshBasicMaterial, extend, useLoader } from '@react-three/fiber'
 import { CycleRaycast, useCursor, shaderMaterial, useBVH } from '@react-three/drei'
@@ -63,12 +62,12 @@ const WaveShaderMaterial = shaderMaterial(
 
   varying float FuTime;
   uniform sampler2D uTexture;
-  uniform vec3 randomFactors;
+  uniform vec3 random()Factors;
 
   varying vec2 vUv;
 
 
-  float random(vec2 st)
+  float random()(vec2 st)
   {
       return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
   }
@@ -76,7 +75,7 @@ const WaveShaderMaterial = shaderMaterial(
   void main() {
     vec3 texture = texture2D(uTexture, vUv).rgb;
     // gl_FragColor = vec4(uColor,1.0);
-    float strength = random(vUv * randomFactors.xy * max(0.001, FuTime));
+    float strength = random()(vUv * random()Factors.xy * max(0.001, FuTime));
     // gl_FragColor = vec4(vec3(strength), 1.0);
     gl_FragColor = vec4(texture + (vec3(strength) * uAddNoise) , 1.0);
   }`,
@@ -97,16 +96,27 @@ const Bar = ({numberOfBars, data,width, index, height, position, scale, map,  ..
   const slug = data.node.fields.slug
   const isLastOne = index === numberOfBars - 1
 
-  const barCodePatternProps = useMemoOne(() => ({
-    number1: index === 0 ? 1 : Math.random() >0.5 ? 1 :0,
-    number2: index === 0 ? 0 : Math.random() >0.5 ? 1 :0,
-    number3: index === 0 ? 1 : Math.random() >0.5 ? 1 :0,
-    number4: index === 0 ? 0 : Math.random() >0.5 ? 1 :0,
-    number5: index === numberOfBars - 1 ? 0 : 1,
-    number6: index === numberOfBars - 1 ? 1 : Math.random() >0.5 ? 1 :0,
-    number7: index === numberOfBars - 1 ? 0 : Math.random() >0.5 ? 1 :0,
-    number8: index === numberOfBars - 1 ? 1 : Math.random() >0.5 ? 1 :0,
-  }), [index, numberOfBars])
+  const barCodePatternProps = useMemoOne(() => {
+    const isFirst = index === 0
+    const isLast = index === numberOfBars
+    const random = () => Math.random() >0.5 ? 1 :0
+    return{
+    number1: isFirst ? 1 : random(),
+    number2: isFirst ? 0 : random(),
+    number3: isFirst ? 1 : random(),
+    number4: isFirst ? 0 : random(),
+    number5: random(),
+    number6: random(),
+    number7: random(),
+    number8: random(),
+    number10: random(),
+    number10: random(),
+    number12: random(),
+    number13: isLast ? 0 : 1,
+    number14: isLast ? 1 : random(),
+    number15: isLast ? 0 : random(),
+    number16: isLast ? 1 : random(),
+  }}, [index, numberOfBars])
 
   // the following controls to which side the bars open by translating the origin
   useEffect(()=> {

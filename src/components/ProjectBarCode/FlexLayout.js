@@ -29,17 +29,18 @@ const FlexLayout = ({projects}) => {
     }))
 
 
+    // TZRANSITION ANIMATION
 
-    useEffect(()=> {
-      if (toSlug !== null && animating) {
-        console.log("toSlug", toSlug)
-      rotationApi.start({rotation: [-2,0,0],      onRest: () => {
-        console.log("SLZG", toSlug)
-        navigate(toSlug)
-        setAnimatingDone()
-      }})
-      }
-    }, [toSlug])
+    // useEffect(()=> {
+    //   if (toSlug !== null && animating) {
+    //     console.log("toSlug", toSlug)
+    //   rotationApi.start({rotation: [-2,0,0],      onRest: () => {
+    //     console.log("SLZG", toSlug)
+    //     navigate(toSlug)
+    //     setAnimatingDone()
+    //   }})
+    //   }
+    // }, [toSlug])
 
 
     const images = useLoader(THREE.TextureLoader,projects.map(project => {

@@ -13,25 +13,62 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
+  - name: "projects"
+    label: "Projects"
+    folder: "src/pages/projects"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "blog-post",
-        }
+      - label: "Template Key"
+        name: "templateKey"
+        widget: "hidden"
+        default: "project-post"
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
       - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Last Image", name: "lastImage", widget: image }
+      - { label: "Client", name: "client", widget: string }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
+      - {
+          label: Additional Data,
+          name: additionalData,
+          widget: list,
+          fields: [
+              { label: Title, name: title, widget: string },
+              { label: Data, name: data, widget: string }
+           ]
+        }
+      - {
+       label: Sections,
+       name: sections,
+       widget: list,
+       fields:
+       	[
+         {
+            label: Section,
+            name: section,
+            widget: list,
+            fields:
+            [
+              {
+              	label: Image,
+                name: image,
+                widget: object,
+                fields: 
+                  [
+                    { label: Align on the left, name: left, widget: boolean },
+                    { label: Fullscreen, name: horizontal, widget: boolean },
+                    { label: Image, name: src, widget: image },
+                    { label: Alt Text, name: altText, widget: text },
+            	  ],
+               }
+            ]
+          }
+          ]
+        }
 
   - name: "pages"
     label: "Pages"
@@ -119,7 +156,7 @@ collections:
                         { label: Alt, name: alt, widget: string },
                       ],
                   },
-                ],
+                ]
             }
       - file: "src/pages/about/index.md"
         label: "About"

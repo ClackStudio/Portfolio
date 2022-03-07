@@ -16,23 +16,23 @@ sections:
   - section:
       - image:
           left: true
-          horicontal: false
+          horizontal: false
           src: /img/labience_global_summer_campaign/compressed/L_03.jpg
           altText: mood 1
       - image:
           left: false
-          horicontal: false
+          horizontal: false
           src: /img/labience_global_summer_campaign/compressed/L_02.png
           altText: mood 2
   - section:
       - image:
           left: true
-          horicontal: false
+          horizontal: false
           src: /img/labience_global_summer_campaign/compressed/L_04.jpg
           altText: mood 3
       - image:
           left: false
-          horicontal: false
+          horizontal: false
           src: /img/labience_global_summer_campaign/compressed/L_05.jpg
           altText: mood 4
 

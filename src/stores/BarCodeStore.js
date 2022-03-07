@@ -9,8 +9,8 @@ const barCodeStore = state => ({
 const backgroundStore = state => ({
     animating: false,
     currentHoveredBar: null,
-    setCurrentHoveredBar: (key) => {
-        state.currentHoveredBar = key;
+    setCurrentHoveredBar: (index) => {
+        state.currentHoveredBar = index;
     },
     setAnimatingDone: () => {state.animating = false}
 });

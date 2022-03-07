@@ -28,7 +28,7 @@ export const IndexPageTemplate = ({
     <div>
       {/* <FullWidthImage img={heroImage} title={title} subheading={subheading} /> */}
       {/* <LaserBackground></LaserBackground> */}
-      <section className="section is-full-height" style={{padding: 0}} >
+      <section className="section is-full-height" style={{padding: 0, minHeight: 'auto', height: 'auto'}} >
           <ProjectBarCode></ProjectBarCode>
       </section>
     </div>

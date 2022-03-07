@@ -6,8 +6,6 @@ import RadialLaser from '../../../static/img/radial.png'
 import AngularLaser from '../../../static/img/angular.png'
 
 import PropTypes from 'prop-types'
-import './styles.sass'
-
 
 
 const LaserBackground = props => {

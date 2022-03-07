@@ -1,5 +1,7 @@
 // Config vars
 // Kaldi logo brand color: #FD461E
+@import "~bulma"
+
 $kaldi-red: #D64000
 $kaldi-red-invert: #fff
 
@@ -13,14 +15,14 @@ $background: #f2f2f2
 
 $desktop-max-width: 2000px
 $standard-padding: 10px
-
+$barcode-numbers-height: 80px
+$navbar-height: 48px
 $huge-font-size: 4rem
 
 @font-face
   font-family: "ABC Diatype"
   src: url("../../static/fonts/ABCDiatype-Medium.woff2"), url("../../static/fonts/ABCDiatype-Medium.woff")
 
-@import "~bulma"
 
 html, body
   font-family: 'ABC Diatype', 'Helvetica Neue', sans-serif
@@ -28,18 +30,30 @@ html, body
   cursor: url('/img/arrow.svg') 0 0, move
   background: $background
   -webkit-font-smoothing: antialiased
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none  /* IE and Edge */
+  scrollbar-width: none  /* Firefox */
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar
+  display: none
+
+
   
 ::selection
-  color: $background
-  background: $black
+  color: red
+  background: $background!important
 
 
 canvas
-  cursor: url('/img/cursor2.svg') 12 12, move!important
+  cursor: url('/img/pointer_laser.svg') 12 12, move!important
+
+.canvas-wrapper
+  height: calc(100vh - #{$navbar-height} - #{$barcode-numbers-height})
 
 
 button, a
-  cursor: url('/img/arrow2.svg') 0 0, move!important
+  cursor: url('/img/arrow.svg') 0 0, move!important
   font-size: 1rem
   color: $black
 
@@ -60,12 +74,15 @@ button
 
 .is-full-height
     margin: auto
-    min-height: 100vh!important
+    min-height: 100vh
     // max-width: 2000px
 
 .fill-container
     width: 100%
     min-height: 100%
+
+.minus-navbar
+  min-height: calc( 100vh -  #{$navbar-height})!important
 
 .column, .columns
     padding: 0
@@ -137,6 +154,18 @@ button
 a
   text-decoration: none
 
+
+
+.barcode-numbers-wrapper
+  width: 100%
+  min-width: 100%
+  height: $barcode-numbers-height
+  align-items: flex-end
+  justify-content: space-between
+  padding-left: $standard-padding
+  padding-right: $standard-padding
+  .left, .right
+    min-width: 30%
 .project-navigation
   width: 100%
   min-width: 100%
@@ -150,28 +179,28 @@ a
   &-numbers
     font-size: $huge-font-size
     .project-number
-      line-height: 88px
+      // line-height: 88px
       width: 45px
-      height: 88px
+      height: 70px
       text-align: center
       position: relative
-      cursor: url('/img/cursor2.svg') 12 12, move!important
+      cursor: url('/img/pointer_laser.svg') 12 12, move!important
       // &:hover
       //   color: $dark-gray
       &:hover
         .vertical-line
           position: absolute
-          top: 0
+          bottom: 32%
           left: 0px
-          width: 4px
+          height: 6px
           background: $black
-          height: 100%
+          width: 100%
     .active
         .horicontal-line
           position: absolute
-          bottom: 0
+          bottom: 32%
           // left: -3.5px
-          height: 4px
+          height: 6px
           background: $black
           width: 100%
 

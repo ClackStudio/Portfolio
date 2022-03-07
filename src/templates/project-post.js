@@ -16,8 +16,8 @@ import './styles.sass'
 import BigImage from "../components/BigImage";
 
 
-const TitleTemplate = ({ title }) => (
-  <div className="columns">
+const TitleTemplate = ({ title, className }) => (
+  <div className="columns" className={className}>
     <div className="column is-6 project-title">
       {title}
     </div>
@@ -45,7 +45,7 @@ const ServicesListTemplate = ({ services }) => (
 )
 
 const Section = ({ data }) => {
-  const isHoricontal = data[0].image.horicontal
+  const isHorizontal = data[0].image.horizontal
   const firstImage = getImage(data[0].image.src) || data[0].image.src;
   const isLeft = data[0].image.left
   const twoImages = data.length > 1
@@ -55,7 +55,7 @@ const Section = ({ data }) => {
 
   return (
     <SectionTemplate>
-        {isHoricontal ? (
+        {isHorizontal ? (
           <div className="columns fill-container">
             <div className="column is-12">
               <BigImage img={firstImage} ></BigImage>
@@ -117,7 +117,7 @@ export const ProjectPostTemplate = ({
                     ))}
                   <TableRowComponent leftData={"date"} rightData={date} />
                   <ServicesListTemplate services={tags}/>
-                  <TitleTemplate title={title}></TitleTemplate>
+                  <TitleTemplate title={title} className={'pt-5'} ></TitleTemplate>
                 </TableLayout>
               </div>
             </div>
@@ -229,7 +229,7 @@ export const pageQuery = graphql`
           section {
             image {
               left
-              horicontal
+              horizontal
               altText
               src {
                 childImageSharp {

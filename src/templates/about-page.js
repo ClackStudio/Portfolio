@@ -3,26 +3,32 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
+import { TableLayout, TableRowComponent } from "../components/TableComponent";
+import SectionTemplate from "../components/SectionTemplate";
 
 // eslint-disable-next-line
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
+    <SectionTemplate className="minus-navbar">
+    <div className="columns fill-container minus-navbar">
+      <div className="column fill-container minus-navbar">
+        <div className="is-12 is-flex is-flex-direction-column is-justify-content-flex-end fill-container" >
+          {/* <HalfPageNavbar /> */}
+          {/* date */}
+          <TableLayout>
+          <PageContent content={content} /> 
+          </TableLayout>
         </div>
       </div>
-    </section>
+      {/* <PostContent content={content} /> */}
+
+    </div>
+    <div className="column is-6 fill-container">
+      {/* <BigImage counter={counter.current} img={sideImage} ></BigImage> */}
+    </div>
+</SectionTemplate>
   );
 };
 
