@@ -37,7 +37,6 @@ const ProjectIndexPageTemplate = ({location, edges, totalCount}) => {
   }
 
   const navigateToProject = (slug) => {
-    console.log("SLUG", slug)
     navigate(slug)
   }
 

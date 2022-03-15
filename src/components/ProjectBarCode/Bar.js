@@ -1,5 +1,5 @@
 import React, {useState, useRef, Suspense, useEffect, useMemo} from 'react'
-import PropTypes from 'prop-types'
+import PropTypes, { number } from 'prop-types'
 import { Canvas, useFrame, useThree, mesh, boxGeometry, meshBasicMaterial, extend, useLoader } from '@react-three/fiber'
 import { CycleRaycast, useCursor, shaderMaterial, useBVH } from '@react-three/drei'
 import glsl from 'babel-plugin-glsl/macro'
@@ -84,7 +84,7 @@ const WaveShaderMaterial = shaderMaterial(
 extend({ WaveShaderMaterial })
 
 
-const Bar = ({numberOfBars, data,width, index, height, position, scale, map,  ...props }) => {
+const Bar = ({numberOfBars, data,width, index, height, position, scale, map, isBeforeMiddle, isMiddle, isAfterMiddle, ...props }) => {
 
   const ref = useRef()
   const geometry = useRef()
@@ -94,7 +94,8 @@ const Bar = ({numberOfBars, data,width, index, height, position, scale, map,  ..
   const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore()
   const { setCanvasTransition } = useTransitionStore()
   const slug = data.node.fields.slug
-  const isLastOne = index === numberOfBars - 1
+  const isFirst = index === 0
+  const isLast = index === numberOfBars - 1
 
   const barCodePatternProps = useMemoOne(() => {
     const isFirst = index === 0
@@ -123,10 +124,12 @@ const Bar = ({numberOfBars, data,width, index, height, position, scale, map,  ..
     if (typeof geometry.current !== 'undefined') {
 
       // all nars open two the right but the last one opens to the left so it doe not overflow
-      if (isLastOne) {
-        geometry.current.translate( -0.5, 0, 0 )
-      } else {
+      if (isBeforeMiddle) {
         geometry.current.translate( 0.5, 0, 0 )
+      } else if (isMiddle) {
+        geometry.current.translate( 0, 0, 0 )
+      } else if (isAfterMiddle) {
+        geometry.current.translate( -0.5, 0, 0 )
       }
     }
   }, [index])
@@ -145,35 +148,27 @@ const Bar = ({numberOfBars, data,width, index, height, position, scale, map,  ..
   const damp = THREE.MathUtils.damp
   useFrame((state, delta) => {
     if (typeof ref.current !== 'undefined') {
-      const isLastBarHovered = currentHoveredBar === numberOfBars - 1
-      const halfOpenWidth = ((imageWidth - width))
+      // TODO: normalisedImageWidth is bugged its not working well on wide screens as it becomes a tiny number
+      const normalisedImageWidth = ((imageWidth - width))
+      const hoveredBarOpenedToTheRight = currentHoveredBar < (numberOfBars / 2)
+      // lambda defines the animation-tension of the spring
       const lambda = 4;
 
-      const barsBetweenHover = index - currentHoveredBar
+      const barsBetweenHover = Math.abs(index - currentHoveredBar)
+        
       const scalePercentage = ((numberOfBars - barsBetweenHover + 1) / numberOfBars) 
 
-      const barSizeToTheRight = width - (imageWidth / barsAfter)
+      const debug = () => {
+        console.log("hoveredBarOpenedToTheRight", hoveredBarOpenedToTheRight)
+        console.log("width", width)
+        console.log("normalisedImageWidth", normalisedImageWidth)
+        console.log("scalePercentage", scalePercentage)
+        console.log("barsBetweenHover", barsBetweenHover)
+        console.log("((normalisedImageWidth * scalePercentage) ) ", ((normalisedImageWidth * scalePercentage) ))
+      }
 
       const expandBar = () => {
         ref.current.material.scale = ref.current.scale.x = damp(ref.current.scale.x, imageWidth, lambda, delta)
-      }
-
-      const moveBarToLeft = () => {
-        ref.current.position.x = damp(ref.current.position.x, position[0] - (imageWidth - width), lambda, delta)
-      }
-      const moveBarToRightWithScale = () => {
-        ref.current.material.scale = ref.current.scale.x = damp(ref.current.scale.x, width * scalePercentage, lambda, delta)
-        if (!isLastOne) {
-          ref.current.position.x = damp(ref.current.position.x, position[0] + ((halfOpenWidth * scalePercentage) ) , lambda, delta)
-
-        } else {
-          ref.current.position.x = damp(ref.current.position.x, position[0] + ((halfOpenWidth * scalePercentage) ) -width , lambda, delta)
-
-        }
-      }
-
-      const moveBarToRight = () => {
-        ref.current.position.x = damp(ref.current.position.x, position[0] + (imageWidth - width), lambda, delta)
       }
 
       const resetPosition = () => {
@@ -186,26 +181,46 @@ const Bar = ({numberOfBars, data,width, index, height, position, scale, map,  ..
 
       }
 
+      const scaleDown = () => {
+        ref.current.material.scale = ref.current.scale.x = damp(ref.current.scale.x, normalisedImageWidth * scalePercentage, lambda, delta)
+
+      }
+
+      const moveBarWithScale = (direction) => {
+        if(index === 0) debug()
+        if (isBeforeMiddle) {
+          if (!hoveredBarOpenedToTheRight || index > currentHoveredBar) {
+            scaleDown()
+            ref.current.position.x = damp(ref.current.position.x, position[0] + (((isFirst ? 0 : normalisedImageWidth) * scalePercentage) * direction ) , lambda, delta)
+          }else {
+            resetPosition()
+            resetScale()
+          }
+        } else if (isMiddle) {
+        // Middle should not be used :D
+          ref.current.position.x = damp(ref.current.position.x, position[0] + ((normalisedImageWidth * scalePercentage) * direction ) , lambda, delta)
+        }
+         else if (isAfterMiddle) {
+          if (hoveredBarOpenedToTheRight  || index < currentHoveredBar) {
+            scaleDown()
+                     // the middel shoul always stay in the same position stay in the same position (there is not always a middle though)
+            ref.current.position.x = damp(ref.current.position.x, position[0] + ((((isLast ? 0 : normalisedImageWidth) * scalePercentage) ) * direction)  , lambda, delta)
+          } else {
+            resetPosition()
+            resetScale()
+          }
+        }
+      }
+
       if (currentHoveredBar === null) {
         resetScale()
         resetPosition()
 
       } else {
         if (index < currentHoveredBar) {
- 
-          // shrinkBar()
-          if (isLastBarHovered) {
-              moveBarToLeft()
-
-          } else {
-            resetScale()
-            resetPosition()
-          }
-          // moveBarToLeft()
+          moveBarWithScale(-1)
         } else if (index > currentHoveredBar) {
-          // shrinkBar()
-          moveBarToRightWithScale()
-          // moveBarToRight()
+          moveBarWithScale(+1)
         }else if (index === currentHoveredBar) {
           // if current one is hovered scale it to the image width and bring it to original position
           expandBar()
@@ -249,8 +264,7 @@ const Bar = ({numberOfBars, data,width, index, height, position, scale, map,  ..
 
       ): (
         // <meshBasicMaterial attach="material" opacity={0.6} color="red"/>
-
-        <patternShader attach="material" transparent {...barCodePatternProps} opacity={0}></patternShader>
+        <patternShader attach="material" transparent {...barCodePatternProps} opacity={0} ></patternShader>
       )}
       
 

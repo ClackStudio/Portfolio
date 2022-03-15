@@ -11,7 +11,6 @@ const ProjectNumber = ({project , index}) => {
   const isHovered = index === currentHoveredBar
   const handleMouseEnter = () => {
     setCurrentHoveredBar(index)
-    console.log(currentHoveredBar)
   }
   const handleMouseLeave = () => {
     setCurrentHoveredBar(null)

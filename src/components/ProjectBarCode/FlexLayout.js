@@ -16,20 +16,8 @@ const isBrowser = typeof window !== "undefined"
 
 const FlexLayout = ({projects}) => {
 
-    const { viewport, size, camera } = useThree()
-    console.log("SIZE", size)
+const { viewport, size, camera } = useThree()
 
-
-const pixelToCoordinate = ([x,y]) => {
-  const vector = new THREE.Vector3();
-  const pos = new THREE.Vector3();
-  vector.set(x, y, 0);
-  vector.unproject(camera); // -1,1 => -screen width/2,screen width/2
-  vector.sub(camera.position).normalize();
-  const distance = -camera.position.z / vector.z;
-  pos.copy(camera.position).add(vector.multiplyScalar(distance));
-  return pos
-} 
 const getCoordinateXLength = (pixelLength) => {
   const fraction =  pixelLength / size.width
   const coordinateWidth = viewport.width * fraction 
@@ -40,13 +28,6 @@ const getCoordinateYLength = (pixelLength) => {
   const coordinateHeight = viewport.height * fraction 
   return coordinateHeight
 }
-
-
-console.log("size", viewport)
-
-  console.log("POSITION", pixelToCoordinate([viewport.width/ 2,viewport.height / 2]))
-  console.log("getCoordinateXLength", getCoordinateXLength(10))
-  console.log("getCoordinateYLength", getCoordinateYLength(10))
 
 
     const numberOfBars = projects.length
@@ -91,7 +72,7 @@ console.log("size", viewport)
     let bottomStartingPoint = 0
 
     const navbarHeight = 48
-    const footerHeight = 80
+    const footerHeight = 100
     const pixelSide = 10
 
     if (isBrowser) {
@@ -117,7 +98,19 @@ console.log("size", viewport)
         {isBrowser && (
           <animated.group name="barcodes" rotation={spring.rotation}  ref={groupRef} position={[0, (topStartingPoint) / 2, 0]}>
           {projects.map((project, i) => {
-            
+              const isBeforeMiddle = i < (numberOfBars / 2)
+              const isAfterMiddle = i >= (numberOfBars / 2)
+              const isMiddle = ((i - (numberOfBars / 2)) === 1) && numberOfBars % 2 != 0
+
+              const addOrigin = () => {
+                if (isBeforeMiddle) {
+                  return 0
+                } else if (isMiddle) {
+                  return barWidth / 2
+                } else if (isAfterMiddle) {
+                  return barWidth
+                }
+              }
 
             return (
               // <mesh key={i}></mesh>
@@ -125,13 +118,16 @@ console.log("size", viewport)
               key={i}
               index={i}
               name={'bar-' + (i + 1)}
-              position={[startingPoint + i * (barWidth) + sidePadding + ((i === numberOfBars -1) ? barWidth : 0), 0, 0]}
+              position={[startingPoint + i * (barWidth) + sidePadding + addOrigin(), 0, 0]}
               scale={[barWidth, barHeight, 1]}
               width={barWidth}
               height={barHeight}
               data={project}
               map={images[i]}
               numberOfBars={numberOfBars}
+              isAfterMiddle={isAfterMiddle}
+              isMiddle={isMiddle}
+              isBeforeMiddle={isBeforeMiddle}
               />
               )    
       

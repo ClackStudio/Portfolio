@@ -34,9 +34,7 @@ const Sun = forwardRef(function Sun(props, forwardRef) {
         if(toSlug !== null && animating && forwardRef.current.position.y > -5) {
             forwardRef.current.position.y -= delta * 10
         } else if (forwardRef.current.position.y < -3) {
-          console.log("DONEEEE")
           forwardRef.current.position.y = 5
-          console.log("SLZG", toSlug)
           navigate(toSlug)
           setAnimatingDone()
 

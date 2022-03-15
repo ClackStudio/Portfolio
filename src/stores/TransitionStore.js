@@ -5,7 +5,7 @@ const transitionStore = state => ({
     currentPath: '/',
     lastPath: '/',
     toSlug: null,
-    introAnimationDone: true,
+    introAnimationDone: false,
     setCurrentHoveredBar: (key) => {
         state.currentHoveredBar = key;
         state.animating = true;
@@ -15,7 +15,6 @@ const transitionStore = state => ({
         state.toSlug = null;
     },
     setCanvasTransition: (slug) => {
-        console.log("STORE SLUG", slug)
         state.toSlug = slug;
         state.animating = true;
     },
