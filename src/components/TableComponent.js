@@ -1,5 +1,5 @@
 import React from 'react'
-import './all.sass'
+// import './all.sass'
 
 
 const TableLayout = ({children}) => (

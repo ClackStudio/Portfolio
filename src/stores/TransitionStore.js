@@ -5,6 +5,7 @@ const transitionStore = state => ({
     currentPath: '/',
     lastPath: '/',
     toSlug: null,
+    introAnimationDone: true,
     setCurrentHoveredBar: (key) => {
         state.currentHoveredBar = key;
         state.animating = true;
@@ -17,6 +18,9 @@ const transitionStore = state => ({
         console.log("STORE SLUG", slug)
         state.toSlug = slug;
         state.animating = true;
+    },
+    setIntroAnimationDone: () => {
+        state.introAnimationDone = true;
     }
 });
 

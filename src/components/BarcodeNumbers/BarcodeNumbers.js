@@ -4,7 +4,6 @@ import { useBackgroundStore } from "./../../stores/BarCodeStore";
 import { useTransitionStore } from "./../../stores/TransitionStore"
 import {projects} from '../../data.mock/projects.mock'
 
-import '../all.sass'
 
 const ProjectNumber = ({project , index}) => {
   const { setCanvasTransition } = useTransitionStore()
@@ -22,7 +21,7 @@ const ProjectNumber = ({project , index}) => {
   }
 
   return (
-      <div onClick={goToProject} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`project-number ${isHovered && 'active'}`} > 
+      <div onClick={goToProject} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`project-number ${isHovered && 'project-number-bar-hover'}`} > 
       {index}
           <div className='vertical-line'></div>
           <div className='horicontal-line'></div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import './all.sass'
+// import './all.sass'
 
 const SectionTemplate = ({children, className}) => (
   <section className={`section is-full-height is-flex is-flex-direction-column justify-content-center fill-container ${className}`}>

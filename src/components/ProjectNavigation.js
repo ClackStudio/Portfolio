@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, graphql, StaticQuery, navigate } from 'gatsby'
 import CrossButton from './CrossButton'
-import './all.sass'
+// import './all.sass'
 import { node } from 'prop-types'
 
 

@@ -1,15 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
-
+import FullScreenAnimation from "../components/FullScreenAnimation";
 import Layout from "../components/Layout";
 import ProjectBarCode from "../components/ProjectBarCode/ProjectBarCode";
-
-// import LaserBackground from "../components/LaserBackground/LaserBackground";
-
-import FullWidthImage from "../components/FullWidthImage";
-
+import { useTransitionStore } from '../stores/TransitionStore'
+import { Transition, animated, useTransition } from "react-spring";
+import { intersection } from "lodash";
 
 
 // eslint-disable-next-line
@@ -23,13 +19,26 @@ export const IndexPageTemplate = ({
   intro,
 }) => {
   // const heroImage = getImage(image) || image;
-
+  const { introAnimationDone } = useTransitionStore()
+  const transition = useTransition(introAnimationDone, false, {
+    from: { opacity: 1 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+    expires: true
+  })
   return (
     <div>
-      {/* <FullWidthImage img={heroImage} title={title} subheading={subheading} /> */}
-      {/* <LaserBackground></LaserBackground> */}
-      <section className="section is-full-height" style={{padding: 0, minHeight: 'auto', height: 'auto'}} >
-          <ProjectBarCode></ProjectBarCode>
+      {/* {transition.map(({ item, props, key }) =>  */}
+        { !introAnimationDone && (
+          <animated.div className="fullscreen-animation-wrapper">
+          <FullScreenAnimation />
+        </animated.div>
+        )}
+
+      {/* )} */}
+
+      <section className="section is-full-height" style={{ padding: 0, minHeight: 'auto', height: 'auto' }} >
+        <ProjectBarCode></ProjectBarCode>
       </section>
     </div>
   );
@@ -53,16 +62,16 @@ const IndexPage = ({ data, location }) => {
   return (
     <Layout location={location}>
       <IndexPageTemplate
-        // image={frontmatter.image}
-        // title={frontmatter.title}
-        // heading={frontmatter.heading}
-        // subheading={frontmatter.subheading}
-        // mainpitch={frontmatter.mainpitch}
-        // description={frontmatter.description}
-        // intro={frontmatter.intro}
+      // image={frontmatter.image}
+      // title={frontmatter.title}
+      // heading={frontmatter.heading}
+      // subheading={frontmatter.subheading}
+      // mainpitch={frontmatter.mainpitch}
+      // description={frontmatter.description}
+      // intro={frontmatter.intro}
       />
 
-      
+
     </Layout>
   );
 };

@@ -1,5 +1,4 @@
 import React, {Suspense, useEffect, useRef, useCallback} from 'react'
-import '../all.sass'
 import PropTypes from 'prop-types'
 import { Canvas } from '@react-three/fiber'
 import { Stats, AdaptiveEvents } from '@react-three/drei'
@@ -15,9 +14,9 @@ const ProjectBarCodeTemplate = ({data}) => {
 
     return (
       <>
-      <div className='container' style={{display: 'block'}}>
+      {/* <div className='container' style={{display: 'block'}}> */}
         <div className="canvas-wrapper">
-            <Canvas dpr={[1, 1.5]} resize={{ debounce: 0, scroll: false }}>
+            <Canvas dpr={[1, 2]} resize={{ debounce: 0, scroll: false }}>
             {/* <color attach="background" args={['transparent']} /> */}
 
             {/* <Stats showPanel={0} className="stats"/> */}
@@ -37,7 +36,7 @@ const ProjectBarCodeTemplate = ({data}) => {
             </Canvas>
         </div>
 
-      </div>
+      {/* </div> */}
       <BarcodeNumbers projects={projects}></BarcodeNumbers>
 
       </>

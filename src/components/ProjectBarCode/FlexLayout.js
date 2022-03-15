@@ -16,7 +16,39 @@ const isBrowser = typeof window !== "undefined"
 
 const FlexLayout = ({projects}) => {
 
-    const { viewport, size } = useThree()
+    const { viewport, size, camera } = useThree()
+    console.log("SIZE", size)
+
+
+const pixelToCoordinate = ([x,y]) => {
+  const vector = new THREE.Vector3();
+  const pos = new THREE.Vector3();
+  vector.set(x, y, 0);
+  vector.unproject(camera); // -1,1 => -screen width/2,screen width/2
+  vector.sub(camera.position).normalize();
+  const distance = -camera.position.z / vector.z;
+  pos.copy(camera.position).add(vector.multiplyScalar(distance));
+  return pos
+} 
+const getCoordinateXLength = (pixelLength) => {
+  const fraction =  pixelLength / size.width
+  const coordinateWidth = viewport.width * fraction 
+  return coordinateWidth
+}
+const getCoordinateYLength = (pixelLength) => {
+  const fraction =  pixelLength / size.height
+  const coordinateHeight = viewport.height * fraction 
+  return coordinateHeight
+}
+
+
+console.log("size", viewport)
+
+  console.log("POSITION", pixelToCoordinate([viewport.width/ 2,viewport.height / 2]))
+  console.log("getCoordinateXLength", getCoordinateXLength(10))
+  console.log("getCoordinateYLength", getCoordinateYLength(10))
+
+
     const numberOfBars = projects.length
     const groupRef = useRef()
     const [vpWidth, vpHeight] = useAspect(size.width, size.height)
@@ -54,18 +86,26 @@ const FlexLayout = ({projects}) => {
     let barWidth = 1
     let barHeight = 1
     let startingPoint = 0
-    const padding = 0.25
+    let sidePadding = 0
+    let topStartingPoint = 0
+    let bottomStartingPoint = 0
+
+    const navbarHeight = 48
+    const footerHeight = 80
+    const pixelSide = 10
 
     if (isBrowser) {
 
-
+      sidePadding = getCoordinateXLength(pixelSide)
+      topStartingPoint = getCoordinateYLength(navbarHeight)
+      bottomStartingPoint = getCoordinateYLength(footerHeight)
 
       // const [standardBarWidth, standardBarHeight] = useAspect('cover', size.width / numberOfBars, size.height - topPadding)
       // console.log(standardBarWidth)
 
 
-      barWidth = (vpWidth - padding * 2) / numberOfBars
-      barHeight = vpHeight
+      barWidth = (vpWidth - sidePadding * 2) / numberOfBars
+      barHeight = vpHeight - (topStartingPoint + bottomStartingPoint)
       startingPoint = vpWidth/2 * -1
   }
 
@@ -75,7 +115,7 @@ const FlexLayout = ({projects}) => {
     return (
         <>
         {isBrowser && (
-          <animated.group name="barcodes" rotation={spring.rotation} ref={groupRef}>
+          <animated.group name="barcodes" rotation={spring.rotation}  ref={groupRef} position={[0, (topStartingPoint) / 2, 0]}>
           {projects.map((project, i) => {
             
 
@@ -85,7 +125,7 @@ const FlexLayout = ({projects}) => {
               key={i}
               index={i}
               name={'bar-' + (i + 1)}
-              position={[startingPoint + i * (barWidth) + padding + ((i === numberOfBars -1) ? barWidth : 0), 0, 0]}
+              position={[startingPoint + i * (barWidth) + sidePadding + ((i === numberOfBars -1) ? barWidth : 0), 0, 0]}
               scale={[barWidth, barHeight, 1]}
               width={barWidth}
               height={barHeight}

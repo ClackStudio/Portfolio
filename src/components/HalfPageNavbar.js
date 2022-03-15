@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Link, navigate } from "gatsby";
 import { useSpring, animated } from 'react-spring'
-import './navbar-styles.sass'
+// import './navbar-styles.sass'
 
 const HalfPageNavbar = () => {
   // const [state, setState] = useState({

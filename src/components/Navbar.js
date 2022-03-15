@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { useSpring, animated } from 'react-spring'
 import github from "../img/github-icon.svg";
 import logo from "../img/logo.svg";
-import './navbar-styles.sass'
+// import './navbar-styles.sass'
 
 const Navbar = () => {
   // const [state, setState] = useState({
