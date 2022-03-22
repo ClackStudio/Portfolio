@@ -8,7 +8,7 @@ import { EffectComposer, GodRays, Bloom, Noise } from "@react-three/postprocessi
 import { useControls, button } from 'leva'
 import { useTransitionStore } from '../stores/TransitionStore'
 import { useSpring, animated, useSpringRef } from '@react-spring/three'
-
+import { gradientShader} from '../components/ProjectBarCode/shaders/GradientShader'
 
 const AnimatedHtml = animated(Html)
  
