@@ -1,16 +1,13 @@
 import React, { Suspense, useEffect, useRef, useMemo, useState } from 'react'
 import { Canvas, useLoader } from '@react-three/fiber'
 import { AdaptiveEvents, useAspect, Html, Plane, Sphere } from '@react-three/drei'
-import BarCodeBackground from './ProjectBarCode/BarCodeBackground'
 // import PreviewCompatibleImage from './PreviewCompatibleImage'
 import { GRAY } from '../helpers/Colors'
 import logo from "../../static/img/logo_2.svg"
-import GradientShader from './ProjectBarCode/shaders/GradientShader'
 import { EffectComposer, GodRays, Bloom, Noise } from "@react-three/postprocessing";
 import { useControls, button } from 'leva'
 import { useTransitionStore } from '../stores/TransitionStore'
 import { useSpring, animated, useSpringRef } from '@react-spring/three'
-import { delay } from 'lodash'
 
 
 const AnimatedHtml = animated(Html)
@@ -74,15 +71,9 @@ const FullScreenAnimation = ({ data }) => {
 
 
     return (
-        <Suspense fallback={null}>
             <Canvas resize={{ debounce: 0, scroll: false }} ref={sceneRef}>
 
                 <color attach="background" args={[GRAY]} />
-                                    {/* <directionalLight color={"white"} intensity={0.2} lookAt={[0,0,0]} position={[0,0,5]}></directionalLight> */}
-
-                {/* <Plane args={[20,20]} position={[0,0,-5]}>
-                <meshBasicMaterial color={"white"}></meshBasicMaterial>
-                </Plane> */}
                 <animated.mesh {...spring} ref={sunRef}>
                     <planeBufferGeometry args={[20,6]}></planeBufferGeometry>
                     <gradientShader attach="material"></gradientShader>
@@ -103,17 +94,10 @@ const FullScreenAnimation = ({ data }) => {
                 <AdaptiveEvents />
                 <EffectComposer>
                     <Bloom luminanceThreshold={0} luminanceSmoothing={0.1} height={300}></Bloom>
-                    {/* <Noise opacity={noise}></Noise> */}
-                    {/* <GodRays
-                        sun={sunRef.current}
-                    /> */}
 
                 </EffectComposer>
                 
-                {/* <BarCodeBackground isIntro></BarCodeBackground> */}
             </Canvas>
-
-        </Suspense>
     )
 }
 
