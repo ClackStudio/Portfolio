@@ -14,7 +14,7 @@ import { navigate } from "gatsby-link";
 const isBrowser = typeof window !== "undefined"
 
 
-const FlexLayout = ({projects}) => {
+const FlexLayout = ({projects, projectsIndex}) => {
 
 const { viewport, size, camera } = useThree()
 
@@ -71,8 +71,8 @@ const getCoordinateYLength = (pixelLength) => {
     let topStartingPoint = 0
     let bottomStartingPoint = 0
 
-    const navbarHeight = 48
-    const footerHeight = 100
+    const navbarHeight = projectsIndex ? 10 : 48
+    const footerHeight = projectsIndex ? 10 : 100
     const pixelSide = 10
 
     if (isBrowser) {
@@ -128,6 +128,7 @@ const getCoordinateYLength = (pixelLength) => {
               isAfterMiddle={isAfterMiddle}
               isMiddle={isMiddle}
               isBeforeMiddle={isBeforeMiddle}
+              projectsIndex={projectsIndex}
               />
               )    
       

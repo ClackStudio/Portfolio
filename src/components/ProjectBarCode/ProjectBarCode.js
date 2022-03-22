@@ -9,13 +9,28 @@ import {GRAY} from '../../helpers/Colors'
 import { Link, graphql, StaticQuery } from 'gatsby'
 // import PreviewCompatibleImage from './PreviewCompatibleImage'
 
-const ProjectBarCodeTemplate = ({data}) => {
+const ProjectBarCodeTemplate = ({data, projectsIndex}) => {
   const { edges: projects } = data.allMarkdownRemark
-
+  console.log(projectsIndex)
+  if (projectsIndex) {
     return (
-      <>
-      {/* <div className='container' style={{display: 'block'}}> */}
-        <div className="canvas-wrapper">
+    <>
+            <Canvas dpr={[1, 2]} resize={{ debounce: 0, scroll: false }}>
+              <Suspense fallback={null}>
+                <FlexLayout projects={projects} projectsIndex></FlexLayout>
+
+                  <AdaptiveEvents />
+
+                <BarCodeBackground></BarCodeBackground>
+              </Suspense>
+            </Canvas>
+      </>
+    )
+  } else {
+    // home page
+    return (
+    <>
+    <div className="canvas-wrapper">
             <Canvas dpr={[1, 2]} resize={{ debounce: 0, scroll: false }}>
             {/* <color attach="background" args={['transparent']} /> */}
 
@@ -38,12 +53,13 @@ const ProjectBarCodeTemplate = ({data}) => {
 
       {/* </div> */}
       <BarcodeNumbers projects={projects}></BarcodeNumbers>
-
       </>
-        )
+    )
+  }
+        
 }
 
-const ProjectBarCode = () => {
+const ProjectBarCode = ({projectsIndex}) => {
   return (
     <StaticQuery
       query={graphql`
@@ -80,7 +96,7 @@ const ProjectBarCode = () => {
           }
         }
       `}
-      render={(data, count) => <ProjectBarCodeTemplate data={data} count={count} />}
+      render={(data, count) => <ProjectBarCodeTemplate projectsIndex={projectsIndex} data={data} count={count} />}
     />
   );
 }

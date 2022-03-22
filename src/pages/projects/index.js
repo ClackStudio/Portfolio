@@ -8,32 +8,43 @@ import BigImage from "../../components/BigImage";
 import { Link, graphql, StaticQuery, navigate } from 'gatsby'
 import { getImage } from "gatsby-plugin-image";
 import '../../components/all.sass'
+import { useBackgroundStore } from "../../stores/BarCodeStore";
+import ProjectBarCode from "../../components/ProjectBarCode/ProjectBarCode";
 
 
 const ProjectIndexPageTemplate = ({location, edges, totalCount}) => {
-  const counter = useRef(0)
-  const haltInterval = useRef(false)
+  const { setCurrentHoveredBar, currentHoveredBar} = useBackgroundStore()
+  // const counter = useRef(0)
+  // const haltInterval = useRef(false)
 
-  const [sideImage, setSideImage] = useState(getImage(edges[6].node.frontmatter.featuredimage) || edges[6].node.frontmatter.featuredimage);
+  // const [sideImage, setSideImage] = useState(getImage(edges[6].node.frontmatter.featuredimage) || edges[6].node.frontmatter.featuredimage);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
       
-      if (counter.current < totalCount - 1) counter.current++
-      else counter.current = 0
+  //     if (counter.current < totalCount - 1) counter.current++
+  //     else counter.current = 0
 
-      if (!haltInterval.current) setSideImage(getImage(edges[counter.current].node.frontmatter.featuredimage) || edges[counter.current].node.frontmatter.featuredimage)
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
+  //     if (!haltInterval.current) setSideImage(getImage(edges[counter.current].node.frontmatter.featuredimage) || edges[counter.current].node.frontmatter.featuredimage)
+  //   }, 2500);
+  //   return () => clearInterval(interval);
+  // }, []);
 
-  const onMouseEnter = (featuredimage) => {
-    haltInterval.current = true
-    setSideImage(getImage(featuredimage) || featuredimage)
+  const onMouseEnter = (index) => {
+    if (currentHoveredBar !== index) {
+      console.log("INDEX", index)
+      console.log("currentHoveredBar", currentHoveredBar)
+      setCurrentHoveredBar(index)
+    }
+    // haltInterval.current = true
+    // setSideImage(getImage(featuredimage) || featuredimage)
   }
 
   const onMouseLeave = () => {
-    haltInterval.current = false
+    if (currentHoveredBar !== null) {
+    setCurrentHoveredBar(null)
+    }
+    // haltInterval.current = false
   }
 
   const navigateToProject = (slug) => {
@@ -52,13 +63,13 @@ const ProjectIndexPageTemplate = ({location, edges, totalCount}) => {
                 <HalfPageNavbar />
                 {/* date */}
                 <TableLayout>
-                  {edges.map(({node}) => (
+                  {edges.map(({node}, index) => (
                   <TableRowComponent 
                   leftData={node.frontmatter.client}
                   rightData={node.frontmatter.title} 
                   onClick={() => navigateToProject(node.fields.slug)}
                   onMouseLeave={onMouseLeave} 
-                  onMouseEnter={() => onMouseEnter(node.frontmatter.featuredimage)} 
+                  onMouseEnter={() => onMouseEnter(index)} 
                   key={node.id} 
                   className={'crossed'} />
                   ))}
@@ -70,7 +81,9 @@ const ProjectIndexPageTemplate = ({location, edges, totalCount}) => {
 
           </div>
           <div className="column is-6 fill-container">
-            <BigImage counter={counter.current} img={sideImage} ></BigImage>
+            {/* <BigImage counter={counter.current} img={sideImage} ></BigImage> */}
+            <ProjectBarCode projectsIndex></ProjectBarCode>
+
           </div>
       </SectionTemplate>
     </>
@@ -99,11 +112,6 @@ const ProjectIndexPage = () => {
                   client
                   templateKey
                   date(formatString: "YYYY")
-                  featuredimage {
-                    childImageSharp {
-                      gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-                    }
-                  }
                 }
               }
             }

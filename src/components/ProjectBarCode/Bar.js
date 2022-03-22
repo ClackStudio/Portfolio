@@ -84,7 +84,7 @@ const WaveShaderMaterial = shaderMaterial(
 extend({ WaveShaderMaterial })
 
 
-const Bar = ({numberOfBars, data,width, index, height, position, scale, map, isBeforeMiddle, isMiddle, isAfterMiddle, ...props }) => {
+const Bar = ({projectsIndex, numberOfBars, data,width, index, height, position, scale, map, isBeforeMiddle, isMiddle, isAfterMiddle, ...props }) => {
 
   const ref = useRef()
   const geometry = useRef()
@@ -152,7 +152,7 @@ const Bar = ({numberOfBars, data,width, index, height, position, scale, map, isB
       const normalisedImageWidth = ((imageWidth - width))
       const hoveredBarOpenedToTheRight = currentHoveredBar < (numberOfBars / 2)
       // lambda defines the animation-tension of the spring
-      const lambda = 4;
+      const lambda = projectsIndex ? 8: 4;
 
       const barsBetweenHover = Math.abs(index - currentHoveredBar)
         
@@ -169,6 +169,8 @@ const Bar = ({numberOfBars, data,width, index, height, position, scale, map, isB
 
       const expandBar = () => {
         ref.current.material.scale = ref.current.scale.x = damp(ref.current.scale.x, imageWidth, lambda, delta)
+        ref.current.position.z = 0.001
+        // ref.current.position.z = damp(ref.current.position.z,position.z + 0.001, lambda, delta)
       }
 
       const resetPosition = () => {
@@ -178,11 +180,12 @@ const Bar = ({numberOfBars, data,width, index, height, position, scale, map, isB
 
       const resetScale = () => {
         ref.current.material.scale = ref.current.scale.x = damp(ref.current.scale.x, scale[0], lambda, delta)
-
+        // ref.current.position.z = position.z
       }
 
       const scaleDown = () => {
         ref.current.material.scale = ref.current.scale.x = damp(ref.current.scale.x, normalisedImageWidth * scalePercentage, lambda, delta)
+        ref.current.position.z = 0.00
 
       }
 

@@ -66,6 +66,7 @@ const Navbar = () => {
       >
         <div className="container" ref={containerRef}>
         <animated.div className="crossing-line" style={styles}></animated.div>
+        <div className="crossing-line" style={initialSpring}></div>
           <div
             id="navMenu"
             className={`navbar-menu`}

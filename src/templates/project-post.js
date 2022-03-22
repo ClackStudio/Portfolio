@@ -17,7 +17,7 @@ import BigImage from "../components/BigImage";
 
 
 const TitleTemplate = ({ title, className }) => (
-  <div className="columns" className={className}>
+  <div className={'columns' + className}>
     <div className="column is-6 project-title">
       {title}
     </div>
@@ -175,7 +175,6 @@ const ProjectPost = ({ data, location }) => {
       client={post.frontmatter.client}
       additionalData={post.frontmatter.additionalData}
       featuredImage={post.frontmatter.featuredimage}
-      lastImage={post.frontmatter.lastImage}
       date={post.frontmatter.date}
       helmet={<Helmet titleTemplate="%s | Blog">
         <title>{`${post.frontmatter.title}`}</title>
