@@ -4,30 +4,30 @@ import FullScreenAnimation from "../components/FullScreenAnimation";
 import Layout from "../components/Layout";
 import ProjectBarCode from "../components/ProjectBarCode/ProjectBarCode";
 import { useTransitionStore } from '../stores/TransitionStore'
-import { Transition, animated, useTransition } from "react-spring";
+import { Transition, animated, useTransition, config } from "react-spring";
 import { intersection } from "lodash";
 import '../components/all.sass'
 
 
 
 // eslint-disable-next-line
-export const IndexPageTemplate = ({
-  image,
-  title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro,
-}) => {
-  // const heroImage = getImage(image) || image;
+export const IndexPageTemplate = ({}) => {
+
   const { introAnimationDone } = useTransitionStore()
-  const transition = useTransition(introAnimationDone, false, {
-    from: { opacity: 1 },
+  const transitions = useTransition(introAnimationDone, {
+    from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
-    expires: true
+    delay: 200,
+    config: config.gentle,
   })
+
+  // const transition = useTransition(introAnimationDone, false, {
+  //   from: { opacity: 1 },
+  //   enter: { opacity: 1 },
+  //   leave: { opacity: 0 },
+  //   expires: true
+  // })
   return (
     <div>
       {/* {transition.map(({ item, props, key }) =>  */}
@@ -36,12 +36,12 @@ export const IndexPageTemplate = ({
           <FullScreenAnimation />
         </animated.div>
         )}
-
-      {/* )} */}
-
-      <section className="section is-full-height" style={{ padding: 0, minHeight: 'auto', height: 'auto' }} >
+        {transitions(
+    (styles, item) => item && <animated.div style={styles} className="section is-full-height">
         <ProjectBarCode></ProjectBarCode>
-      </section>
+      </animated.div>)
+    }
+
     </div>
   );
 };
