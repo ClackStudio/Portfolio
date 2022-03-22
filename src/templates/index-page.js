@@ -6,6 +6,8 @@ import ProjectBarCode from "../components/ProjectBarCode/ProjectBarCode";
 import { useTransitionStore } from '../stores/TransitionStore'
 import { Transition, animated, useTransition } from "react-spring";
 import { intersection } from "lodash";
+import '../components/all.sass'
+
 
 
 // eslint-disable-next-line
