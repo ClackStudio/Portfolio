@@ -34,7 +34,7 @@ const FullScreenAnimation = ({ data }) => {
         to: {...endValues},
         onRest: () => setIntroAnimationDone(),
         config: {mass:1, tension:2, friction:0, clamp: true},
-        delay: 800,
+        delay: 1800,
       }))
 
       springApi.start()

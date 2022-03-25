@@ -12765,6 +12765,13 @@ react-use-measure@^2.1.1:
   dependencies:
     debounce "^1.2.1"
 
+react-use-scroll-snap@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/react-use-scroll-snap/-/react-use-scroll-snap-0.0.3.tgz#a240682990a121ce461c89de90b4605c920f939e"
+  integrity sha512-wuyfiSwoVwuRYgsKPt9WQ5+JlagVFOhMVA5lOlbpkqBkL1FTTOFtedYrneEsbDBHCef5PV4p2Ia20cH+QyCa9Q==
+  dependencies:
+    tweezer.js "^1.5.0"
+
 react-virtualized-auto-sizer@^1.0.2:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/react-virtualized-auto-sizer/-/react-virtualized-auto-sizer-1.0.6.tgz#66c5b1c9278064c5ef1699ed40a29c11518f97ca"
@@ -13585,6 +13592,11 @@ schema-utils@^3.0, schema-utils@^3.0.0, schema-utils@^3.1.0, schema-utils@^3.1.1
     "@types/json-schema" "^7.0.8"
     ajv "^6.12.5"
     ajv-keywords "^3.5.2"
+
+scroll-snap@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/scroll-snap/-/scroll-snap-4.0.3.tgz#015ef1e2661249acfe99c673408a3710f74c7b3d"
+  integrity sha512-7am2JXqY/0jHN9+3b2zhZtm55NmzEQhZTXZBIdC/fVb6aVN5nonjbRpf+OghU9LhguJB+rq5ty9SmQcYzMvMxw==
 
 section-matter@^1.0.0:
   version "1.0.0"
@@ -14915,6 +14927,11 @@ tunnel-agent@^0.6.0:
   integrity sha1-J6XeoGs2sEoKmWZ3SykIaPD8QP0=
   dependencies:
     safe-buffer "^5.0.1"
+
+tweezer.js@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/tweezer.js/-/tweezer.js-1.5.0.tgz#ca50ac5215022203fd3be4d28617e8e2305f5c0c"
+  integrity sha512-aSiJz7rGWNAQq7hjMK9ZYDuEawXupcCWgl3woQQSoDP2Oh8O4srWb/uO1PzzHIsrPEOqrjJ2sUb9FERfzuBabQ==
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"

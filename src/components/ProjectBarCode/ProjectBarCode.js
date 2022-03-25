@@ -11,7 +11,6 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 
 const ProjectBarCodeTemplate = ({data, projectsIndex}) => {
   const { edges: projects } = data.allMarkdownRemark
-  console.log(projectsIndex)
   if (projectsIndex) {
     return (
     <>
@@ -29,31 +28,44 @@ const ProjectBarCodeTemplate = ({data, projectsIndex}) => {
   } else {
     // home page
     return (
-    <>
-    <div className="canvas-wrapper">
-            <Canvas dpr={[1, 2]} resize={{ debounce: 0, scroll: false }}>
-            {/* <color attach="background" args={['transparent']} /> */}
+      <>
+      <div className='show-only-desktop'>
+      <div className="canvas-wrapper">
+              <Canvas dpr={[1, 2]} resize={{ debounce: 0, scroll: false }}>
+              {/* <Stats showPanel={0} className="stats"/> */}
+                <Suspense fallback={null}>
+                  <FlexLayout projects={projects}></FlexLayout>
 
-            {/* <Stats showPanel={0} className="stats"/> */}
-              <Suspense fallback={null}>
-                  {/* Main */}
-                  {/* <directionalLight
-                      position={[1, 10, -2]}
-                      color={'0xff0000'}
-                      intensity={1}
-                  /> */}
-                <FlexLayout projects={projects}></FlexLayout>
+                    <AdaptiveEvents />
 
-                  <AdaptiveEvents />
+                  <BarCodeBackground></BarCodeBackground>
+                </Suspense>
+              </Canvas>
+          </div>
 
-                <BarCodeBackground></BarCodeBackground>
-              </Suspense>
-            </Canvas>
-        </div>
+        {/* </div> */}
+        <BarcodeNumbers projects={projects}></BarcodeNumbers>
+      </div>
 
-      {/* </div> */}
-      <BarcodeNumbers projects={projects}></BarcodeNumbers>
+
+      <div className='show-only-mobile'>
+      <div className="canvas-wrapper">
+              <Canvas dpr={[1, 2]} resize={{ debounce: 0, scroll: false }}>
+              {/* <Stats showPanel={0} className="stats"/> */}
+                <Suspense fallback={null}>
+                  <FlexLayout projects={projects} isMobile></FlexLayout>
+
+                    <AdaptiveEvents />
+
+                  <BarCodeBackground isMobile></BarCodeBackground>
+                </Suspense>
+              </Canvas>
+          </div>
+
+        {/* <BarcodeNumbers isMobile projects={projects}></BarcodeNumbers> */}
+      </div>
       </>
+    
     )
   }
         

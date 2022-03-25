@@ -20,11 +20,13 @@ const ProjectNumber = ({project ,currentProjectId, index}) => {
     )
 }
 
-const ProjectNavigationTemplate = ({projects, count, currentProjectId}) => {
+const ProjectNavigationTemplate = ({projects, currentProjectId}) => {
+    const count = projects.length
+    console.log("COUNTSSSS", count)
     const activeProject = projects.find(({node}, index) => node.id === currentProjectId)
     const activeProjectIndex = projects.indexOf(activeProject)
     const isFirstProject = activeProjectIndex === 0
-    const isLastProject = activeProjectIndex === count
+    const isLastProject = activeProjectIndex === count -1
     const previousProject = !isFirstProject ? activeProjectIndex - 1 : activeProjectIndex
     const nextProject = !isLastProject ? activeProjectIndex + 1 : activeProjectIndex
 
@@ -37,7 +39,7 @@ const ProjectNavigationTemplate = ({projects, count, currentProjectId}) => {
     }
   return (
     <div className="project-navigation is-flex is-flex-direction-row is-justify-content-space-between">
-        <CrossButton onClick={() => goToPreviousProject()}>prev</CrossButton>
+        <CrossButton className="project-navigation-link" onClick={() => goToPreviousProject()}>{!isFirstProject && ("prev")}</CrossButton>
 
         <div className='project-navigation-numbers is-flex is-flex-direction-row'>
             {projects.map(({node}, index) => (
@@ -45,7 +47,7 @@ const ProjectNavigationTemplate = ({projects, count, currentProjectId}) => {
             ))}
         </div> 
 
-        <CrossButton onClick={() => goToNextProject()} >next</CrossButton>
+        <CrossButton className="project-navigation-link" onClick={() => goToNextProject()} >{!isLastProject && ("next")}</CrossButton>
     </div>
   )
 }
@@ -73,7 +75,7 @@ const ProjectNavigation = (props) => {
             }
           }
         `}
-        render={(data, count) => <ProjectNavigationTemplate {...props} projects={data.allMarkdownRemark.edges} count={count} />}
+        render={(data, count) => <ProjectNavigationTemplate {...props} projects={data.allMarkdownRemark.edges} />}
       />
     );
   }

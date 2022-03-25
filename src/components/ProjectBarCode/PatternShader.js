@@ -23,7 +23,8 @@ const PatternShader = shaderMaterial(
     number13: 1,
     number14: 1,
     number15: 0,
-    number16: 1
+    number16: 1,
+    isMobile: false
   },
   // vertex shader
   glsl`
@@ -55,12 +56,13 @@ const PatternShader = shaderMaterial(
     uniform int number14;
     uniform int number15;
     uniform int number16;
+    uniform bool isMobile;
 
 
     void main() {
       float numberOfBars = 16.0;
       float barWidth = 1.0 / numberOfBars;
-      float cb = floor((vUv.x + time) * 8.0);
+      float cb = floor((vUv.y + time) * 8.0);
       float cb2 = floor((vUv.x + time + 2.0) * 4.0);
       vec3 ugColor = vec3(0.0);
 
@@ -73,41 +75,81 @@ const PatternShader = shaderMaterial(
       // gl_FragColor = vec4(vec3(0.0), ugColor );
       vec2 st = gl_FragCoord.xy/vUv.xy;
       mediump float bar = 1.0;
-      
-      if (vUv.x < barWidth) {
-        bar = float(number1);
-      }
-      else if (vUv.x < barWidth * 2.0) {
-          bar = float(number2);
-      } else if (vUv.x < barWidth * 3.0) {
-        bar = float(number3);
-      }else if (vUv.x < barWidth * 4.0) {
-        bar = float(number4);
-      } else if (vUv.x < barWidth * 5.0) {
-        bar = float(number5);
-      } else if (vUv.x < barWidth * 6.0) {
-        bar = float(number6);
-      } else if (vUv.x < barWidth * 7.0) {
-        bar = float(number7);
-      } else if (vUv.x < barWidth * 8.0) {
-        bar = float(number8);
-      } else if (vUv.x < barWidth * 9.0) {
-        bar = float(number9);
-      } else if (vUv.x < barWidth * 10.0) {
-        bar = float(number10);
-      } else if (vUv.x < barWidth * 11.0) {
-        bar = float(number11);
-      } else if (vUv.x < barWidth * 12.0) {
-        bar = float(number12);
-      } else if (vUv.x < barWidth * 13.0) {
-        bar = float(number13);
-      } else if (vUv.x < barWidth * 14.0) {
-        bar = float(number14);
-      } else if (vUv.x < barWidth * 15.0) {
-        bar = float(number15);
+
+      if (isMobile != true) {
+        if (vUv.x < barWidth) {
+          bar = float(number1);
+        }
+        else if (vUv.x < barWidth * 2.0) {
+            bar = float(number2);
+        } else if (vUv.x < barWidth * 3.0) {
+          bar = float(number3);
+        }else if (vUv.x < barWidth * 4.0) {
+          bar = float(number4);
+        } else if (vUv.x < barWidth * 5.0) {
+          bar = float(number5);
+        } else if (vUv.x < barWidth * 6.0) {
+          bar = float(number6);
+        } else if (vUv.x < barWidth * 7.0) {
+          bar = float(number7);
+        } else if (vUv.x < barWidth * 8.0) {
+          bar = float(number8);
+        } else if (vUv.x < barWidth * 9.0) {
+          bar = float(number9);
+        } else if (vUv.x < barWidth * 10.0) {
+          bar = float(number10);
+        } else if (vUv.x < barWidth * 11.0) {
+          bar = float(number11);
+        } else if (vUv.x < barWidth * 12.0) {
+          bar = float(number12);
+        } else if (vUv.x < barWidth * 13.0) {
+          bar = float(number13);
+        } else if (vUv.x < barWidth * 14.0) {
+          bar = float(number14);
+        } else if (vUv.x < barWidth * 15.0) {
+          bar = float(number15);
+        } else {
+          bar = float(number16);
+        }
+
       } else {
-        bar = float(number16);
+        if (vUv.y < barWidth) {
+          bar = float(number1);
+        }
+        else if (vUv.y < barWidth * 2.0) {
+            bar = float(number2);
+        } else if (vUv.y < barWidth * 3.0) {
+          bar = float(number3);
+        }else if (vUv.y < barWidth * 4.0) {
+          bar = float(number4);
+        } else if (vUv.y < barWidth * 5.0) {
+          bar = float(number5);
+        } else if (vUv.y < barWidth * 6.0) {
+          bar = float(number6);
+        } else if (vUv.y < barWidth * 7.0) {
+          bar = float(number7);
+        } else if (vUv.y < barWidth * 8.0) {
+          bar = float(number8);
+        } else if (vUv.y < barWidth * 9.0) {
+          bar = float(number9);
+        } else if (vUv.y < barWidth * 10.0) {
+          bar = float(number10);
+        } else if (vUv.y < barWidth * 11.0) {
+          bar = float(number11);
+        } else if (vUv.y < barWidth * 12.0) {
+          bar = float(number12);
+        } else if (vUv.y < barWidth * 13.0) {
+          bar = float(number13);
+        } else if (vUv.y < barWidth * 14.0) {
+          bar = float(number14);
+        } else if (vUv.y < barWidth * 15.0) {
+          bar = float(number15);
+        } else {
+          bar = float(number16);
+        }
       }
+      
+      
       gl_FragColor = vec4(vec3(0.0),bar);
 
     }

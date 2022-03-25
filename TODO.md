@@ -5,6 +5,8 @@
 - <s> barcode less glitchy </s>
 - barcode for mobile
 - <s>Netlify connection (there was a problem with the github repo) </s>
-- navigation bar also on last page of the project post
+- <s> navigation bar also on last page of the project post </s>
 - maybe scoll arrow for better UX
 - <s> clack studio cross stays </s>
+- <s> section view snapping </s>
+- <s> project navigation bar showing whole menu</s>

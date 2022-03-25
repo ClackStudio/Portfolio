@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
+import createScrollSnap from 'scroll-snap'
+
 import HalfPageNavbar from "../components/HalfPageNavbar";
 import ProjectNavigation from "../components/ProjectNavigation";
 
 import Content, { HTMLContent } from "../components/Content";
 import { getImage } from "gatsby-plugin-image";
-import {TableLayout, TableRowComponent} from '../components/TableComponent'
+import { TableLayout, TableRowComponent } from '../components/TableComponent'
 import SectionTemplate from "../components/SectionTemplate";
 import './styles.sass'
 
@@ -55,26 +57,26 @@ const Section = ({ data }) => {
 
   return (
     <SectionTemplate>
-        {isHorizontal ? (
-          <div className="columns fill-container">
-            <div className="column is-12">
-              <BigImage img={firstImage} ></BigImage>
-            </div>
+      {isHorizontal ? (
+        <div className="columns fill-container">
+          <div className="column is-12">
+            <BigImage img={firstImage} ></BigImage>
           </div>
-        ) : (
-          <div className="columns fill-container">
+        </div>
+      ) : (
+        <div className="columns fill-container">
 
-            <div className="column is-6">
-              {isLeft && (<BigImage img={firstImage} ></BigImage>)}
-            </div>
-            <div className="column is-6">
-              {!isLeft && (<BigImage img={firstImage} ></BigImage>)}
-              {secondImage && (<BigImage img={secondImage} ></BigImage>)}
-            </div>
+          <div className="column is-6">
+            {isLeft && (<BigImage img={firstImage} ></BigImage>)}
           </div>
-        )
-        }
-  </SectionTemplate>)
+          <div className="column is-6">
+            {!isLeft && (<BigImage img={firstImage} ></BigImage>)}
+            {secondImage && (<BigImage img={secondImage} ></BigImage>)}
+          </div>
+        </div>
+      )
+      }
+    </SectionTemplate>)
 
 }
 
@@ -98,36 +100,52 @@ export const ProjectPostTemplate = ({
   const firstImage = featuredImage && (getImage(featuredImage) || featuredImage)
   const lastSectionImage = lastImage && (getImage(lastImage) || lastImage)
 
-  console.log(sections)
+  // const scrollContainer = useRef();
+  // const bindScrollSnap = () => {
+  //   const element = scrollContainer.current
+
+  //   createScrollSnap(
+  //     element, {
+  //     snapDestinationY: '100%',
+  //     threshold: 0,
+  //     duration: 0,
+
+  //   }, () => console.log('snapped'))
+  // }
+
+  // useEffect(() => {
+  //   bindScrollSnap()
+  // }, [])
 
   return (
-    <>
+    <div className="scroll-container">
       {helmet || ""}
       <SectionTemplate>
-          <div className="columns fill-container">
-            <div className="column fill-container">
-              <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container" >
-                <HalfPageNavbar />
-                {/* date */}
-                <TableLayout>
-                  <TableRowComponent leftData={"client"} rightData={client} />
-                    {additionalData && additionalData.map(({ title, data }, index) => (
-                      <TableRowComponent leftData={title} rightData={data} key={`key_add_data_${index}`} />
+        <div className="columns fill-container" >
 
-                    ))}
-                  <TableRowComponent leftData={"date"} rightData={date} />
-                  <ServicesListTemplate services={tags}/>
-                  <TitleTemplate title={title} className={'pt-5'} ></TitleTemplate>
-                </TableLayout>
-              </div>
+          <div className="column fill-container">
+            <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container" >
+              <HalfPageNavbar />
+              {/* date */}
+              <TableLayout>
+                <TableRowComponent leftData={"client"} rightData={client} />
+                {additionalData && additionalData.map(({ title, data }, index) => (
+                  <TableRowComponent leftData={title} rightData={data} key={`key_add_data_${index}`} />
+
+                ))}
+                <TableRowComponent leftData={"date"} rightData={date} />
+                <ServicesListTemplate services={tags} />
+                <TitleTemplate title={title} className={'pt-5'} ></TitleTemplate>
+              </TableLayout>
             </div>
-
-            {/* <PostContent content={content} /> */}
-
           </div>
-          <div className="column is-6 fill-container">
-            <BigImage img={firstImage} ></BigImage>
-          </div>
+
+          {/* <PostContent content={content} /> */}
+
+        </div>
+        <div className="column is-6 fill-container">
+          <BigImage img={firstImage} ></BigImage>
+        </div>
       </SectionTemplate>
 
       {sections && sections.length ?
@@ -137,18 +155,21 @@ export const ProjectPostTemplate = ({
       {/* FINAL SECTION */}
       <SectionTemplate>
         <div className="columns fill-container">
-            <div className="column is-6 fill-container">
+          <div className="column is-6 fill-container">
             <BigImage img={lastSectionImage} ></BigImage>
-            </div>
-            <div className="column is-6 is-flex is-justify-content-space-between is-flex-direction-column fill-container">
+          </div>
+          <div className="column is-6 is-flex is-flex-direction-column fill-container">
+            <HalfPageNavbar />
+            <div className="is-flex is-justify-content-space-between is-flex-direction-column" style={{ height: "100%" }}>
               <TableLayout>
-              <PostContent content={content} /> 
+                <PostContent content={content} />
               </TableLayout>
               <ProjectNavigation currentProjectId={id} />
             </div>
-        </div>  
+          </div>
+        </div>
       </SectionTemplate>
-    </>
+    </div>
   );
 };
 

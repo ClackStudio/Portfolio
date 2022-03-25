@@ -19,6 +19,15 @@ $barcode-numbers-height: 80px
 $navbar-height: 48px
 $huge-font-size: 4rem
 
+// crossed lines
+@mixin crossedFontLine()
+  bottom: 40%
+  height: 2px
+  position: absolute
+  background: $black
+  bottom: 40%
+  width: 100%
+  
 @font-face
   font-family: "ABC Diatype"
   src: url("../../static/fonts/ABCDiatype-Medium.woff2"), url("../../static/fonts/ABCDiatype-Medium.woff")
@@ -35,14 +44,31 @@ html, body
   scrollbar-width: none  /* Firefox */
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-html::-webkit-scrollbar
+html::-webkit-scrollbar, .scroll-container::-webkit-scrollbar
   display: none
 
-
+section
+  scroll-snap-align: start
   
 ::selection
   color: red
   background: $background!important
+
+.scroll-container
+  overflow-y: scroll
+  scroll-snap-type: y mandatory
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none  /* IE and Edge */
+  scrollbar-width: none  /* Firefox */
+  height: 100vh
+// RESPONSIVE
+.show-only-desktop
+  @include until($desktop)
+    display: none!important
+
+.show-only-mobile
+  @include from($desktop)
+    display: none!important
 
 
 canvas
@@ -90,17 +116,32 @@ button, a
   font-size: 1rem
   color: $black
 
-button
+button, a
   position: relative
+  
   margin: 0 $standard-padding
   padding: 0
+  &:hover,&.active
+    .crossed-line
+      @include crossedFontLine
+a
+  margin: 0
+
+.navbar-logo
+  padding-right: 0!important
+  .crossed-line
+    @include crossedFontLine
+    width: 46px
+    left: 50px
+    bottom: 46%
+    transition: all ease-in-out 0.3s
   &:hover
     .crossed-line
-      position: absolute
-      height: 1px
-      background: $black
-      bottom: 50%
-      width: 100%
+      width: 90px
+      left: 8px
+      bottom: 46%
+      transition: all ease-in-out 0.3s
+      
 
 .section
     padding: 0px
@@ -178,10 +219,9 @@ a
     .columns
       position: relative
     .table-cross-line
-      position: absolute
-      height: 1px
-      bottom: 50%
-      width: 100%
+      @include crossedFontLine()
+      background: transparent
+      
 
     .crossed
       &:hover
@@ -223,7 +263,10 @@ a
 
 .navbar-item
   // margin-right: 20px
+  margin-right: 0
+  color: $black
   padding: $standard-padding
+
 
 a
   text-decoration: none
@@ -347,9 +390,13 @@ footer.footer
   height: 1px
   width: 100px
 
+.project-navigation-link
+  min-width: 40px
+
+
 .navbar, .navbar-menu
   margin-right: 0!important
-nav, .half-page-navbar-menu
+nav, .half-page-navbar-menu, .navbar-menu
   height: 48px
   position: relative
 
@@ -357,3 +404,4 @@ a.navbar-item
   margin-right: 0!important
   &:hover
     color: $black!important
+
