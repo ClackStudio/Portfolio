@@ -1,6 +1,7 @@
 // Config vars
 // Kaldi logo brand color: #FD461E
 @import "~bulma"
+@import 'variables'
 
 $kaldi-red: #D64000
 $kaldi-red-invert: #fff
@@ -8,25 +9,7 @@ $kaldi-red-invert: #fff
 $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
 $body-color: #333
-$black: #000000
-$dark-gray: #515151
 
-$background: #f2f2f2
-
-$desktop-max-width: 2000px
-$standard-padding: 10px
-$barcode-numbers-height: 80px
-$navbar-height: 48px
-$huge-font-size: 4rem
-
-// crossed lines
-@mixin crossedFontLine()
-  bottom: 40%
-  height: 2px
-  position: absolute
-  background: $black
-  bottom: 40%
-  width: 100%
   
 @font-face
   font-family: "ABC Diatype"
@@ -36,7 +19,7 @@ $huge-font-size: 4rem
 html, body
   font-family: 'ABC Diatype', 'Helvetica Neue', sans-serif
   color: $black
-  cursor: url('/img/arrow.svg') 0 0, move
+  cursor: $cursor
   background: $background
   -webkit-font-smoothing: antialiased
   /* Hide scrollbar for IE, Edge and Firefox */
@@ -72,13 +55,13 @@ section
 
 
 canvas
-  cursor: url('/img/pointer_laser.svg') 12 12, move!important
+  //cursor: url('/img/pointer_laser.svg') 12 12, move!important
   background: $background
 
 .canvas-wrapper
   position: absolute
   top: 0
-  cursor: url('/img/pointer_laser.svg') 12 12, move!important
+  //cursor: url('/img/pointer_laser.svg') 12 12, move!important
   // height: calc(100vh - #{$navbar-height} - #{$barcode-numbers-height})
   height: 100vh
   width: 100vw
@@ -96,6 +79,8 @@ canvas
     opacity: 0
   .transparent
     opacity: 0
+.transparent
+  opacity: 0
 
 .intro-logo-wrapper
   transition: opacity ease-in-out 2s
@@ -106,13 +91,14 @@ canvas
   width: 100%
   height: 100%
 .intro-logo
-  width: 100px
+  width: 200px
 
 
 
 
 button, a
-  cursor: url('/img/arrow.svg') 0 0, move!important
+  cursor: $cursor
+  // cursor: url('/img/arrow.svg') 0 0, move!important
   font-size: 1rem
   color: $black
 
@@ -166,7 +152,6 @@ a
     margin: auto
     min-height: 100vh
     // max-width: 2000px
-
 
 
 .column, .columns
@@ -251,11 +236,12 @@ a
     display: flex
     align-items: center
     justify-content: center
-    height: 48px
+    height: $navbar-height
     width: 100%
 
 .navbar-menu
   width: 100%
+  height: $navbar-height
   box-shadow: none !important
   // background: $background
   background: transparent
@@ -264,12 +250,29 @@ a
 .navbar-item
   // margin-right: 20px
   margin-right: 0
+  padding-top: 0!important
+  padding-bottom: 0!important
   color: $black
   padding: $standard-padding
 
 
 a
   text-decoration: none
+
+
+
+
+@keyframes project-number-title-animation
+  0%
+    opacity: 0
+    flex: 0
+  80%
+    opacity: 0.4
+    flex: 1
+
+  100%
+    opacity: 1
+    flex: 1
 
 
 
@@ -306,26 +309,56 @@ a
       text-align: center
       position: relative
       line-height: normal
-      cursor: url('/img/pointer_laser.svg') 12 12, move!important
+      // cursor: url('/img/pointer_laser.svg') 12 12, move!important
       // &:hover
       //   color: $dark-gray
-      &:hover, &-bar-hover
-        .vertical-line
-          position: absolute
-          bottom: 0%
-          left: 0px
-          height: 6px
-          background: $black
-          width: 100%
-    .active
-        .horicontal-line
-          position: absolute
-          bottom: 50%
-          // left: -3.5px
-          height: 6px
-          background: $black
-          width: 100%
+    //   &:hover, &-bar-hover
+    //     .vertical-line
+    //       position: absolute
+    //       bottom: 0%
+    //       left: 0px
+    //       height: 6px
+    //       background: $black
+    //       width: 100%
+    // .active
+    //     .horicontal-line
+    //       position: absolute
+    //       bottom: 50%
+    //       // left: -3.5px
+    //       height: 6px
+    //       background: $black
+    //       width: 100%
 
+.project-number-title
+  font-size: 1rem
+  color: $dark-gray
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  padding: 0 $standard-padding
+  white-space: nowrap
+  margin-bottom: 4px
+  transition: all 0.4s ease-in-out
+  opacity: 0
+  padding: 0
+  flex: 0
+  width: 0px
+  &.animate
+    //width: auto
+    padding: 0
+    padding-right: $standard-padding
+    animation-name: project-number-title-animation
+    animation-duration: 0.5s
+    animation-timing-function: linear
+    animation-iteration-count: 1
+    animation-fill-mode: forwards
+    width: auto
+
+
+
+
+.project-number-wrapper
+  display: flex
 
 .content .taglist
   list-style: none
@@ -376,8 +409,10 @@ a
   width: 1.5rem
   height: 1.5rem
   fill: currentColor
-.navbar-brand .navbar-item.logo
-  padding: 0 1rem
+.navbar-brand, .navbar-item.logo
+  padding: 0
+  min-height: 0px!important
+  margin-left: auto
 footer.footer
   padding: 3rem 0rem 0rem
   background-color: transparent
@@ -397,7 +432,8 @@ footer.footer
 .navbar, .navbar-menu
   margin-right: 0!important
 nav, .half-page-navbar-menu, .navbar-menu
-  height: 48px
+  min-height: $navbar-height-important
+  height: $navbar-height-important
   position: relative
 
 a.navbar-item
@@ -405,3 +441,5 @@ a.navbar-item
   &:hover
     color: $black!important
 
+.navbar-end
+  margin-left: auto

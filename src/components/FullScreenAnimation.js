@@ -34,7 +34,7 @@ const FullScreenAnimation = ({ data }) => {
         to: {...endValues},
         onRest: () => setIntroAnimationDone(),
         config: {mass:1, tension:2, friction:0, clamp: true},
-        delay: 1800,
+        delay: 0,
       }))
 
       springApi.start()
@@ -64,7 +64,7 @@ const FullScreenAnimation = ({ data }) => {
     useEffect(() => {
         setTimeout(() => {
             setAnimated1(true)
-        }, 1)
+        }, 400)
     }, [animated1])
 
 
@@ -74,10 +74,10 @@ const FullScreenAnimation = ({ data }) => {
             <Canvas resize={{ debounce: 0, scroll: false }} ref={sceneRef}>
 
                 <color attach="background" args={[GRAY]} />
-                <animated.mesh {...spring} ref={sunRef}>
+                {/* <animated.mesh {...spring} ref={sunRef}>
                     <planeBufferGeometry args={[20,6]}></planeBufferGeometry>
                     <gradientShader attach="material"></gradientShader>
-                </animated.mesh>
+                </animated.mesh> */}
                 <AnimatedHtml
                     occlude
                     as='div' // Wrapping element (default: 'div')
@@ -87,7 +87,7 @@ const FullScreenAnimation = ({ data }) => {
                     // sprite // Renders as sprite, but only in transform mode (default=false)
                     //   calculatePosition={(el: Object3D, camera: Camera, size: { width: number; height: number }) => number[]} // Override default positioning function. (default=undefined) [ignored in transform mode]
                 >
-                    <div className={`intro-logo-wrapper ${!animated1 ? 'transparent' : ''}`}>
+                    <div className={`intro-logo-wrapper ${animated1 ? 'transparent' : ''}`}>
                     <img src={logo} className="intro-logo"></img>
                     </div>
                 </AnimatedHtml>

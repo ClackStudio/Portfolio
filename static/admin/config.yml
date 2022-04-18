@@ -18,23 +18,22 @@ collections:
     label: "Projects"
     folder: "src/pages/projects"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - label: "Template Key"
         name: "templateKey"
         widget: "hidden"
         default: "project-post"
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
-      - { label: "Featured Image", name: "featuredimage", widget: image }
-      - { label: "Last Image", name: "lastImage", widget: image }
+      - { label: "Title", name: "title", widget: "string", hint: please choose short titles}
       - { label: "Client", name: "client", widget: string }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Publish Date", name: "date", widget: "datetime", hint: the year will be shown in the description }
+      - { label: "Shown in Barcode", name: "featuredpost", widget: "boolean" }
+      - { label: "Featured Image", name: "featuredimage", widget: image, hint: has to be 720x1080 pixel with a mximum size of 200kb (yes it is possible to have it even smaller and it still looks great) }
+      - { label: "Featured Mobile Image", name: "featuredimageMobile", widget: image, hint: has to be 1080x720 pixel with a mximum size of 180kb (yes it is possible to have it even smaller and it still looks great)  }
+      - { label: featured Video, name: featuredVideo, widget: file, pattern: [^\w+.(mp4)$, must be a mp4 in h.264 compression with not more then 0.5mb], hint: this is very dangerous as too many featured videos can make the website super slow with bad SEO, use only as a last resort on one or two projects}
       - {
-          label: Additional Data,
+          label: Additional data,
+          hint: data rows for the description; e.g. "Photographer — Paul Wiegeand",
           name: additionalData,
           widget: list,
           fields: [
@@ -43,33 +42,23 @@ collections:
            ]
         }
       - {
-       label: Sections,
-       name: sections,
-       widget: list,
-       fields:
-       	[
-         {
             label: Section,
             name: section,
             widget: list,
+            hint: Here ayou can add as many photos and videos as you would like,
             fields:
             [
-              {
-              	label: Image,
-                name: image,
-                widget: object,
-                fields: 
-                  [
-                    { label: Align on the left, name: left, widget: boolean },
-                    { label: Fullscreen, name: horizontal, widget: boolean },
-                    { label: Image, name: src, widget: image },
-                    { label: Alt Text, name: altText, widget: text },
-            	  ],
-               }
+              { label: Image, name: src, widget: image },
+              { label: Align on the left, name: left, widget: boolean, hint: forces the image to the left side of the screen (does not matter for mobiel), required: false },
+              { label: Fullscreen, name: horizontal, widget: boolean, hint: use only with a horicontal image },
+              { label: second image, name: secondImage, widget: image, hint: if you add an image here there will be two images in one row next to each other},
+              { label: Alt Text, name: altText, widget: text, hint: helps SEO },
+              { label: video, name: video, widget: file, pattern: [^\w+.(mp4)$, must be a mp4], hint: h.264 compression not more then 1 or 2mb}
             ]
           }
-          ]
-        }
+      - { label: "Optional Text", name: "body", widget: "markdown" }
+      - { label: "Services", name: "tags", widget: "list", hint: add multiple by comma seperation, default: ["art direction"] }
+      - { label: "Last Image", name: "lastImage", widget: image }
 
   - name: "pages"
     label: "Pages"

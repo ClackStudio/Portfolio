@@ -7,9 +7,9 @@ import { TableLayout, TableRowComponent } from "../components/TableComponent";
 import SectionTemplate from "../components/SectionTemplate";
 
 // eslint-disable-next-line
-export const ContactPageTemplate = ({ title, content, contentComponent }) => {
+export const ContactPageTemplate = ({ title, content, contentComponent, socialLinks, contactData }) => {
   const PageContent = contentComponent || Content;
-
+  console.log(contactData)
   return (
     <SectionTemplate className="minus-navbar">
     <div className="columns fill-container minus-navbar">
@@ -17,9 +17,19 @@ export const ContactPageTemplate = ({ title, content, contentComponent }) => {
         <div className="is-12 is-flex is-flex-direction-column is-justify-content-flex-end fill-container" >
           {/* <HalfPageNavbar /> */}
           {/* date */}
+          <div className="column is-6 fill-container">
           <TableLayout>
-          <PageContent content={content} /> 
+          {contactData && contactData.map(({ title, data, }, index) => (
+                  <TableRowComponent leftData={title} rightData={data} key={`key_add_data_${index}`} />
+
+          ))}
+          {socialLinks && socialLinks.map(({ title, name, url }, index) => (
+                  <TableRowComponent leftData={title} rightData={<a href={url}>{name} </a>} key={`key_add_data_${index}`} />
+
+          ))}
           </TableLayout>
+          </div>
+
         </div>
       </div>
       {/* <PostContent content={content} /> */}
@@ -43,16 +53,18 @@ const ContactPage = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <AboutPageTemplate
+      <ContactPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
+        socialLinks={post.frontmatter.socialLinks}
+        contactDate={post.frontmatter.contactData}
       />
     </Layout>
   );
 };
 
-AboutPage.propTypes = {
+ContactPage.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
@@ -64,6 +76,15 @@ export const contactPageQuery = graphql`
       html
       frontmatter {
         title
+        contactData {
+          title
+          data
+        }
+        socialLinks {
+          title
+          name
+          url
+        }
       }
     }
   }

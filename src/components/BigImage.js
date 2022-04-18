@@ -10,7 +10,6 @@ export default function BigImage(props) {
     altText = ""
   } = props;
 
-  console.log("RELOAD")
 
   return (
     <React.Fragment>

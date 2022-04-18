@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import FullScreenAnimation from "../components/FullScreenAnimation";
-import Layout from "../components/Layout";
-import ProjectBarCode from "../components/ProjectBarCode/ProjectBarCode";
-import CssBarcode from "../components/CssBarcode/CssBarcode";
-import { useTransitionStore } from '../stores/TransitionStore'
-import { Transition, animated, useTransition, config, useSpring, useSpringRef, useChain } from "react-spring";
+import FullScreenAnimation from "../../components/FullScreenAnimation";
+import Layout from "../../components/Layout";
+import ProjectBarCode from "../../components/ProjectBarCode/ProjectBarCode";
+import { useTransitionStore } from '../../stores/TransitionStore'
+import { Transition, animated, useTransition, config } from "react-spring";
 import { intersection } from "lodash";
-import '../components/all.sass'
+import '../../components/all.sass'
 
 
 
@@ -15,43 +14,30 @@ import '../components/all.sass'
 export const IndexPageTemplate = ({}) => {
 
   const { introAnimationDone } = useTransitionStore()
-
-  const transitionRef = useSpringRef()
   const transitions = useTransition(introAnimationDone, {
-    from: { opacity: 1 },
+    from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
-    delay: 1200,
+    delay: 200,
     config: config.gentle,
-    ref: transitionRef
   })
 
-  const springRef = useSpringRef()
-  const springProps = useSpring({
-    from: { opacity: 0},
-    to: { opacity: 1},
-    delay: 1000,
-    ref: springRef
-  })
-
-  useChain([transitionRef, springRef])
-
-
+  // const transition = useTransition(introAnimationDone, false, {
+  //   from: { opacity: 1 },
+  //   enter: { opacity: 1 },
+  //   leave: { opacity: 0 },
+  //   expires: true
+  // })
   return (
     <div>
+        { !introAnimationDone && (
+          <animated.div className="fullscreen-animation-wrapper">
+          <FullScreenAnimation />
+        </animated.div>
+        )}
     {transitions(
-    ({opacity}, item) => item ? 
-    <animated.div
-    style={springProps}
-
-    className="section is-full-height is-flex minus-navbar">
-        <CssBarcode/>
-    </animated.div > 
-    :
-    <animated.div className="fullscreen-animation-wrapper"
-      style={{opacity: opacity}}
-    >
-      <FullScreenAnimation />
+    (styles, item) => item && <animated.div className="section is-full-height is-flex">
+                      <ProjectBarCode></ProjectBarCode>
     </animated.div>
     )}
     </div>

@@ -37,7 +37,7 @@ const navigationStore = state => ({
             name: 'data policy',
             slug: '/datapolicy',
             shownInProjects: false,
-            shownOnHome: true
+            shownOnHome: false
         },
     ]
 

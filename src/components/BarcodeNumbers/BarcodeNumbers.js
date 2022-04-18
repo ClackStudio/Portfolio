@@ -5,6 +5,15 @@ import { useTransitionStore } from "./../../stores/TransitionStore"
 import {projects} from '../../data.mock/projects.mock'
 
 
+const ProjectTitle = ({children, isShown}) => {
+
+  return (
+    <div className={`project-number-title ${isShown ? "animate" : ""}`}> 
+      {children}
+    </div>
+  )
+}
+
 const ProjectNumber = ({project , index}) => {
   const { setCanvasTransition } = useTransitionStore()
   const {currentHoveredBar, setCurrentHoveredBar} = useBackgroundStore()
@@ -16,17 +25,26 @@ const ProjectNumber = ({project , index}) => {
     setCurrentHoveredBar(null)
   }
   const goToProject = () => {
-    setCanvasTransition(project.fields.slug)
+    console.log("GOTO", project)
+    navigate(project.fields.slug)
+    //setCanvasTransition(project.fields.slug)
   }
 
   return (
-      <div onClick={goToProject} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`project-number ${isHovered && 'project-number-bar-hover'}`} > 
+    <div className="project-number-wrapper" onClick={goToProject} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <div  className={`project-number ${isHovered && 'project-number-bar-hover'}`} > 
       {index}
-          <div className='vertical-line'></div>
-          <div className='horicontal-line'></div>
+          {/* <div className='vertical-line'></div>
+          <div className='horicontal-line'></div> */}
+ 
       </div>
+<ProjectTitle isShown={currentHoveredBar === index}> 
+          {project.frontmatter.title }
+        </ProjectTitle>
+    </div>
   )
 }
+
 
 
 const BarcodeNumbers = ({projects, count, currentProjectId}) => {
@@ -35,11 +53,11 @@ const BarcodeNumbers = ({projects, count, currentProjectId}) => {
 return (
   <div className="barcode-numbers-wrapper is-flex is-flex-direction-row is-justify-content-space-between">
       <div className="left">
-      {(currentHoveredBar !== null) && projects[currentHoveredBar].node.frontmatter.title }
       </div>
       <div className='project-navigation-numbers is-flex is-flex-direction-row'>
           {projects.map(({node}, index) => (
-              <ProjectNumber project={node} index={index} key={`barNum_` + node.id}></ProjectNumber>
+              <ProjectNumber project={node} index={index} key={`barNum_` + node.id}>
+              </ProjectNumber>
           ))}
       </div> 
       <div className="right">

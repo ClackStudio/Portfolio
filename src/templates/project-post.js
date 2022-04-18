@@ -46,12 +46,13 @@ const ServicesListTemplate = ({ services }) => (
   </div>
 )
 
-const Section = ({ data }) => {
-  const isHorizontal = data[0].image.horizontal
-  const firstImage = getImage(data[0].image.src) || data[0].image.src;
-  const isLeft = data[0].image.left
-  const twoImages = data.length > 1
-  const secondImage = twoImages ? getImage(data[1].image.src) || data[1].image.src : false
+const Section = ({data}) => {
+  console.log("DATA", data)
+  const isHorizontal = data.horizontal
+  const firstImage = getImage(data.src) || data.src;
+  const isLeft = data.left
+  const secondImage = getImage(data.secondImageSrc) || data.secondImageSrc;
+  const twoImages = secondImage === true
   // const heroImage = getImage(image) || image;
 
 
@@ -100,23 +101,6 @@ export const ProjectPostTemplate = ({
   const firstImage = featuredImage && (getImage(featuredImage) || featuredImage)
   const lastSectionImage = lastImage && (getImage(lastImage) || lastImage)
 
-  // const scrollContainer = useRef();
-  // const bindScrollSnap = () => {
-  //   const element = scrollContainer.current
-
-  //   createScrollSnap(
-  //     element, {
-  //     snapDestinationY: '100%',
-  //     threshold: 0,
-  //     duration: 0,
-
-  //   }, () => console.log('snapped'))
-  // }
-
-  // useEffect(() => {
-  //   bindScrollSnap()
-  // }, [])
-
   return (
     <div className="scroll-container">
       {helmet || ""}
@@ -149,7 +133,7 @@ export const ProjectPostTemplate = ({
       </SectionTemplate>
 
       {sections && sections.length ?
-        sections.map(({ section }, index) => <Section data={section} key={`section_${index}`}></Section>)
+        sections.map((section, index) => <Section data={section} key={`section_${index}`}></Section>)
         : null}
 
       {/* FINAL SECTION */}
@@ -191,7 +175,7 @@ const ProjectPost = ({ data, location }) => {
       content={post.html}
       contentComponent={HTMLContent}
       description={post.frontmatter.description}
-      sections={post.frontmatter.sections}
+      sections={post.frontmatter.section}
       lastImage={post.frontmatter.lastImage}
       client={post.frontmatter.client}
       additionalData={post.frontmatter.additionalData}
@@ -245,19 +229,20 @@ export const pageQuery = graphql`
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
-        sections {
-          section {
-            image {
-              left
-              horizontal
-              altText
-              src {
-                childImageSharp {
-                  gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-                }
+        section {
+            left
+            horizontal
+            altText
+            src {
+              childImageSharp {
+                gatsbyImageData(quality: 100, layout: FULL_WIDTH)
               }
             }
-          }
+            secondImageSrc {
+              childImageSharp {
+                gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+              }
+            }
         }
       }
     }

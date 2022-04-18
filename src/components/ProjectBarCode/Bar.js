@@ -89,7 +89,7 @@ const Bar = ({isMobile, projectsIndex, numberOfBars, data,width, index, height, 
   useFrame((state, delta) => {
     if (typeof ref.current !== 'undefined' && !isMobile) {
       // TODO: normalisedImageWidth is bugged its not working well on wide screens as it becomes a tiny number
-      const normalisedImageWidth = ((imageWidth - width))
+      const extraWidth = imageWidth > width ? imageWidth - width : 0
       const hoveredBarOpenedToTheRight = currentHoveredBar < (numberOfBars / 2)
       // lambda defines the animation-tension of the spring
       const lambda = projectsIndex ? 8: 4;
@@ -101,10 +101,12 @@ const Bar = ({isMobile, projectsIndex, numberOfBars, data,width, index, height, 
       const debug = () => {
         console.log("hoveredBarOpenedToTheRight", hoveredBarOpenedToTheRight)
         console.log("width", width)
-        console.log("normalisedImageWidth", normalisedImageWidth)
+        console.log("extraWidth", extraWidth)
         console.log("scalePercentage", scalePercentage)
         console.log("barsBetweenHover", barsBetweenHover)
-        console.log("((normalisedImageWidth * scalePercentage) ) ", ((normalisedImageWidth * scalePercentage) ))
+        console.log("currentHoveredBar", currentHoveredBar)
+
+        console.log("((extraWidth * scalePercentage) ) ", ((extraWidth * scalePercentage) ))
       }
 
       const expandBar = () => {
@@ -124,30 +126,30 @@ const Bar = ({isMobile, projectsIndex, numberOfBars, data,width, index, height, 
       }
 
       const scaleDown = () => {
-        ref.current.material.scale = ref.current.scale.x = damp(ref.current.scale.x, normalisedImageWidth * scalePercentage, lambda, delta)
+        ref.current.material.scale = ref.current.scale.x = damp(ref.current.scale.x, extraWidth * scalePercentage, lambda, delta)
         ref.current.position.z = 0.00
 
       }
 
       const moveBarWithScale = (direction) => {
-        if(index === 0) debug()
+        if(index === 1) debug()
         if (isBeforeMiddle) {
           if (!hoveredBarOpenedToTheRight || index > currentHoveredBar) {
             scaleDown()
-            ref.current.position.x = damp(ref.current.position.x, position[0] + (((isFirst ? 0 : normalisedImageWidth) * scalePercentage) * direction ) , lambda, delta)
+            ref.current.position.x = damp(ref.current.position.x, position[0] + (((isFirst ? 0 : width) * scalePercentage) * direction ) , lambda, delta)
           }else {
             resetPosition()
             resetScale()
           }
         } else if (isMiddle) {
         // Middle should not be used :D
-          ref.current.position.x = damp(ref.current.position.x, position[0] + ((normalisedImageWidth * scalePercentage) * direction ) , lambda, delta)
+          ref.current.position.x = damp(ref.current.position.x, position[0] + ((extraWidth * scalePercentage) * direction ) , lambda, delta)
         }
          else if (isAfterMiddle) {
           if (hoveredBarOpenedToTheRight  || index < currentHoveredBar) {
             scaleDown()
                      // the middel shoul always stay in the same position stay in the same position (there is not always a middle though)
-            ref.current.position.x = damp(ref.current.position.x, position[0] + ((((isLast ? 0 : normalisedImageWidth) * scalePercentage) ) * direction)  , lambda, delta)
+            ref.current.position.x = damp(ref.current.position.x, position[0] + ((((isLast ? 0 : extraWidth) * scalePercentage) ) * direction)  , lambda, delta)
           } else {
             resetPosition()
             resetScale()
