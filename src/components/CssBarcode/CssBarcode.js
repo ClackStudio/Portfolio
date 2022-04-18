@@ -73,21 +73,20 @@ const CssBar = ({project, projects, index, numberOfBars, isMobile, barcodeRef}) 
 
 
 
-const CssBarcodeTemplate = ({data, projectsIndex}) => {
+const CssBarcodeTemplate = ({data, small}) => {
   const barcodeRef = useRef()
   const { edges: projects } = data.allMarkdownRemark
-  console.log("PROJECTS", projects)
     // home page
     return (
       <div className="css-barcode-wrapper">
-        <div className="css-barcode" ref={barcodeRef}>
+        <div className={`css-barcode ${small ? `small` : ``}`} ref={barcodeRef}>
           { projects.map((project, i) => <CssBar barcodeRef={barcodeRef} index={i} key={`css-bar-${i}`} project={project} numberOfBars={projects.length}/>)}
         </div> 
-        <BarcodeNumbers projects={projects}></BarcodeNumbers>
+        { !small && (<BarcodeNumbers projects={projects}></BarcodeNumbers>) }
       </div>
     ) 
 }
-const CssBarcode = ({projectsIndex}) => {
+const CssBarcode = ({small}) => {
   return (
     <StaticQuery
       query={graphql`
@@ -124,7 +123,7 @@ const CssBarcode = ({projectsIndex}) => {
           }
         }
       `}
-      render={(data, count) => <CssBarcodeTemplate projectsIndex={projectsIndex} data={data} count={count} />}
+      render={(data, count) => <CssBarcodeTemplate small={small} data={data} count={count} />}
     />
   );
 }

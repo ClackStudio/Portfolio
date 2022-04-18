@@ -3,9 +3,8 @@ import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
-import createScrollSnap from 'scroll-snap'
 
-import HalfPageNavbar from "../components/HalfPageNavbar";
+import Navbar from "../components/Navbar";
 import ProjectNavigation from "../components/ProjectNavigation";
 
 import Content, { HTMLContent } from "../components/Content";
@@ -46,8 +45,7 @@ const ServicesListTemplate = ({ services }) => (
   </div>
 )
 
-const Section = ({data}) => {
-  console.log("DATA", data)
+const Section = ({data, className}) => {
   const isHorizontal = data.horizontal
   const firstImage = getImage(data.src) || data.src;
   const isLeft = data.left
@@ -57,7 +55,7 @@ const Section = ({data}) => {
 
 
   return (
-    <SectionTemplate>
+    <SectionTemplate className={className}>
       {isHorizontal ? (
         <div className="columns fill-container">
           <div className="column is-12">
@@ -104,14 +102,14 @@ export const ProjectPostTemplate = ({
   return (
     <div className="scroll-container">
       {helmet || ""}
-      <SectionTemplate>
+      <SectionTemplate innerClassName='minus-navbar' placeOnTop={<Navbar></Navbar>}>
         <div className="columns fill-container" >
 
           <div className="column fill-container">
             <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container" >
-              <HalfPageNavbar />
-              {/* date */}
+              <div></div>
               <TableLayout>
+              <TableRowComponent leftData={"project"} rightData={title} />
                 <TableRowComponent leftData={"client"} rightData={client} />
                 {additionalData && additionalData.map(({ title, data }, index) => (
                   <TableRowComponent leftData={title} rightData={data} key={`key_add_data_${index}`} />
@@ -119,7 +117,7 @@ export const ProjectPostTemplate = ({
                 ))}
                 <TableRowComponent leftData={"date"} rightData={date} />
                 <ServicesListTemplate services={tags} />
-                <TitleTemplate title={title} className={'pt-5'} ></TitleTemplate>
+                {/* <TitleTemplate title={title} className={'pt-5'} ></TitleTemplate> */}
               </TableLayout>
             </div>
           </div>
@@ -128,7 +126,7 @@ export const ProjectPostTemplate = ({
 
         </div>
         <div className="column is-6 fill-container">
-          <BigImage img={firstImage} ></BigImage>
+          <BigImage img={firstImage}></BigImage>
         </div>
       </SectionTemplate>
 
@@ -143,7 +141,7 @@ export const ProjectPostTemplate = ({
             <BigImage img={lastSectionImage} ></BigImage>
           </div>
           <div className="column is-6 is-flex is-flex-direction-column fill-container">
-            <HalfPageNavbar />
+            <Navbar halfpage />
             <div className="is-flex is-justify-content-space-between is-flex-direction-column" style={{ height: "100%" }}>
               <TableLayout>
                 <PostContent content={content} />

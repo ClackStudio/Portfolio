@@ -3,13 +3,11 @@ import React, { useRef, useEffect, useState } from "react";
 import SectionTemplate from "../../components/SectionTemplate";
 import { TableLayout, TableRowComponent } from "../../components/TableComponent";
 import { helmet } from "react-helmet";
-import HalfPageNavbar from "../../components/HalfPageNavbar";
-import BigImage from "../../components/BigImage";
+import Navbar from "../../components/Navbar";
 import { Link, graphql, StaticQuery, navigate } from 'gatsby'
-import { getImage } from "gatsby-plugin-image";
 import '../../components/all.sass'
 import { useBackgroundStore } from "../../stores/BarCodeStore";
-import ProjectBarCode from "../../components/ProjectBarCode/ProjectBarCode";
+import CssBarcode from "../../components/CssBarcode/CssBarcode";
 
 
 const ProjectIndexPageTemplate = ({location, edges, totalCount}) => {
@@ -32,8 +30,6 @@ const ProjectIndexPageTemplate = ({location, edges, totalCount}) => {
 
   const onMouseEnter = (index) => {
     if (currentHoveredBar !== index) {
-      console.log("INDEX", index)
-      console.log("currentHoveredBar", currentHoveredBar)
       setCurrentHoveredBar(index)
     }
     // haltInterval.current = true
@@ -56,12 +52,14 @@ const ProjectIndexPageTemplate = ({location, edges, totalCount}) => {
   return (
     <>
       {helmet || ""}
-      <SectionTemplate>
+      <Navbar></Navbar>
+      <SectionTemplate className="minus-navbar">
           <div className="columns fill-container">
             <div className="column fill-container">
               <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container" >
-                <HalfPageNavbar />
+                {/* <HalfPageNavbar /> */}
                 {/* date */}
+                <div></div>
                 <TableLayout>
                   {edges.map(({node}, index) => (
                   <TableRowComponent 
@@ -82,7 +80,7 @@ const ProjectIndexPageTemplate = ({location, edges, totalCount}) => {
           </div>
           <div className="column is-6 fill-container">
             {/* <BigImage counter={counter.current} img={sideImage} ></BigImage> */}
-            <ProjectBarCode projectsIndex></ProjectBarCode>
+            <CssBarcode small></CssBarcode>
 
           </div>
       </SectionTemplate>

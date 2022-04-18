@@ -10,13 +10,13 @@ const NavbarLogo = () => {
   <div className="navbar-brand">
   <Link to="/" className="navbar-item navbar-logo" title="Logo">
     clack studio
-    <div className='crossed-line'></div>
+    <div className='crossed-line logo'></div>
   </Link>
 </div>
 </div>
   )}
 
-const Navbar = () => {
+const Navbar = ({halfpage}) => {
     const { navItems } = useNavigationStore()
     return (
       <nav
@@ -29,7 +29,7 @@ const Navbar = () => {
             className={`navbar-menu`}
             style={{marginTop: "-4px"}}
           >
-            {navItems.filter(item => item.shownOnHome).map( item => (
+            {navItems.filter(item => (halfpage ? item.shownInProjects : item.shownOnHome)).map( item => (
               <div className="navbar-item navbar-start has-text-centered" >
               <CrossLink  slug={item.slug}> {item.name} </CrossLink>
               </div>

@@ -20,6 +20,8 @@ $barcode-height: calc(100vh - #{$bottom-space} - #{$standard-padding} * 2 - 36px
     display: flex
     justify-content: space-between
     padding: 0 $standard-padding
+    &.small
+        min-height: calc(100% - #{$standard-padding} * 1)
     .css-bar
         flex: 1 1 auto
         width: 10%

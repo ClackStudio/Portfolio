@@ -12,7 +12,7 @@ const ProjectNumber = ({project ,currentProjectId, index}) => {
     }
 
     return (
-        <div onClick={goToProject} className={`project-number ${isActiveProject && 'active'}`} > 
+        <div onClick={goToProject} className={`project-number project-navigation-number ${isActiveProject && 'active'}`} > 
         {index}
             <div className='vertical-line'></div>
             <div className='horicontal-line'></div>
@@ -22,7 +22,6 @@ const ProjectNumber = ({project ,currentProjectId, index}) => {
 
 const ProjectNavigationTemplate = ({projects, currentProjectId}) => {
     const count = projects.length
-    console.log("COUNTSSSS", count)
     const activeProject = projects.find(({node}, index) => node.id === currentProjectId)
     const activeProjectIndex = projects.indexOf(activeProject)
     const isFirstProject = activeProjectIndex === 0
@@ -38,8 +37,8 @@ const ProjectNavigationTemplate = ({projects, currentProjectId}) => {
         navigate(projects[nextProject].node.fields.slug)
     }
   return (
-    <div className="project-navigation is-flex is-flex-direction-row is-justify-content-space-between">
-        <CrossButton className="project-navigation-link" onClick={() => goToPreviousProject()}>{!isFirstProject && ("prev")}</CrossButton>
+    <div className="project-navigation is-flex is-flex-direction-row is-justify-content-center">
+        {/* <CrossButton className="project-navigation-link" onClick={() => goToPreviousProject()}>{!isFirstProject && ("prev")}</CrossButton> */}
 
         <div className='project-navigation-numbers is-flex is-flex-direction-row'>
             {projects.map(({node}, index) => (
@@ -47,7 +46,7 @@ const ProjectNavigationTemplate = ({projects, currentProjectId}) => {
             ))}
         </div> 
 
-        <CrossButton className="project-navigation-link" onClick={() => goToNextProject()} >{!isLastProject && ("next")}</CrossButton>
+        {/* <CrossButton className="project-navigation-link" onClick={() => goToNextProject()} >{!isLastProject && ("next")}</CrossButton> */}
     </div>
   )
 }

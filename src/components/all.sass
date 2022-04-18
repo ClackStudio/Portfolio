@@ -101,7 +101,8 @@ button, a
   // cursor: url('/img/arrow.svg') 0 0, move!important
   font-size: 1rem
   color: $black
-
+  &:focus
+    color: $black!important
 button, a
   position: relative
   
@@ -110,6 +111,8 @@ button, a
   &:hover,&.active
     .crossed-line
       @include crossedFontLine
+      &.logo
+        height: 2px
 a
   margin: 0
 
@@ -182,6 +185,7 @@ a
 
 .minus-navbar
   min-height: calc( 100vh -  #{$navbar-height})!important
+  height: calc( 100vh -  #{$navbar-height})!important
 
 .column, .columns
     padding: 0
@@ -290,7 +294,7 @@ a
 .project-navigation
   width: 100%
   min-width: 100%
-  padding: $standard-padding
+  // padding: $standard-padding
   align-items: flex-end
 
   button
@@ -309,17 +313,27 @@ a
       text-align: center
       position: relative
       line-height: normal
+
+      &.project-navigation-number
+
+        &:hover
+          .vertical-line
+            position: absolute
+            bottom: 0%
+            left: 0px
+            height: 6px
+            background: $black
+            width: 100%
+        &.active
+          color: $dark-gray
+          .vertical-line
+            display: none
+      //   color: $dark-gray
       // cursor: url('/img/pointer_laser.svg') 12 12, move!important
       // &:hover
       //   color: $dark-gray
     //   &:hover, &-bar-hover
-    //     .vertical-line
-    //       position: absolute
-    //       bottom: 0%
-    //       left: 0px
-    //       height: 6px
-    //       background: $black
-    //       width: 100%
+
     // .active
     //     .horicontal-line
     //       position: absolute
@@ -410,12 +424,10 @@ a
   height: 1.5rem
   fill: currentColor
 .navbar-brand, .navbar-item.logo
+  color: $black!important
   padding: 0
   min-height: 0px!important
   margin-left: auto
-footer.footer
-  padding: 3rem 0rem 0rem
-  background-color: transparent
 
 .crossing-line
   position: absolute

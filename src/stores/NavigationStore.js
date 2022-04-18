@@ -6,18 +6,18 @@ const navigationStore = state => ({
         {
             name: 'home',
             slug: '/',
-            shownInProjects: true,
+            shownInProjects: false,
             shownOnHome: false
-        },
-        {
-            name: 'about us',
-            slug: '/about',
-            shownInProjects: true,
-            shownOnHome: true
         },
         {
             name: 'projects',
             slug: '/projects',
+            shownInProjects: true,
+            shownOnHome: true
+        },
+        {
+            name: 'about us',
+            slug: '/about',
             shownInProjects: true,
             shownOnHome: true
         },
