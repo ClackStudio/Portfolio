@@ -29,13 +29,14 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime", hint: the year will be shown in the description }
       - { label: "Shown in Barcode", name: "featuredpost", widget: "boolean" }
       - { label: "Featured Image", name: "featuredimage", widget: image, hint: has to be 720x1080 pixel with a mximum size of 200kb (yes it is possible to have it even smaller and it still looks great) }
-      - { label: "Featured Mobile Image", name: "featuredimageMobile", widget: image, hint: has to be 1080x720 pixel with a mximum size of 180kb (yes it is possible to have it even smaller and it still looks great)  }
-      - { label: featured Video, name: featuredVideo, widget: file, pattern: [^\w+.(mp4)$, must be a mp4 in h.264 compression with not more then 0.5mb], hint: this is very dangerous as too many featured videos can make the website super slow with bad SEO, use only as a last resort on one or two projects}
+      - { label: "Featured Mobile Image", name: "featuredimageMobile", required: false, widget: image, hint: has to be 1080x720 pixel with a mximum size of 180kb (yes it is possible to have it even smaller and it still looks great)  }
+      - { label: featured Video, name: featuredVideo, required: false, widget: file, pattern: [^\w+.(mp4)$, must be a mp4 in h.264 compression with not more then 0.5mb], hint: this is very dangerous as too many featured videos can make the website super slow with bad SEO, use only as a last resort on one or two projects}
       - {
           label: Additional data,
           hint: data rows for the description; e.g. "Photographer — Paul Wiegeand",
           name: additionalData,
           widget: list,
+          required: false,
           fields: [
               { label: Title, name: title, widget: string },
               { label: Data, name: data, widget: string }
@@ -48,17 +49,18 @@ collections:
             hint: Here ayou can add as many photos and videos as you would like,
             fields:
             [
-              { label: Image, name: src, widget: image },
-              { label: Align on the left, name: left, widget: boolean, hint: forces the image to the left side of the screen (does not matter for mobiel), required: false },
-              { label: Fullscreen, name: horizontal, widget: boolean, hint: use only with a horicontal image },
-              { label: second image, name: secondImage, widget: image, hint: if you add an image here there will be two images in one row next to each other},
-              { label: Alt Text, name: altText, widget: text, hint: helps SEO },
-              { label: video, name: video, widget: file, pattern: [^\w+.(mp4)$, must be a mp4], hint: h.264 compression not more then 1 or 2mb}
+              { label: Image, name: src, required: false, widget: image },
+              { label: Second Alt Text, required: false, name: altTextSecond, widget: text, hint: helps SEO (only if two images are in this section) },
+              { label: Align on the left, name: left, required: false, widget: boolean, hint: forces the image to the left side of the screen (does not matter for mobiel) },
+              { label: Fullscreen, name: horizontal, required: false, widget: boolean, hint: use only with a horicontal image },
+              { label: second image, name: secondImage, required: false, widget: image, hint: if you add an image here there will be two images in one row next to each other},
+              { label: Alt Text, required: false, name: altText, widget: text, hint: helps SEO },
+              { label: video, name: video, required: false, widget: file, pattern: [^\w+.(mp4)$, must be a mp4], hint: h.264 compression not more then 1 or 2mb; uses alttext1; is always fullscreen},
             ]
           }
-      - { label: "Optional Text", name: "body", widget: "markdown" }
-      - { label: "Services", name: "tags", widget: "list", hint: add multiple by comma seperation, default: ["art direction"] }
-      - { label: "Last Image", name: "lastImage", widget: image }
+      - { label: "Optional Text", name: "body", required: false, widget: "markdown" }
+      - { label: "Services", name: "tags", required: false, widget: "list", hint: add multiple by comma seperation, default: ["art direction"] }
+      - { label: "Last Image", name: "lastImage", required: false, widget: image, hint: this is the last image on the left of the navigation; can also be empty }
 
   - name: "pages"
     label: "Pages"

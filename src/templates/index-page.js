@@ -2,14 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import FullScreenAnimation from "../components/FullScreenAnimation";
 import Layout from "../components/Layout";
-import ProjectBarCode from "../components/ProjectBarCode/ProjectBarCode";
 import CssBarcode from "../components/CssBarcode/CssBarcode";
 import { useTransitionStore } from '../stores/TransitionStore'
 import { Transition, animated, useTransition, config, useSpring, useSpringRef, useChain } from "react-spring";
-import { intersection } from "lodash";
 import '../components/all.sass'
-
-
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({}) => {
@@ -28,14 +24,13 @@ export const IndexPageTemplate = ({}) => {
 
   const springRef = useSpringRef()
   const springProps = useSpring({
-    from: { opacity: 0},
+    from: { opacity: !introAnimationDone ? 0 : 1},
     to: { opacity: 1},
     delay: 1000,
     ref: springRef
   })
 
   useChain([transitionRef, springRef])
-
 
   return (
     <div>
@@ -49,7 +44,7 @@ export const IndexPageTemplate = ({}) => {
     </animated.div > 
     :
     <animated.div className="fullscreen-animation-wrapper"
-      style={{opacity: opacity}}
+      style={{opacity: opacity }}
     >
       <FullScreenAnimation />
     </animated.div>
@@ -75,17 +70,7 @@ const IndexPage = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <IndexPageTemplate
-      // image={frontmatter.image}
-      // title={frontmatter.title}
-      // heading={frontmatter.heading}
-      // subheading={frontmatter.subheading}
-      // mainpitch={frontmatter.mainpitch}
-      // description={frontmatter.description}
-      // intro={frontmatter.intro}
-      />
-
-
+      <IndexPageTemplate />
     </Layout>
   );
 };
@@ -99,37 +84,3 @@ IndexPage.propTypes = {
 };
 
 export default IndexPage;
-
-// export const pageQuery = graphql`
-//   query IndexPageTemplate {
-//     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-//       frontmatter {
-//         title
-//         image {
-//           childImageSharp {
-//             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-//           }
-//         }
-//         heading
-//         subheading
-//         mainpitch {
-//           title
-//           description
-//         }
-//         description
-//         intro {
-//           blurbs {
-//             image {
-//               childImageSharp {
-//                 gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
-//               }
-//             }
-//             text
-//           }
-//           heading
-//           description
-//         }
-//       }
-//     }
-//   }
-// `;
