@@ -63,7 +63,8 @@
     "develop": "npm run clean && gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mirror": "cd mirror-rep.git/ && git fetch -p origin && git push --mirror && cd .."
   },
   "devDependencies": {
     "prettier": "^2.0.5"
