@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: logo campaign
+title: labience logo campaign
 date: 2016-12-17T15:04:10.000Z
 featuredpost: true
 featuredimage: /img/labience_logo.jpg
