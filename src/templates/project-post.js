@@ -6,15 +6,14 @@ import { graphql, Link } from "gatsby";
 
 import Navbar from "../components/Navbar";
 import ProjectNavigation from "../components/ProjectNavigation";
-
+import BigImage from "../components/BigImage";
+import ScrollArrow from "../components/ScrollArrow";
 import Content, { HTMLContent } from "../components/Content";
 import { getImage } from "gatsby-plugin-image";
 import { TableLayout, TableRowComponent } from '../components/TableComponent'
 import SectionTemplate from "../components/SectionTemplate";
 import './styles.sass'
 
-
-import BigImage from "../components/BigImage";
 
 
 const TitleTemplate = ({ title, className }) => (
@@ -36,7 +35,7 @@ const ServicesListTemplate = ({ services }) => (
         <ul className="services-list">
           {services.map((service) => (
             <li className="meta-data-point" key={service + `services`}>
-              <Link to={`/tags/${kebabCase(service)}/`}>{service}</Link>
+              {service}
             </li>
           ))}
         </ul>
@@ -106,11 +105,12 @@ export const ProjectPostTemplate = ({
         <div className="columns fill-container" >
 
           <div className="column fill-container">
-            <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container" >
+            <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container is-postion-relative" >
               <div></div>
+              <ScrollArrow/>
               <TableLayout>
+              <TableRowComponent leftData={"client"} rightData={client} />
               <TableRowComponent leftData={"project"} rightData={title} />
-                <TableRowComponent leftData={"client"} rightData={client} />
                 {additionalData && additionalData.map(({ title, data }, index) => (
                   <TableRowComponent leftData={title} rightData={data} key={`key_add_data_${index}`} />
 

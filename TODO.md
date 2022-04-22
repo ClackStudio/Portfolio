@@ -3,10 +3,16 @@
 - <s>similar laser to intro (prop glsl with transparent color) </s>
 - Imprint & Data policy
 - <s> barcode less glitchy </s>
-- barcode for mobile
 - <s>Netlify connection (there was a problem with the github repo) </s>
 - <s> navigation bar also on last page of the project post </s>
-- maybe scoll arrow for better UX
+- scoll arrow for better UX
 - <s> clack studio cross stays </s>
 - <s> section view snapping </s>
 - <s> project navigation bar showing whole menu</s>
+- slimmer font for logo and text
+- openGraph Image from logo
+- projectBarcodeNumbers should show the name like in the start page
+- barcode for mobile
+- mobile gesture
+- enable video for project post
+- enable video as a featured post

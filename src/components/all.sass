@@ -10,14 +10,31 @@ $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
 $body-color: #333
 
-  
 @font-face
   font-family: "ABC Diatype"
-  src: url("../../static/fonts/ABCDiatype-Medium.woff2"), url("../../static/fonts/ABCDiatype-Medium.woff")
+  src: url("../../static/fonts/EduDiatype-Medium.woff2"), url("../../static/fonts/EduDiatype-Medium.woff")
+  font-weight: 500
+  font-style: normal
+@font-face
+  font-family: "ABC Diatype"
+  src: url("../../static/fonts/EduDiatype-Regular.woff2"), url("../../static/fonts/EduDiatype-Regular.woff")
+  font-weight: 400
+  font-style: normal
+@font-face
+  font-family: "ABC Diatype"
+  src: url("../../static/fonts/EduDiatype-Light.woff2"), url("../../static/fonts/EduDiatype-Light.woff")
+  font-weight: 300
+  font-style: normal
+@font-face
+  font-family: "ABC Diatype"
+  src: url("../../static/fonts/EduDiatype-Thin.woff2"), url("../../static/fonts/EduDiatype-Thin.woff")
+  font-weight: 200
+  font-style: normal
 
 
 html, body
   font-family: 'ABC Diatype', 'Helvetica Neue', sans-serif
+  font-weight: 400
   color: $black
   cursor: $cursor
   background: $background
@@ -112,7 +129,7 @@ button, a
     .crossed-line
       @include crossedFontLine
       &.logo
-        height: 2px
+        //height: 2px
 a
   margin: 0
 
@@ -258,6 +275,9 @@ a
   padding-bottom: 0!important
   color: $black
   padding: $standard-padding
+  @include breakpoint(mobile-only)
+    padding-left: 5px!important
+    padding-right: 5px!important
 
 
 a
@@ -455,3 +475,20 @@ a.navbar-item
 
 .navbar-end
   margin-left: auto
+
+
+@keyframes pulse
+  0%
+    opacity: 1
+
+  100%
+    opacity: 0
+
+.scroll-arrow-wrapper
+  position: absolute
+  left: 23%
+  bottom: 6px
+  .scroll-arrow
+    width: 24px
+    height: 24px
+    animation: pulse 2s infinite
