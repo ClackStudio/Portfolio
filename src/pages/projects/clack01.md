@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: free trail berlin
+title: nike free trail berlin
 client: nike
 date: 2022-04-22T14:16:32.377Z
 featuredpost: true
