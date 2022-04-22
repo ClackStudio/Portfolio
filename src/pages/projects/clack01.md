@@ -1,33 +1,22 @@
 ---
 templateKey: project-post
-title: nike free trail berlin
+title: free trail berlin
 client: nike
-date: 2016-12-17T15:04:10.000Z
+date: 2022-04-22T14:16:32.377Z
 featuredpost: true
 featuredimage: /img/nikeFreeRunTrail/02.jpg
 additionalData:
   - title: photographer
-    data: fritz
-  - title: mommy
-    data: Theo
+    data: fritz elsmann
+  - title: date
+    data: "2020"
+  - title: services
+    data: art direction, production, copy
 section:
-  - left: true
-    horizontal: false
-    src: /img/nikeFreeRunTrail/02.jpg
-    altText: girl with nikes
-    secondImageSrc: /img/nikeFreeRunTrail/02.jpg
-    altTextSecond: girl with nikes 2
-  - left: false
-    horizontal: false
-    src: /img/nikeFreeRunTrail/02.jpg
-    altText: girl with nikes
-  - left: false
-    horizontal: true
-    src: /img/nikeFreeRunTrail/01.jpg
-    altText: cool nikes
-tags:
-  - art direction
-  - production
+  - src: /img/clack-6.jpg
+  - src: /img/clack-4.jpg
+  - {}
+tags: []
 lastImage: /img/nikeFreeRunTrail/05.jpg
 photographer: Hannes Meier
 description: one of clack’s favourite project. it was a pleasure to work with
