@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: ss2022 campaign
+title: labience ss2022 campaign
 client: labience
 date: 2022-04-22T14:16:15.926Z
 featuredpost: true
