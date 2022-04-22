@@ -1,17 +1,14 @@
 ---
 templateKey: project-post
-title: labience global summer campaign
-date: 2019-12-17T15:04:10.000Z
+title: lil nas x
+client: sony music
+date: 2022-04-22T14:52:34.771Z
 featuredpost: true
-featuredimage: /img/labience_global_summer_campaign/compressed/L_featuredimage.jpg
-description: one of clack’s favourite project. it was a pleasure to work with such an amazing team, and being able to follow all our ideas we had from the beginning on.
-lastImage: /img/labience_global_summer_campaign/compressed/L_06.jpg
-client: labience
-additionalData:
-    - title: photographer
-      data: isha misha
-    - title: stylist
-      data: anka möck  
+featuredimage: /img/sony_music.jpg
+tags:
+  - production
+  - art direction
+lastImage: ""
 sections:
   - section:
       - image:
@@ -35,9 +32,8 @@ sections:
           horizontal: false
           src: /img/labience_global_summer_campaign/compressed/L_05.jpg
           altText: mood 4
-
-tags:
-  - art direction
+additionalData: []
+description: one of clack’s favourite project. it was a pleasure to work with
+  such an amazing team, and being able to follow all our ideas we had from the
+  beginning on.
 ---
-
-clack says: one of clack’s favourite projects. it was a pleasure to work with such an amazing team, and being able to follow all our ideas we had from the beginning on. HALLOOO
