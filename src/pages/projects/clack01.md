@@ -13,11 +13,14 @@ additionalData:
   - title: services
     data: art direction, production, copy
 section:
-  - src: /img/clack-6.jpg
-  - src: /img/clack-4.jpg
-  - {}
-tags: []
-lastImage: /img/clack-4.jpg
+  - src: /img/free_trail03.jpg
+  - src: /img/free_trail07.jpg
+  - src: /img/free_trail05.jpg
+  - src: /img/free_trail08.jpg
+  - src: /img/free_trail02.jpg
+tags:
+  - production
+lastImage: /img/free_trail09.jpg
 photographer: Hannes Meier
 description: one of clack’s favourite project. it was a pleasure to work with
   such an amazing team, and being able to follow all our ideas we had from the
