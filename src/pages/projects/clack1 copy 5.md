@@ -1,7 +1,7 @@
 ---
 templateKey: project-post
 photographer: Hannes Meier
-title: voo store talking shop
+title: nike voo store talking shop
 client: nike
 date: 2022-04-22T14:44:20.347Z
 featuredpost: true
