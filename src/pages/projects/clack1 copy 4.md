@@ -1,17 +1,17 @@
 ---
 templateKey: project-post
-title: nike free run trail
-date: 2016-12-17T15:04:10.000Z
+title: voo store talking shop
+date: 2022-04-22T14:27:54.772Z
 featuredpost: true
-featuredimage: /img/clack-1.jpg
-description: The Coffee Taster’s Flavor Wheel, the official resource used by coffee tasters, has been revised for the first time this year.
+featuredimage: /img/feedcard_voo_1080x1215_2.jpg
+section:
+  - src: /img/feedcard_voo_1080x1215_2.jpg
 photographer: Hannes Meier
+client: nike
 tags:
   - art direction
-  - tasting
+  - production
+description: The Coffee Taster’s Flavor Wheel, the official resource used by
+  coffee tasters, has been revised for the first time this year.
 ---
-![girl with nikes](/img/clack-1.jpg)
-
-clack says: one of clack’s favourite project. it was a pleasure to work with such an amazing team, and being able to follow all our ideas we had from the beginning on.
-
-client says: whoop, whoop
+![girl with nikes]()
