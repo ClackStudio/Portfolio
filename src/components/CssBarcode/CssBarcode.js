@@ -62,7 +62,7 @@ const CssBar = ({project, projects, index, numberOfBars, isMobile, barcodeRef}) 
         onPointerOver={(e) => (e.stopPropagation(), handleHover(index))}
         onPointerOut={(e) => handleHover(null)}
         // style={{width: isHovering ? normalisedImageWidth + "px" : "auto", maxWidth: isHovering ? normalisedImageWidth + "px" : "auto",flex: isHovering ? "1 1 auto" : "1 1 auto"}}
-        style={{flex: isHovering ? 2.2 : "1"}}
+        style={{flex: isHovering ? 2.3 : "1"}}
 
         >
         <CssBarPicture show={currentHoveredBar === index} featuredimage={project.node.frontmatter.featuredimage} ></CssBarPicture>
