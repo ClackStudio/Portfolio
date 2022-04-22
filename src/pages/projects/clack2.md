@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: lil nas x
+title: sony music lil nas x
 client: sony music
 date: 2022-04-22T14:52:34.771Z
 featuredpost: true
