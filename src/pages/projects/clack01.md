@@ -1,13 +1,13 @@
 ---
 templateKey: project-post
-title: nike real trail
+title: nike free trail berlin
 client: nike
 date: 2016-12-17T15:04:10.000Z
 featuredpost: true
 featuredimage: /img/nikeFreeRunTrail/02.jpg
 additionalData:
   - title: photographer
-    data: hannes meier
+    data: fritz
   - title: mommy
     data: Theo
 section:
@@ -27,6 +27,7 @@ section:
     altText: cool nikes
 tags:
   - art direction
+  - production
 lastImage: /img/nikeFreeRunTrail/05.jpg
 photographer: Hannes Meier
 description: one of clack’s favourite project. it was a pleasure to work with
