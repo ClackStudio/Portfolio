@@ -1,17 +1,30 @@
 ---
 templateKey: project-post
-title: voo store talking shop
-date: 2022-04-22T14:27:54.772Z
+title: yoga campaign
+client: reebok
+date: 2022-04-22T14:32:05.298Z
 featuredpost: true
-featuredimage: /img/feedcard_voo_1080x1215_2.jpg
+featuredimage: /img/07.jpg
+additionalData:
+  - title: photographer
+    data: hannes m. meier
+  - title: date
+    data: "2021"
 section:
-  - src: /img/feedcard_voo_1080x1215_2.jpg
-photographer: Hannes Meier
-client: nike
+  - src: /img/09.jpg
+  - src: /img/08.jpg
+  - src: /img/05.jpg
+  - src: /img/04.jpg
+  - src: /img/03.jpg
+  - src: /img/02.jpg
+  - src: /img/01.jpg
 tags:
   - art direction
+  - creative direction
   - production
+lastImage: /img/10.jpg
+photographer: Hannes Meier
 description: The Coffee Taster’s Flavor Wheel, the official resource used by
   coffee tasters, has been revised for the first time this year.
 ---
-![girl with nikes]()
+![]()
