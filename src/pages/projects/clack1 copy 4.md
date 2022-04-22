@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: yoga campaign
+title: reebok yoga campaign
 client: reebok
 date: 2022-04-22T14:32:05.298Z
 featuredpost: true
