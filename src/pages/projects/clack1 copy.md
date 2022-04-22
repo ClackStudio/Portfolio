@@ -5,11 +5,10 @@ date: 2016-12-17T15:04:10.000Z
 featuredpost: true
 featuredimage: /img/labience_logo.jpg
 additionalData:
-  - title: 3d animation
-    data: clack studio
   - title: date
     data: "2022"
 tags:
+  - 3d animation
   - art direction
   - creative direction
   - production
