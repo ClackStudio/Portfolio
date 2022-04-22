@@ -7,7 +7,7 @@ clack studio is a berlin based creative studio founded by a female friends duo i
 
 \    
 
-services include: content creation (photo/video/3d), concepts, packaging, copywriting, installations, graphic design, creative direction, art direction, events, pop-up stores, brand design, production, photography, consultation, print, ooh...
+services include: content creation (photo/video/3d animation), concepts, packaging, copywriting, installations, graphic design, creative direction, art direction, events, pop-up stores, brand design, production, photography, consultation, print, ooh...
 
 \    
 
