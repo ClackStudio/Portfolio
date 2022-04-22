@@ -1,13 +1,11 @@
 ---
 templateKey: project-post
-title: summer campaign
+title: campaign ss2022
 client: labience
 date: 2022-04-22T14:16:15.926Z
 featuredpost: true
 featuredimage: /img/2022-03-03-11.34.29-kopie.jpg
 additionalData:
-  - title: photographer
-    data: clack studio
   - title: date
     data: "2022"
 section:
