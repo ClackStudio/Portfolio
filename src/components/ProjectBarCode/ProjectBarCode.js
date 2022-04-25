@@ -91,7 +91,7 @@ const ProjectBarCode = ({projectsIndex}) => {
                   title
                   templateKey
                   date(formatString: "YYYY")
-                  featuredpost
+                  featuredproject
                   featuredimage {
                     childImageSharp {
                       gatsbyImageData(

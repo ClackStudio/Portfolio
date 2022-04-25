@@ -4,7 +4,7 @@ photographer: Hannes Meier
 title: nike solebox talking shop
 client: nike
 date: 2016-12-17T15:04:10.000Z
-featuredpost: true
+featuredproject: true
 featuredimage: /img/bildschirmfoto-2022-04-22-um-16.20.jpg
 tags:
   - art direction

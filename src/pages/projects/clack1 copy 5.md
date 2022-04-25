@@ -4,7 +4,7 @@ photographer: Hannes Meier
 title: nike voo store talking shop
 client: nike
 date: 2022-04-22T14:44:20.347Z
-featuredpost: true
+featuredproject: true
 featuredimage: /img/feedcard_voo_1080x1215_2.jpg
 additionalData:
   - title: videographer

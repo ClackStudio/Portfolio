@@ -3,7 +3,7 @@ templateKey: project-post
 title: nike free trail berlin
 client: nike
 date: 2022-04-22T14:16:32.377Z
-featuredpost: true
+featuredproject: true
 featuredimage: /img/clack-6.jpg
 additionalData:
   - title: photographer

@@ -3,7 +3,7 @@ templateKey: project-post
 title: labience ss2022
 client: labience
 date: 2022-04-25T07:56:00.142Z
-featuredpost: true
+featuredproject: true
 featuredimage: /img/2022-03-03-11.34.29-kopie.jpg
 additionalData:
   - title: date

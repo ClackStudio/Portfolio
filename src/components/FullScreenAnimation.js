@@ -3,7 +3,7 @@ import { Canvas, useLoader } from '@react-three/fiber'
 import { AdaptiveEvents, useAspect, Html, Plane, Sphere } from '@react-three/drei'
 // import PreviewCompatibleImage from './PreviewCompatibleImage'
 import { GRAY } from '../helpers/Colors'
-import logo from "../../static/img/logo_2.svg"
+import logo from "../img/logo_2.svg"
 import { EffectComposer, GodRays, Bloom, Noise } from "@react-three/postprocessing";
 import { useControls, button } from 'leva'
 import { useTransitionStore } from '../stores/TransitionStore'

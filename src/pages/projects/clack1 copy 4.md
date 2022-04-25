@@ -3,7 +3,7 @@ templateKey: project-post
 title: reebok yoga campaign
 client: reebok
 date: 2022-04-22T14:32:05.298Z
-featuredpost: true
+featuredproject: true
 featuredimage: /img/07.jpg
 additionalData:
   - title: photographer

@@ -27,7 +27,7 @@ collections:
       - { label: "Title", name: "title", widget: "string", hint: please choose short titles}
       - { label: "Client", name: "client", widget: string }
       - { label: "Publish Date", name: "date", widget: "datetime", hint: the year will be shown in the description }
-      - { label: "Shown in Barcode", name: "featuredpost", widget: "boolean" }
+      - { label: "Shown in Barcode", name: "featuredproject", widget: "boolean" }
       - { label: "Featured Image", name: "featuredimage", widget: image, hint: has to be 720x1080 pixel with a mximum size of 200kb (yes it is possible to have it even smaller and it still looks great) }
       - { label: "Featured Mobile Image", name: "featuredimageMobile", required: false, widget: image, hint: has to be 1080x720 pixel with a mximum size of 180kb (yes it is possible to have it even smaller and it still looks great)  }
       - { label: featured Video, name: featuredVideo, required: false, widget: file, pattern: [^\w+.(mp4)$, must be a mp4 in h.264 compression with not more then 0.5mb], hint: this is very dangerous as too many featured videos can make the website super slow with bad SEO, use only as a last resort on one or two projects}
@@ -65,91 +65,6 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/index.md"
-        label: "Landing Page"
-        name: "index"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "index-page",
-            }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
-          - {
-              label: Mainpitch,
-              name: mainpitch,
-              widget: object,
-              fields:
-                [
-                  { label: Title, name: title, widget: string },
-                  { label: Description, name: description, widget: text },
-                ],
-            }
-          - { label: Description, name: description, widget: string }
-          - {
-              label: Intro,
-              name: intro,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Blurbs,
-                    name: blurbs,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Main,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                ]
-            }
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
@@ -162,114 +77,52 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/pages/products/index.md"
-        label: "Products Page"
-        name: "products"
+      - file: "src/pages/about/imprint.md"
+        label: "Imprint"
+        name: "imprint"
         fields:
           - {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "product-page",
+              default: "about-page",
             }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Description, name: description, widget: string }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/pages/contact/index.md"
+        label: "Contact"
+        name: "contact"
+        fields:
           - {
-              label: Intro,
-              name: intro,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Blurbs,
-                    name: blurbs,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
-                      ],
-                  },
-                ],
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "contact-page",
             }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
           - {
-              label: Main,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Testimonials,
-              name: testimonials,
+              label: Contact Data,
+              hint: data rows for contact; e.g. "Phone — 0278 883 948",
+              name: contactData,
               widget: list,
-              fields:
-                [
-                  { label: Quote, name: quote, widget: string },
-                  { label: Author, name: author, widget: string },
-                ],
+              required: false,
+              fields: [
+                  { label: Title, name: title, widget: string },
+                  { label: Data, name: data, widget: string }
+              ]
             }
-          - { label: Full_image, name: full_image, widget: image }
           - {
-              label: Pricing,
-              name: pricing,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: string },
-                  {
-                    label: Plans,
-                    name: plans,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Plan, name: plan, widget: string },
-                        { label: Price, name: price, widget: string },
-                        {
-                          label: Description,
-                          name: description,
-                          widget: string,
-                        },
-                        { label: Items, name: items, widget: list },
-                      ],
-                  },
-                ],
+              label: Social Links,
+              hint: data rows for platforms; e.g. "Instagram — @200kilo",
+              name: contactData,
+              widget: list,
+              required: false,
+              fields: [
+                  { label: Title, name: title, widget: string },
+                  { label: Name, name: name, widget: string },
+                  { label: URL, name: url, widget: string }
+              ]
             }
+
+

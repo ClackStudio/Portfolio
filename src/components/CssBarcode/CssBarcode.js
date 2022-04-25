@@ -76,13 +76,17 @@ const CssBar = ({project, projects, index, numberOfBars, isMobile, barcodeRef}) 
 const CssBarcodeTemplate = ({data, small}) => {
   const barcodeRef = useRef()
   const { edges: projects } = data.allMarkdownRemark
+  console.log(projects)
+  const onlyFeaturedProjects = projects.filter((project) => project.node.frontmatter.featuredproject)
+  console.log(onlyFeaturedProjects)
+
     // home page
     return (
       <div className="css-barcode-wrapper">
         <div className={`css-barcode ${small ? `small` : ``}`} ref={barcodeRef}>
-          { projects.map((project, i) => <CssBar barcodeRef={barcodeRef} index={i} key={`css-bar-${i}`} project={project} numberOfBars={projects.length}/>)}
+          { onlyFeaturedProjects.map((project, i) => <CssBar barcodeRef={barcodeRef} index={i} key={`css-bar-${i}`} project={project} numberOfBars={projects.length}/>)}
         </div> 
-        { !small && (<BarcodeNumbers projects={projects}></BarcodeNumbers>) }
+        { !small && (<BarcodeNumbers projects={onlyFeaturedProjects}></BarcodeNumbers>) }
       </div>
     ) 
 }
@@ -106,7 +110,7 @@ const CssBarcode = ({small}) => {
                   title
                   templateKey
                   date(formatString: "YYYY")
-                  featuredpost
+                  featuredproject
                   featuredimage {
                     childImageSharp {
                       gatsbyImageData(
