@@ -10,6 +10,7 @@ additionalData:
     data: "2022"
 section:
   - src: /img/2022-03-02-15.53.55-kopie.jpg
+    altTextSecond: hi
   - src: /img/2022-03-02-16.09.51-kopie.jpg
   - src: /img/2022-03-02-17.39.47-kopie.jpg
   - src: /img/2022-03-03-11.27.12-kopie.jpg
