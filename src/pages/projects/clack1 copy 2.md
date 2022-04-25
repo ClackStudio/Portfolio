@@ -2,7 +2,7 @@
 templateKey: project-post
 title: labience ss2022 campaign
 client: labience
-date: 2022-04-22T14:16:15.926Z
+date: 2022-04-25T07:56:00.142Z
 featuredpost: true
 featuredimage: /img/2022-03-03-11.34.29-kopie.jpg
 additionalData:
