@@ -115,7 +115,7 @@ collections:
           - {
               label: Social Links,
               hint: data rows for platforms; e.g. "Instagram — @200kilo",
-              name: contactData,
+              name: socialLinks,
               widget: list,
               required: false,
               fields: [
