@@ -58,7 +58,7 @@ const ContactPage = ({ data, location }) => {
         title={post.frontmatter.title}
         content={post.html}
         socialLinks={post.frontmatter.socialLinks}
-        contactDate={post.frontmatter.contactData}
+        contactData={post.frontmatter.contactData}
       />
     </Layout>
   );
