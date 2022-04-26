@@ -1,5 +1,4 @@
 const createBarcodePattern = (index, numberOfBars) => {
-    console.log("CREATE BARCODE")
     const isFirst = index === 0
         const isLast = index === numberOfBars -1
         const random = () => Math.random() >0.5 ? 1 :0
@@ -24,10 +23,7 @@ const createBarcodePattern = (index, numberOfBars) => {
 
 
 const createCompleteBarcodePattern = (numberOfBars) => {
-    console.log("number HAHAHA", numberOfBars) 
-    // const patternArray = []
     const patternArray = [...Array(numberOfBars).keys()].map((_, i, array) => {
-        console.log(i)
         return createBarcodePattern(i, numberOfBars)
       });
     
