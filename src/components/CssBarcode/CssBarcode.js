@@ -77,7 +77,7 @@ const CssBarcodeTemplate = ({data, small}) => {
   const barcodeRef = useRef()
   const { edges: projects } = data.allMarkdownRemark
   console.log(projects)
-  const onlyFeaturedProjects = projects.filter((project) => project.node.frontmatter.featuredproject)
+  const onlyFeaturedProjects = small ? projects : projects.filter((project) => project.node.frontmatter.featuredproject)
   console.log(onlyFeaturedProjects)
 
     // home page

@@ -69,7 +69,7 @@ const ProjectIndexPageTemplate = ({location, edges, totalCount}) => {
                   onMouseLeave={onMouseLeave} 
                   onMouseEnter={() => onMouseEnter(index)} 
                   key={node.id} 
-                  className={'crossed'} />
+                  className={`crossed ${index === currentHoveredBar ? 'active' : ''}`} />
                   ))}
                 
                 </TableLayout>
