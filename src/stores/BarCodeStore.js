@@ -2,12 +2,19 @@ import create from "zustand";
 import { immer } from './middleware'
 import { NUM_BARS } from "./BarCodeConfig";
 import { getNormalisedWidth } from "../components/CssBarcode/getImageRatio";
+import { createCompleteBarcodePattern } from "../components/CssBarcode/createBarcodePattern";
 
 const barCodeStore = state => ({
     normalisedImageWidth: 0,
+    barcodePattern: [],
     getNormalisedImageWidth: (height, isMobile) => {
         const normalisedImageWidth = getNormalisedWidth(height, isMobile)
         if(normalisedImageWidth !== state.normalisedImageWidth) state.normalisedImageWidth = normalisedImageWidth
+    },
+    requestBarcodePattern: (numberOfBars) => {
+        if (state.barcodePattern.length === 0) {
+            state.barcodePattern = createCompleteBarcodePattern(numberOfBars)
+        }
     }
 });
 

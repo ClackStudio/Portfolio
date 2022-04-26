@@ -1,11 +1,11 @@
 import React, {useState, Suspense, useEffect, useRef, useCallback} from 'react'
 import { Link, navigate, graphql, StaticQuery } from 'gatsby'
-import { useMemoOne } from '@react-spring/shared'
-import { createBarcodePattern } from './createBarcodePattern'
+import { useMemoOne } from 'use-memo-one'
 import { useBackgroundStore, useBarCodeStore } from '../../stores/BarCodeStore'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import BarcodeNumbers from '../BarcodeNumbers/BarcodeNumbers'
 import BigImage from '../BigImage'
+import { createBarcodePattern } from './createBarcodePattern'
 // import PreviewCompatibleImage from './PreviewCompatibleImage'
 import './styles.sass'
 
@@ -33,12 +33,15 @@ const CssBarPicture = ({show, featuredimage}) => {
 )
 }
 
-const CssBar = ({project, projects, index, numberOfBars, isMobile, barcodeRef}) => {
+const CssBar = ({project, projects, index, numberOfBars, isMobile, barcodeRef, barcodePattern, small}) => {
     const barRef = useRef()
 
     const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore()
     const { getNormalisedImageWidth, normalisedImageWidth } = useBarCodeStore()
-    const barCodePatternArray = useMemoOne(() => createBarcodePattern(index, numberOfBars), [index, numberOfBars])
+
+    const stripePattern = useMemoOne( () => (!small && barcodePattern) ? barcodePattern : createBarcodePattern(index, numberOfBars), [small, barcodePattern])
+
+
     const slug = project.node.fields.slug
     const isHovering = currentHoveredBar === index
     const handleClick = () => navigate(slug)
@@ -66,7 +69,7 @@ const CssBar = ({project, projects, index, numberOfBars, isMobile, barcodeRef}) 
 
         >
         <CssBarPicture show={currentHoveredBar === index} featuredimage={project.node.frontmatter.featuredimage} ></CssBarPicture>
-            { barCodePatternArray.map((value, i) => <Stripe key={index + "stripe" + i} black={value === 1}></Stripe>)}
+            { stripePattern.map((value, i) => <Stripe key={index + "stripe" + i} black={value === 1}></Stripe>)}
         </div>
     )
 }
@@ -74,17 +77,16 @@ const CssBar = ({project, projects, index, numberOfBars, isMobile, barcodeRef}) 
 
 
 const CssBarcodeTemplate = ({data, small}) => {
+  const { barcodePattern, requestBarcodePattern } = useBarCodeStore()
   const barcodeRef = useRef()
   const { edges: projects } = data.allMarkdownRemark
-  console.log(projects)
   const onlyFeaturedProjects = small ? projects : projects.filter((project) => project.node.frontmatter.featuredproject)
-  console.log(onlyFeaturedProjects)
-
+  useMemoOne(() => requestBarcodePattern(onlyFeaturedProjects.length),[onlyFeaturedProjects.length])
     // home page
     return (
       <div className="css-barcode-wrapper">
         <div className={`css-barcode ${small ? `small` : ``}`} ref={barcodeRef}>
-          { onlyFeaturedProjects.map((project, i) => <CssBar barcodeRef={barcodeRef} index={i} key={`css-bar-${i}`} project={project} numberOfBars={projects.length}/>)}
+          { onlyFeaturedProjects.map((project, i) => <CssBar small={small} barcodeRef={barcodeRef} barcodePattern={barcodePattern.length > 0 ? barcodePattern[i] : []} index={i} key={`css-bar-${i}`} project={project} numberOfBars={projects.length}/>)}
         </div> 
         { !small && (<BarcodeNumbers projects={onlyFeaturedProjects}></BarcodeNumbers>) }
       </div>
