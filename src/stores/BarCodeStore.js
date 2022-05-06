@@ -20,7 +20,7 @@ const barCodeStore = state => ({
 
 const backgroundStore = state => ({
     animating: false,
-    currentHoveredBar: 1,
+    currentHoveredBar: null,
     setCurrentHoveredBar: (index) => {
         state.currentHoveredBar = index;
     },

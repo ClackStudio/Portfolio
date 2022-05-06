@@ -3,7 +3,7 @@ import { navigate } from 'gatsby';
 import { useBackgroundStore } from "./../../stores/BarCodeStore";
 import { useTransitionStore } from "./../../stores/TransitionStore"
 import {projects} from '../../data.mock/projects.mock'
-
+import { isMobile } from 'react-device-detect';
 
 const ProjectTitle = ({children, isShown}) => {
 
@@ -25,7 +25,6 @@ const ProjectNumber = ({project , index}) => {
     setCurrentHoveredBar(null)
   }
   const goToProject = () => {
-    console.log("GOTO", project)
     navigate(project.fields.slug)
     //setCanvasTransition(project.fields.slug)
   }
@@ -48,21 +47,37 @@ const ProjectNumber = ({project , index}) => {
 
 
 const BarcodeNumbers = ({projects, count, currentProjectId}) => {
+  const [transform, setTransform] = useState(false)
   const {currentHoveredBar} = useBackgroundStore()
+  const wrappersRef = useRef()
+  const numbersRef = useRef()
 
+  const style = {
+    transform: !isMobile && `translateX(${transform ? transform + 'px' : '50%'})`,
+    margin: isMobile ? 'auto' : 0
+  }
+
+  if(wrappersRef.current && numbersRef.current) {
+    if (!transform && !isMobile) {
+      const inner = numbersRef.current.getBoundingClientRect().width
+      const outer = wrappersRef.current.getBoundingClientRect().width
+      const transform = outer / 2 - inner / 2 
+      setTransform(transform)
+    }
+  }
 return (
-  <div className="barcode-numbers-wrapper is-flex is-flex-direction-row is-justify-content-space-between">
-      <div className="left">
-      </div>
-      <div className='project-navigation-numbers is-flex is-flex-direction-row'>
+  <div ref={wrappersRef} className="barcode-numbers-wrapper is-flex is-flex-direction-row is-justify-content-space-between">
+      {/* <div className="left">
+      </div> */}
+      <div ref={numbersRef} style={style} className='project-navigation-numbers is-flex is-flex-direction-row'>
           {projects.map(({node}, index) => (
               <ProjectNumber project={node} index={index} key={`barNum_` + node.id}>
               </ProjectNumber>
           ))}
       </div> 
-      <div className="right">
+      {/* <div className="right">
       {(currentHoveredBar !== null) && projects[currentHoveredBar].name }
-      </div>
+      </div> */}
 
   </div>
 )

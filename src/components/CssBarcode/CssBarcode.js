@@ -7,6 +7,10 @@ import BarcodeNumbers from '../BarcodeNumbers/BarcodeNumbers'
 import BigImage from '../BigImage'
 import { createBarcodePattern } from './createBarcodePattern'
 // import PreviewCompatibleImage from './PreviewCompatibleImage'
+import {isMobile} from 'react-device-detect';
+import { useDrag } from '@use-gesture/react'
+import { useControls } from 'leva'
+
 import './styles.sass'
 
 const Stripe = ({black}) => (
@@ -33,7 +37,7 @@ const CssBarPicture = ({show, featuredimage}) => {
 )
 }
 
-const CssBar = ({project, projects, index, numberOfBars, isMobile, barcodeRef, barcodePattern, small}) => {
+const CssBar = ({project, projects, index, numberOfBars, barcodeRef, barcodePattern, small}) => {
     const barRef = useRef()
 
     const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore()
@@ -63,7 +67,10 @@ const CssBar = ({project, projects, index, numberOfBars, isMobile, barcodeRef, b
         ref={barRef}
         onClick={handleClick}
         onPointerOver={(e) => (e.stopPropagation(), handleHover(index))}
-        onPointerOut={(e) => handleHover(null)}
+        onPointerOut={(e) => {
+          // the last touched element shall stay open, on desktop it resets
+          if (!isMobile) handleHover(null)
+        }}
         // style={{width: isHovering ? normalisedImageWidth + "px" : "auto", maxWidth: isHovering ? normalisedImageWidth + "px" : "auto",flex: isHovering ? "1 1 auto" : "1 1 auto"}}
         style={{flex: isHovering ? 2.3 : "1"}}
 
@@ -77,14 +84,56 @@ const CssBar = ({project, projects, index, numberOfBars, isMobile, barcodeRef, b
 
 
 const CssBarcodeTemplate = ({data, small}) => {
+  const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore()
   const { barcodePattern, requestBarcodePattern } = useBarCodeStore()
+  const saved = useRef(0)
+
   const barcodeRef = useRef()
   const { edges: projects } = data.allMarkdownRemark
   const onlyFeaturedProjects = small ? projects : projects.filter((project) => project.node.frontmatter.featuredproject)
   useMemoOne(() => requestBarcodePattern(onlyFeaturedProjects.length),[onlyFeaturedProjects.length])
+
+  const bind = useDrag(({ down, movement: [mx, my], velocity: [vx, vy], direction: [dx,dy] }) => {
+    if (isMobile) {
+      const isFirst = currentHoveredBar === 0
+      const isLast = currentHoveredBar === onlyFeaturedProjects.length - 1
+
+      const directionalAdd = () => {
+        if(dy > 0) {
+          if (!isLast) {
+            return 1
+          }
+        } else {
+          if (!isFirst) {
+            return -1
+          }
+        }
+        return 0
+      }
+      const velocityCalc = (velocity) => {
+        const valueOfOneStep = 1
+        saved.current = saved.current + velocity
+        if (saved.current > 2) {
+          setCurrentHoveredBar(currentHoveredBar + directionalAdd())
+          saved.current = 0
+        }
+      }
+      // const movementThreshold = 40
+      // const velocityThreshold = 0
+
+
+      velocityCalc(vy)
+      // if (my > movementThreshold && vy > velocityThreshold) {
+
+      //   setCurrentHoveredBar(currentHoveredBar + directionalAdd())
+      // }
+      // console.log("VELOCITY", vy)
+    }
+  }, { })
+
     // home page
     return (
-      <div className="css-barcode-wrapper">
+      <div className="css-barcode-wrapper" {...bind()}>
         <div className={`css-barcode ${small ? `small` : ``}`} ref={barcodeRef}>
           { onlyFeaturedProjects.map((project, i) => <CssBar small={small} barcodeRef={barcodeRef} barcodePattern={barcodePattern.length > 0 ? barcodePattern[i] : []} index={i} key={`css-bar-${i}`} project={project} numberOfBars={projects.length}/>)}
         </div> 

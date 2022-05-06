@@ -29,7 +29,7 @@ $cursor: url('/img/blur_arrow.svg') 0 0, move !important
     @media (min-width: 64em)
       @content
   @else if $point == tablet 
-    @media (min-width: 50em)
+    @media (max-width: 50em)
       @content
   @else if $point == phablet 
     @media (min-width: 37.5em)
@@ -37,3 +37,8 @@ $cursor: url('/img/blur_arrow.svg') 0 0, move !important
   @else if $point == mobile-only 
     @media (max-width: 37.5em)
       @content
+
+// https://ferie.medium.com/detect-a-touch-device-with-only-css-9f8e30fa1134  
+@mixin touch-device()
+  @media (hover: none) and (pointer: coarse), (max-width: 37.5em)
+    @content

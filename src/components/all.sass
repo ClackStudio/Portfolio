@@ -36,7 +36,7 @@ html, body
   font-family: 'ABC Diatype', 'Helvetica Neue', sans-serif
   font-weight: 400
   color: $black
-  cursor: $cursor
+  // cursor: $cursor
   background: $background
   -webkit-font-smoothing: antialiased
   /* Hide scrollbar for IE, Edge and Firefox */
@@ -114,8 +114,9 @@ canvas
 
 
 button, a
-  cursor: $cursor
+  // cursor: $cursor
   // cursor: url('/img/arrow.svg') 0 0, move!important
+  cursor: pointer
   font-size: 1rem
   color: $black
   &:focus
@@ -138,13 +139,13 @@ a
   .crossed-line
     @include crossedFontLine
     width: 46px
-    left: 50px
+    left: 39px
     bottom: 46%
     transition: all ease-in-out 0.3s
   &:hover
     .crossed-line
       width: 90px
-      left: 8px
+      left: -2px
       bottom: 46%
       transition: all ease-in-out 0.3s
       
@@ -230,6 +231,7 @@ a
       
 
     .crossed
+      cursor: pointer
       &:hover, &.active
         .table-cross-line
           background: $black
@@ -322,8 +324,12 @@ a
     border-width: none
 
   &-numbers
+
     font-size: $huge-font-size
+    @include touch-device()
+      font-size: calc(#{$huge-font-size} * 0.8)
     max-height: 100%
+    cursor: pointer
     .project-number
       // line-height: 88px
       display: flex
@@ -443,6 +449,10 @@ a
   width: 1.5rem
   height: 1.5rem
   fill: currentColor
+
+.navbar-item
+  padding-left: 0!important
+  padding-right: 0!important
 .navbar-brand, .navbar-item.logo
   color: $black!important
   padding: 0
@@ -463,6 +473,9 @@ a
 
 .navbar, .navbar-menu
   margin-right: 0!important
+  column-gap: $standard-padding
+.navbar
+  padding: 0 $standard-padding
 nav, .half-page-navbar-menu, .navbar-menu
   min-height: $navbar-height-important
   height: $navbar-height-important
@@ -472,6 +485,9 @@ a.navbar-item
   margin-right: 0!important
   &:hover
     color: $black!important
+ 
+  
+
 
 .navbar-end
   margin-left: auto
