@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { extend, useLoader } from '@react-three/fiber'
 
 import { shaderMaterial,} from '@react-three/drei'

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Suspense } from 'react'
 import { generateShader } from '../generateShader'
 

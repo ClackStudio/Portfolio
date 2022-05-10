@@ -1,8 +1,5 @@
 import React from 'react'
-import { Link, graphql, StaticQuery, navigate } from 'gatsby'
-import CrossButton from './CrossButton'
-// import './all.sass'
-import { node } from 'prop-types'
+import { graphql, StaticQuery, navigate } from 'gatsby'
 
 
 const ProjectNumber = ({project ,currentProjectId, index}) => {
@@ -30,7 +27,6 @@ const ProjectNavigationTemplate = ({projects, currentProjectId}) => {
     const nextProject = !isLastProject ? activeProjectIndex + 1 : activeProjectIndex
 
     const goToPreviousProject = () => {
-        console.log("PREV")
         navigate(projects[previousProject].node.fields.slug)
     }
     const goToNextProject = () => {

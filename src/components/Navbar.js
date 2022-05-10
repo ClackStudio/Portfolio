@@ -24,8 +24,8 @@ const DesktopNavMenu = ({navItems, halfpage}) => (
             className={`navbar-menu`}
             style={{marginTop: "-4px"}}
           >
-            {navItems.filter(item => (halfpage ? item.shownInProjects : item.shownOnHome)).map( item => (
-              <div className="navbar-item navbar-start has-text-centered" >
+            {navItems.filter(item => (halfpage ? item.shownInProjects : item.shownOnHome)).map( (item, index) => (
+              <div className="navbar-item navbar-start has-text-centered" key={`desktop-nav-item-${index}`} >
               <CrossLink  slug={item.slug}> {item.name} </CrossLink>
               </div>
             ))}
@@ -51,8 +51,8 @@ const MobileNavMenu = ({navItems}) => {
               <CrossButton onClick={handleMenuClick}> menu </CrossButton>
           </div>
           <div className={`fullscreen-menu ${menuOpen && 'open'}`}>
-          {navItems.filter(item => (item.shownOnHome)).map( item => (
-              <div className="mobile-nav-item" >
+          {navItems.filter((item) => (item.shownOnHome)).map( (item, index) => (
+              <div className="mobile-nav-item" key={`mobile-nav-item-${index}`}>
                 <Link activeClassName={"active"} className="mobile-nav-link" to={item.slug}>{item.name}</Link>
               </div>
             ))}

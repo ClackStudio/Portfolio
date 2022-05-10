@@ -1,15 +1,13 @@
-import React, {useState, Suspense, useEffect, useRef, useCallback} from 'react'
-import { Link, navigate, graphql, StaticQuery } from 'gatsby'
+import React, {useState, useEffect, useRef} from 'react'
+import { navigate, graphql, StaticQuery } from 'gatsby'
 import { useMemoOne } from 'use-memo-one'
 import { useBackgroundStore, useBarCodeStore } from '../../stores/BarCodeStore'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import BarcodeNumbers from '../BarcodeNumbers/BarcodeNumbers'
-import BigImage from '../BigImage'
 import { createBarcodePattern } from './createBarcodePattern'
 // import PreviewCompatibleImage from './PreviewCompatibleImage'
-import {isMobile} from 'react-device-detect';
+import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import { useDrag } from '@use-gesture/react'
-import { useControls } from 'leva'
 
 import './styles.sass'
 
@@ -17,7 +15,7 @@ const Stripe = ({black}) => (
     <div  className={`css-stripe ${black && 'black'}`}></div>
   )
 const CssBarPicture = ({show, featuredimage}) => {
-  const [image, setImage] = useState(getImage(featuredimage) || featuredimage);
+  const [image] = useState(getImage(featuredimage) || featuredimage);
   return (
     <div className='css-bar-picture' style={{opacity: show ? 1 : 0}}>
       <GatsbyImage
@@ -30,6 +28,7 @@ const CssBarPicture = ({show, featuredimage}) => {
             height: "100%",
             maxHeight: "100%",
           }}
+          alt=""
           layout="fullWidth"
           formats={["auto", "webp", "avif"]}
         />
@@ -38,10 +37,12 @@ const CssBarPicture = ({show, featuredimage}) => {
 }
 
 const CssBar = ({project, projects, index, numberOfBars, barcodeRef, barcodePattern, small}) => {
+    const breakpoints = useBreakpoint();
+    const isMobile = breakpoints.sm
     const barRef = useRef()
 
     const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore()
-    const { getNormalisedImageWidth, normalisedImageWidth } = useBarCodeStore()
+    const { getNormalisedImageWidth } = useBarCodeStore()
 
     const stripePattern = useMemoOne( () => (!small && barcodePattern) ? barcodePattern : createBarcodePattern(index, numberOfBars), [small, barcodePattern])
 
@@ -53,7 +54,7 @@ const CssBar = ({project, projects, index, numberOfBars, barcodeRef, barcodePatt
     useEffect(()=> {
       // console.log(flexGrowCalc(barcodeRef.current, projects, normalisedImageWidth))
       getNormalisedImageWidth(barRef.current.clientHeight, isMobile)
-    }, [project, isMobile])
+    }, [project, isMobile, getNormalisedImageWidth])
 
 
     // const flexGrowCalc = (barcode, projects, normalisedImageWidth) => {
@@ -86,6 +87,8 @@ const CssBar = ({project, projects, index, numberOfBars, barcodeRef, barcodePatt
 const CssBarcodeTemplate = ({data, small}) => {
   const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore()
   const { barcodePattern, requestBarcodePattern } = useBarCodeStore()
+  const breakpoints = useBreakpoint();
+  const isMobile = breakpoints.sm
   const saved = useRef(0)
 
   const barcodeRef = useRef()
@@ -111,7 +114,6 @@ const CssBarcodeTemplate = ({data, small}) => {
         return 0
       }
       const velocityCalc = (velocity) => {
-        const valueOfOneStep = 1
         saved.current = saved.current + velocity
         if (saved.current > 2) {
           setCurrentHoveredBar(currentHoveredBar + directionalAdd())

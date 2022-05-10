@@ -1,6 +1,5 @@
 import create from "zustand";
 import { immer } from './middleware'
-import { NUM_BARS } from "./BarCodeConfig";
 import { getNormalisedWidth } from "../components/CssBarcode/getImageRatio";
 import { createCompleteBarcodePattern } from "../components/CssBarcode/createBarcodePattern";
 

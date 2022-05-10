@@ -8,7 +8,7 @@ import SectionTemplate from "../components/SectionTemplate";
 
 // eslint-disable-next-line
 export const ContactPageTemplate = ({ title, content, contentComponent, socialLinks, contactData }) => {
-  const PageContent = contentComponent || Content;
+  // const PageContent = contentComponent || Content;
   console.log(contactData)
   return (
     <SectionTemplate className="minus-navbar">

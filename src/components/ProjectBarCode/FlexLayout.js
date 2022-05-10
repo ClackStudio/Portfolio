@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useRef, useEffect } from 'react'
 import { useThree, useLoader, MeshBasicMaterialProps, group } from '@react-three/fiber'
 import { useBarCodeStore, useBackgroundStore } from "../../stores/BarCodeStore";

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, {useState, useRef, Suspense, useEffect, useMemo} from 'react'
 import { extend, useLoader } from '@react-three/fiber'
 

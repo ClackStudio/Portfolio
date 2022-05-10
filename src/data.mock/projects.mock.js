@@ -1,10 +1,4 @@
 import clack1 from '../../static/img/clack-1.jpg'
-import clack2 from '../../static/img/clack-2.jpg'
-import clack3 from '../../static/img/clack-3.jpg'
-import clack4 from '../../static/img/clack-4.jpg'
-import clack5 from '../../static/img/clack-5.jpg'
-import clack6 from '../../static/img/clack-6.jpg'
-
 
 const projects = [
     {

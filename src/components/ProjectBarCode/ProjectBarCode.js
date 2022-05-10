@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, {Suspense, useEffect, useRef, useCallback} from 'react'
 import PropTypes from 'prop-types'
 import { Canvas } from '@react-three/fiber'

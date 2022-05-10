@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, {useState, useRef, Suspense, useEffect, useMemo} from 'react'
 import PropTypes, { number } from 'prop-types'
 import { Canvas, useFrame, useThree, mesh, boxGeometry, meshBasicMaterial, extend, useLoader } from '@react-three/fiber'

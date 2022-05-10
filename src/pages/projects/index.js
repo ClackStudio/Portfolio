@@ -1,16 +1,16 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 
 import SectionTemplate from "../../components/SectionTemplate";
 import { TableLayout, TableRowComponent } from "../../components/TableComponent";
 import { helmet } from "react-helmet";
 import Navbar from "../../components/Navbar";
-import { Link, graphql, StaticQuery, navigate } from 'gatsby'
+import { graphql, StaticQuery, navigate } from 'gatsby'
 import '../../components/all.sass'
 import { useBackgroundStore } from "../../stores/BarCodeStore";
 import CssBarcode from "../../components/CssBarcode/CssBarcode";
 
 
-const ProjectIndexPageTemplate = ({location, edges, totalCount}) => {
+const ProjectIndexPageTemplate = ({edges}) => {
   const { setCurrentHoveredBar, currentHoveredBar} = useBackgroundStore()
   // const counter = useRef(0)
   // const haltInterval = useRef(false)

@@ -56,7 +56,7 @@ export default function BigImage(props) {
             // You can optionally force an aspect ratio for the generated image
             aspectratio={3 / 1}
             // This is a presentational image, so the alt should be an empty string
-            alt={altText}
+            alt={altText ? altText : ''}
             formats={["auto", "webp", "avif"]}
           />
         )}

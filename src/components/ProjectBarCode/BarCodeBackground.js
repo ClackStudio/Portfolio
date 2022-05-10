@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useRef, forwardRef, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import * as THREE from 'three'

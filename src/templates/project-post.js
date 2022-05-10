@@ -1,9 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
-import { graphql, Link } from "gatsby";
-
+import { graphql } from "gatsby";
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import Navbar from "../components/Navbar";
 import ProjectNavigation from "../components/ProjectNavigation";
 import BigImage from "../components/BigImage";
@@ -13,16 +12,6 @@ import { getImage } from "gatsby-plugin-image";
 import { TableLayout, TableRowComponent } from '../components/TableComponent'
 import SectionTemplate from "../components/SectionTemplate";
 import './styles.sass'
-
-
-
-const TitleTemplate = ({ title, className }) => (
-  <div className={'columns' + className}>
-    <div className="column is-6 project-title">
-      {title}
-    </div>
-  </div>
-)
 
 const ServicesListTemplate = ({ services }) => (
   <div className="columns">
@@ -49,7 +38,6 @@ const Section = ({data, className}) => {
   const firstImage = getImage(data.src) || data.src;
   const isLeft = data.left
   const secondImage = getImage(data.secondImageSrc) || data.secondImageSrc;
-  const twoImages = secondImage === true
   // const heroImage = getImage(image) || image;
 
 
@@ -94,19 +82,21 @@ export const ProjectPostTemplate = ({
   featuredImage,
   sections,
 }) => {
+  
   const PostContent = contentComponent || Content;
   const firstImage = featuredImage && (getImage(featuredImage) || featuredImage)
   const lastSectionImage = lastImage && (getImage(lastImage) || lastImage)
+  const breakpoints = useBreakpoint();
 
   return (
-    <div className="scroll-container">
+    <div className={`scroll-container ${breakpoints.sm && 'mobile-scroll-container'}`}>
       {helmet || ""}
       <SectionTemplate innerClassName='minus-navbar' placeOnTop={<Navbar></Navbar>}>
         <div className="columns fill-container" >
 
           <div className="column fill-container">
             <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container is-postion-relative" >
-              <div></div>
+              <div></div> 
               <ScrollArrow/>
               <TableLayout>
               <TableRowComponent leftData={"client"} rightData={client} />

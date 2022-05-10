@@ -4,7 +4,7 @@ import FullScreenAnimation from "../components/FullScreenAnimation";
 import Layout from "../components/Layout";
 import CssBarcode from "../components/CssBarcode/CssBarcode";
 import { useTransitionStore } from '../stores/TransitionStore'
-import { Transition, animated, useTransition, config, useSpring, useSpringRef, useChain } from "react-spring";
+import { animated, useTransition, config, useSpring, useSpringRef, useChain } from "react-spring";
 import '../components/all.sass'
 
 // eslint-disable-next-line

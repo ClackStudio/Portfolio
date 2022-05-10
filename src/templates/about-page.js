@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
-import { TableLayout, TableRowComponent } from "../components/TableComponent";
+import { TableLayout } from "../components/TableComponent";
 import SectionTemplate from "../components/SectionTemplate";
 
 // eslint-disable-next-line

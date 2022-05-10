@@ -1,10 +1,7 @@
-import React, {useRef, useReducer, useState} from 'react'
+import React, {useRef, useState} from 'react'
 import { navigate } from 'gatsby';
 import { useBackgroundStore } from "./../../stores/BarCodeStore";
-import { useTransitionStore } from "./../../stores/TransitionStore"
-import {projects} from '../../data.mock/projects.mock'
-import { isMobile } from 'react-device-detect';
-
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 const ProjectTitle = ({children, isShown}) => {
 
   return (
@@ -15,7 +12,6 @@ const ProjectTitle = ({children, isShown}) => {
 }
 
 const ProjectNumber = ({project , index}) => {
-  const { setCanvasTransition } = useTransitionStore()
   const {currentHoveredBar, setCurrentHoveredBar} = useBackgroundStore()
   const isHovered = index === currentHoveredBar
   const handleMouseEnter = () => {
@@ -47,8 +43,9 @@ const ProjectNumber = ({project , index}) => {
 
 
 const BarcodeNumbers = ({projects, count, currentProjectId}) => {
+  const breakpoints = useBreakpoint();
+  const isMobile = breakpoints.sm
   const [transform, setTransform] = useState(false)
-  const {currentHoveredBar} = useBackgroundStore()
   const wrappersRef = useRef()
   const numbersRef = useRef()
 
