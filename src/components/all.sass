@@ -126,6 +126,9 @@ button, a
   
   margin: 0 $standard-padding
   padding: 0
+  &:focus
+    border: none
+    box-shadow: none!important
   &:hover,&.active
     .crossed-line
       @include crossedFontLine
@@ -133,6 +136,17 @@ button, a
         //height: 2px
 a
   margin: 0
+
+.button
+  margin: 0
+  padding: 0
+  background: transparent
+  border: none
+  height: auto
+  &:focus
+    border: none
+    box-shadow: none
+
 
 .navbar-logo
   padding-right: 0!important
@@ -285,6 +299,31 @@ a
 a
   text-decoration: none
 
+.mobile-nav
+  position: fixed
+  background: $background
+  .mobile-navbar-menu
+    .fullscreen-menu
+      display: none
+      width: 100vw
+      background: $background
+      height: calc( 100vh - #{$navbar-height} )
+      position: fixed
+      top: $navbar-height
+      z-index: 10
+      flex-direction: column
+      justify-content: end
+      padding-bottom: $standard-padding 
+      &.open
+        display: flex
+      .mobile-nav-item
+        .mobile-nav-link
+          font-size: $mobile-huge-font-size
+          line-height: 120%
+          &.active
+            color: $dark-gray
+
+
 
 
 
@@ -327,7 +366,7 @@ a
 
     font-size: $huge-font-size
     @include touch-device()
-      font-size: calc(#{$huge-font-size} * 0.8)
+      font-size: $mobile-huge-font-size
     max-height: 100%
     cursor: pointer
     .project-number
