@@ -30,7 +30,7 @@ collections:
       - { label: "Shown in Barcode", name: "featuredproject", widget: "boolean" }
       - { label: "Featured Image", name: "featuredimage", widget: image, hint: has to be 720x1080 pixel with a mximum size of 200kb (yes it is possible to have it even smaller and it still looks great) }
       - { label: "Featured Mobile Image", name: "featuredimageMobile", required: false, widget: image, hint: has to be 1080x720 pixel with a mximum size of 180kb (yes it is possible to have it even smaller and it still looks great)  }
-      - { label: featured Video, name: featuredVideo, required: false, widget: file, pattern: [^\w+.(mp4)$, must be a mp4 in h.264 compression with not more then 0.5mb], hint: this is very dangerous as too many featured videos can make the website super slow with bad SEO, use only as a last resort on one or two projects}
+      - { label: featured Video, name: featuredVideo, required: false, widget: file, hint: not more then 1mb!!! this is very dangerous as too many featured videos can make the website super slow with bad SEO, use only as a last resort on one or two projects}
       - {
           label: Additional data,
           hint: data rows for the description; e.g. "Photographer — Paul Wiegeand",
@@ -55,7 +55,7 @@ collections:
               { label: Fullscreen, name: horizontal, required: false, widget: boolean, hint: use only with a horicontal image },
               { label: second image, name: secondImage, required: false, widget: image, hint: if you add an image here there will be two images in one row next to each other},
               { label: Alt Text, required: false, name: altText, widget: text, hint: helps SEO },
-              { label: video, name: video, required: false, widget: file, pattern: [^\w+.(mp4)$, must be a mp4], hint: h.264 compression not more then 1 or 2mb; uses alttext1; is always fullscreen},
+              { label: video, name: video, required: false, widget: file, hint: h.264 compression not more then 1 or 2mb; uses alttext1;},
             ]
           }
       - { label: "Optional Text", name: "body", required: false, widget: "markdown" }

@@ -10,7 +10,7 @@ export const shouldUpdateScroll = ({
       // console.log('scroll to top')
       window.scrollTo({
         top: 0,
-        behavior: 'smooth' // feel free to use or not
+        behavior: 'smooth', // feel free to use or not
       })
     }, transitionDelay)
   } else {
@@ -20,7 +20,7 @@ export const shouldUpdateScroll = ({
       // console.log('scroll to saved position')
       window.scrollTo({
         top,
-        behavior: 'smooth'
+        behavior: 'smooth',
       })
     }, transitionDelay)
   }

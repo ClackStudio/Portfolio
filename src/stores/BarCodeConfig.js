@@ -1,3 +1,3 @@
-import {projects} from '../data.mock/projects.mock'
+import { projects } from '../data.mock/projects.mock'
 
-export const NUM_BARS = projects.length;
+export const NUM_BARS = projects.length

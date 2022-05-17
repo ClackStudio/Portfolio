@@ -1,17 +1,16 @@
-import React from "react";
+import React from 'react'
 
-import SectionTemplate from "../../components/SectionTemplate";
-import { TableLayout, TableRowComponent } from "../../components/TableComponent";
-import { helmet } from "react-helmet";
-import Navbar from "../../components/Navbar";
+import SectionTemplate from '../../components/SectionTemplate'
+import { TableLayout, TableRowComponent } from '../../components/TableComponent'
+import { helmet } from 'react-helmet'
+import Navbar from '../../components/Navbar'
 import { graphql, StaticQuery, navigate } from 'gatsby'
 import '../../components/all.sass'
-import { useBackgroundStore } from "../../stores/BarCodeStore";
-import CssBarcode from "../../components/CssBarcode/CssBarcode";
+import { useBackgroundStore } from '../../stores/BarCodeStore'
+import CssBarcode from '../../components/CssBarcode/CssBarcode'
 
-
-const ProjectIndexPageTemplate = ({edges}) => {
-  const { setCurrentHoveredBar, currentHoveredBar} = useBackgroundStore()
+const ProjectIndexPageTemplate = ({ edges }) => {
+  const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore()
   // const counter = useRef(0)
   // const haltInterval = useRef(false)
 
@@ -19,7 +18,7 @@ const ProjectIndexPageTemplate = ({edges}) => {
 
   // useEffect(() => {
   //   const interval = setInterval(() => {
-      
+
   //     if (counter.current < totalCount - 1) counter.current++
   //     else counter.current = 0
 
@@ -38,7 +37,7 @@ const ProjectIndexPageTemplate = ({edges}) => {
 
   const onMouseLeave = () => {
     if (currentHoveredBar !== null) {
-    setCurrentHoveredBar(null)
+      setCurrentHoveredBar(null)
     }
     // haltInterval.current = false
   }
@@ -47,46 +46,43 @@ const ProjectIndexPageTemplate = ({edges}) => {
     navigate(slug)
   }
 
-
-
   return (
     <>
-      {helmet || ""}
+      {helmet || ''}
       <Navbar></Navbar>
       <SectionTemplate className="minus-navbar">
-          <div className="columns fill-container">
-            <div className="column fill-container">
-              <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container" >
-                {/* <HalfPageNavbar /> */}
-                {/* date */}
-                <div></div>
-                <TableLayout>
-                  {edges.map(({node}, index) => (
-                  <TableRowComponent 
-                  leftData={node.frontmatter.client}
-                  rightData={node.frontmatter.title} 
-                  onClick={() => navigateToProject(node.fields.slug)}
-                  onMouseLeave={onMouseLeave} 
-                  onMouseEnter={() => onMouseEnter(index)} 
-                  key={node.id} 
-                  className={`crossed ${index === currentHoveredBar ? 'active' : ''}`} />
-                  ))}
-                
-                </TableLayout>
-              </div>
+        <div className="columns fill-container">
+          <div className="column fill-container">
+            <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container">
+              {/* <HalfPageNavbar /> */}
+              {/* date */}
+              <div></div>
+              <TableLayout>
+                {edges.map(({ node }, index) => (
+                  <TableRowComponent
+                    leftData={node.frontmatter.client}
+                    rightData={node.frontmatter.title}
+                    onClick={() => navigateToProject(node.fields.slug)}
+                    onMouseLeave={onMouseLeave}
+                    onMouseEnter={() => onMouseEnter(index)}
+                    key={node.id}
+                    className={`crossed ${
+                      index === currentHoveredBar ? 'active' : ''
+                    }`}
+                  />
+                ))}
+              </TableLayout>
             </div>
-            {/* <PostContent content={content} /> */}
-
           </div>
-          <div className="column is-6 fill-container">
-            {/* <BigImage counter={counter.current} img={sideImage} ></BigImage> */}
-            <CssBarcode small></CssBarcode>
-
-          </div>
+          {/* <PostContent content={content} /> */}
+        </div>
+        <div className="column is-6 fill-container">
+          {/* <BigImage counter={counter.current} img={sideImage} ></BigImage> */}
+          <CssBarcode small></CssBarcode>
+        </div>
       </SectionTemplate>
     </>
   )
-
 }
 
 const ProjectIndexPage = () => {
@@ -117,9 +113,15 @@ const ProjectIndexPage = () => {
           }
         }
       `}
-      render={(data, count) => <ProjectIndexPageTemplate totalCount={data.allMarkdownRemark.totalCount} edges={data.allMarkdownRemark.edges} count={count} />}
+      render={(data, count) => (
+        <ProjectIndexPageTemplate
+          totalCount={data.allMarkdownRemark.totalCount}
+          edges={data.allMarkdownRemark.edges}
+          count={count}
+        />
+      )}
     />
-  );
+  )
 }
 
 export default ProjectIndexPage

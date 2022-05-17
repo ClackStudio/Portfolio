@@ -5,6 +5,7 @@ client: reebok
 date: 2022-04-22T14:32:05.298Z
 featuredproject: true
 featuredimage: /img/07.jpg
+featuredVideo: /img/rebook_featured.mp4
 additionalData:
   - title: photographer
     data: hannes m. meier
@@ -18,12 +19,13 @@ section:
   - src: /img/03.jpg
   - src: /img/02.jpg
   - src: /img/01.jpg
+  - video: /img/final-video_rf37.mp4
+lastImage: /img/10.jpg
+photographer: Hannes Meier
 tags:
   - art direction
   - creative direction
   - production
-lastImage: /img/10.jpg
-photographer: Hannes Meier
 description: The Coffee Taster’s Flavor Wheel, the official resource used by
   coffee tasters, has been revised for the first time this year.
 ---

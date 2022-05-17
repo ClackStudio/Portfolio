@@ -1,14 +1,14 @@
 /* eslint-disable */
-import React, {useState, useRef, Suspense, useEffect, useMemo} from 'react'
+import React, { useState, useRef, Suspense, useEffect, useMemo } from 'react'
 import { extend, useLoader } from '@react-three/fiber'
 
-import { shaderMaterial,} from '@react-three/drei'
+import { shaderMaterial } from '@react-three/drei'
 import glsl from 'babel-plugin-glsl/macro'
 import * as THREE from 'three'
 
-
 const PatternShader = shaderMaterial(
-  { time: 0, 
+  {
+    time: 0,
     number1: 1,
     number2: 0,
     number3: 1,
@@ -25,7 +25,7 @@ const PatternShader = shaderMaterial(
     number14: 1,
     number15: 0,
     number16: 1,
-    isMobile: false
+    isMobile: false,
   },
   // vertex shader
   glsl`
@@ -155,9 +155,8 @@ const PatternShader = shaderMaterial(
 
     }
   `
-);
+)
 
 extend({ PatternShader })
 
 // export default PatternShader
-

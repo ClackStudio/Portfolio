@@ -1,16 +1,15 @@
 /* eslint-disable */
 import { extend, useLoader } from '@react-three/fiber'
 
-import { shaderMaterial,} from '@react-three/drei'
+import { shaderMaterial } from '@react-three/drei'
 import glsl from 'babel-plugin-glsl/macro'
 import * as THREE from 'three'
 import { GRAY } from '../../../helpers/Colors'
 
-
 const GradientShader = shaderMaterial(
-  { 
+  {
     firstColor: new THREE.Color(GRAY),
-    middleColor: new THREE.Color("red"),
+    middleColor: new THREE.Color('red'),
     endColor: new THREE.Color(GRAY),
   },
   // vertex shader
@@ -39,6 +38,6 @@ const GradientShader = shaderMaterial(
       }
 
   `
-);
+)
 
 extend({ GradientShader })

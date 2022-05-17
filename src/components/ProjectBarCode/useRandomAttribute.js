@@ -12,7 +12,10 @@ function useRandomAttribute() {
       for (let i = 0; i < attributesCount; i++) {
         newRandomAttributes[i] = Math.random()
       }
-      geometryRef.current.setAttribute('aRandom', new THREE.BufferAttribute(newRandomAttributes, 1))
+      geometryRef.current.setAttribute(
+        'aRandom',
+        new THREE.BufferAttribute(newRandomAttributes, 1)
+      )
     }
   }, [geometryRef])
 

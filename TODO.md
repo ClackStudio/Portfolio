@@ -5,14 +5,15 @@
 - <s> barcode less glitchy </s>
 - <s>Netlify connection (there was a problem with the github repo) </s>
 - <s> navigation bar also on last page of the project post </s>
-- scoll arrow for better UX
+- <s>  scoll arrow for better UX</s>
 - <s> clack studio cross stays </s>
 - <s> section view snapping </s>
 - <s> project navigation bar showing whole menu</s>
-- slimmer font for logo and text
-- openGraph Image from logo
+- slimmer font for logo and text </s>
+- openGraph Image from logo 
 - projectBarcodeNumbers should show the name like in the start page
-- barcode for mobile
-- mobile gesture
+- barcode for mobile </s>
+- mobile gesture </s>
 - enable video for project post
 - enable video as a featured post
+- mobile change project gesture

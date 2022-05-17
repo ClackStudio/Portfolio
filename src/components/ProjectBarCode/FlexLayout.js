@@ -1,22 +1,37 @@
 /* eslint-disable */
 import React, { useState, useRef, useEffect } from 'react'
-import { useThree, useLoader, MeshBasicMaterialProps, group } from '@react-three/fiber'
-import { useBarCodeStore, useBackgroundStore } from "../../stores/BarCodeStore";
-import { TransformControls, Sphere, CycleRaycast, BakeShadows, Bounds, useCursor, softShadows, shaderMaterial, Stats, useAspect, useHelper, BoxHelper } from '@react-three/drei'
+import {
+  useThree,
+  useLoader,
+  MeshBasicMaterialProps,
+  group,
+} from '@react-three/fiber'
+import { useBarCodeStore, useBackgroundStore } from '../../stores/BarCodeStore'
+import {
+  TransformControls,
+  Sphere,
+  CycleRaycast,
+  BakeShadows,
+  Bounds,
+  useCursor,
+  softShadows,
+  shaderMaterial,
+  Stats,
+  useAspect,
+  useHelper,
+  BoxHelper,
+} from '@react-three/drei'
 import * as THREE from 'three'
 import { useSpring, animated, config } from '@react-spring/three'
 // import { projects } from '../../data.mock/projects.mock'
-import { useTransitionStore, } from '../../stores/TransitionStore'
+import { useTransitionStore } from '../../stores/TransitionStore'
 import Bar from './Bar'
-import { navigate } from "gatsby-link";
-
+import { navigate } from 'gatsby-link'
 
 // Check if window is defined (so if in the browser or in node.js).
-const isBrowser = typeof window !== "undefined"
-
+const isBrowser = typeof window !== 'undefined'
 
 const FlexLayout = ({ projects, projectsIndex, isMobile }) => {
-
   const { viewport, size, camera } = useThree()
 
   const getCoordinateXLength = (pixelLength) => {
@@ -30,7 +45,6 @@ const FlexLayout = ({ projects, projectsIndex, isMobile }) => {
     return coordinateHeight
   }
 
-
   const numberOfBars = projects.length
   const groupRef = useRef()
   const [vpWidth, vpHeight] = useAspect(size.width, size.height)
@@ -39,18 +53,17 @@ const FlexLayout = ({ projects, projectsIndex, isMobile }) => {
   const [spring, rotationApi] = useSpring(() => ({
     rotation: [0, 0, 0],
     config: { mass: 1, tension: 5, friction: 0, clamp: true },
-
   }))
 
-
-
-  const images = useLoader(THREE.TextureLoader, projects.map(project => {
-    console.log('LOADING', project)
-    if (project.node.frontmatter.featuredimage) return project.node.frontmatter.featuredimage.childImageSharp.gatsbyImageData.images.fallback.src
-
-  }))
-
-
+  const images = useLoader(
+    THREE.TextureLoader,
+    projects.map((project) => {
+      console.log('LOADING', project)
+      if (project.node.frontmatter.featuredimage)
+        return project.node.frontmatter.featuredimage.childImageSharp
+          .gatsbyImageData.images.fallback.src
+    })
+  )
 
   let barWidth = 1
   let barHeight = 1
@@ -66,7 +79,6 @@ const FlexLayout = ({ projects, projectsIndex, isMobile }) => {
   const pixelSide = 10
 
   if (isBrowser) {
-
     sidePadding = getCoordinateXLength(pixelSide)
     topStartingPoint = getCoordinateYLength(navbarHeight)
     bottomStartingPoint = getCoordinateYLength(footerHeight)
@@ -74,28 +86,30 @@ const FlexLayout = ({ projects, projectsIndex, isMobile }) => {
     // const [standardBarWidth, standardBarHeight] = useAspect('cover', size.width / numberOfBars, size.height - topPadding)
     // console.log(standardBarWidth)
 
-
     barWidth = (vpWidth - sidePadding * 2) / numberOfBars
     barHeight = vpHeight - (topStartingPoint + bottomStartingPoint)
 
-    barWidthMobile = (vpWidth - sidePadding * 2)
-    barHeightMobile = (vpHeight - (topStartingPoint + bottomStartingPoint) ) / numberOfBars
+    barWidthMobile = vpWidth - sidePadding * 2
+    barHeightMobile =
+      (vpHeight - (topStartingPoint + bottomStartingPoint)) / numberOfBars
 
-    startingPoint = vpWidth / 2 * -1
+    startingPoint = (vpWidth / 2) * -1
   }
-
 
   // console.log(group.current.geometry.computeBoundingBox())
 
   return (
     <>
       {isBrowser && !isMobile && (
-        <group name="barcodes" ref={groupRef} position={[0, (topStartingPoint) / 2, 0]}>
+        <group
+          name="barcodes"
+          ref={groupRef}
+          position={[0, topStartingPoint / 2, 0]}
+        >
           {projects.map((project, i) => {
-
-            const isBeforeMiddle = i < (numberOfBars / 2)
-            const isAfterMiddle = i >= (numberOfBars / 2)
-            const isMiddle = ((i - (numberOfBars / 2)) === 1) && numberOfBars % 2 != 0
+            const isBeforeMiddle = i < numberOfBars / 2
+            const isAfterMiddle = i >= numberOfBars / 2
+            const isMiddle = i - numberOfBars / 2 === 1 && numberOfBars % 2 != 0
 
             const addOrigin = () => {
               if (isBeforeMiddle) {
@@ -113,7 +127,11 @@ const FlexLayout = ({ projects, projectsIndex, isMobile }) => {
                 key={i}
                 index={i}
                 name={'bar-' + (i + 1)}
-                position={[startingPoint + i * (barWidth) + sidePadding + addOrigin(), 0, 0]}
+                position={[
+                  startingPoint + i * barWidth + sidePadding + addOrigin(),
+                  0,
+                  0,
+                ]}
                 scale={[barWidth, barHeight, 1]}
                 data={project}
                 map={images[i]}
@@ -127,25 +145,26 @@ const FlexLayout = ({ projects, projectsIndex, isMobile }) => {
                 isMobile={false}
               />
             )
-
           })}
         </group>
       )}
 
       {isBrowser && isMobile && (
-        <group name="barcodes" ref={groupRef} position={[0, (topStartingPoint) / 2, 0]}>
+        <group
+          name="barcodes"
+          ref={groupRef}
+          position={[0, topStartingPoint / 2, 0]}
+        >
           {projects.map((project, i) => {
-
-
- 
-            const yStartingPoint = vpHeight / 2 * -1
-            const xStartingPoint = vpWidth / 2 * -1
-            const isBeforeMiddle = i < (numberOfBars / 2)
-            const isAfterMiddle = i >= (numberOfBars / 2)
-            const isMiddle = ((i - (numberOfBars / 2)) === 1) && numberOfBars % 2 != 0
-            barWidth = (vpWidth - sidePadding * 2)
-            barHeight = (vpHeight - (topStartingPoint + bottomStartingPoint) ) / numberOfBars 
-
+            const yStartingPoint = (vpHeight / 2) * -1
+            const xStartingPoint = (vpWidth / 2) * -1
+            const isBeforeMiddle = i < numberOfBars / 2
+            const isAfterMiddle = i >= numberOfBars / 2
+            const isMiddle = i - numberOfBars / 2 === 1 && numberOfBars % 2 != 0
+            barWidth = vpWidth - sidePadding * 2
+            barHeight =
+              (vpHeight - (topStartingPoint + bottomStartingPoint)) /
+              numberOfBars
 
             const addOrigin = () => {
               if (isBeforeMiddle) {
@@ -156,8 +175,9 @@ const FlexLayout = ({ projects, projectsIndex, isMobile }) => {
                 return barHeight
               }
             }
-            const positionX = xStartingPoint +sidePadding
-            const positionY = yStartingPoint + i * (barHeight) + sidePadding + addOrigin()
+            const positionX = xStartingPoint + sidePadding
+            const positionY =
+              yStartingPoint + i * barHeight + sidePadding + addOrigin()
             console.log(positionX)
 
             return (
@@ -166,9 +186,8 @@ const FlexLayout = ({ projects, projectsIndex, isMobile }) => {
                 key={i}
                 index={i}
                 name={'bar-' + (i + 1)}
-                position={[positionX ,positionY, 0]}
+                position={[positionX, positionY, 0]}
                 scale={[barWidth, barHeight, 1]}
-
                 width={barWidth}
                 height={barHeight}
                 data={project}
@@ -181,7 +200,6 @@ const FlexLayout = ({ projects, projectsIndex, isMobile }) => {
                 isMobile
               />
             )
-
           })}
         </group>
       )}

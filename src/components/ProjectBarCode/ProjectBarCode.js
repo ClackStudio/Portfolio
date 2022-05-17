@@ -1,78 +1,75 @@
 /* eslint-disable */
-import React, {Suspense, useEffect, useRef, useCallback} from 'react'
+import React, { Suspense, useEffect, useRef, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { Canvas } from '@react-three/fiber'
 import { Stats, AdaptiveEvents } from '@react-three/drei'
 import BarCodeBackground from './BarCodeBackground'
 import FlexLayout from './FlexLayout'
 import BarcodeNumbers from '../BarcodeNumbers/BarcodeNumbers'
-import {GRAY} from '../../helpers/Colors'
+import { GRAY } from '../../helpers/Colors'
 import { Link, graphql, StaticQuery } from 'gatsby'
 // import PreviewCompatibleImage from './PreviewCompatibleImage'
 
-const ProjectBarCodeTemplate = ({data, projectsIndex}) => {
+const ProjectBarCodeTemplate = ({ data, projectsIndex }) => {
   const { edges: projects } = data.allMarkdownRemark
   if (projectsIndex) {
     return (
-    <>
-            <Canvas dpr={[1, 2]} resize={{ debounce: 0, scroll: false }}>
-              <Suspense fallback={null}>
-                <FlexLayout projects={projects} projectsIndex></FlexLayout>
+      <>
+        <Canvas dpr={[1, 2]} resize={{ debounce: 0, scroll: false }}>
+          <Suspense fallback={null}>
+            <FlexLayout projects={projects} projectsIndex></FlexLayout>
 
-                  <AdaptiveEvents />
+            <AdaptiveEvents />
 
-                <BarCodeBackground></BarCodeBackground>
-              </Suspense>
-            </Canvas>
+            <BarCodeBackground></BarCodeBackground>
+          </Suspense>
+        </Canvas>
       </>
     )
   } else {
     // home page
     return (
       <>
-      <div className='show-only-desktop'>
-      <div className="canvas-wrapper">
-              <Canvas dpr={[1, 2]} resize={{ debounce: 0, scroll: false }}>
+        <div className="show-only-desktop">
+          <div className="canvas-wrapper">
+            <Canvas dpr={[1, 2]} resize={{ debounce: 0, scroll: false }}>
               {/* <Stats showPanel={0} className="stats"/> */}
-                <Suspense fallback={null}>
-                  <FlexLayout projects={projects}></FlexLayout>
+              <Suspense fallback={null}>
+                <FlexLayout projects={projects}></FlexLayout>
 
-                    <AdaptiveEvents />
+                <AdaptiveEvents />
 
-                  <BarCodeBackground></BarCodeBackground>
-                </Suspense>
-              </Canvas>
+                <BarCodeBackground></BarCodeBackground>
+              </Suspense>
+            </Canvas>
           </div>
 
-        {/* </div> */}
-        <BarcodeNumbers projects={projects}></BarcodeNumbers>
-      </div>
+          {/* </div> */}
+          <BarcodeNumbers projects={projects}></BarcodeNumbers>
+        </div>
 
-
-      <div className='show-only-mobile'>
-      <div className="canvas-wrapper">
-              <Canvas dpr={[1, 2]} resize={{ debounce: 0, scroll: false }}>
+        <div className="show-only-mobile">
+          <div className="canvas-wrapper">
+            <Canvas dpr={[1, 2]} resize={{ debounce: 0, scroll: false }}>
               {/* <Stats showPanel={0} className="stats"/> */}
-                <Suspense fallback={null}>
-                  <FlexLayout projects={projects} isMobile></FlexLayout>
+              <Suspense fallback={null}>
+                <FlexLayout projects={projects} isMobile></FlexLayout>
 
-                    <AdaptiveEvents />
+                <AdaptiveEvents />
 
-                  <BarCodeBackground isMobile></BarCodeBackground>
-                </Suspense>
-              </Canvas>
+                <BarCodeBackground isMobile></BarCodeBackground>
+              </Suspense>
+            </Canvas>
           </div>
 
-        {/* <BarcodeNumbers isMobile projects={projects}></BarcodeNumbers> */}
-      </div>
+          {/* <BarcodeNumbers isMobile projects={projects}></BarcodeNumbers> */}
+        </div>
       </>
-    
     )
   }
-        
 }
 
-const ProjectBarCode = ({projectsIndex}) => {
+const ProjectBarCode = ({ projectsIndex }) => {
   return (
     <StaticQuery
       query={graphql`
@@ -100,7 +97,6 @@ const ProjectBarCode = ({projectsIndex}) => {
                         quality: 100
                         layout: CONSTRAINED
                       )
-
                     }
                   }
                 }
@@ -109,14 +105,17 @@ const ProjectBarCode = ({projectsIndex}) => {
           }
         }
       `}
-      render={(data, count) => <ProjectBarCodeTemplate projectsIndex={projectsIndex} data={data} count={count} />}
+      render={(data, count) => (
+        <ProjectBarCodeTemplate
+          projectsIndex={projectsIndex}
+          data={data}
+          count={count}
+        />
+      )}
     />
-  );
+  )
 }
 
-
-ProjectBarCode.propTypes = {
-
-}
+ProjectBarCode.propTypes = {}
 
 export default ProjectBarCode
