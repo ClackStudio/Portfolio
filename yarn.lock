@@ -9541,6 +9541,11 @@ language-tags@^1.0.5:
   dependencies:
     language-subtag-registry "~0.3.2"
 
+large-small-dynamic-viewport-units-polyfill@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/large-small-dynamic-viewport-units-polyfill/-/large-small-dynamic-viewport-units-polyfill-0.0.4.tgz#5d32499e6dda39aa15ff9b613ad073519d93a7f1"
+  integrity sha512-UmvkvGfb5p2KoXLrW3+y8lP8yNrRpHQUwZ2JkwAX8nYu1u29WMu0yfxg5GZQT3t2BHIC6Im5ARfx0KCPC7Avsg==
+
 latest-version@5.1.0, latest-version@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/latest-version/-/latest-version-5.1.0.tgz#119dfe908fe38d15dfa43ecd13fa12ec8832face"

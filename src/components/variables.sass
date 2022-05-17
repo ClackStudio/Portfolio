@@ -14,6 +14,10 @@ $mobile-huge-font-size: calc(4rem * 0.8)
 
 $cursor: url('/img/blur_arrow.svg') 0 0, move !important
 
+// https://npm.io/package/large-small-dynamic-viewport-units-polyfill
+// TODO: this might need a fallback
+$dvh: calc(var(--1dvh, 1vh) * 100)
+
 // crossed lines
 @mixin crossedFontLine()
   bottom: 43%
