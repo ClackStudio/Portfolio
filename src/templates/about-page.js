@@ -11,9 +11,9 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <SectionTemplate className="minus-navbar">
+    <SectionTemplate className="single-page-wrapper  minus-navbar ">
       <div className="columns fill-container minus-navbar">
-        <div className="column fill-container minus-navbar">
+        <div className="column is-flex fill-container minus-navbar">
           <div className="is-12 is-flex is-flex-direction-column is-justify-content-flex-end fill-container">
             {/* <HalfPageNavbar /> */}
             {/* date */}

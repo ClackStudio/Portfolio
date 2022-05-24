@@ -50,10 +50,10 @@ const ProjectIndexPageTemplate = ({ edges }) => {
     <>
       {helmet || ''}
       <Navbar></Navbar>
-      <SectionTemplate className="minus-navbar">
+      <SectionTemplate className="minus-navbar project-index-wrapper">
         <div className="columns fill-container">
           <div className="column fill-container">
-            <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container">
+            <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container minus-navbar">
               {/* <HalfPageNavbar /> */}
               {/* date */}
               <div></div>
@@ -76,7 +76,7 @@ const ProjectIndexPageTemplate = ({ edges }) => {
           </div>
           {/* <PostContent content={content} /> */}
         </div>
-        <div className="column is-6 fill-container">
+        <div className="column is-6 fill-container projects-index-barcode-column">
           {/* <BigImage counter={counter.current} img={sideImage} ></BigImage> */}
           <CssBarcode small></CssBarcode>
         </div>

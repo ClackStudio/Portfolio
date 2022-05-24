@@ -48,9 +48,11 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
         height: auto
 
 .meta-table
-    .columns
-        @include breakpoint(mobile-only)
-        display: flex
+    @include breakpoint(mobile-only)
+        margin-top: auto
+        width: 100%
+        .columns
+            display: flex
 
 .project-column
     @include breakpoint(mobile-only)
@@ -68,8 +70,19 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
             position: absolute
             min-height: 100%
 
+.force-flex
+    @include breakpoint(mobile-only)
+        display: flex!important
+.projects-index-barcode-column
+    @include breakpoint(mobile-only)
+        display: none
+.project-index-wrapper, .single-page-wrapper
+    @include breakpoint(mobile-only)
+        margin-top: $navbar-height
 
-
+.fullscreen-animation-wrapper
+    @include breakpoint(mobile-only)
+        height: $barcode-height
 // .container
 //     & .minus-navbar
 //         top: $navbar-height

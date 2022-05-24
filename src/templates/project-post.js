@@ -31,7 +31,7 @@ const ServicesListTemplate = ({ services }) => (
 )
 
 const FillingVideo = ({ src }) => (
-  <video muted autoplay="autoplay" loop playsinline>
+  <video muted autoPlay="autoplay" loop playsInline>
     <source type="video/mp4" src={src}></source>
   </video>
 )
@@ -109,7 +109,7 @@ export const ProjectPostTemplate = ({
   return (
     <div
       ref={projectRef}
-      style={{ touchAction: 'none' }}
+      style={{ touchAction: 'pan-y' }}
       className={`scroll-container ${
         breakpoints.sm && 'mobile-scroll-container'
       }`}
