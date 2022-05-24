@@ -17,7 +17,7 @@ const Stripe = ({ black }) => (
 const CssBarPicture = ({ show, featuredimage }) => {
   const [image] = useState(getImage(featuredimage) || featuredimage)
   return (
-    <div className="css-bar-picture" style={{ opacity: show ? 1 : 0 }}>
+    <div className={`css-bar-picture`} style={{ opacity: show ? 1 : 0 }}>
       <GatsbyImage
         image={image}
         objectFit={'cover'}
@@ -38,7 +38,7 @@ const CssBarPicture = ({ show, featuredimage }) => {
 const CssBarVideo = ({ show, src }) => {
   return (
     <div className="css-bar-picture" style={{ opacity: show ? 1 : 0 }}>
-      <video muted autoplay="autoplay" loop >
+      <video muted autoplay="autoplay" loop playsinline>
         <source type="video/mp4" src={src}></source>
       </video>
     </div>
@@ -87,7 +87,7 @@ const CssBar = ({
   // }
   return (
     <div
-      className="css-bar"
+      className={`css-bar`}
       ref={barRef}
       onClick={handleClick}
       onPointerOver={(e) => (e.stopPropagation(), handleHover(index))}
@@ -98,16 +98,16 @@ const CssBar = ({
       // style={{width: isHovering ? normalisedImageWidth + "px" : "auto", maxWidth: isHovering ? normalisedImageWidth + "px" : "auto",flex: isHovering ? "1 1 auto" : "1 1 auto"}}
       style={{ flex: isHovering ? 2.3 : '1' }}
     >
-      { isFeaturedVideo ? (
+      {isFeaturedVideo ? (
         <CssBarVideo
           show={currentHoveredBar === index}
           src={project.node.frontmatter.featuredVideo.publicURL}
         ></CssBarVideo>
       ) : (
         <CssBarPicture
-        show={currentHoveredBar === index}
-        featuredimage={project.node.frontmatter.featuredimage}
-      ></CssBarPicture>
+          show={currentHoveredBar === index}
+          featuredimage={project.node.frontmatter.featuredimage}
+        ></CssBarPicture>
       )}
 
       {stripePattern.map((value, i) => (
@@ -176,7 +176,12 @@ const CssBarcodeTemplate = ({ data, small }) => {
   // home page
   return (
     <div className="css-barcode-wrapper" {...bind()}>
-      <div className={`css-barcode ${small ? `small` : ``}`} ref={barcodeRef}>
+      <div
+        className={`css-barcode ${small ? `small` : ``}  ${
+          breakpoints.sm && 'mobile-css-barcode'
+        }`}
+        ref={barcodeRef}
+      >
         {onlyFeaturedProjects.map((project, i) => (
           <CssBar
             small={small}

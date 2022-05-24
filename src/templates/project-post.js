@@ -30,8 +30,8 @@ const ServicesListTemplate = ({ services }) => (
   </div>
 )
 
-const FillingVideo = ({src}) => (
-  <video muted autoplay="autoplay" loop >
+const FillingVideo = ({ src }) => (
+  <video muted autoplay="autoplay" loop playsinline>
     <source type="video/mp4" src={src}></source>
   </video>
 )
@@ -48,23 +48,35 @@ const Section = ({ data, className }) => {
       {isHorizontal ? (
         <div className="columns fill-container">
           <div className="column is-12">
-            { videoData ? (
+            {videoData ? (
               <FillingVideo src={videoData.publicURL}></FillingVideo>
-            ):
-            (<BigImage img={firstImage}></BigImage>
+            ) : (
+              <BigImage img={firstImage}></BigImage>
             )}
           </div>
         </div>
       ) : (
         <div className="columns fill-container">
-          <div className="column is-6" style={{position: 'relative'}}>
-            { isLeft && videoData && (<FillingVideo src={videoData.publicURL}></FillingVideo>)}
-            {isLeft && !videoData && (<BigImage img={firstImage}></BigImage>)}
+          <div
+            className="column is-6 project-column"
+            style={{ position: 'relative' }}
+          >
+            {isLeft && videoData && (
+              <FillingVideo src={videoData.publicURL}></FillingVideo>
+            )}
+            {isLeft && !videoData && <BigImage img={firstImage}></BigImage>}
           </div>
-          <div className="column is-6" style={{position: 'relative'}}>
-            { !isLeft && videoData && (<FillingVideo src={videoData.publicURL}></FillingVideo>)}
-            {!isLeft && !videoData  && (<BigImage img={firstImage}></BigImage>)}
-            {secondImage && !videoData && (<BigImage img={secondImage}></BigImage>)}
+          <div
+            className="column is-6 project-column"
+            style={{ position: 'relative' }}
+          >
+            {!isLeft && videoData && (
+              <FillingVideo src={videoData.publicURL}></FillingVideo>
+            )}
+            {!isLeft && !videoData && <BigImage img={firstImage}></BigImage>}
+            {secondImage && !videoData && (
+              <BigImage img={secondImage}></BigImage>
+            )}
           </div>
         </div>
       )}
@@ -92,21 +104,24 @@ export const ProjectPostTemplate = ({
   const firstImage = featuredImage && (getImage(featuredImage) || featuredImage)
   const lastSectionImage = lastImage && (getImage(lastImage) || lastImage)
   const breakpoints = useBreakpoint()
+  const projectRef = React.useRef(null)
 
   return (
     <div
+      ref={projectRef}
+      style={{ touchAction: 'none' }}
       className={`scroll-container ${
         breakpoints.sm && 'mobile-scroll-container'
       }`}
     >
       {helmet || ''}
       <SectionTemplate
-        innerClassName="minus-navbar"
+        innerClassName="minus-navbar first-section"
         placeOnTop={<Navbar></Navbar>}
       >
         <div className="columns fill-container">
           <div className="column fill-container">
-            <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container is-postion-relative">
+            <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container is-postion-relative project-info">
               <div></div>
               <ScrollArrow />
               <TableLayout>
@@ -129,7 +144,7 @@ export const ProjectPostTemplate = ({
 
           {/* <PostContent content={content} /> */}
         </div>
-        <div className="column is-6 fill-container">
+        <div className="column is-6 fill-container project-first-image">
           <BigImage img={firstImage}></BigImage>
         </div>
       </SectionTemplate>
@@ -155,7 +170,7 @@ export const ProjectPostTemplate = ({
               <TableLayout>
                 <PostContent content={content} />
               </TableLayout>
-              <ProjectNavigation currentProjectId={id} />
+              <ProjectNavigation ref={projectRef} currentProjectId={id} />
             </div>
           </div>
         </div>

@@ -38,6 +38,7 @@ module.exports = {
     `gatsby-plugin-image`,
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-breakpoints',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -80,6 +81,5 @@ module.exports = {
       },
     }, // must be after other CSS plugins
     'gatsby-plugin-netlify', // make sure to keep it last in the array
-    'gatsby-plugin-breakpoints',
   ],
 }

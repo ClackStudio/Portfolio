@@ -1,14 +1,5 @@
-// Config vars
-// Kaldi logo brand color: #FD461E
 @import "~bulma"
 @import 'variables'
-
-$kaldi-red: #D64000
-$kaldi-red-invert: #fff
-
-$primary: $kaldi-red
-$primary-invert: $kaldi-red-invert
-$body-color: #333
 
 @font-face
   font-family: "ABC Diatype"
@@ -50,6 +41,15 @@ html::-webkit-scrollbar, .scroll-container::-webkit-scrollbar
 section
   scroll-snap-align: start
   
+// yes poor handicapped peeps
+*:focus
+  outline: none!important
+  outline-width: 0!important
+  -moz-box-shadow: none!important
+  -webkit-box-shadow: none!important
+  box-shadow: none!important
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
 ::selection
   color: red
   background: $background!important
@@ -60,6 +60,7 @@ section
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none  /* IE and Edge */
   scrollbar-width: none  /* Firefox */
+  -webkit-overflow-scrolling: touch
   height: 100vh
 // RESPONSIVE
 .show-only-desktop
@@ -291,37 +292,10 @@ a
   padding-bottom: 0!important
   color: $black
   padding: $standard-padding
-  @include breakpoint(mobile-only)
-    padding-left: 5px!important
-    padding-right: 5px!important
 
 
 a
   text-decoration: none
-
-.mobile-nav
-  position: fixed
-  background: $background
-  .mobile-navbar-menu
-    .fullscreen-menu
-      display: none
-      width: 100vw
-      background: $background
-      height: calc( 100vh - #{$navbar-height} )
-      position: fixed
-      top: $navbar-height
-      z-index: 10
-      flex-direction: column
-      justify-content: end
-      padding-bottom: $standard-padding 
-      &.open
-        display: flex
-      .mobile-nav-item
-        .mobile-nav-link
-          font-size: $mobile-huge-font-size
-          line-height: 120%
-          &.active
-            color: $dark-gray
 
 
 
@@ -481,8 +455,6 @@ a
 .margin-top-0
   margin-top: 0 !important
 
-.navbar-item .icon
-  color: $primary
 // Override for use of svg's from https://simpleicons.org/
 .icon svg
   width: 1.5rem
