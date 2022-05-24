@@ -44,9 +44,8 @@ export const IndexPageTemplate = ({}) => {
         item ? (
           <animated.div
             style={springProps}
-            className="section is-full-height is-flex minus-navbar"
           >
-            <CssBarcode />
+            <CssBarcode wrapperStyle={{paddingTop: "36px"}} />
           </animated.div>
         ) : (
           <animated.div

@@ -6,8 +6,6 @@ date: 2022-04-25T07:56:00.142Z
 featuredproject: true
 featuredimage: /img/2022-03-03-11.34.29-kopie.jpg
 additionalData:
-  - title: date
-    data: "2022"
 section:
   - src: /img/2022-03-02-15.53.55-kopie.jpg
     altTextSecond: hi
@@ -24,8 +22,5 @@ tags:
   - art direction
   - photography
 lastImage: /img/2022-03-03-11.34.29-kopie.jpg
-photographer: Hannes Meier
-description: The Coffee Taster’s Flavor Wheel, the official resource used by
-  coffee tasters, has been revised for the first time this year.
 ---
 ![]()

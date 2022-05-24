@@ -1,6 +1,5 @@
 ---
 templateKey: project-post
-photographer: Hannes Meier
 title: nike solebox talking shop
 client: nike
 date: 2016-12-17T15:04:10.000Z

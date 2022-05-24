@@ -7,7 +7,10 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
     left: 47%
 .mobile-nav
   position: fixed
-  background: $background
+    color: white
+    background: none
+    mix-blend-mode: difference
+    filter: invert(1) grayscale(0)
   .mobile-navbar-menu
     .fullscreen-menu
       display: none
@@ -41,10 +44,10 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
 
 
 .mobile-scroll-container
-    scroll-snap-type: none
+    // scroll-snap-type: none
 
     .fill-container
-        min-height: auto
+        min-height: $dvh
         height: auto
 
 .meta-table
@@ -56,13 +59,16 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
 
 .project-column
     @include breakpoint(mobile-only)
+        display: contents
+        min-height: $dvh
         width: 100%
 
 .first-section
     @include breakpoint(mobile-only)
-        margin-top: $navbar-height
+        // margin-top: $navbar-height
         .project-info
             position: absolute
+            min-height: auto
             bottom: 0
             background: $background
             z-index: 2

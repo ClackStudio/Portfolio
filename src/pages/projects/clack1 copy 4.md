@@ -7,10 +7,7 @@ featuredproject: true
 featuredimage: /img/07.jpg
 featuredVideo: /img/rebook_featured.mp4
 additionalData:
-  - title: photographer
-    data: hannes m. meier
-  - title: date
-    data: "2021"
+
 section:
   - src: /img/09.jpg
   - src: /img/08.jpg

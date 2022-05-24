@@ -50,9 +50,12 @@ section
   box-shadow: none!important
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 
+div::selection
+  color: red
+  background: transparent!important
 ::selection
   color: red
-  background: $background!important
+  background: transparent!important
 
 .scroll-container
   overflow-y: scroll
@@ -267,7 +270,11 @@ a
     background: $background
 
 .navbar
-    background: transparent
+    position: fixed
+    color: white
+    background: none
+    mix-blend-mode: difference
+    filter: invert(1) grayscale(1) contrast(5)
     // position: fixed
     top:0
     display: flex
@@ -509,6 +516,10 @@ a.navbar-item
 
   100%
     opacity: 0
+
+.absolute-under-navbar
+  position: absolute
+  top: $navbar-height
 
 .scroll-arrow-wrapper
   position: absolute

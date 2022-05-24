@@ -38,7 +38,7 @@ const CssBarPicture = ({ show, featuredimage }) => {
 const CssBarVideo = ({ show, src }) => {
   return (
     <div className="css-bar-picture" style={{ opacity: show ? 1 : 0 }}>
-      <video muted autoplay="autoplay" loop playsinline>
+      <video muted autoplay="autoplay" loop playsInline>
         <source type="video/mp4" src={src}></source>
       </video>
     </div>
@@ -117,7 +117,7 @@ const CssBar = ({
   )
 }
 
-const CssBarcodeTemplate = ({ data, small }) => {
+const CssBarcodeTemplate = ({ data, small, wrapperStyle }) => {
   const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore()
   const { barcodePattern, requestBarcodePattern } = useBarCodeStore()
   const breakpoints = useBreakpoint()
@@ -172,10 +172,9 @@ const CssBarcodeTemplate = ({ data, small }) => {
     },
     {}
   )
-
   // home page
   return (
-    <div className="css-barcode-wrapper" {...bind()}>
+    <div className="css-barcode-wrapper" style={wrapperStyle} {...bind()}>
       <div
         className={`css-barcode ${small ? `small` : ``}  ${
           breakpoints.sm && 'mobile-css-barcode'
@@ -200,7 +199,7 @@ const CssBarcodeTemplate = ({ data, small }) => {
     </div>
   )
 }
-const CssBarcode = ({ small }) => {
+const CssBarcode = (props) => {
   return (
     <StaticQuery
       query={graphql`
@@ -240,7 +239,7 @@ const CssBarcode = ({ small }) => {
         }
       `}
       render={(data, count) => (
-        <CssBarcodeTemplate small={small} data={data} count={count} />
+        <CssBarcodeTemplate data={data} count={count} {...props}  />
       )}
     />
   )

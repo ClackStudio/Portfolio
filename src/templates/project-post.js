@@ -162,7 +162,7 @@ export const ProjectPostTemplate = ({
             <BigImage img={lastSectionImage}></BigImage>
           </div>
           <div className="column is-6 is-flex is-flex-direction-column fill-container">
-            <Navbar halfpage />
+            {/* <Navbar halfpage /> */}
             <div
               className="is-flex is-justify-content-space-between is-flex-direction-column"
               style={{ height: '100%' }}
