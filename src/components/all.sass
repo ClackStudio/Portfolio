@@ -114,7 +114,8 @@ canvas
 .intro-logo
   width: 200px
 
-
+p
+  max-width: 600px
 
 
 button, a
@@ -217,7 +218,9 @@ a
 .meta-data
     text-align: end
 
-
+.fill-complete-height
+  min-height: 100vh
+  height: 100vh
 .minus-navbar
   min-height: calc( 100vh -  #{$navbar-height})!important
   height: calc( 100vh -  #{$navbar-height})!important
@@ -271,11 +274,10 @@ a
 
 .navbar
     position: fixed
+    background: transparent
     color: white
-    background: none
     mix-blend-mode: difference
-    filter: invert(1) grayscale(1) contrast(5)
-    // position: fixed
+    filter: invert(1) grayscale(1) contrast(5) 
     top:0
     display: flex
     align-items: center
@@ -311,9 +313,9 @@ a
   0%
     opacity: 0
     flex: 0
-  80%
-    opacity: 0.4
-    flex: 1
+  // 80%
+  //   opacity: 0.4
+  //   flex: 1
 
   100%
     opacity: 1
@@ -525,6 +527,7 @@ a.navbar-item
   position: absolute
   left: 23%
   bottom: 6px
+  z-index: 2
   .scroll-arrow
     width: 24px
     height: 24px

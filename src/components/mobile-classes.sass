@@ -2,6 +2,10 @@
 
 $bottom-space: 30px
 $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36px)
+.fill-complete-height
+  min-height: $dvh
+  height: $dvh
+
 .scroll-arrow-wrapper
   @include breakpoint(mobile-only)
     left: 47%
@@ -33,7 +37,11 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
           line-height: 120%
           &.active
             color: $dark-gray
-
+.no-filter
+  background: $background
+  color: $black
+  mix-blend-mode: normal
+  filter: none
 .navbar-item
   @include breakpoint(mobile-only)
     padding-left: 0px!important
@@ -54,6 +62,8 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
     @include breakpoint(mobile-only)
         margin-top: auto
         width: 100%
+        background: $background
+        z-index: 1
         .columns
             display: flex
 
@@ -74,8 +84,19 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
             z-index: 2
         .project-first-image
             position: absolute
-            min-height: 100%
-
+            min-height: 90%
+            height: 90%
+.last-section
+  &.fill-container
+    @include breakpoint(mobile-only)
+      min-height: 90%
+      height: 90%
+      position: absolute
+.last-section-nav
+  &.fill-container
+    @include breakpoint(mobile-only)
+      min-height: auto
+      height: auto
 .force-flex
     @include breakpoint(mobile-only)
         display: flex!important
@@ -84,14 +105,13 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
         display: none
 .project-index-wrapper, .single-page-wrapper
     @include breakpoint(mobile-only)
-        margin-top: $navbar-height
+        // margin-top: $navbar-height
 
 .fullscreen-animation-wrapper
     @include breakpoint(mobile-only)
         height: $barcode-height
-// .container
-//     & .minus-navbar
-//         top: $navbar-height
 
-// .columns
-//     display: flex!important
+.mobile-flex-column
+  @include breakpoint(mobile-only)
+    display: flex
+    flex-direction: column

@@ -12,6 +12,7 @@ import { getImage } from 'gatsby-plugin-image'
 import { TableLayout, TableRowComponent } from '../components/TableComponent'
 import SectionTemplate from '../components/SectionTemplate'
 import './styles.sass'
+import { useBackgroundStore } from '../stores/BarCodeStore'
 
 const ServicesListTemplate = ({ services }) => (
   <div className="columns">
@@ -31,7 +32,7 @@ const ServicesListTemplate = ({ services }) => (
 )
 
 const FillingVideo = ({ src }) => (
-  <video muted autoPlay="autoplay" loop playsInline>
+  <video muted autoPlay loop playsInline>
     <source type="video/mp4" src={src}></source>
   </video>
 )
@@ -105,18 +106,25 @@ export const ProjectPostTemplate = ({
   const lastSectionImage = lastImage && (getImage(lastImage) || lastImage)
   const breakpoints = useBreakpoint()
   const projectRef = React.useRef(null)
+  const isMobile = breakpoints.sm
+  const { setCurrentHoveredBar } = useBackgroundStore()
+
+  React.useEffect(() => {
+    // reset hovered
+    setCurrentHoveredBar(null)
+  }, [])
 
   return (
     <div
       ref={projectRef}
       style={{ touchAction: 'pan-y' }}
       className={`scroll-container ${
-        breakpoints.sm && 'mobile-scroll-container'
+        isMobile && 'mobile-scroll-container'
       }`}
     >
       {helmet || ''}
       <SectionTemplate
-        innerClassName="minus-navbar first-section"
+        innerClassName=" first-section"
         placeOnTop={<Navbar></Navbar>}
       >
         <div className="columns fill-container">
@@ -136,7 +144,7 @@ export const ProjectPostTemplate = ({
                     />
                   ))}
                 <TableRowComponent leftData={'date'} rightData={date} />
-                <ServicesListTemplate services={tags} />
+                {!isMobile && (<ServicesListTemplate services={tags} />)}
                 {/* <TitleTemplate title={title} className={'pt-5'} ></TitleTemplate> */}
               </TableLayout>
             </div>
@@ -157,12 +165,11 @@ export const ProjectPostTemplate = ({
 
       {/* FINAL SECTION */}
       <SectionTemplate>
-        <div className="columns fill-container">
-          <div className="column is-6 fill-container">
+        <div className="columns fill-container mobile-flex-column">
+          <div className="column is-6 fill-container last-section">
             <BigImage img={lastSectionImage}></BigImage>
           </div>
-          <div className="column is-6 is-flex is-flex-direction-column fill-container">
-            {/* <Navbar halfpage /> */}
+          <div className="column is-6 is-flex is-flex-direction-column fill-container last-section-nav">
             <div
               className="is-flex is-justify-content-space-between is-flex-direction-column"
               style={{ height: '100%' }}

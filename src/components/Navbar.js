@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import { useNavigationStore } from '../stores/NavigationStore'
 import CrossLink from './CrossLink'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import CrossButton from './CrossButton'
+import { globalHistory } from '@reach/router'
+
 
 const NavbarLogo = () => {
   return (
@@ -35,22 +37,30 @@ const DesktopNavMenu = ({ navItems, halfpage }) => (
 )
 
 const MobileNavMenu = ({ navItems }) => {
-  const [menuOpen, setMenuState] = useState(false)
+  const { mobileMenuIsOpen, setMobileMenu  } = useNavigationStore()
+
+  // close menu on route switch
+  useEffect(() => {
+    return globalHistory.listen(({ action }) => {
+      if (action === 'PUSH') setMobileMenu(false)
+    })
+  }, [setMobileMenu])
 
   const handleMenuClick = () => {
-    setMenuState(!menuOpen)
+    console.log(mobileMenuIsOpen)
+    setMobileMenu(!mobileMenuIsOpen)
   }
 
   return (
     <div
       id="navMenu"
-      className={`navbar-menu mobile-navbar-menu`}
+      className={`navbar-menu mobile-navbar-menu `}
       style={{ marginTop: '-4px' }}
     >
       <div className="navbar-item navbar-start has-text-centered">
         <CrossButton onClick={handleMenuClick}> menu </CrossButton>
       </div>
-      <div className={`fullscreen-menu ${menuOpen && 'open'}`}>
+      <div className={`fullscreen-menu ${mobileMenuIsOpen && 'open'}`}>
         {navItems
           .filter((item) => item.shownOnHome)
           .map((item, index) => (
@@ -72,11 +82,11 @@ const MobileNavMenu = ({ navItems }) => {
 }
 
 const Navbar = ({ halfpage }) => {
-  const { navItems } = useNavigationStore()
+  const { navItems, mobileMenuIsOpen } = useNavigationStore()
   const breakpoints = useBreakpoint()
   return (
     <nav
-      className={`navbar is-transparent ${breakpoints.sm && 'mobile-nav'}`}
+      className={`navbar is-transparent ${breakpoints.sm && 'mobile-nav'} ${mobileMenuIsOpen && 'no-filter'}`}
       role="navigation"
       aria-label="main-navigation"
     >

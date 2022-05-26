@@ -38,7 +38,7 @@ const CssBarPicture = ({ show, featuredimage }) => {
 const CssBarVideo = ({ show, src }) => {
   return (
     <div className="css-bar-picture" style={{ opacity: show ? 1 : 0 }}>
-      <video muted autoplay="autoplay" loop playsInline>
+      <video muted autoPlay loop playsInline>
         <source type="video/mp4" src={src}></source>
       </video>
     </div>
@@ -58,6 +58,7 @@ const CssBar = ({
   const isMobile = breakpoints.sm
   const barRef = useRef()
   const isFeaturedVideo = project.node.frontmatter.featuredVideo
+  // const timeoutRef = useRef(null)
 
   const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore()
   const { getNormalisedImageWidth } = useBarCodeStore()
@@ -72,10 +73,15 @@ const CssBar = ({
 
   const slug = project.node.fields.slug
   const isHovering = currentHoveredBar === index
-  const handleClick = () => navigate(slug)
+  const handleClick = () => {
+    // clearTimeout(timeoutRef.current)
+    // timeoutRef.current = setTimeout(setCurrentHoveredBar(null),500)
+    
+    navigate(slug)
+  }
   const handleHover = (index) => setCurrentHoveredBar(index)
   useEffect(() => {
-    // console.log(flexGrowCalc(barcodeRef.current, projects, normalisedImageWidth))
+    // console.log(flexGrowCa t, projects, normalisedImageWidth))
     getNormalisedImageWidth(barRef.current.clientHeight, isMobile)
   }, [project, isMobile, getNormalisedImageWidth])
 
@@ -217,6 +223,7 @@ const CssBarcode = (props) => {
                 }
                 frontmatter {
                   title
+                  client
                   templateKey
                   date(formatString: "YYYY")
                   featuredproject

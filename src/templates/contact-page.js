@@ -15,11 +15,10 @@ export const ContactPageTemplate = ({
   contactData,
 }) => {
   // const PageContent = contentComponent || Content;
-  console.log(contactData)
   return (
-    <SectionTemplate className="single-page-wrapper minus-navbar">
-      <div className="columns fill-container minus-navbar">
-        <div className="column fill-container minus-navbar">
+    <SectionTemplate className="single-page-wrapper">
+      <div className="columns fill-container">
+        <div className="column fill-container fill-complete-height">
           <div className="is-12 is-flex is-flex-direction-column is-justify-content-flex-end fill-container">
             {/* <HalfPageNavbar /> */}
             {/* date */}

@@ -2,6 +2,11 @@ import create from 'zustand'
 import { immer } from './middleware'
 
 const navigationStore = (state) => ({
+  mobileMenuIsOpen: false,
+  setMobileMenu: (boolean) => {
+    console.log("HAALOSOSOSO", state)
+    state.mobileMenuIsOpen = boolean;
+  },
   navItems: [
     {
       name: 'home',

@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react'
 import { navigate } from 'gatsby'
 import { useBackgroundStore } from './../../stores/BarCodeStore'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
+import useResizeObserver from '@react-hook/resize-observer'
+
 const ProjectTitle = ({ children, isShown }) => {
   return (
     <div className={`project-number-title ${isShown ? 'animate' : ''}`}>
@@ -24,6 +26,7 @@ const ProjectNumber = ({ project, index }) => {
     //setCanvasTransition(project.fields.slug)
   }
 
+
   return (
     <div
       className="project-number-wrapper"
@@ -39,7 +42,7 @@ const ProjectNumber = ({ project, index }) => {
           <div className='horicontal-line'></div> */}
       </div>
       <ProjectTitle isShown={currentHoveredBar === index}>
-        {project.frontmatter.title}
+        {project.frontmatter.client}
       </ProjectTitle>
     </div>
   )
@@ -52,20 +55,36 @@ const BarcodeNumbers = ({ projects, count, currentProjectId }) => {
   const wrappersRef = useRef()
   const numbersRef = useRef()
 
-  const style = {
-    transform:
-      !isMobile && `translateX(${transform ? transform + 'px' : '50%'})`,
-    margin: isMobile ? 'auto' : 0,
-  }
-
-  if (wrappersRef.current && numbersRef.current) {
-    if (!transform && !isMobile) {
-      const inner = numbersRef.current.getBoundingClientRect().width
-      const outer = wrappersRef.current.getBoundingClientRect().width
-      const transform = outer / 2 - inner / 2
-      setTransform(transform)
+  const centerStyleCalc = () => {
+    // recalculating number positioning to center but left aligned when opening
+    if (wrappersRef.current && numbersRef.current) {
+      if (!transform && !isMobile) {
+        const inner = numbersRef.current.getBoundingClientRect().width
+        const outer = wrappersRef.current.getBoundingClientRect().width
+        const newTransform = outer / 2 - inner / 2
+        setTransform(newTransform)
+      }
     }
-  }
+    return {
+    transform:
+    !isMobile && `translateX(${transform ? transform + 'px' : '50%'})`,
+  margin: isMobile ? 'auto' : 0,
+  }}
+
+  const [style, setStyle] = useState(centerStyleCalc())
+
+  // React.useLayoutEffect(() => {
+  //   setStyle
+  // }, [wrappersRef])
+
+  // Where the magic happens
+  useResizeObserver(wrappersRef, (entry) => {
+    setTransform(false)
+    setStyle(centerStyleCalc())})
+
+ 
+
+
   return (
     <div
       ref={wrappersRef}
