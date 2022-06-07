@@ -65,6 +65,7 @@ div::selection
   scrollbar-width: none  /* Firefox */
   -webkit-overflow-scrolling: touch
   height: 100vh
+  height: $dvh
 // RESPONSIVE
 .show-only-desktop
   @include until($desktop)
@@ -95,6 +96,7 @@ canvas
   //cursor: url('/img/pointer_laser.svg') 12 12, move!important
   // height: calc(100vh - #{$navbar-height} - #{$barcode-numbers-height})
   height: 100vh
+  height: $dvh
   width: 100vw
   background: $background
 
@@ -102,6 +104,7 @@ canvas
   position: absolute
   width: 100vw
   height: 100vh
+  height: $dvh
   top: 0
   z-index: 99
   background: $background
@@ -192,6 +195,7 @@ a
 .is-full-height
     margin: auto
     min-height: 100vh
+    min-height: $dvh
     // max-width: 2000px
 
 .fill-container
@@ -208,6 +212,7 @@ a
 .is-full-height
     margin: auto
     min-height: 100vh
+    min-height: $dvh
     // max-width: 2000px
 
 
@@ -221,6 +226,7 @@ a
 .container
     max-width: 100vw
     max-height: 100vh
+    max-height: $dvh
 
 a
     color: $black
@@ -237,10 +243,15 @@ a
 
 .fill-complete-height
   min-height: 100vh
+  min-height: $dvh
   height: 100vh
+  height: $dvh
+
 .minus-navbar
-  min-height: calc( 100vh -  #{$navbar-height})!important
-  height: calc( 100vh -  #{$navbar-height})!important
+  min-height: calc( #{$dvh} -  #{$navbar-height})!important
+  height: calc( #{$dvh} -  #{$navbar-height})!important
+  min-height: calc( #{$dvh} -  #{$navbar-height})!important
+  height: calc( #{$dvh} -  #{$navbar-height})!important
 
 .column, .columns
     padding: 0
@@ -252,6 +263,8 @@ a
 .container
     max-width: 100vw
     max-height: 100vh
+    min-height: $dvh
+
 
 
 .centered
