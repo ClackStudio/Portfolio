@@ -47,7 +47,6 @@ const MobileNavMenu = ({ navItems }) => {
   }, [setMobileMenu])
 
   const handleMenuClick = () => {
-    console.log(mobileMenuIsOpen)
     setMobileMenu(!mobileMenuIsOpen)
   }
 

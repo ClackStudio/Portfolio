@@ -50,10 +50,10 @@ const ProjectIndexPageTemplate = ({ edges }) => {
     <>
       {helmet || ''}
       <Navbar></Navbar>
-      <SectionTemplate className="minus-navbar absolute-under-navbar project-index-wrapper">
+      <SectionTemplate className="minus-navbar project-index-wrapper">
         <div className="columns fill-container">
           <div className="column fill-container">
-            <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container minus-navbar">
+            <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container fill-complete-height">
               {/* <HalfPageNavbar /> */}
               {/* date */}
               <div></div>

@@ -9,6 +9,10 @@ $barcode-numbers-height: 80px
 $navbar-height: 36px
 $navbar-height-important: 36px!important
 
+$standard-transition: all ease-in-out 0.5s
+$fast-transition: all ease-in-out 0.3s
+
+
 $huge-font-size: 4rem
 $mobile-huge-font-size: calc(4rem * 0.8)
 
@@ -20,11 +24,12 @@ $dvh: calc(var(--1dvh, 1vh) * 100)
 
 // crossed lines
 @mixin crossedFontLine()
-  bottom: 43%
+  bottom: 46%
   height: 1px
   position: absolute
   background: $black
   width: 100%
+  box-shadow: 0px 0.35px $black
 
 @mixin breakpoint($point)
   @if $point == desktop

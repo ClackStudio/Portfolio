@@ -74,6 +74,16 @@ div::selection
   @include from($desktop)
     display: none!important
 
+// all italics will be crossed through BE CAREFUL
+crossed
+  position: relative
+  display: inline-flex
+  text-decoration: none
+  font-style: normal
+  &::after
+    content: ""
+    display: block
+    @include crossedFontLine()
 
 canvas
   //cursor: url('/img/pointer_laser.svg') 12 12, move!important
@@ -131,10 +141,14 @@ button, a
   
   margin: 0 $standard-padding
   padding: 0
+  .crossed-line
+    width: 0
+    transition: $fast-transition
   &:focus
     border: none
     box-shadow: none!important
   &:hover,&.active
+    color: $black
     .crossed-line
       @include crossedFontLine
       &.logo
@@ -160,13 +174,13 @@ a
     width: 46px
     left: 39px
     bottom: 46%
-    transition: all ease-in-out 0.3s
+    transition: $fast-transition
   &:hover
     .crossed-line
       width: 90px
       left: -2px
       bottom: 46%
-      transition: all ease-in-out 0.3s
+      transition: $fast-transition
       
 
 .section
@@ -237,6 +251,8 @@ a
     max-height: 100vh
 
 
+.centered
+  padding: 8% 8%
 // Data Lists
 
 .meta-table
@@ -247,7 +263,10 @@ a
       position: relative
     .table-cross-line
       @include crossedFontLine()
+      width: 0%
+      margin: auto
       background: transparent
+      transition: all ease-in-out 0.5s
       
 
     .crossed
@@ -255,6 +274,9 @@ a
       &:hover, &.active
         .table-cross-line
           background: $black
+          width: 100%
+          transition: all ease-in-out 0.5s
+
 
 
 .meta-title
@@ -277,7 +299,7 @@ a
     background: transparent
     color: white
     mix-blend-mode: difference
-    filter: invert(1) grayscale(1) contrast(5) 
+    filter: invert(1) grayscale(1) contrast(1) 
     top:0
     display: flex
     align-items: center
@@ -534,7 +556,7 @@ a.navbar-item
     animation: pulse 2s infinite
 
 video
-  position: absolute
+  // position: absolute
   top: 0
   left: 0
   display: block

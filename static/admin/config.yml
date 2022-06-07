@@ -76,8 +76,8 @@ collections:
               default: "about-page",
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/pages/about/imprint.md"
+          - { label: "Body", name: "body", required: false, widget: "markdown" }
+      - file: "src/pages/imprint/index.md"
         label: "Imprint"
         name: "imprint"
         fields:
@@ -88,7 +88,7 @@ collections:
               default: "about-page",
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Body", name: "body", required: false, widget: "markdown" }
       - file: "src/pages/contact/index.md"
         label: "Contact"
         name: "contact"
@@ -100,7 +100,7 @@ collections:
               default: "contact-page",
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Body", name: "body", required: false, widget: "markdown" }
           - {
               label: Contact Data,
               hint: data rows for contact; e.g. "Phone — 0278 883 948",

@@ -31,52 +31,61 @@ const ServicesListTemplate = ({ services }) => (
   </div>
 )
 
-const FillingVideo = ({ src }) => (
-  <video muted autoPlay loop playsInline>
-    <source type="video/mp4" src={src}></source>
+const FillingVideo = ({ src, centered }) => (
+  <video muted autoPlay loop playsInline style={{objectFit: centered ? 'contain' : 'cover'}}>
+    <source type="video/mp4" src={src} ></source>
   </video>
 )
 
 const Section = ({ data, className }) => {
-  const isHorizontal = data.horizontal
+  const { 
+    src, 
+    secondImage = null,
+    video = null,
+    left = false,
+    horizontal = false, 
+    centered = false,
+    centeredSecond= false,
+    altText = 'portfolio image',
+    altTextSecond = 'another portfolio image'
+    } = data
+
   const firstImage = getImage(data.src) || data.src
-  const isLeft = data.left
-  const secondImage = getImage(data.secondImageSrc) || data.secondImageSrc
-  const videoData = data.video
-  // const heroImage = getImage(image) || image;
+  const secondImageSrc = getImage(data.secondImage) || data.secondImage
+  // console.log("CENTERED", centerd)
   return (
     <SectionTemplate className={className}>
-      {isHorizontal ? (
-        <div className="columns fill-container">
-          <div className="column is-12">
-            {videoData ? (
-              <FillingVideo src={videoData.publicURL}></FillingVideo>
+      {horizontal ? (
+        <div className="columns fill-container horizontal">
+          <div className={`column is-12 ${centered ? 'centered' : ''}`}>
+            {video ? (
+              <FillingVideo src={video.publicURL} altText={altText} centered={centered}></FillingVideo>
             ) : (
-              <BigImage img={firstImage}></BigImage>
+              <BigImage img={firstImage} altText={altText} objectFit={centeredSecond ? 'contain' : 'cover'}></BigImage>
             )}
           </div>
         </div>
       ) : (
         <div className="columns fill-container">
           <div
-            className="column is-6 project-column"
+            className={`column is-6 project-column ${centered && (left || secondImage) ? 'centered' : ''}`}
             style={{ position: 'relative' }}
           >
-            {isLeft && videoData && (
-              <FillingVideo src={videoData.publicURL}></FillingVideo>
+            {left && video && (
+              <FillingVideo src={video.publicURL} altText={altText} centered={centered}></FillingVideo>
             )}
-            {isLeft && !videoData && <BigImage img={firstImage}></BigImage>}
+            {(left || secondImage) && !video && <BigImage img={firstImage} altText={altText} objectFit={centeredSecond ? 'contain' : 'cover'}></BigImage>}
           </div>
           <div
-            className="column is-6 project-column"
+            className={`column is-6 project-column ${((secondImage || video) && centeredSecond) || (!secondImage && centered)  ? 'centered' : 'TEST'}`}
             style={{ position: 'relative' }}
           >
-            {!isLeft && videoData && (
-              <FillingVideo src={videoData.publicURL}></FillingVideo>
+            {!left && video && (
+              <FillingVideo src={video.publicURL} altText={altText} centered={centered}></FillingVideo>
             )}
-            {!isLeft && !videoData && <BigImage img={firstImage}></BigImage>}
-            {secondImage && !videoData && (
-              <BigImage img={secondImage}></BigImage>
+            {!left && !video && !secondImage && <BigImage  altText={altText} img={firstImage} objectFit={centeredSecond  || (!secondImage && centered)  ? 'contain' : 'cover'}></BigImage>}
+            {secondImage && !video && (
+              <BigImage  img={secondImageSrc} altText={altTextSecond}  className="second-image" objectFit={centeredSecond  || (!secondImage && centered)  ? 'contain' : 'cover'}></BigImage>
             )}
           </div>
         </div>
@@ -266,12 +275,15 @@ export const pageQuery = graphql`
           left
           horizontal
           altText
+          altTextSecond
+          centered
+          centeredSecond
           src {
             childImageSharp {
               gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }
           }
-          secondImageSrc {
+          secondImage {
             childImageSharp {
               gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }

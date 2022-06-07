@@ -93,7 +93,7 @@ const CssBar = ({
   // }
   return (
     <div
-      className={`css-bar`}
+      className={`css-bar ${currentHoveredBar === index ? 'open' : ''}`}
       ref={barRef}
       onClick={handleClick}
       onPointerOver={(e) => (e.stopPropagation(), handleHover(index))}
@@ -180,7 +180,7 @@ const CssBarcodeTemplate = ({ data, small, wrapperStyle }) => {
   )
   // home page
   return (
-    <div className="css-barcode-wrapper" style={wrapperStyle} {...bind()}>
+    <div className={`css-barcode-wrapper ${small ? `small` : ``}`} style={wrapperStyle} {...bind()}>
       <div
         className={`css-barcode ${small ? `small` : ``}  ${
           breakpoints.sm && 'mobile-css-barcode'

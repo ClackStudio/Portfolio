@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
 export default function BigImage(props) {
-  const { height = '100%', img, imgPosition = 'center', altText = '' } = props
+  const { height = '100%', img, imgPosition = 'center', altText = '', className = '', objectFit = "cover" } = props
 
   return (
     <React.Fragment>
       <div
-        className="margin-top-0"
+        className={`margin-top-0 ${className}`}
         style={{
           minWidth: '100%',
           minHeight: '100%',
@@ -20,7 +20,7 @@ export default function BigImage(props) {
         {img?.url ? (
           <img
             src={img}
-            objectFit={'cover'}
+            objectFit={objectFit}
             objectPosition={imgPosition}
             style={{
               gridArea: '1/1',
@@ -30,7 +30,7 @@ export default function BigImage(props) {
               width: '100%',
             }}
             // You can optionally force an aspect ratio for the generated image
-            aspectratio={3 / 1}
+            // aspectratio={3 / 1}
             // This is a presentational image, so the alt should be an empty string
             alt={altText}
             formats={['auto', 'webp', 'avif']}
@@ -38,7 +38,7 @@ export default function BigImage(props) {
         ) : (
           <GatsbyImage
             image={img}
-            objectFit={'cover'}
+            objectFit={objectFit}
             objectPosition={imgPosition}
             style={{
               gridArea: '1/1',
@@ -48,7 +48,7 @@ export default function BigImage(props) {
             }}
             layout="fullWidth"
             // You can optionally force an aspect ratio for the generated image
-            aspectratio={3 / 1}
+            // aspectratio={3 / 1}
             // This is a presentational image, so the alt should be an empty string
             alt={altText ? altText : ''}
             formats={['auto', 'webp', 'avif']}
@@ -60,6 +60,7 @@ export default function BigImage(props) {
 }
 
 BigImage.propTypes = {
+  objectFit: PropTypes.string,
   img: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   height: PropTypes.number,
   altText: PropTypes.string,

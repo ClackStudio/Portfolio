@@ -47,8 +47,8 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
     padding-left: 0px!important
     padding-right: 0px!important
 
-.mobile-css-barcode
-    min-height: $barcode-height!important
+// .mobile-css-barcode
+//     min-height: $barcode-height!important
 
 
 .mobile-scroll-container
@@ -58,6 +58,13 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
         min-height: $dvh
         height: auto
 
+.centered
+  @include breakpoint(mobile-only)
+    padding: 0
+.horizontal
+  @include breakpoint(mobile-only)
+    display: flex
+    
 .meta-table
     @include breakpoint(mobile-only)
         margin-top: auto
@@ -115,3 +122,7 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
   @include breakpoint(mobile-only)
     display: flex
     flex-direction: column
+
+.minus-navbar
+  @include breakpoint(mobile-only)
+    height: $dvh!important

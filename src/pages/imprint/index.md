@@ -1,5 +1,5 @@
 ---
-templateKey: 'about-page'
+templateKey: about-page
 path: /about
 title: About our values
 ---
@@ -14,9 +14,13 @@ Inhaltliche Verantwortung
 Die inhaltliche Verantwortung für den Internetauftritt
 wird wahrgenommen von XXXXXX
 <br/><br/>
-Kontakt
+<crossed>Theo</crossed> was here
 
 +49 XXXX XXXXX
 XXXXXXXX
 <br/><br/>
-A website by [Zweihundertkilo](https://www.200kilo.com)
+
+
+Website: [Zweihundertkilo](https://www.200kilo.com)
+
+Typeface: Diatype, [abcdinamo](https://abcdinamo.com/)

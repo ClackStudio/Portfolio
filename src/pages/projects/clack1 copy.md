@@ -1,12 +1,9 @@
 ---
 templateKey: project-post
-title: labience logo campaign
+title: logo campaign
 date: 2016-12-17T15:04:10.000Z
 featuredproject: true
 featuredimage: /img/labience_logo.jpg
-additionalData:
-  - title: date
-    data: "2022"
 tags:
   - 3d animation
   - art direction

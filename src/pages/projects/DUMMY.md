@@ -14,10 +14,29 @@ section:
     altText: dummy
     horizontal: true
     left: true
-    secondImageSrc: /img/2022-03-02-15.53.55-kopie.jpg
-    altTextSecond: dummy
+  - src: /img/2022-03-02-15.53.55-kopie.jpg
+    altText: dummy
+    secondImage: /img/2022-03-02-15.53.55-kopie.jpg
   - video: /img/video/RebookVideo_RF37.mp4
     altText: dummyVideo
+    horizontal: false
+    left: false
+  - src: /img//labience_logo.jpg
+    altText: dummy
+    centered: true
+    horizontal: true
+    altTextSecond: dummy
+  - src: /img/2022-03-02-15.53.55-kopie.jpg
+    altText: dummy
+    centered: true
+  - src: /img/2022-03-02-15.53.55-kopie.jpg
+    altText: dummy
+    centered: true
+    centeredSecond: true
+    secondImage: /img/2022-03-02-15.53.55-kopie.jpg
+  - video: /img/video/RebookVideo_RF37.mp4
+    altText: dummyVideo
+    centered: true
     horizontal: false
     left: false
 tags:
