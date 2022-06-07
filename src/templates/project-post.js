@@ -54,38 +54,43 @@ const Section = ({ data, className }) => {
   const secondImageSrc = getImage(data.secondImage) || data.secondImage
   // console.log("CENTERED", centerd)
   return (
-    <SectionTemplate className={className}>
+    <SectionTemplate className={`${className} ${(secondImage || left) && !horizontal ? 'mobile-flip-section' : ''}`}>
       {horizontal ? (
         <div className="columns fill-container horizontal">
           <div className={`column is-12 ${centered ? 'centered' : ''}`}>
             {video ? (
               <FillingVideo src={video.publicURL} altText={altText} centered={centered}></FillingVideo>
             ) : (
-              <BigImage img={firstImage} altText={altText} objectFit={centeredSecond ? 'contain' : 'cover'}></BigImage>
+              <BigImage className="project-picture" img={firstImage} altText={altText} objectFit={centeredSecond ? 'contain' : 'cover'}></BigImage>
             )}
           </div>
         </div>
       ) : (
         <div className="columns fill-container">
           <div
-            className={`column is-6 project-column ${centered && (left || secondImage) ? 'centered' : ''}`}
+            className={`column is-6 project-column 
+            ${centered && (left || secondImage) ? 'centered' : ''}
+            ${!left && !secondImage ? `hide-column-mobile` : 'not-hidden?'}
+            `}
             style={{ position: 'relative' }}
           >
             {left && video && (
               <FillingVideo src={video.publicURL} altText={altText} centered={centered}></FillingVideo>
             )}
-            {(left || secondImage) && !video && <BigImage img={firstImage} altText={altText} objectFit={centeredSecond ? 'contain' : 'cover'}></BigImage>}
+            {(left || secondImage) && !video && <BigImage className="project-picture" img={firstImage} altText={altText} objectFit={centeredSecond ? 'contain' : 'cover'}></BigImage>}
           </div>
           <div
-            className={`column is-6 project-column ${((secondImage || video) && centeredSecond) || (!secondImage && centered)  ? 'centered' : 'TEST'}`}
+            className={`column is-6 project-column 
+            ${left && !video && !secondImage ? `hide-column-mobile` : 'not-hidden?'}
+            ${((secondImage || video) && centeredSecond) || (!secondImage && centered)  ? 'centered' : ''}`}
             style={{ position: 'relative' }}
           >
             {!left && video && (
               <FillingVideo src={video.publicURL} altText={altText} centered={centered}></FillingVideo>
             )}
-            {!left && !video && !secondImage && <BigImage  altText={altText} img={firstImage} objectFit={centeredSecond  || (!secondImage && centered)  ? 'contain' : 'cover'}></BigImage>}
+            {!left && !video && !secondImage && <BigImage className="project-picture" altText={altText} img={firstImage} objectFit={centeredSecond  || (!secondImage && centered)  ? 'contain' : 'cover'}></BigImage>}
             {secondImage && !video && (
-              <BigImage  img={secondImageSrc} altText={altTextSecond}  className="second-image" objectFit={centeredSecond  || (!secondImage && centered)  ? 'contain' : 'cover'}></BigImage>
+              <BigImage  img={secondImageSrc} altText={altTextSecond}  className="second-image project-picture" objectFit={centeredSecond  || (!secondImage && centered)  ? 'contain' : 'cover'}></BigImage>
             )}
           </div>
         </div>

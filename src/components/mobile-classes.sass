@@ -20,7 +20,7 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
       display: none
       width: 100vw
       background: $background
-      height: calc( 100vh - #{$navbar-height} )
+      height: calc( #{$dvh} - #{$navbar-height} )
       position: fixed
       top: calc(#{$navbar-height}  - 1px )
       left: 0
@@ -76,7 +76,7 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
 
 .project-column
     @include breakpoint(mobile-only)
-        display: contents
+        display: block
         min-height: $dvh
         width: 100%
 
@@ -126,3 +126,47 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
 .minus-navbar
   @include breakpoint(mobile-only)
     height: $dvh!important
+
+
+.mobile-flip-section
+  @include breakpoint(mobile-only)
+    .columns::-webkit-scrollbar
+        display: none
+    .columns
+      overflow-y: hidden
+      overflow-x: scroll
+      scroll-snap-type: x mandatory
+      -ms-overflow-style: none  /* IE and Edge */
+      scrollbar-width: none  /* Firefox */
+      -webkit-overflow-scrolling: touch
+      display: flex
+      flex-direction: row
+      .column
+        min-width: 100vw
+        scroll-snap-align: start
+
+
+.project-column
+  @include breakpoint(mobile-only)
+    display: flex
+    justify-content: center
+    align-items: center
+    .project-picture
+      min-height: $dvh!important
+
+.last-section-nav
+  @include breakpoint(mobile-only)
+    .project-navigation
+      z-index: 1
+      background: $background
+ 
+.centered
+  @include breakpoint(mobile-only)
+    padding: 0
+    img
+      object-fit: cover!important
+
+
+.hide-column-mobile
+  @include breakpoint(mobile-only)
+    display: none
