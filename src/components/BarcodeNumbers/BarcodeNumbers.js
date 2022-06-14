@@ -12,27 +12,40 @@ const ProjectTitle = ({ children, isShown }) => {
   )
 }
 
-const ProjectNumber = ({ project, index }) => {
+const ProjectNumber = ({ project, index, isMobile }) => {
   const { currentHoveredBar, setCurrentHoveredBar } = useBackgroundStore()
+  const [wasClicked, setClicked] = useState(false)
   const isHovered = index === currentHoveredBar
-  const handleMouseEnter = () => {
+  const handlePointerEnter = () => {
     setCurrentHoveredBar(index)
   }
-  const handleMouseLeave = () => {
-    setCurrentHoveredBar(null)
+  const handlePointerLeave = () => {
+    if (!isMobile) setCurrentHoveredBar(null)
   }
   const goToProject = () => {
     navigate(project.fields.slug)
     //setCanvasTransition(project.fields.slug)
   }
 
+  React.useEffect(() => {
+    setClicked(false)
+  }, [currentHoveredBar])
+
+  const handlePointerDown = () => {
+    if (!isMobile || (isMobile && wasClicked)) {
+      goToProject()
+    } else {
+      handlePointerEnter(index)
+      setClicked(true)
+    }
+  }
 
   return (
     <div
       className="project-number-wrapper"
-      onClick={goToProject}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onPointerDown={handlePointerDown}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
     >
       <div
         className={`project-number ${isHovered && 'project-number-bar-hover'}`}
@@ -51,40 +64,33 @@ const ProjectNumber = ({ project, index }) => {
 const BarcodeNumbers = ({ projects, count, currentProjectId }) => {
   const breakpoints = useBreakpoint()
   const isMobile = breakpoints.sm
-  const [transform, setTransform] = useState(false)
   const wrappersRef = useRef()
   const numbersRef = useRef()
 
   const centerStyleCalc = () => {
     // recalculating number positioning to center but left aligned when opening
+    let newTransform = '50%'
     if (wrappersRef.current && numbersRef.current) {
-      if (!transform && !isMobile) {
+      if (!isMobile) {
         const inner = numbersRef.current.getBoundingClientRect().width
         const outer = wrappersRef.current.getBoundingClientRect().width
-        const newTransform = outer / 2 - inner / 2
-        setTransform(newTransform)
+        newTransform = outer / 2 - inner / 2 + `px`
       }
     }
+
     return {
-    transform:
-    !isMobile && `translateX(${transform ? transform + 'px' : '50%'})`,
-  margin: isMobile ? 'auto' : 0,
+    transform: !isMobile && `translateX(${newTransform})`,
+    margin: isMobile ? 'auto' : 0,
   }}
 
   const [style, setStyle] = useState(centerStyleCalc())
 
-  // React.useLayoutEffect(() => {
-  //   setStyle
-  // }, [wrappersRef])
-
   // Where the magic happens
   useResizeObserver(wrappersRef, (entry) => {
-    setTransform(false)
-    setStyle(centerStyleCalc())})
+    setStyle(centerStyleCalc())
+  })
 
  
-
-
   return (
     <div
       ref={wrappersRef}
@@ -102,6 +108,7 @@ const BarcodeNumbers = ({ projects, count, currentProjectId }) => {
             project={node}
             index={index}
             key={`barNum_` + node.id}
+            isMobile={isMobile}
           ></ProjectNumber>
         ))}
       </div>

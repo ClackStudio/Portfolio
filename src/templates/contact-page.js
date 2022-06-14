@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import { TableLayout, TableRowComponent } from '../components/TableComponent'
 import SectionTemplate from '../components/SectionTemplate'
+import Seo from '../components/Seo'
 
 // eslint-disable-next-line
 export const ContactPageTemplate = ({
@@ -17,12 +18,11 @@ export const ContactPageTemplate = ({
   // const PageContent = contentComponent || Content;
   return (
     <SectionTemplate className="single-page-wrapper">
+      <Seo></Seo>
       <div className="columns fill-container">
         <div className="column fill-container fill-complete-height">
-          <div className="is-12 is-flex is-flex-direction-column is-justify-content-flex-end fill-container">
-            {/* <HalfPageNavbar /> */}
-            {/* date */}
-            <div className="column is-flex is-6 fill-container">
+          <div className="is-12 is-flex is-flex-direction-column is-justify-content-flex-end fill-container bigger-font">
+            <div className="column is-flex is-12 fill-container">
               <TableLayout>
                 {contactData &&
                   contactData.map(({ title, data }, index) => (

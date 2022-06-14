@@ -1,10 +1,20 @@
 module.exports = {
   siteMetadata: {
-    title: 'clack studio',
-    description: 'clack studio',
+    title: `clack studio`,
+    siteUrl: `https://www.clackstudio.com`,
+    description: 'creative studio based in berlin',
+    image: "/og-image.jpg", // Path to the image placed in the 'static' folder, in the project's root directory.
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        background_color: `#663399`,
+        theme_color: `#fff`,
+        icon: 'src/img/favicon.svg',
+      },
+    },
     {
       resolve: 'gatsby-plugin-sass',
       options: {

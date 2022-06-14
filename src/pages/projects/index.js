@@ -8,24 +8,10 @@ import { graphql, StaticQuery, navigate } from 'gatsby'
 import '../../components/all.sass'
 import { useBackgroundStore } from '../../stores/BarCodeStore'
 import CssBarcode from '../../components/CssBarcode/CssBarcode'
+import Seo from '../../components/Seo'
 
 const ProjectIndexPageTemplate = ({ edges }) => {
   const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore()
-  // const counter = useRef(0)
-  // const haltInterval = useRef(false)
-
-  // const [sideImage, setSideImage] = useState(getImage(edges[6].node.frontmatter.featuredimage) || edges[6].node.frontmatter.featuredimage);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-
-  //     if (counter.current < totalCount - 1) counter.current++
-  //     else counter.current = 0
-
-  //     if (!haltInterval.current) setSideImage(getImage(edges[counter.current].node.frontmatter.featuredimage) || edges[counter.current].node.frontmatter.featuredimage)
-  //   }, 2500);
-  //   return () => clearInterval(interval);
-  // }, []);
 
   const onMouseEnter = (index) => {
     if (currentHoveredBar !== index) {
@@ -48,7 +34,7 @@ const ProjectIndexPageTemplate = ({ edges }) => {
 
   return (
     <>
-      {helmet || ''}
+      <Seo></Seo>
       <Navbar></Navbar>
       <SectionTemplate className="minus-navbar project-index-wrapper">
         <div className="columns fill-container">

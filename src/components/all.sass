@@ -33,6 +33,12 @@ html, body
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none  /* IE and Edge */
   scrollbar-width: none  /* Firefox */
+  @include breakpoint(desktop)
+    font-size: 1.1rem
+    crossed
+      &::after
+        height: 2px
+        box-shadow: 0px 0px $black
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 html::-webkit-scrollbar, .scroll-container::-webkit-scrollbar
@@ -131,14 +137,13 @@ canvas
   width: 200px
 
 p
-  max-width: 600px
+  max-width: 550px
 
 
 button, a
   // cursor: $cursor
   // cursor: url('/img/arrow.svg') 0 0, move!important
   cursor: pointer
-  font-size: 1rem
   color: $black
   &:focus
     color: $black!important
@@ -181,12 +186,18 @@ a
     left: 39px
     bottom: 46%
     transition: $fast-transition
+    @include breakpoint(desktop)
+        left: 48px
+        width: 53px
   &:hover
     .crossed-line
       width: 90px
       left: -2px
       bottom: 46%
       transition: $fast-transition
+      @include breakpoint(desktop)
+        left: -2px
+        width: 105px
       
 
 .section
@@ -235,6 +246,7 @@ a
 
 .meta-table
     padding: $standard-padding
+    width: 100%
 
 .meta-title
     color: $dark-gray
@@ -268,7 +280,7 @@ a
 
 
 .centered
-  padding: 8% 8%
+  padding: 4% 4%
 // Data Lists
 
 .meta-table
@@ -330,6 +342,9 @@ a
   // background: $background
   background: transparent
   display: flex
+  margin-top: 4px
+  @include breakpoint(desktop)
+    margin-top: 0
 
 .navbar-item
   // margin-right: 20px
@@ -363,6 +378,7 @@ a
 
 .barcode-numbers-wrapper
   // position: absolute
+  margin-top: auto
   bottom: 0
   width: 100%
   min-width: 100%
@@ -579,5 +595,16 @@ video
   width: 100%
   height: 100%
   object-fit: cover
+
+
+.bigger-font
+  @include breakpoint(laptop)
+    font-size: 1.5rem
+    a
+      font-size: 1.5rem
+    crossed
+      &::after
+        height: 2px
+        box-shadow: 0px 0.25px $black
 
 @import 'mobile-classes.sass'

@@ -13,6 +13,7 @@ import { TableLayout, TableRowComponent } from '../components/TableComponent'
 import SectionTemplate from '../components/SectionTemplate'
 import './styles.sass'
 import { useBackgroundStore } from '../stores/BarCodeStore'
+import Seo from '../components/Seo'
 
 const ServicesListTemplate = ({ services }) => (
   <div className="columns">
@@ -44,8 +45,10 @@ const Section = ({ data, className }) => {
     video = null,
     left = false,
     horizontal = false, 
-    centered = false,
+    centeredFirst = false,
+    centeredFirstMobile = false,
     centeredSecond= false,
+    centeredSecondMobile= false,
     altText = 'portfolio image',
     altTextSecond = 'another portfolio image'
     } = data
@@ -57,9 +60,9 @@ const Section = ({ data, className }) => {
     <SectionTemplate className={`${className} ${(secondImage || left) && !horizontal ? 'mobile-flip-section' : ''}`}>
       {horizontal ? (
         <div className="columns fill-container horizontal">
-          <div className={`column is-12 ${centered ? 'centered' : ''}`}>
+          <div className={`column is-12 ${centeredFirstMobile ? 'centered-mobile' : ''} ${centeredFirst ? 'centered' : ''}`}>
             {video ? (
-              <FillingVideo src={video.publicURL} altText={altText} centered={centered}></FillingVideo>
+              <FillingVideo src={video.publicURL} altText={altText} centered={centeredFirst}></FillingVideo>
             ) : (
               <BigImage className="project-picture" img={firstImage} altText={altText} objectFit={centeredSecond ? 'contain' : 'cover'}></BigImage>
             )}
@@ -69,28 +72,31 @@ const Section = ({ data, className }) => {
         <div className="columns fill-container">
           <div
             className={`column is-6 project-column 
-            ${centered && (left || secondImage) ? 'centered' : ''}
+            ${centeredFirstMobile && (left || secondImage) ? 'centered-mobile' : ''}
+            ${centeredFirst && (left || secondImage) ? 'centered' : ''}
             ${!left && !secondImage ? `hide-column-mobile` : 'not-hidden?'}
             `}
             style={{ position: 'relative' }}
           >
             {left && video && (
-              <FillingVideo src={video.publicURL} altText={altText} centered={centered}></FillingVideo>
+              <FillingVideo src={video.publicURL} altText={altText} centered={centeredFirst}></FillingVideo>
             )}
             {(left || secondImage) && !video && <BigImage className="project-picture" img={firstImage} altText={altText} objectFit={centeredSecond ? 'contain' : 'cover'}></BigImage>}
           </div>
           <div
             className={`column is-6 project-column 
             ${left && !video && !secondImage ? `hide-column-mobile` : 'not-hidden?'}
-            ${((secondImage || video) && centeredSecond) || (!secondImage && centered)  ? 'centered' : ''}`}
+            ${((secondImage || video) && centeredSecond) || (!secondImage && centeredFirst)  ? 'centered' : ''}
+            ${((secondImage || video) && centeredSecondMobile) || (!secondImage && centeredFirstMobile)  ? 'centered-mobile' : ''}
+            `}
             style={{ position: 'relative' }}
           >
             {!left && video && (
-              <FillingVideo src={video.publicURL} altText={altText} centered={centered}></FillingVideo>
+              <FillingVideo src={video.publicURL} altText={altText} centered={centeredFirst}></FillingVideo>
             )}
-            {!left && !video && !secondImage && <BigImage className="project-picture" altText={altText} img={firstImage} objectFit={centeredSecond  || (!secondImage && centered)  ? 'contain' : 'cover'}></BigImage>}
+            {!left && !video && !secondImage && <BigImage className="project-picture" altText={altText} img={firstImage} objectFit={centeredSecond  || (!secondImage && centeredFirst)  ? 'contain' : 'cover'}></BigImage>}
             {secondImage && !video && (
-              <BigImage  img={secondImageSrc} altText={altTextSecond}  className="second-image project-picture" objectFit={centeredSecond  || (!secondImage && centered)  ? 'contain' : 'cover'}></BigImage>
+              <BigImage  img={secondImageSrc} altText={altTextSecond}  className="second-image project-picture" objectFit={centeredSecond  || (!secondImage && centeredFirst)  ? 'contain' : 'cover'}></BigImage>
             )}
           </div>
         </div>
@@ -136,7 +142,7 @@ export const ProjectPostTemplate = ({
         isMobile && 'mobile-scroll-container'
       }`}
     >
-      {helmet || ''}
+      <Seo description={`${client} ${title} ${date}`} featuredImage={firstImage}></Seo>
       <SectionTemplate
         innerClassName=" first-section"
         placeOnTop={<Navbar></Navbar>}
@@ -281,8 +287,10 @@ export const pageQuery = graphql`
           horizontal
           altText
           altTextSecond
-          centered
+          centeredFirst
+          centeredFirstMobile
           centeredSecond
+          centeredSecondMobile
           src {
             childImageSharp {
               gatsbyImageData(quality: 100, layout: FULL_WIDTH)

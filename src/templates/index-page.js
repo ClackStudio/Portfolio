@@ -13,6 +13,7 @@ import {
   useChain,
 } from 'react-spring'
 import '../components/all.sass'
+import Seo from '../components/Seo'
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({}) => {
@@ -40,6 +41,7 @@ export const IndexPageTemplate = ({}) => {
 
   return (
     <div>
+      <Seo></Seo>
       {transitions(({ opacity }, item) =>
         item ? (
           <animated.div

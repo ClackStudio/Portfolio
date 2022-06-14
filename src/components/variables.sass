@@ -30,6 +30,10 @@ $dvh: calc(var(--1dvh, 1vh) * 100)
   background: $black
   width: 100%
   box-shadow: 0px 0.35px $black
+  @include breakpoint(desktop)
+    height: 2px
+    box-shadow: none
+
 
 @mixin breakpoint($point)
   @if $point == desktop

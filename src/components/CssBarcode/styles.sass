@@ -8,9 +8,14 @@ $mobile-bottom-space: 30px
 $barcode-height: calc(#{$dvh} - #{$standard-padding} * 2 - #{$navbar-height} - #{$barcode-numbers-height})
 $barcode-height-minus-bottom: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - #{$navbar-height} -  #{$barcode-numbers-height})
 
+// different blurs to prevent flickering on different devices    
+$d-blur: .5px
+$m-blur: .0px
+
 .css-barcode-wrapper
     display: flex
     position: absolute
+    overflow: hidden
     top: $navbar-height
     flex-direction: column
     width: 100%
@@ -60,23 +65,23 @@ $barcode-height-minus-bottom: calc(#{$dvh} - #{$bottom-space} - #{$standard-padd
             &.black
                 //transform: scaleX(1.2)
                 background: $black
-                box-shadow: 2px 0px 1px -1px $black, -2px 0px 1px -1px $black
+                box-shadow: 2px 0px $d-blur -1px $black, -2px 0px $d-blur -1px $black
                 @include breakpoint(mobile-only)
-                    box-shadow: 0px 2px 1px -1px $black, 0px -2px 1px -1px $black
+                    box-shadow: 0px 2px $m-blur -1px $black, 0px -2px $m-blur -1px $black
         // remove white edge lines
         &.open
 
             div:last-child
-                box-shadow: 2px 0px 1px -1px rgba(0,0,0,0)
+                box-shadow: 2px 0px $d-blur -1px rgba(0,0,0,0)
                 @include breakpoint(mobile-only)
-                    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0)
+                    box-shadow: 0px 2px $m-blur -1px rgba(0,0,0,0)
             div:nth-child(2)
-                box-shadow: -2px 0px 1px -1px rgba(0,0,0,0)
+                box-shadow: -2px 0px $d-blur -1px rgba(0,0,0,0)
                 @include breakpoint(mobile-only)
-                    box-shadow: 0px -2px 1px -1px rgba(0,0,0,0)
+                    box-shadow: 0px -2px $m-blur -1px rgba(0,0,0,0)
             div
                 @include breakpoint(mobile-only)
-                    box-shadow: inset 0px 0px 0px 2px #FFFFFF
+                    box-shadow: inset 0px 0px $m-blur 2px #FFFFFF
         .css-bar-picture
             z-index: 1
             position: absolute

@@ -52,11 +52,19 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
 
 
 .mobile-scroll-container
+  @include breakpoint(mobile-only)
+    position: fixed
+    top: 0
+    left: 0
+    height: $dvh
+    width: 100vw
     // scroll-snap-type: none
 
     .fill-container
         min-height: $dvh
         height: auto
+        // this is really important to prevent flickering on IOs
+        overflow: auto
 
 .centered
   @include breakpoint(mobile-only)
@@ -165,6 +173,12 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
     padding: 0
     img
       object-fit: cover!important
+
+.centered-mobile
+  @include breakpoint(mobile-only)
+    padding: calc(#{$standard-padding} * 3 )
+    img
+      object-fit: contain!important
 
 
 .hide-column-mobile

@@ -21,22 +21,25 @@ section:
     altText: dummyVideo
     horizontal: false
     left: false
-  - src: /img//labience_logo.jpg
+  - src: /img/labience_logo.jpg
     altText: dummy
-    centered: true
+    centeredFirst: true
+    centeredFirstMobile: true
     horizontal: true
     altTextSecond: dummy
   - src: /img/2022-03-02-15.53.55-kopie.jpg
     altText: dummy
-    centered: true
+    centeredFirst: true
   - src: /img/2022-03-02-15.53.55-kopie.jpg
     altText: dummy
-    centered: true
+    centeredFirst: true
+    centeredFirstMobile: true
+    centeredSecondMobile: true
     centeredSecond: true
     secondImage: /img/2022-03-02-15.53.55-kopie.jpg
   - video: /img/video/RebookVideo_RF37.mp4
     altText: dummyVideo
-    centered: true
+    centeredFirst: true
     horizontal: false
     left: false
 tags:

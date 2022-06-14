@@ -21,7 +21,7 @@ const NavbarLogo = () => {
 }
 
 const DesktopNavMenu = ({ navItems, halfpage }) => (
-  <div id="navMenu" className={`navbar-menu`} style={{ marginTop: '-4px' }}>
+  <div id="navMenu" className={`navbar-menu`}>
     {navItems
       .filter((item) => (halfpage ? item.shownInProjects : item.shownOnHome))
       .map((item, index) => (
@@ -54,7 +54,6 @@ const MobileNavMenu = ({ navItems }) => {
     <div
       id="navMenu"
       className={`navbar-menu mobile-navbar-menu `}
-      style={{ marginTop: '-4px' }}
     >
       <div className="navbar-item navbar-start has-text-centered">
         <CrossButton onClick={handleMenuClick}> menu </CrossButton>
