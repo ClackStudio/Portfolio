@@ -135,74 +135,76 @@ export const ProjectPostTemplate = ({
   }, [])
 
   return (
-    <div
-      ref={projectRef}
-      style={{ touchAction: 'pan-y' }}
-      className={`scroll-container ${
-        isMobile && 'mobile-scroll-container'
-      }`}
-    >
-      <Seo description={`${client} ${title} ${date}`} featuredImage={firstImage}></Seo>
+    <>
       <Navbar></Navbar>
-      <SectionTemplate
-        innerClassName=" first-section"
+      <div
+        ref={projectRef}
+        style={{ touchAction: 'pan-y' }}
+        className={`scroll-container ${
+          isMobile && 'mobile-scroll-container'
+        }`}
       >
-        <div className="columns fill-container">
-          <div className="column fill-container project-info-wrapper">
-            <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container is-postion-relative project-info">
-              <div></div>
-              <ScrollArrow />
-              <TableLayout>
-                <TableRowComponent leftData={'client'} rightData={client} />
-                <TableRowComponent leftData={'project'} rightData={title} />
-                {additionalData &&
-                  additionalData.map(({ title, data }, index) => (
-                    <TableRowComponent
-                      leftData={title}
-                      rightData={data}
-                      key={`key_add_data_${index}`}
-                    />
-                  ))}
-                <TableRowComponent leftData={'date'} rightData={date} />
-                {!isMobile && (<ServicesListTemplate services={tags} />)}
-                {/* <TitleTemplate title={title} className={'pt-5'} ></TitleTemplate> */}
-              </TableLayout>
+        <Seo description={`${client} ${title} ${date}`} featuredImage={firstImage}></Seo>
+        <SectionTemplate
+          innerClassName=" first-section"
+        >
+          <div className="columns fill-container project-info-wrapper">
+            <div className="column fill-container ">
+              <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container is-postion-relative project-info">
+                <div></div>
+                <ScrollArrow />
+                <TableLayout>
+                  <TableRowComponent leftData={'client'} rightData={client} />
+                  <TableRowComponent leftData={'project'} rightData={title} />
+                  {additionalData &&
+                    additionalData.map(({ title, data }, index) => (
+                      <TableRowComponent
+                        leftData={title}
+                        rightData={data}
+                        key={`key_add_data_${index}`}
+                      />
+                    ))}
+                  <TableRowComponent leftData={'date'} rightData={date} />
+                  {!isMobile && (<ServicesListTemplate services={tags} />)}
+                  {/* <TitleTemplate title={title} className={'pt-5'} ></TitleTemplate> */}
+                </TableLayout>
+              </div>
+            </div>
+
+            {/* <PostContent content={content} /> */}
+          </div>
+          <div className="column is-6 fill-container project-first-image">
+            <BigImage img={firstImage}></BigImage>
+          </div>
+        </SectionTemplate>
+
+        {sections && sections.length
+          ? sections.map((section, index) => (
+              <Section data={section} key={`section_${index}`}></Section>
+            ))
+          : null}
+
+        {/* FINAL SECTION */}
+        <SectionTemplate>
+          <div className="columns fill-container mobile-flex-column">
+            <div className="column is-6 fill-container last-section">
+              <BigImage img={lastSectionImage}></BigImage>
+            </div>
+            <div className="column is-6 is-flex is-flex-direction-column fill-container last-section-nav">
+              <div
+                className="is-flex is-justify-content-space-between is-flex-direction-column"
+                style={{ height: '100%' }}
+              >
+                <TableLayout>
+                  <PostContent content={content} />
+                </TableLayout>
+                <ProjectNavigation ref={projectRef} currentProjectId={id} />
+              </div>
             </div>
           </div>
-
-          {/* <PostContent content={content} /> */}
-        </div>
-        <div className="column is-6 fill-container project-first-image">
-          <BigImage img={firstImage}></BigImage>
-        </div>
-      </SectionTemplate>
-
-      {sections && sections.length
-        ? sections.map((section, index) => (
-            <Section data={section} key={`section_${index}`}></Section>
-          ))
-        : null}
-
-      {/* FINAL SECTION */}
-      <SectionTemplate>
-        <div className="columns fill-container mobile-flex-column">
-          <div className="column is-6 fill-container last-section">
-            <BigImage img={lastSectionImage}></BigImage>
-          </div>
-          <div className="column is-6 is-flex is-flex-direction-column fill-container last-section-nav">
-            <div
-              className="is-flex is-justify-content-space-between is-flex-direction-column"
-              style={{ height: '100%' }}
-            >
-              <TableLayout>
-                <PostContent content={content} />
-              </TableLayout>
-              <ProjectNavigation ref={projectRef} currentProjectId={id} />
-            </div>
-          </div>
-        </div>
-      </SectionTemplate>
-    </div>
+        </SectionTemplate>
+      </div>
+    </>
   )
 }
 
