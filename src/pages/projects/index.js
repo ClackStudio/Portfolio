@@ -9,12 +9,15 @@ import '../../components/all.sass'
 import { useBackgroundStore } from '../../stores/BarCodeStore'
 import CssBarcode from '../../components/CssBarcode/CssBarcode'
 import Seo from '../../components/Seo'
+import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 
 const ProjectIndexPageTemplate = ({ edges }) => {
   const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore()
+  const breakpoints = useBreakpoint()
+  const isMobile = breakpoints.sm
 
   const onMouseEnter = (index) => {
-    if (currentHoveredBar !== index) {
+    if (currentHoveredBar !== index && !isMobile) {
       setCurrentHoveredBar(index)
     }
     // haltInterval.current = true
@@ -22,7 +25,7 @@ const ProjectIndexPageTemplate = ({ edges }) => {
   }
 
   const onMouseLeave = () => {
-    if (currentHoveredBar !== null) {
+    if (currentHoveredBar !== null && !isMobile) {
       setCurrentHoveredBar(null)
     }
     // haltInterval.current = false

@@ -143,12 +143,12 @@ export const ProjectPostTemplate = ({
       }`}
     >
       <Seo description={`${client} ${title} ${date}`} featuredImage={firstImage}></Seo>
+      <Navbar></Navbar>
       <SectionTemplate
         innerClassName=" first-section"
-        placeOnTop={<Navbar></Navbar>}
       >
         <div className="columns fill-container">
-          <div className="column fill-container">
+          <div className="column fill-container project-info-wrapper">
             <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container is-postion-relative project-info">
               <div></div>
               <ScrollArrow />

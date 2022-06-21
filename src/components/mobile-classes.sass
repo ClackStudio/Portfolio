@@ -81,6 +81,9 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
         z-index: 1
         .columns
             display: flex
+        .table-cross-line
+          width: 0%!important
+          background: transparent!important
 
 .project-column
     @include breakpoint(mobile-only)
@@ -91,6 +94,8 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
 .first-section
     @include breakpoint(mobile-only)
         // margin-top: $navbar-height
+        .project-info-wrapper
+          z-index: 2
         .project-info
             position: absolute
             min-height: auto
