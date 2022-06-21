@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import Navbar from '../components/Navbar'
-import ProjectNavigation from '../components/ProjectNavigation'
+import NewProjectNavigation from '../components/NewProjectNavigation'
 import BigImage from '../components/BigImage'
 import ScrollArrow from '../components/ScrollArrow'
 import Content, { HTMLContent } from '../components/Content'
@@ -198,7 +198,7 @@ export const ProjectPostTemplate = ({
                 <TableLayout>
                   <PostContent content={content} />
                 </TableLayout>
-                <ProjectNavigation ref={projectRef} currentProjectId={id} />
+                <NewProjectNavigation ref={projectRef} currentProjectId={id} />
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ import { useBackgroundStore } from './../../stores/BarCodeStore'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import useResizeObserver from '@react-hook/resize-observer'
 
-const ProjectTitle = ({ children, isShown }) => {
+export const ProjectTitle = ({ children, isShown }) => {
   return (
     <div className={`project-number-title ${isShown ? 'animate' : ''}`}>
       {children}
@@ -12,7 +12,7 @@ const ProjectTitle = ({ children, isShown }) => {
   )
 }
 
-const ProjectNumber = ({ project, index, isMobile }) => {
+export const ProjectNumber = ({ project, index, isMobile }) => {
   const { currentHoveredBar, setCurrentHoveredBar } = useBackgroundStore()
   const [wasClicked, setClicked] = useState(false)
   const isHovered = index === currentHoveredBar

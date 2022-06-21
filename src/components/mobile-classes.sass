@@ -79,11 +79,16 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
         width: 100%
         background: $background
         z-index: 1
+        .table-cross-line
+          background: transparent!important
+        
         .columns
             display: flex
-        .table-cross-line
-          width: 0%!important
-          background: transparent!important
+            &:active
+              .table-cross-line
+                background: $black!important
+
+
 
 .project-column
     @include breakpoint(mobile-only)
