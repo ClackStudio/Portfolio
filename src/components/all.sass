@@ -461,6 +461,12 @@ a
   padding: 0
   flex: 0
   width: 0px
+  margin-bottom: 0px
+  @include breakpoint(desktop)
+    font-size: 1.1rem
+  @include breakpoint(mobile-only)
+    margin-bottom: 6px
+
   &.animate
     //width: auto
     padding: 0
