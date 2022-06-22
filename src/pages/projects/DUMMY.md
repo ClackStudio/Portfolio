@@ -42,6 +42,10 @@ section:
     centeredFirst: true
     horizontal: false
     left: false
+  - src: /img/02.jpg
+    altText: Alternative test texz
+    centeredFirst: true
+    centeredFirstMobile: true
 tags:
   - production
   - art direction
