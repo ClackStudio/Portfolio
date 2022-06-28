@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
@@ -14,6 +14,9 @@ import SectionTemplate from '../components/SectionTemplate'
 import './styles.sass'
 import { useBackgroundStore } from '../stores/BarCodeStore'
 import Seo from '../components/Seo'
+import { useScroll } from '@use-gesture/react'
+import { values } from 'lodash'
+
 
 const ServicesListTemplate = ({ services }) => (
   <div className="columns">
@@ -37,6 +40,41 @@ const FillingVideo = ({ src, centered }) => (
     <source type="video/mp4" src={src} ></source>
   </video>
 )
+
+const IndicatorDot = ({on}) => (
+  <div className={`indicator-dot ${on ? 'active' : null }`}> </div>
+)
+const ScrollIndicator = ({slideNumber}) => {
+
+  return (
+    <div className='scroll-indicator'>
+      <IndicatorDot on={slideNumber === 0}/>
+      <IndicatorDot on={slideNumber === 1}/>
+    </div> 
+  )
+}
+
+const MultiplePictureWrapper = ({children, slider}) => {
+  const [slideNumber, setSlideNumber] = useState(0)
+  const bind = useScroll(({values: [x,y]}) => {
+    const middle = 200
+    if (x > middle && slideNumber === 0) {
+      setSlideNumber(1)
+    }
+    if (x < middle && slideNumber === 1) {
+      setSlideNumber(0)
+    }
+}, {
+  axis: 'x'
+});
+
+  return (
+    <div {...bind()} className="columns fill-container">
+      {slider && <ScrollIndicator slideNumber={slideNumber}></ScrollIndicator>}
+      {children}
+    </div>
+  )
+}
 
 const Section = ({ data, className }) => {
   const { 
@@ -69,7 +107,7 @@ const Section = ({ data, className }) => {
           </div>
         </div>
       ) : (
-        <div className="columns fill-container">
+        <MultiplePictureWrapper slider={secondImage && true}>
           <div
             className={`column is-6 project-column 
             ${centeredFirstMobile && (left || secondImage) ? 'centered-mobile' : ''}
@@ -99,7 +137,7 @@ const Section = ({ data, className }) => {
               <BigImage  img={secondImageSrc} altText={altTextSecond}  className="second-image project-picture" objectFit={centeredSecond  || (!secondImage && centeredFirst)  ? 'contain' : 'cover'}></BigImage>
             )}
           </div>
-        </div>
+        </MultiplePictureWrapper>
       )}
     </SectionTemplate>
   )
