@@ -42,7 +42,7 @@ export default function Seo(props) {
     },
     {
       name: 'og:image',
-      content: ogImage.images.fallback.src,
+      content: ogImage ?? ogImage.images.fallback.src,
     },
     {
       name: 'og:image:width',
@@ -86,7 +86,7 @@ export default function Seo(props) {
     },
     {
       name: 'twitter:image',
-      content: ogImage.images.fallback.src,
+      content: ogImage ?? ogImage.images.fallback.src,
     },
   ];
   // If we have keywords, then add it
