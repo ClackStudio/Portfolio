@@ -2,11 +2,10 @@
 
 $transition: all ease-in-out .5s
 
-$bottom-space: 40px
 $mobile-bottom-space: 30px
 
 $barcode-height: calc(#{$dvh} - #{$standard-padding} * 2 - #{$navbar-height} - #{$barcode-numbers-height})
-$barcode-height-minus-bottom: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - #{$navbar-height} -  #{$barcode-numbers-height})
+$barcode-height-minus-bottom: calc(#{$dvh} - #{$standard-padding} * 2 - #{$navbar-height} -  #{$barcode-numbers-height} + 14px)
 
 // different blurs to prevent flickering on different devices    
 $d-blur: .5px

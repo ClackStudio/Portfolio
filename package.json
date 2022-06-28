@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
-  "version": "1.1.3",
-  "author": "Austin Green",
+  "name": "clack-studio",
+  "description": "clack studios portfolio website",
+  "version": "1.0.1",
+  "author": "t0dorakis Theodor Hillmann",
   "dependencies": {
     "@react-hook/resize-observer": "^1.2.5",
     "@react-three/drei": "^8.4.0",
@@ -55,7 +55,6 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
   "main": "n/a",
   "scripts": {
     "clean": "gatsby clean",
@@ -64,8 +63,7 @@
     "develop": "npm run clean && gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "mirror": "cd mirror-rep.git/ && git fetch -p origin && git push --mirror && cd .."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "prettier": "^2.0.5"
