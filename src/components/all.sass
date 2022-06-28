@@ -42,8 +42,9 @@ html, body
         height: 2px
         box-shadow: 0px 0px $black
 
+
 /* Hide scrollbar for Chrome, Safari and Opera */
-html::-webkit-scrollbar, .scroll-container::-webkit-scrollbar
+html::-webkit-scrollbar, .scroll-container::-webkit-scrollbar, .meta-table::-webkit-scrollbar
   display: none
 
 section
@@ -246,9 +247,20 @@ a
 
 // Data Lists
 
+.extra-top-padding
+  padding-top: 50px
+
 .meta-table
     padding: $standard-padding
     width: 100%
+    overflow-y: scroll
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none  /* IE and Edge */
+    scrollbar-width: none  /* Firefox */
+    font-size: 1.1rem
+    @include breakpoint(desktop)
+      font-size: 1.5rem
+    
 
 .meta-title
     color: $dark-gray
@@ -463,9 +475,10 @@ a
   padding: 0
   flex: 0
   width: 0px
-  margin-bottom: 0px
+  margin-bottom: 3px
   @include breakpoint(desktop)
     font-size: 1.1rem
+    margin-bottom: 0px
   @include breakpoint(mobile-only)
     margin-bottom: 6px
 

@@ -6,8 +6,6 @@ date: 2022-04-22T14:52:34.771Z
 featuredproject: true
 featuredimage: /img/sony_music.jpg
 tags:
-  - production
-  - art direction
 lastImage: ""
 additionalData: []
 description: one of clack’s favourite project. it was a pleasure to work with

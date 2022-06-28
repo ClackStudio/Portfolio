@@ -5,10 +5,6 @@ date: 2016-12-17T15:04:10.000Z
 featuredproject: true
 featuredimage: /img/labience_logo.jpg
 tags:
-  - 3d animation
-  - art direction
-  - creative direction
-  - production
 lastImage: /img/labience_symbol.jpg
 photographer: Hannes Meier
 client: labience

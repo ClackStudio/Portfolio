@@ -16,7 +16,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
       <Seo></Seo>
       <div className="columns fill-container">
         <div className="column is-flex fill-container">
-          <div className={`is-12 is-flex is-flex-direction-column is-justify-content-flex-end fill-container bigger-font`}>
+          <div className={`is-12 is-flex is-flex-direction-column is-justify-content-flex-end fill-container bigger-font extra-top-padding`}>
             {/* <HalfPageNavbar /> */}
             {/* date */}
             <TableLayout>

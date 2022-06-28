@@ -22,7 +22,7 @@ export const ContactPageTemplate = ({
       <div className="columns fill-container">
         <div className="column fill-container fill-complete-height">
           <div className="is-12 is-flex is-flex-direction-column is-justify-content-flex-end fill-container bigger-font">
-            <div className="column is-flex is-12 fill-container">
+            <div className="column is-flex is-12 fill-container extra-top-padding">
               <TableLayout>
                 {contactData &&
                   contactData.map(({ title, data }, index) => (

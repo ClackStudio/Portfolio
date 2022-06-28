@@ -119,6 +119,10 @@ export const ProjectPostTemplate = ({
   title,
   helmet,
   featuredImage,
+  centeredFirstImage,
+  centeredFirstImageMobile,
+  centeredLastImage,
+  centeredLastImageMobile,
   sections,
 }) => {
   const PostContent = contentComponent || Content
@@ -173,7 +177,10 @@ export const ProjectPostTemplate = ({
 
             {/* <PostContent content={content} /> */}
           </div>
-          <div className="column is-6 fill-container project-first-image">
+          <div className={`column is-6 fill-container project-first-image
+            ${centeredFirstImage ? 'centered' : ''}
+            ${centeredFirstImageMobile? 'centered-mobile' : ''}
+          `}>
             <BigImage img={firstImage}></BigImage>
           </div>
         </SectionTemplate>
@@ -187,13 +194,16 @@ export const ProjectPostTemplate = ({
         {/* FINAL SECTION */}
         <SectionTemplate>
           <div className="columns fill-container mobile-flex-column">
-            <div className="column is-6 fill-container last-section">
+            <div className={`column is-6 fill-container last-section
+            ${centeredLastImage ? 'centered' : ''}
+            ${centeredLastImageMobile? 'centered-mobile' : ''}
+            `}>
               <BigImage img={lastSectionImage}></BigImage>
             </div>
             <div className="column is-6 is-flex is-flex-direction-column fill-container last-section-nav">
               <div
                 className="is-flex is-justify-content-space-between is-flex-direction-column"
-                style={{ height: '100%' }}
+                style={{ height: '100%', overflow: 'hidden' }}
               >
                 <TableLayout>
                   <PostContent content={content} />
@@ -232,6 +242,10 @@ const ProjectPost = ({ data, location }) => {
       featuredImage={post.frontmatter.featuredimage}
       videoSrc={post.frontmatter.publicURL}
       date={post.frontmatter.date}
+      centeredFirstImage={post.frontmatter.centeredFirstImage}
+      centeredLastImage={post.frontmatter.centeredLastImage}
+      centeredFirstImageMobile={post.frontmatter.centeredFirstImageMobile}
+      centeredLastImageMobile={post.frontmatter.centeredLastImageMobile}
       helmet={
         <Helmet titleTemplate="%s | Blog">
           <title>{`${post.frontmatter.title}`}</title>
@@ -266,6 +280,10 @@ export const pageQuery = graphql`
         title
         description
         client
+        centeredFirstImage
+        centeredFirstImageMobile
+        centeredLastImage
+        centeredLastImageMobile
         additionalData {
           title
           data
