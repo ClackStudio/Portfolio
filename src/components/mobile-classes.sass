@@ -187,6 +187,7 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
 .centered-mobile
   @include breakpoint(mobile-only)
     padding: calc(#{$standard-padding} * 3 )
+    max-height: $dvh
     img
       object-fit: contain!important
 

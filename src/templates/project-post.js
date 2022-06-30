@@ -15,8 +15,6 @@ import './styles.sass'
 import { useBackgroundStore } from '../stores/BarCodeStore'
 import Seo from '../components/Seo'
 import { useScroll } from '@use-gesture/react'
-import { values } from 'lodash'
-
 
 const ServicesListTemplate = ({ services }) => (
   <div className="columns">
@@ -41,20 +39,26 @@ const FillingVideo = ({ src, centered }) => (
   </video>
 )
 
-const IndicatorDot = ({on}) => (
-  <div className={`indicator-dot ${on ? 'active' : null }`}> </div>
+const IndicatorDot = ({on, black}) => (
+  <div className={`
+  indicator-dot
+  ${on ? 'active' : null }
+  `}> </div>
 )
-const ScrollIndicator = ({slideNumber}) => {
+const ScrollIndicator = ({slideNumber, black}) => {
 
   return (
-    <div className='scroll-indicator'>
+    <div className={`
+    scroll-indicator
+    ${black ? 'black' : 'white' }
+    `}>
       <IndicatorDot on={slideNumber === 0}/>
       <IndicatorDot on={slideNumber === 1}/>
     </div> 
   )
 }
 
-const MultiplePictureWrapper = ({children, slider}) => {
+const MultiplePictureWrapper = ({children, slider, black}) => {
   const [slideNumber, setSlideNumber] = useState(0)
   const bind = useScroll(({values: [x,y]}) => {
     const middle = 200
@@ -70,7 +74,7 @@ const MultiplePictureWrapper = ({children, slider}) => {
 
   return (
     <div {...bind()} className="columns fill-container">
-      {slider && <ScrollIndicator slideNumber={slideNumber}></ScrollIndicator>}
+      {slider && <ScrollIndicator slideNumber={slideNumber} black={black}></ScrollIndicator>}
       {children}
     </div>
   )
@@ -107,7 +111,7 @@ const Section = ({ data, className }) => {
           </div>
         </div>
       ) : (
-        <MultiplePictureWrapper slider={secondImage && true}>
+        <MultiplePictureWrapper slider={secondImage && true} black={centeredFirst || centeredSecond}>
           <div
             className={`column is-6 project-column 
             ${centeredFirstMobile && (left || secondImage) ? 'centered-mobile' : ''}
