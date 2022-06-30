@@ -3,6 +3,7 @@ import { navigate } from 'gatsby'
 import { useBackgroundStore } from './../../stores/BarCodeStore'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import useResizeObserver from '@react-hook/resize-observer'
+import { useDrag } from '@use-gesture/react'
 
 export const ProjectTitle = ({ children, isShown }) => {
   return (
@@ -64,6 +65,7 @@ export const ProjectNumber = ({ project, index, isMobile }) => {
 const BarcodeNumbers = ({ projects, count, currentProjectId }) => {
   const breakpoints = useBreakpoint()
   const isMobile = breakpoints.sm
+  const { currentHoveredBar, setCurrentHoveredBar} = useBackgroundStore()
   const wrappersRef = useRef()
   const numbersRef = useRef()
 
@@ -89,10 +91,50 @@ const BarcodeNumbers = ({ projects, count, currentProjectId }) => {
   useResizeObserver(wrappersRef, (entry) => {
     setStyle(centerStyleCalc())
   })
+  const saved = useRef(0)
 
+  const bind = useDrag(
+    ({ down, movement: [mx, my], velocity: [vx, vy], direction: [dx, dy] }) => {
+      if (isMobile) {
+        const isFirst = currentHoveredBar === 0
+        const isLast = currentHoveredBar === projects.length - 1
+
+        const directionalAdd = () => {
+          if (dx > 0) {
+            if (!isLast) {
+              return 1
+            }
+          } else {
+            if (!isFirst) {
+              return -1
+            }
+          }
+          return 0
+        }
+        const velocityCalc = (velocity) => {
+          saved.current = saved.current + velocity
+          if (saved.current > 0.1) {
+            setCurrentHoveredBar(currentHoveredBar + directionalAdd())
+            saved.current = 0
+          }
+        }
+        // const movementThreshold = 40
+        // const velocityThreshold = 0
+
+        velocityCalc(vy)
+        // if (my > movementThreshold && vy > velocityThreshold) {
+
+        //   setCurrentHoveredBar(currentHoveredBar + directionalAdd())
+        // }
+        // console.log("VELOCITY", vy)
+      }
+    },
+    {}
+  )
  
   return (
     <div
+      {...bind()}
       ref={wrappersRef}
       className="barcode-numbers-wrapper is-flex is-flex-direction-row is-justify-content-space-between"
     >
