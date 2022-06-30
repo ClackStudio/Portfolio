@@ -106,7 +106,7 @@ const Section = ({ data, className }) => {
             {video ? (
               <FillingVideo src={video.publicURL} altText={altText} centered={centeredFirst}></FillingVideo>
             ) : (
-              <BigImage className="project-picture" img={firstImage} altText={altText} objectFit={centeredSecond ? 'contain' : 'cover'}></BigImage>
+              <BigImage className="project-picture" img={firstImage} altText={altText} objectFit={centeredFirst ? 'contain' : 'cover'}></BigImage>
             )}
           </div>
         </div>
@@ -223,7 +223,7 @@ export const ProjectPostTemplate = ({
             ${centeredFirstImage ? 'centered' : ''}
             ${centeredFirstImageMobile? 'centered-mobile' : ''}
           `}>
-            <BigImage img={firstImage}></BigImage>
+            <BigImage img={firstImage} objectFit={(centeredFirstImage && !isMobile)  || (centeredFirstImageMobile && isMobile)  ? 'contain' : 'cover'}></BigImage>
           </div>
         </SectionTemplate>
 
@@ -240,7 +240,7 @@ export const ProjectPostTemplate = ({
             ${centeredLastImage ? 'centered' : ''}
             ${centeredLastImageMobile? 'centered-mobile' : ''}
             `}>
-              <BigImage img={lastSectionImage}></BigImage>
+              <BigImage img={lastSectionImage} objectFit={(centeredLastImage && !isMobile)  || (centeredLastImageMobile && isMobile)  ? 'contain' : 'cover'}></BigImage>
             </div>
             <div className="column is-6 is-flex is-flex-direction-column fill-container last-section-nav">
               <div

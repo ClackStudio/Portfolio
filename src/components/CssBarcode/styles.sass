@@ -30,9 +30,10 @@ $m-blur: .0px
     max-height: 100%
     display: flex
     justify-content: space-between
-    padding: 0 $standard-padding
+    padding: 0 calc(#{$standard-padding} + 2px)
     touch-action: none
     @include breakpoint(mobile-only)
+        padding: 0 calc(#{$standard-padding} + 0px)
         flex-direction: column
         min-height: calc(#{$dvh} - #{$navbar-height} - #{$barcode-numbers-height})
     &.small
