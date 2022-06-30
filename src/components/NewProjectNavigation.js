@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { graphql, StaticQuery, navigate } from 'gatsby'
 import { useDrag } from '@use-gesture/react'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
-import { ProjectTitle, ProjectNumber } from './BarcodeNumbers/BarcodeNumbers'
-
+import { ProjectNumber } from './BarcodeNumbers/BarcodeNumbers'
+import { useBackgroundStore } from '../stores/BarCodeStore'
 
 const ProjectNavigationTemplate = React.forwardRef(
   ({ projects, currentProjectId }, ref) => {
+    const { setCurrentClickedNumber, currentHoveredBar, setCurrentHoveredBar } = useBackgroundStore()
     const breakpoints = useBreakpoint()
     const isMobile = breakpoints.sm
     const filteredProjects = projects.filter(
       (project) => project.node.frontmatter.featuredproject
     )
     const count = filteredProjects.length
-    const [dragged, setDragged] = useState(false)
     const activeProject = filteredProjects.find(
       ({ node }, index) => node.id === currentProjectId
     )
@@ -27,59 +27,41 @@ const ProjectNavigationTemplate = React.forwardRef(
       ? activeProjectIndex + 1
       : activeProjectIndex
 
-    const goToPreviousProject = () => {
-      navigate(filteredProjects[previousProject].node.fields.slug)
-    }
-    const goToNextProject = () => {
-      navigate(filteredProjects[nextProject].node.fields.slug)
-    }
+    const saved = useRef(0)
 
-    // useDrag(({ event }) => event.preventDefault(), {
-    //   target: myRef,
-    //   eventOptions: { passive: false }
-    // })
-    const refWidth = 400
-
-    useDrag(
-      ({
-        down,
-        movement: [mx, my],
-        velocity: [vx, vy],
-        direction: [dx, dy],
-      }) => {
-        // console.log("hallo")
-        // console.log(ref)
-        // console.log(vx)
-
-        const minDraggedDistance = Math.abs(mx) > refWidth / 2
-
+    const bind = useDrag(
+      ({ initial, down, last, elapsedTime, movement: [mx, my], velocity: [vx, vy], direction: [dx, dy] }) => {
         if (isMobile) {
-        if (dx > 0 && minDraggedDistance && !dragged) {
-          if (isFirstProject) {
-            navigate(
-              filteredProjects[filteredProjects.length - 1].node.fields.slug
-            )
-          } else {
-            goToPreviousProject()
-          }
-          setDragged(true)
 
-          // console.log("previous")
-        } else if (vx > 1 && minDraggedDistance && !dragged) {
-          if (isLastProject) {
-            navigate(filteredProjects[0].node.fields.slug)
-          } else {
-            goToNextProject()
+          const isFirst = currentHoveredBar === 0
+          const isLast = currentHoveredBar === projects.length - 1
+  
+          const directionalAdd = () => {
+            if (dx > 0) {
+              if (!isLast) {
+                return 1
+              }
+            } else {
+              if (!isFirst) {
+                return -1
+              }
+            }
+            return 0
           }
-          setDragged(true)
-          // console.log("next")
-          // goToNextProject()
+          const velocityCalc = (velocity) => {
+
+            saved.current = saved.current + velocity
+            if (saved.current > 0.1 && elapsedTime > 300) {
+              setCurrentHoveredBar(currentHoveredBar + directionalAdd())
+              // setCurrentClickedNumber(currentHoveredBar + directionalAdd())
+              saved.current = 0
+            }
+            if (last) {
+              setCurrentClickedNumber(currentHoveredBar)
+            }
+          }
+          velocityCalc(vy)
         }
-        }
-      },
-      {
-        target: ref,
-        eventOptions: { passive: false },
       }
     )
     return (
@@ -90,6 +72,7 @@ const ProjectNavigationTemplate = React.forwardRef(
 
         <div
         className="project-navigation-numbers is-flex is-flex-direction-row"
+        {...bind()}
       >
         {projects.map(({ node }, index) => (
           <ProjectNumber

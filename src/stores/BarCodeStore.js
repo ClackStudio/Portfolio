@@ -24,6 +24,10 @@ const backgroundStore = (state) => ({
   setCurrentHoveredBar: (index) => {
     state.currentHoveredBar = index
   },
+  currentClickedNumber: null,
+  setCurrentClickedNumber: (index) => {
+    state.currentClickedNumber = index
+  },
   setAnimatingDone: () => {
     state.animating = false
   },

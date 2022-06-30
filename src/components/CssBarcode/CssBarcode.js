@@ -176,7 +176,6 @@ const CssBarcodeTemplate = ({ data, small, wrapperStyle }) => {
         // console.log("VELOCITY", vy)
       }
     },
-    {}
   )
   // home page
   return (

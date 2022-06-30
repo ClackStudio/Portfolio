@@ -14,7 +14,7 @@ export const ProjectTitle = ({ children, isShown }) => {
 }
 
 export const ProjectNumber = ({ project, index, isMobile }) => {
-  const { currentHoveredBar, setCurrentHoveredBar } = useBackgroundStore()
+  const { currentHoveredBar, setCurrentHoveredBar, setCurrentClickedNumber, currentClickedNumber} = useBackgroundStore()
   const [wasClicked, setClicked] = useState(false)
   const isHovered = index === currentHoveredBar
   const handlePointerEnter = () => {
@@ -24,8 +24,8 @@ export const ProjectNumber = ({ project, index, isMobile }) => {
     if (!isMobile) setCurrentHoveredBar(null)
   }
   const goToProject = () => {
+    setCurrentClickedNumber(null)
     navigate(project.fields.slug)
-    //setCanvasTransition(project.fields.slug)
   }
 
   React.useEffect(() => {
@@ -33,7 +33,7 @@ export const ProjectNumber = ({ project, index, isMobile }) => {
   }, [currentHoveredBar])
 
   const handlePointerDown = () => {
-    if (!isMobile || (isMobile && wasClicked)) {
+    if (!isMobile || (isMobile && (wasClicked || currentClickedNumber === index))) {
       goToProject()
     } else {
       handlePointerEnter(index)
@@ -52,8 +52,6 @@ export const ProjectNumber = ({ project, index, isMobile }) => {
         className={`project-number ${isHovered && 'project-number-bar-hover'}`}
       >
         {index}
-        {/* <div className='vertical-line'></div>
-          <div className='horicontal-line'></div> */}
       </div>
       <ProjectTitle isShown={currentHoveredBar === index}>
         {project.frontmatter.client}
@@ -65,7 +63,7 @@ export const ProjectNumber = ({ project, index, isMobile }) => {
 const BarcodeNumbers = ({ projects, count, currentProjectId }) => {
   const breakpoints = useBreakpoint()
   const isMobile = breakpoints.sm
-  const { currentHoveredBar, setCurrentHoveredBar} = useBackgroundStore()
+  const { currentHoveredBar, setCurrentHoveredBar, setCurrentClickedNumber} = useBackgroundStore()
   const wrappersRef = useRef()
   const numbersRef = useRef()
 
@@ -94,7 +92,7 @@ const BarcodeNumbers = ({ projects, count, currentProjectId }) => {
   const saved = useRef(0)
 
   const bind = useDrag(
-    ({ down, movement: [mx, my], velocity: [vx, vy], direction: [dx, dy] }) => {
+    ({ initial, down, last, elapsedTime, movement: [mx, my], velocity: [vx, vy], direction: [dx, dy] }) => {
       if (isMobile) {
         const isFirst = currentHoveredBar === 0
         const isLast = currentHoveredBar === projects.length - 1
@@ -113,9 +111,13 @@ const BarcodeNumbers = ({ projects, count, currentProjectId }) => {
         }
         const velocityCalc = (velocity) => {
           saved.current = saved.current + velocity
-          if (saved.current > 0.1) {
+          if (saved.current > 0.1 && elapsedTime > 300) {
             setCurrentHoveredBar(currentHoveredBar + directionalAdd())
+            // setCurrentClickedNumber(currentHoveredBar + directionalAdd())
             saved.current = 0
+          }
+          if (last) {
+            setCurrentClickedNumber(currentHoveredBar)
           }
         }
         // const movementThreshold = 40
@@ -128,19 +130,16 @@ const BarcodeNumbers = ({ projects, count, currentProjectId }) => {
         // }
         // console.log("VELOCITY", vy)
       }
-    },
-    {}
+    }
   )
  
   return (
     <div
-      {...bind()}
       ref={wrappersRef}
       className="barcode-numbers-wrapper is-flex is-flex-direction-row is-justify-content-space-between"
     >
-      {/* <div className="left">
-      </div> */}
       <div
+        {...bind()}
         ref={numbersRef}
         style={style}
         className="project-navigation-numbers is-flex is-flex-direction-row"
@@ -154,9 +153,6 @@ const BarcodeNumbers = ({ projects, count, currentProjectId }) => {
           ></ProjectNumber>
         ))}
       </div>
-      {/* <div className="right">
-      {(currentHoveredBar !== null) && projects[currentHoveredBar].name }
-      </div> */}
     </div>
   )
 }
