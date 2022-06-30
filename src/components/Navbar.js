@@ -5,6 +5,7 @@ import CrossLink from './CrossLink'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import CrossButton from './CrossButton'
 import { globalHistory } from '@reach/router'
+import { useBackgroundStore } from '../stores/BarCodeStore'
 
 
 const NavbarLogo = () => {
@@ -38,6 +39,7 @@ const DesktopNavMenu = ({ navItems, halfpage }) => (
 
 const MobileNavMenu = ({ navItems }) => {
   const { mobileMenuIsOpen, setMobileMenu  } = useNavigationStore()
+  const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore()
 
   // close menu on route switch
   useEffect(() => {
@@ -47,6 +49,7 @@ const MobileNavMenu = ({ navItems }) => {
   }, [setMobileMenu])
 
   const handleMenuClick = () => {
+    setCurrentHoveredBar(null)
     setMobileMenu(!mobileMenuIsOpen)
   }
 
