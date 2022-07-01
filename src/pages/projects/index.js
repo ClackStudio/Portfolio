@@ -1,8 +1,6 @@
 import React from 'react'
-
 import SectionTemplate from '../../components/SectionTemplate'
 import { TableLayout, TableRowComponent } from '../../components/TableComponent'
-import { helmet } from 'react-helmet'
 import Navbar from '../../components/Navbar'
 import { graphql, StaticQuery, navigate } from 'gatsby'
 import '../../components/all.sass'
@@ -17,16 +15,21 @@ const ProjectIndexPageTemplate = ({ edges }) => {
   const isMobile = breakpoints.sm
 
   const onMouseEnter = (index) => {
-    if (currentHoveredBar !== index && !isMobile) {
-      setCurrentHoveredBar(index)
+    if (!isMobile) {
+      if (currentHoveredBar !== index && !isMobile) {
+        setCurrentHoveredBar(index)
+      }
     }
+
     // haltInterval.current = true
     // setSideImage(getImage(featuredimage) || featuredimage)
   }
 
   const onMouseLeave = () => {
-    if (currentHoveredBar !== null && !isMobile) {
-      setCurrentHoveredBar(null)
+    if (!isMobile) {
+      if (currentHoveredBar !== null && !isMobile) {
+        setCurrentHoveredBar(null)
+      }
     }
     // haltInterval.current = false
   }
@@ -56,7 +59,7 @@ const ProjectIndexPageTemplate = ({ edges }) => {
                     onMouseEnter={() => onMouseEnter(index)}
                     key={node.id}
                     className={`crossed ${
-                      index === currentHoveredBar ? 'active' : ''
+                      index === currentHoveredBar && !isMobile ? 'active' : ''
                     }`}
                   />
                 ))}
