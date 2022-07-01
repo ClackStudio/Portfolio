@@ -93,9 +93,13 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
                 transition: none
             &:hover
               .table-cross-line
-                width: 0!important
-                background: transparent!important
-                box-shadow: none!important
+                // width: 0!important
+                // background: transparent!important
+                // box-shadow: none!important
+                @include crossedFontLine(big)
+                background: $black
+                width: 100%
+                transition: none
 
 
 
