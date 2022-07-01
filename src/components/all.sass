@@ -84,7 +84,6 @@ div::selection
   @include from($desktop)
     display: none!important
 
-// all italics will be crossed through BE CAREFUL
 crossed
   position: relative
   display: inline-flex
@@ -93,7 +92,7 @@ crossed
   &::after
     content: ""
     display: block
-    @include crossedFontLine()
+    @include crossedFontLine(bigger-font)
 
 canvas
   //cursor: url('/img/pointer_laser.svg') 12 12, move!important
@@ -164,7 +163,7 @@ button, a
   &:hover,&.active
     color: $black
     .crossed-line
-      @include crossedFontLine
+      @include crossedFontLine()
       &.logo
         //height: 2px
 a
@@ -187,7 +186,6 @@ a
     @include crossedFontLine
     width: 46px
     left: 39px
-    bottom: 46%
     transition: $fast-transition
     @include breakpoint(desktop)
         left: 48px
@@ -196,7 +194,6 @@ a
     .crossed-line
       width: 90px
       left: -2px
-      bottom: 46%
       transition: $fast-transition
       @include breakpoint(desktop)
         left: -2px
@@ -304,7 +301,7 @@ a
     .columns
       position: relative
     .table-cross-line
-      @include crossedFontLine()
+      @include crossedFontLine(big)
       width: 0%
       margin: auto
       background: transparent
@@ -316,6 +313,7 @@ a
       cursor: pointer
       &:hover, &.active
         .table-cross-line
+          @include crossedFontLine(big)
           background: $black
           width: 100%
           transition: all ease-in-out 0.5s
