@@ -10,8 +10,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        background_color: `#663399`,
-        theme_color: `#fff`,
+        background_color: `#fafafa`,
+        theme_color: `#fafafa`,
         icon: 'src/img/favicon.svg',
       },
     },
