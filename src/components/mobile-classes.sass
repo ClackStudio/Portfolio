@@ -85,12 +85,7 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
         
         .columns
             display: flex
-            &:active
-              .table-cross-line
-                @include crossedFontLine(big)
-                background: $black
-                width: 100%
-                transition: none
+
             &:hover
               .table-cross-line
                   width: 0
@@ -101,6 +96,12 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
                     background: $black
                     width: 100%
                     transition: none
+            &:active
+              .table-cross-line
+                @include crossedFontLine(big)
+                background: $black
+                width: 100%
+                transition: none
 
 
 
