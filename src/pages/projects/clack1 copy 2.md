@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: labience ss2022
+title: énigmatique
 client: labience
 date: 2022-04-25T07:56:00.142Z
 featuredproject: true
