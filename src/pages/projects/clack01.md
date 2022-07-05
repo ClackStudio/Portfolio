@@ -3,18 +3,22 @@ templateKey: project-post
 title: free trail berlin
 date: 2022-04-22T14:16:32.377Z
 centeredFirstImageMobile: false
-centeredLastImage: true
-centeredLastImageMobile: true
+centeredLastImage: false
+centeredLastImageMobile: false
 additionalData: null
 section:
-  - src: ""
-  - src: ""
-  - src: ""
-  - src: ""
-  - src: ""
+  - src: /img/free_trail01.jpg
+    horizontal: true
+  - src: /img/free_trail02.jpg
+    left: true
+    secondImage: /img/free_trail03.jpg
+  - src: /img/free_trail09.jpg
+    horizontal: true
+  - src: /img/free_trail07.jpg
+    horizontal: true
 tags:
   - production
-lastImage: ""
+lastImage: /img/free_trail05.jpg
 photographer: Hannes Meier
 client: nike
 featuredproject: true
