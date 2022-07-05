@@ -1,26 +1,26 @@
 ---
 templateKey: project-post
 title: free trail berlin
-client: nike
 date: 2022-04-22T14:16:32.377Z
-featuredproject: true
-featuredimage: /img/clack-6.jpg
-centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: true
 centeredLastImageMobile: true
 additionalData: null
 section:
-  - src: /img/free_trail03.jpg
-  - src: /img/free_trail07.jpg
-  - src: /img/free_trail05.jpg
-  - src: /img/free_trail08.jpg
-  - src: /img/free_trail02.jpg
-lastImage: /img/free_trail09.jpg
-photographer: Hannes Meier
+  - src: ""
+  - src: ""
+  - src: ""
+  - src: ""
+  - src: ""
 tags:
   - production
+lastImage: ""
+photographer: Hannes Meier
+client: nike
+featuredproject: true
+featuredimage: /img/free_trail08.jpg
 description: one of clack’s favourite project. it was a pleasure to work with
   such an amazing team, and being able to follow all our ideas we had from the
   beginning on.
+centeredFirstImage: false
 ---
