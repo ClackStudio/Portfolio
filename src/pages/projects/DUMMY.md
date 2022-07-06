@@ -4,7 +4,7 @@ title: Dummy
 client: Dummy
 date: 2022-04-25T07:56:00.142Z
 featuredproject: false
-featuredimage: /img/2022-03-03-11.34.29-kopie.jpg
+featuredimage: /img/DoNotDeletePlaceholder.jpg
 centeredFirstImage: true
 centeredFirstImageMobile: true
 centeredLastImage: true
@@ -14,39 +14,39 @@ additionalData:
   - title: dummy
     data: dummy
 section:
-  - src: /img/2022-03-02-15.53.55-kopie.jpg
+  - src: /img/DoNotDeletePlaceholder.jpg
     altText: dummy
     horizontal: true
     left: true
-  - src: /img/2022-03-02-15.53.55-kopie.jpg
+  - src: /img/DoNotDeletePlaceholder.jpg
     altText: dummy
-    secondImage: /img/2022-03-02-15.53.55-kopie.jpg
+    secondImage: /img/DoNotDeletePlaceholder.jpg
   - video: /img/video/RebookVideo_RF37.mp4
     altText: dummyVideo
     horizontal: false
     left: false
-  - src: /img/labience_logo.jpg
+  - src: /img/DoNotDeletePlaceholder.jpg
     altText: dummy
     centeredFirst: true
     centeredFirstMobile: true
     horizontal: true
     altTextSecond: dummy
-  - src: /img/2022-03-02-15.53.55-kopie.jpg
+  - src: /img/DoNotDeletePlaceholder.jpg
     altText: dummy
     centeredFirst: true
-  - src: /img/2022-03-02-15.53.55-kopie.jpg
+  - src: /img/DoNotDeletePlaceholder.jpg
     altText: dummy
     centeredFirst: true
     centeredFirstMobile: true
     centeredSecondMobile: true
     centeredSecond: true
-    secondImage: /img/2022-03-02-15.53.55-kopie.jpg
-  - video: /img/video/RebookVideo_RF37.mp4
+    secondImage: /img/DO NO DELETE – Placeholder.jpg
+  - video: /img/DoNotDeletePlaceholder.jpg
     altText: dummyVideo
     centeredFirst: true
     horizontal: false
     left: false
-  - src: /img/02.jpg
+  - src: /img/DoNotDeletePlaceholder.jpg
     altText: Alternative test texz
     centeredFirst: true
     centeredFirstMobile: true
@@ -54,7 +54,7 @@ tags:
   - production
   - art direction
   - photography
-lastImage: /img/2022-03-03-11.34.29-kopie.jpg
+lastImage: /img/DoNotDeletePlaceholder.jpg
 description: DO NOT DELETE
 ---
 DO NOT DELETE yey

@@ -1,5 +1,5 @@
 import React from 'react'
-import ScrollArrowSvg from '../../static/img/ScrollArrow.svg'
+import ScrollArrowSvg from '../img/ScrollArrow.svg'
 
 const ScrollArrow = () => {
   return (
