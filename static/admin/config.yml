@@ -27,12 +27,12 @@ collections:
       - { label: "Title", name: "title", widget: "string", hint: please choose short titles}
       - { label: "Client", name: "client", widget: string }
       - { label: "Publish Date", name: "date", widget: "datetime", hint: the year will be shown in the description }
-      - { label: "Shown in Barcode", name: "featuredproject", widget: "boolean" }
+      - { label: "Shown in Barcode", name: "featuredproject", widget: "boolean", default: true }
       - { label: "Featured Image", name: "featuredimage", widget: image, hint: has to be 720x1080 pixel with a mximum size of 200kb (yes it is possible to have it even smaller and it still looks great) }
-      - { label: "Centered first image", name: centeredFirstImage, widget: boolean, hint: give the start-image a padding }
-      - { label: "Centered first Image on mobile", name: centeredFirstImageMobile, widget: boolean, hint: give the start-image a padding }
-      - { label: "Centered last image", name: centeredLastImage, widget: boolean, hint: give the end-image a padding }
-      - { label: "Centered last Image on mobile", name: centeredLastImageMobile, widget: boolean, hint: give the end-image a padding }
+      - { label: "Centered first image", name: centeredFirstImage, widget: boolean, hint: give the start-image a padding, default: false }
+      - { label: "Centered first Image on mobile", name: centeredFirstImageMobile, widget: boolean, hint: give the start-image a padding , default: false }
+      - { label: "Centered last image", name: centeredLastImage, widget: boolean, hint: give the end-image a padding , default: false }
+      - { label: "Centered last Image on mobile", name: centeredLastImageMobile, widget: boolean, hint: give the end-image a padding , default: false }
       - { label: featured Video, name: featuredVideo, required: false, widget: file, hint: not more then 1mb!!! this is very dangerous as too many featured videos can make the website super slow with bad SEO, use only as a last resort on one or two projects}
       - {
           label: Additional data,
@@ -53,15 +53,15 @@ collections:
             fields:
             [
               { label: Image, name: src, required: false, widget: image },
-              { label: Alt Text, required: false, name: altText, widget: text, hint: helps SEO },
-              { label: centered first image, name: centeredFirst, required: false, widget: boolean, hint: give the first image a padding of 4% },
-              { label: centered first image on mobile, name: centeredFirstMobile, required: false, widget: boolean, hint: also on mobile - give the first image a padding of 4% },
-              { label: Align on the left, name: left, required: false, widget: boolean, hint: forces the image to the left side of the screen (does not matter for mobiel) },
-              { label: Fullscreen, name: horizontal, required: false, widget: boolean, hint: use only with a horicontal image },
+              { label: Alt Text, required: false, name: altText, widget: text, hint: helps SEO , default: "" },
+              { label: centered first image, name: centeredFirst, required: false, widget: boolean, hint: give the first image a padding of 4% , default: false },
+              { label: centered first image on mobile, name: centeredFirstMobile, required: false, widget: boolean, hint: also on mobile - give the first image a padding of 4% , default: false },
+              { label: Align on the left, name: left, required: false, widget: boolean, hint: forces the image to the left side of the screen (does not matter for mobiel) , default: false },
+              { label: Fullscreen, name: horizontal, required: false, widget: boolean, hint: use only with a horicontal image , default: false },
               { label: second image, name: secondImage, required: false, widget: image, hint: if you add an image here there will be two images in one row next to each other},
-              { label: Second Alt Text, required: false, name: altTextSecond, widget: text, hint: helps SEO (only if two images are in this section) },
-              { label: centered second image, name: centeredSecond, required: false, widget: boolean, hint: give the second image a padding of 4% },
-              { label: centered second image on mobile, name: centeredSecondMobile, required: false, widget: boolean, hint: also on mobile - give the second image a padding of 4% },
+              { label: Second Alt Text, required: false, name: altTextSecond, widget: text, hint: helps SEO (only if two images are in this section) , default: "" },
+              { label: centered second image, name: centeredSecond, required: false, widget: boolean, hint: give the second image a padding of 4% , default: false },
+              { label: centered second image on mobile, name: centeredSecondMobile, required: false, widget: boolean, hint: also on mobile - give the second image a padding of 4% , default: false },
               { label: video, name: video, required: false, widget: file, hint: h.264 compression not more then 1 or 2mb; uses alttext1;},
             ]
           }
