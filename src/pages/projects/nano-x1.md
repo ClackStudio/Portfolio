@@ -10,15 +10,6 @@ centeredFirstImageMobile: true
 centeredLastImage: true
 centeredLastImageMobile: false
 section:
-  - horizontal: true
-    src: /img/210802_reebok-x-clack-studio_shot-10_1876.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: false
   - horizontal: false
     src: /img/210802_reebok-x-clack-studio_shot-10_2198.jpg
     left: false
@@ -31,5 +22,5 @@ section:
     centeredFirstMobile: false
 tags:
   - art direction
-lastImage: /img/210802_reebok-x-clack-studio_shot-9_1853.jpg
+lastImage: /img/210802_reebok-x-clack-studio_shot-10_1876.jpg
 ---
