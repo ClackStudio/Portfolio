@@ -37,13 +37,22 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
   - horizontal: false
     src: /img/2022-03-03-13.53.52-kopie.jpg
     left: false
     secondImage: /img/2022-03-03-13.45.09-kopie.jpg
     centeredSecond: true
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: true
+    centeredFirstMobile: false
+  - horizontal: true
+    src: /img/2022-03-02-16.09.51-kopie.jpg
+    left: false
+    centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
