@@ -6,7 +6,7 @@ date: 2022-07-18T10:52:04.082Z
 featuredproject: true
 featuredimage: /img/210802_reebok-x-clack-studio_shot-9_1792.jpg
 centeredFirstImage: true
-centeredFirstImageMobile: true
+centeredFirstImageMobile: false
 centeredLastImage: true
 centeredLastImageMobile: false
 section:
