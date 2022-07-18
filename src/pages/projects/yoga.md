@@ -7,8 +7,8 @@ featuredproject: true
 featuredimage: /img/210421_reebok_yoga_m6_150.jpg
 centeredFirstImage: true
 centeredFirstImageMobile: false
-centeredLastImage: false
-centeredLastImageMobile: true
+centeredLastImage: true
+centeredLastImageMobile: false
 section:
   - horizontal: false
     src: /img/210421_reebok_yoga_m6_176.jpg
