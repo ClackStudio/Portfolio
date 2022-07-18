@@ -1,0 +1,64 @@
+---
+templateKey: project-post
+title: énigmatique
+client: labience
+date: 2022-07-18T10:36:53.432Z
+featuredproject: true
+featuredimage: /img/2022-03-02-17.43.10-kopie.jpg
+centeredFirstImage: false
+centeredFirstImageMobile: false
+centeredLastImage: true
+centeredLastImageMobile: false
+section:
+  - horizontal: false
+    src: /img/2022-03-02-15.53.55-kopie.jpg
+    left: false
+    secondImage: /img/2022-03-02-14.14.29-kopie.jpg
+    centeredSecond: true
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: true
+    centeredFirstMobile: false
+  - horizontal: true
+    src: /img/2022-03-02-16.09.51-kopie.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: false
+    centeredFirstMobile: false
+  - horizontal: false
+    src: /img/2022-03-02-17.39.47-kopie.jpg
+    left: false
+    secondImage: /img/2022-03-03-11.34.29-kopie.jpg
+    centeredSecond: true
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: true
+    centeredFirstMobile: false
+  - horizontal: true
+    src: /img/2022-03-03-11.27.12-kopie.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: false
+    centeredFirstMobile: false
+  - horizontal: false
+    src: /img/2022-03-03-13.53.52-kopie.jpg
+    left: false
+    secondImage: /img/2022-03-03-13.45.09-kopie.jpg
+    centeredSecond: true
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: true
+    centeredFirstMobile: false
+tags:
+  - art direction
+lastImage: /img/2022-03-03-13.12.54-kopie.jpg
+---
