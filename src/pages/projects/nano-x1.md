@@ -17,7 +17,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
   - horizontal: false
     src: /img/210802_reebok-x-clack-studio_shot-10_2198.jpg
