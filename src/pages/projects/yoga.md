@@ -5,20 +5,20 @@ client: reebok
 date: 2022-07-18T08:32:16.313Z
 featuredproject: true
 featuredimage: /img/07.jpg
-centeredFirstImage: false
+centeredFirstImage: true
 centeredFirstImageMobile: false
-centeredLastImage: false
+centeredLastImage: true
 centeredLastImageMobile: false
 section:
   - horizontal: false
     src: /img/09.jpg
     left: false
     secondImage: /img/08.jpg
-    centeredSecond: false
+    centeredSecond: true
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
   - horizontal: true
     src: /img/01.jpg
@@ -27,17 +27,17 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
   - horizontal: false
     src: /img/04.jpg
     left: false
     secondImage: /img/03.jpg
-    centeredSecond: false
+    centeredSecond: true
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
   - horizontal: true
     src: /img/10.jpg
@@ -46,7 +46,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
 tags:
   - art direction
