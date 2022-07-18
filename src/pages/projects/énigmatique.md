@@ -38,7 +38,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: true
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: false
     src: /img/2022-03-03-13.53.52-kopie.jpg
     left: false
