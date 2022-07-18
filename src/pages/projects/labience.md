@@ -10,14 +10,24 @@ centeredFirstImageMobile: false
 centeredLastImage: true
 centeredLastImageMobile: false
 section:
-  - altText: ""
-    centeredFirst: false
-    centeredFirstMobile: false
+  - horizontal: false
     left: false
-    horizontal: false
-    altTextSecond: ""
     centeredSecond: false
     centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    video: /img/labience_logo_animation_medium.mp4
+    centeredFirst: false
+    centeredFirstMobile: false
+  - horizontal: false
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    video: /img/labience_symbol_animation.mp4
+    centeredFirst: false
+    centeredFirstMobile: false
   - horizontal: false
     src: /img/2022-03-02-17.39.47-kopie.jpg
     left: false
