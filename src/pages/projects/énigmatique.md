@@ -6,7 +6,7 @@ date: 2022-07-18T10:36:53.432Z
 featuredproject: true
 featuredimage: /img/2022-03-02-17.43.10-kopie.jpg
 centeredFirstImage: false
-centeredFirstImageMobile: false
+centeredFirstImageMobile: true
 centeredLastImage: true
 centeredLastImageMobile: false
 section:
@@ -19,15 +19,6 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: true
-    centeredFirstMobile: false
-  - horizontal: true
-    src: /img/2022-03-02-16.09.51-kopie.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: false
     centeredFirstMobile: false
   - horizontal: false
     src: /img/2022-03-02-17.39.47-kopie.jpg
