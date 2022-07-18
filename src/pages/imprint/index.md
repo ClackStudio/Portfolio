@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 path: /about
-title: About our values
+title: imprint
 ---
 Clack Studio GbR
 
