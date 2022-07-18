@@ -1,7 +1,7 @@
 ---
 templateKey: project-post
-title: labience
-client: énigmatique
+title: énigmatique
+client: labience
 date: 2022-07-18T08:25:59.819Z
 featuredproject: true
 featuredimage: /img/2022-03-02-14.14.29-kopie.jpg
