@@ -41,5 +41,6 @@ section:
     centeredFirstMobile: false
 tags:
   - art direction
+  - ""
 lastImage: /img/210421_reebok_yoga_m1_087.jpg
 ---
