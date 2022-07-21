@@ -131,5 +131,17 @@ collections:
                   { label: URL, name: url, widget: string }
               ]
             }
-
-
+  - name: "dynamic pages"
+    label: "Extra Pages"
+    folder: "src/pages/dynamic-pages"
+    create: true
+    slug: '{{fslug}}'
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "about-page",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", required: false, widget: "markdown" }

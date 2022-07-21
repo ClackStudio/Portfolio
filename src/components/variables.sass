@@ -6,13 +6,14 @@ $background: #fafafa
 $desktop-max-width: 2000px
 $standard-padding: 10px
 $barcode-numbers-height: 80px
-$navbar-height: 36px
+$navbar-height: 40px
 $navbar-height-important: 36px!important
 
 $standard-transition: all ease-in-out 0.5s
 $fast-transition: all ease-in-out 0.3s
 
-
+$font-size-1: 1.1rem
+$font-size-2: 1.2rem
 $huge-font-size: 4rem
 $mobile-huge-font-size: calc(4rem * 0.8)
 
@@ -24,21 +25,22 @@ $dvh: calc(var(--1dvh, 1vh) * 100)
 
 // crossed lines
 @mixin crossedFontLine($bigger-font: false)
-  bottom: 46%
-  height: 1px
+  bottom: 45%
+  height: 2px
   position: absolute
   background: $black
   width: 100%
-  box-shadow: 0px 0.35px $black
+  // box-shadow: 0px 0.35px $black
   @include breakpoint(desktop)
     height: 2px
-    box-shadow: none
+    // box-shadow: 0px 0.6px $black
     @if $bigger-font
-      bottom: 44%
+      bottom: 43%
   @include breakpoint(mobile-only)
+    bottom: 43%
     @if $bigger-font
-      box-shadow: 0px 0.35px #000000
-      bottom: 48%
+      // box-shadow: 0px 0.35px #000000
+      bottom: 44%
 
 
 @mixin breakpoint($point)

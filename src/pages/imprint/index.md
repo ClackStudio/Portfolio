@@ -18,6 +18,8 @@ hello@clackstudio.com\
 INHALTLICH VERANTWORTLICH GEMÄSS §5 TMG sind \
 Hélène Marie Camille Mohrbutter & Mana Zarindast\
 \
+[Link to data-policy](/dynamic-pages/data-policy)\
+\
 LEGAL DISCLAIMER\
 \
 EUROPÄISCHE ONLINE-STREITBEILEGUNGS-PLATTFORM

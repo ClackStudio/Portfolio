@@ -3,6 +3,11 @@
 
 @font-face
   font-family: "ABC Diatype"
+  src: url("../../static/fonts/EduDiatype-Bold.woff2"), url("../../static/fonts/EduDiatype-Bold.woff")
+  font-weight: 600
+  font-style: normal
+@font-face
+  font-family: "ABC Diatype"
   src: url("../../static/fonts/EduDiatype-Medium.woff2"), url("../../static/fonts/EduDiatype-Medium.woff")
   font-weight: 500
   font-style: normal
@@ -36,7 +41,7 @@ html, body
   -ms-overflow-style: none  /* IE and Edge */
   scrollbar-width: none  /* Firefox */
   @include breakpoint(desktop)
-    font-size: 1.1rem
+    font-size:$font-size-1
     crossed
       &::after
         height: 2px
@@ -190,11 +195,15 @@ a
     @include breakpoint(desktop)
         left: 48px
         width: 53px
+    @include breakpoint(mobile-only)
+        bottom: 43%!important
   &:hover
     .crossed-line
       width: 90px
       left: -2px
       transition: $fast-transition
+      @include breakpoint(mobile-only)
+        width: 85px
       @include breakpoint(desktop)
         left: -2px
         width: 105px
@@ -254,9 +263,11 @@ a
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none  /* IE and Edge */
     scrollbar-width: none  /* Firefox */
-    font-size: 1.1rem
+    font-size: $font-size-1
     @include breakpoint(desktop)
-      font-size: 1.5rem
+      font-size: $font-size-2
+    &.limit-width
+      max-width: 700px
     
 
 .meta-title
@@ -355,9 +366,9 @@ a
   // background: $background
   background: transparent
   display: flex
-  margin-top: 4px
-  @include breakpoint(desktop)
-    margin-top: 0
+  margin-top: 2px
+  // @include breakpoint(desktop)
+  //   margin-top: 0
 
 .navbar-item
   // margin-right: 20px
@@ -464,7 +475,7 @@ a
     //       width: 100%
 
 .project-number-title
-  font-size: 1rem
+  font-size: $font-size-1
   color: $dark-gray
   display: flex
   flex-direction: column
@@ -479,7 +490,7 @@ a
   width: 0px
   margin-bottom: 3px
   @include breakpoint(desktop)
-    font-size: 1.1rem
+    font-size: $font-size-1
     margin-bottom: 0px
   @include breakpoint(mobile-only)
     margin-bottom: 6px
@@ -626,9 +637,9 @@ video
 
 .bigger-font
   @include breakpoint(laptop)
-    font-size: 1.5rem
+    font-size: $font-size-2
     a
-      font-size: 1.5rem
+      font-size: $font-size-2
     crossed
       &::after
         height: 2px
@@ -665,5 +676,15 @@ video
       .indicator-dot
         background: $black
     // background: pink
+
+.single-page-wrapper
+  a
+    text-decoration: underline
+  p
+    color: black
+    strong, b
+      font-weight: 400
+      color: red!important
+
 
 @import 'mobile-classes.sass'

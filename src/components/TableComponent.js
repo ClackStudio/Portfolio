@@ -1,8 +1,8 @@
 import React from 'react'
 // import './all.sass'
 
-const TableLayout = ({ children }) => (
-  <div className="meta-table">{children}</div>
+const TableLayout = ({ children, className }) => (
+  <div className={`meta-table ${className && className}`}>{children}</div>
 )
 
 const TableRowComponent = ({
