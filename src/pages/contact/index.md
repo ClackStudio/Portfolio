@@ -1,12 +1,14 @@
 ---
-templateKey: 'contact-page'
+templateKey: contact-page
 path: /contact
-title: Contact us
+title: contact
 contactData:
-  - title: Phone
-    data: +49 (0)123 213 323 232
+  - title: e-mail
+    data: hello@clackstudio.com
+  - title: phone
+    data: +49 176 48 23 12 54
 socialLinks:
-  - title: Instagram
-    name: "@clackstudio"
+  - title: instagram
+    name: "@clack.studio"
     url: https://www.instagram.com/clack.studio
 ---
