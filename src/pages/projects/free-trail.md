@@ -10,7 +10,7 @@ centeredFirstImageMobile: false
 centeredLastImage: true
 centeredLastImageMobile: false
 section:
-  - horizontal: false
+  - horizontal: true
     src: /img/free_trail01.jpg
     left: false
     centeredSecond: false
@@ -29,7 +29,7 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: false
+  - horizontal: true
     src: /img/free_trail04.jpg
     left: false
     centeredSecond: false
@@ -38,7 +38,7 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: false
+  - horizontal: true
     src: /img/free_trail07.jpg
     left: false
     centeredSecond: false
