@@ -22,21 +22,17 @@ Hélène Marie Camille Mohrbutter & Mana Zarindast\
 \
 LEGAL DISCLAIMER\
 \
-EUROPÄISCHE ONLINE-STREITBEILEGUNGS-PLATTFORM
-
+*EUROPÄISCHE ONLINE-STREITBEILEGUNGS-PLATTFORM*\
 Seit dem 15. Februar 2016 stellt die EU-Kommission eine Plattform für außergerichtliche Streitschlichtung bereit. Als Verbraucher gibt dies die Möglichkeit, Streitigkeiten im Zusammenhang mit der Online-Bestellung zunächst ohne die Einschaltung eines Gerichts zu klären. Die Streitbeilegungs-Plattform unter dem externen Link <https://webgate.ec.europa.eu/odr/main/index.cfm?event=main.adr.show> erreichbar.\
 \
-HAFTUNG FÜR INHALTE\
-\
+*HAFTUNG FÜR INHALTE*\
 Die Inhalte unserer Seiten wurden mit größter Sorgfalt und bestem Gewissen erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Seiten und Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder\
 Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir entsprechende Inhalte und Links umgehend entfernen.\
 \
-HAFTUNG FÜR LINKS\
-\
+*HAFTUNG FÜR LINKS*\
 Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Aus diesem Grund können wir für diese Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.\
 \
-URHEBERRECHT\
-\
+*URHEBERRECHT*\
 Die auf der Website veröffentlichten Inhalte, Werke und bereitgestellten Informationen unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen. \
 \
 COPYRIGHT\
@@ -73,7 +69,7 @@ The right to withdraw consent
 Log Files
 www.clack-studio.de follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
 
-Privacy Policies
+*PRIVACY POLICIES* 
 You may consult this list to find the Privacy Policy for each of the advertising partners of www.clack-studio.de.
 
 Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on www.clack-studio.de, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.
@@ -96,12 +92,10 @@ Our Privacy Policy applies only to our online activities and is valid for visito
 Consent
 By using our website, you hereby consent to our Privacy Policy and agree to its terms.\
 \
-CHANGE OF OUR PRIVACY POLICY
-
+*CHANGE OF OUR PRIVACY POLICY*\
 We reserve the right to amend this privacy policy to always comply with the current legal requirements or to implement changes to our services in the privacy policy, e.g. when introducing new services. Your new visit will be subject to the new privacy policy.
 
-QUESTIONS TO THE DATA PROTECTION OFFICER
-
+*QUESTIONS TO THE DATA PROTECTION OFFICER*\
 If you have questions about privacy, please contact us by e-mail via hello@clackstudio.com\
 \
 \
