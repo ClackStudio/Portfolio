@@ -59,6 +59,9 @@ section:
     centeredFirst: true
     centeredFirstMobile: false
 tags:
-  - art direction
+  - creative direction
+  - photography
+  - 3D animation
+  - production
 lastImage: /img/2022-03-03-13.12.54-kopie.jpg
 ---
