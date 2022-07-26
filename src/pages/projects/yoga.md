@@ -1,8 +1,8 @@
 ---
 templateKey: project-post
-title: yoga
+title: "fw21 yoga campaign "
 client: reebok
-date: 2022-07-18T11:21:40.431Z
+date: 2021-06-23T14:47:38.445Z
 featuredproject: true
 featuredimage: /img/210421_reebok_yoga_m6_150.jpg
 centeredFirstImage: true
@@ -41,6 +41,6 @@ section:
     centeredFirstMobile: false
 tags:
   - art direction
-  - ""
+  - production
 lastImage: /img/210421_reebok_yoga_m1_087.jpg
 ---
