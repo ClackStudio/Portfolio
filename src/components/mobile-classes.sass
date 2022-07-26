@@ -16,13 +16,15 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
     mix-blend-mode: difference
     filter: invert(1) grayscale(0)
   .mobile-navbar-menu
+    .navbar-item
+      z-index: 12
     .fullscreen-menu
       display: none
       width: 100vw
       background: $background
-      height: calc( #{$dvh} - #{$navbar-height} )
+      height: calc( #{$dvh})
       position: fixed
-      top: calc(#{$navbar-height}  - 1px )
+      top: 0
       left: 0
       padding-left: $standard-padding
       z-index: 10

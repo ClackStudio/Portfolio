@@ -58,6 +58,7 @@ const ProjectIndexPageTemplate = ({ edges }) => {
                     onMouseLeave={onMouseLeave}
                     onMouseEnter={() => onMouseEnter(index)}
                     key={node.id}
+                    leftMaxWidth={isMobile ? '40%' : '50%'}
                     className={`crossed ${
                       index === currentHoveredBar && !isMobile ? 'active' : ''
                     }`}

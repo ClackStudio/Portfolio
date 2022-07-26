@@ -12,6 +12,8 @@ const TableRowComponent = ({
   onMouseLeave,
   onClick,
   className,
+  leftMaxWidth,
+  noCrossLine
 }) => {
   return (
     <div
@@ -20,9 +22,9 @@ const TableRowComponent = ({
       onClick={onClick}
       className={`columns ${className}`}
     >
-      <div className="column is-6 meta-title">{leftData}</div>
+      <div className={`column is-6 meta-title`} style={{maxWidth: leftMaxWidth}}>{leftData}</div>
       <div className="column is-6 meta-data">{rightData}</div>
-      <div className="table-cross-line"></div>
+      {!noCrossLine && <div className="table-cross-line"></div>}
     </div>
   )
 }

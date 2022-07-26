@@ -30,6 +30,7 @@ export const ContactPageTemplate = ({
                       leftData={title}
                       rightData={data}
                       key={`key_add_data_${index}`}
+                      noCrossLine
                     />
                   ))}
                 {socialLinks &&
@@ -38,6 +39,7 @@ export const ContactPageTemplate = ({
                       leftData={title}
                       rightData={<a href={url}>{name} </a>}
                       key={`key_add_data_${index}`}
+                      noCrossLine
                     />
                   ))}
               </TableLayout>
