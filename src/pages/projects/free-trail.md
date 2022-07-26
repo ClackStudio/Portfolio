@@ -1,8 +1,8 @@
 ---
 templateKey: project-post
-title: free trail
+title: hyperlocal berlin
 client: nike
-date: 2022-07-21T11:26:54.174Z
+date: 2021-07-27T14:44:22.421Z
 featuredproject: true
 featuredimage: /img/free_trail08.jpg
 centeredFirstImage: true
@@ -49,5 +49,7 @@ section:
     centeredFirstMobile: false
 tags:
   - art direction
+  - copy
+  - production
 lastImage: /img/free_trail05.jpg
 ---
