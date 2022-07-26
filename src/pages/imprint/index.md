@@ -39,34 +39,34 @@ COPYRIGHT\
 \
 © 2022 Clack Studio. All rights reserved: Clack Studio GbR. This website and all of its content, including all text, graphics, video, and photos, are the copyrighted works of Clack Studio GbR and/or various third parties. The content is for your personal and non-commercial use only. You may not download our content for commercial purposes without prior written permission of Clack Studio GbR.\
 \
-PRIVACY POLICY
-
-At www.clack-studio.de, accessible from www.clack-studio.de, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by www.clack-studio.de and how we use it.
-
-If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us. Our Privacy Policy was generated with the help of GDPR Privacy Policy Generator
-
+PRIVACY POLICY\
+At www.clack-studio.de, accessible from www.clack-studio.de, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by www.clack-studio.de and how we use it.\
+\
+If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us. Our Privacy Policy was generated with the help of GDPR Privacy Policy Generator\
+\
 General Data Protection Regulation (GDPR)
-We are a Data Controller of your information.
-
-Clack Studio Gbr legal basis for collecting and using the personal information described in this Privacy Policy depends on the Personal Information we collect and the specific context in which we collect the information:
-
+We are a Data Controller of your information.\
+\
+Clack Studio Gbr legal basis for collecting and using the personal information described in this Privacy Policy depends on the Personal Information we collect and the specific context in which we collect the information:\
+\
 Clack Studio Gbr needs to perform a contract with you
-You have given Clack Studio Gbr permission to do so
+You have given Clack Studio Gbr permission to do so \
 Processing your personal information is in Clack Studio Gbr legitimate interests
 Clack Studio Gbr needs to comply with the law
-Clack Studio Gbr will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies.
-
-If you are a resident of the European Economic Area (EEA), you have certain data protection rights. If you wish to be informed what Personal Information we hold about you and if you want it to be removed from our systems, please contact us.
-
-In certain circumstances, you have the following data protection rights:
-
+Clack Studio Gbr will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies.\
+\
+If you are a resident of the European Economic Area (EEA), you have certain data protection rights. If you wish to be informed what Personal Information we hold about you and if you want it to be removed from our systems, please contact us.\
+\
+In certain circumstances, you have the following data protection rights:\
+\
 The right to access, update or to delete the information we have on you.
 The right of rectification.
 The right to object.
 The right of restriction.
 The right to data portability
-The right to withdraw consent
-Log Files
+The right to withdraw consent\
+\
+*LOG FILES*
 www.clack-studio.de follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
 
 *PRIVACY POLICIES* 
@@ -93,8 +93,8 @@ Consent
 By using our website, you hereby consent to our Privacy Policy and agree to its terms.\
 \
 *CHANGE OF OUR PRIVACY POLICY*\
-We reserve the right to amend this privacy policy to always comply with the current legal requirements or to implement changes to our services in the privacy policy, e.g. when introducing new services. Your new visit will be subject to the new privacy policy.
-
+We reserve the right to amend this privacy policy to always comply with the current legal requirements or to implement changes to our services in the privacy policy, e.g. when introducing new services. Your new visit will be subject to the new privacy policy.\
+\
 *QUESTIONS TO THE DATA PROTECTION OFFICER*\
 If you have questions about privacy, please contact us by e-mail via hello@clackstudio.com\
 \
