@@ -21,16 +21,7 @@ section:
     centeredFirst: false
     centeredFirstMobile: false
   - horizontal: true
-    src: /img/img_2422.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: false
-    centeredFirstMobile: false
-  - horizontal: true
-    src: /img/img_3128_reedited.jpg
+    src: /img/img_3004.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
@@ -47,8 +38,8 @@ section:
     altText: ""
     centeredFirst: false
     centeredFirstMobile: false
-  - horizontal: false
-    src: /img/img_3004.jpg
+  - horizontal: true
+    src: /img/img_3128_reedited.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
