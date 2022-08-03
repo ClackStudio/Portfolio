@@ -28,7 +28,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: false
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: true
     src: /img/img_2723_reedited.jpg
     left: false
@@ -37,7 +37,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: false
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: true
     src: /img/img_3128_reedited.jpg
     left: false
@@ -46,7 +46,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: false
-    centeredFirstMobile: false
+    centeredFirstMobile: true
 tags:
   - production
 lastImage: /img/img_2536.jpg
