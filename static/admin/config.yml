@@ -33,7 +33,7 @@ collections:
       - { label: "Centered first Image on mobile", name: centeredFirstImageMobile, widget: boolean, hint: give the start-image a padding , default: false }
       - { label: "Centered last image", name: centeredLastImage, widget: boolean, hint: give the end-image a padding , default: false }
       - { label: "Centered last Image on mobile", name: centeredLastImageMobile, widget: boolean, hint: give the end-image a padding , default: false }
-      - { label: featured Video, name: featuredVideo, required: false, widget: file, hint: not more then 1mb!!! this is very dangerous as too many featured videos can make the website super slow with bad SEO, use only as a last resort on one or two projects}
+      - { label: featured Video, name: featuredVideo, choose_url: false, required: false, widget: file, hint: not more then 1mb!!! this is very dangerous as too many featured videos can make the website super slow with bad SEO, use only as a last resort on one or two projects, default: null}
       - {
           label: Additional data,
           hint: data rows for the description; e.g. "Photographer — Paul Wiegeand",
@@ -49,7 +49,7 @@ collections:
             label: Section,
             name: section,
             widget: list,
-            hint: Here ayou can add as many photos and videos as you would like,
+            hint: Here you can add as many photos and videos as you would like,
             fields:
             [
               { label: Image, name: src, required: false, widget: image },
@@ -62,7 +62,7 @@ collections:
               { label: Second Alt Text, required: false, name: altTextSecond, widget: text, hint: helps SEO (only if two images are in this section) , default: "" },
               { label: centered second image, name: centeredSecond, required: false, widget: boolean, hint: give the second image a padding of 4% , default: false },
               { label: centered second image on mobile, name: centeredSecondMobile, required: false, widget: boolean, hint: also on mobile - give the second image a padding of 4% , default: false },
-              { label: video, name: video, required: false, widget: file, hint: h.264 compression not more then 1 or 2mb; uses alttext1;},
+              { label: video, name: video, choose_url: false ,required: false, widget: file, hint: h.264 compression not more then 1 or 2mb; uses alttext1 },
             ]
           }
       - { label: "Optional Text", name: "body", required: false, widget: "markdown" }

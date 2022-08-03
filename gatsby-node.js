@@ -85,3 +85,50 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  // Explicitly define the Markdown frontmatter object
+  // This way those will always be defined as file even if CMS leaves a blank string
+  // This way the queries will return `null` even when a blank string is left
+  createTypes(`
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+    }
+
+    type Section {
+      left: Boolean
+      horizontal: Boolean
+      altText: String
+      altTextSecond: String
+      centeredFirst: Boolean
+      centeredFirstMobile: Boolean
+      centeredSecond:Boolean
+      centeredSecondMobile: Boolean
+      src: File @fileByRelativePath
+      secondImage: File @fileByRelativePath
+      video: File @fileByRelativePath
+    }
+
+    type Frontmatter {
+      featuredimage: File @fileByRelativePath
+      featuredVideo: File @fileByRelativePath
+      lastImage: File @fileByRelativePath
+      title: String
+      description: String
+      client: String
+      centeredFirstImage: Boolean
+      centeredFirstImageMobile: Boolean
+      centeredLastImage: Boolean
+      centeredLastImageMobile: Boolean
+      additionalData: [AdditionalData]
+      section: [Section]
+    }
+
+    type AdditionalData {
+      title: String
+      data: String
+    }
+  `);
+};

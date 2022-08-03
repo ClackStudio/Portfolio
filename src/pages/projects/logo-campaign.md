@@ -9,16 +9,15 @@ centeredFirstImage: true
 centeredFirstImageMobile: false
 centeredLastImage: true
 centeredLastImageMobile: false
+featuredVideo: ""
 section:
   - horizontal: false
-    src: /img/labience_logo_animation_medium.mp4
     left: false
-    secondImage: /img/labience_symbol_animation.mp4
     centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    video: ""
+    video: /img/labience_symbol_animation.mp4
     centeredFirst: false
     centeredFirstMobile: false
 tags:

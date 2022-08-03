@@ -269,7 +269,7 @@ ProjectPostTemplate.propTypes = {
 }
 
 const ProjectPost = ({ data, location }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
   return (
     // <Layout location={location}>
     <ProjectPostTemplate
@@ -301,16 +301,16 @@ const ProjectPost = ({ data, location }) => {
       title={post.frontmatter.title}
     />
     // </Layout>
-  )
-}
+  );
+};
 
 ProjectPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
-}
+};
 
-export default ProjectPost
+export default ProjectPost;
 
 export const pageQuery = graphql`
   query ProjectPostByID($id: String!) {
@@ -338,6 +338,7 @@ export const pageQuery = graphql`
         }
         featuredVideo {
           publicURL
+          relativePath
         }
         lastImage {
           childImageSharp {
@@ -371,4 +372,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
