@@ -22,16 +22,18 @@ const ServicesListTemplate = ({ services }) => (
     <div className="column is-6 meta-data">
       {services && services.length ? (
         <ul className="services-list">
-          {services.map((service) => (
-            <li className="meta-data-point" key={service + `services`}>
-              {service}
-            </li>
-          ))}
+          {services.map(
+            (service, index) =>
+              service + `${index !== services.length - 1 ? ", " : ""}`
+            // <li className="meta-data-point" key={service + `services`}>
+            //   {service}
+            // </li>
+          )}
         </ul>
       ) : null}
     </div>
   </div>
-)
+);
 
 const FillingVideo = ({ src, centered }) => (
   <video muted autoPlay loop playsInline style={{objectFit: centered ? 'contain' : 'cover'}}>
