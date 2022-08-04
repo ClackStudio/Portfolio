@@ -14,11 +14,11 @@ section:
     src: /img/img_1695.jpg
     left: true
     secondImage: /img/img_1807.jpg
-    centeredSecond: false
+    centeredSecond: true
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
   - horizontal: true
     src: /img/img_3004.jpg
@@ -27,7 +27,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: true
   - horizontal: true
     src: /img/img_2723_reedited.jpg
@@ -36,7 +36,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: true
   - horizontal: true
     src: /img/img_3128_reedited.jpg
@@ -45,7 +45,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: true
 tags:
   - production
