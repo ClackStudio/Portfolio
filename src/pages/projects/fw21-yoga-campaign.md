@@ -22,9 +22,9 @@ section:
     centeredFirst: true
     centeredFirstMobile: false
   - horizontal: false
-    src: /img/210802_reebok-x-clack-studio_shot-9_1853.jpg
+    src: /img/210802_reebok-x-clack-studio_shot-9_1792.jpg
     left: false
-    secondImage: /img/210802_reebok-x-clack-studio_shot-9_1792.jpg
+    secondImage: /img/210802_reebok-x-clack-studio_shot-9_1853.jpg
     centeredSecond: true
     centeredSecondMobile: false
     altTextSecond: ""
@@ -34,5 +34,5 @@ section:
 tags:
   - art direction
   - production
-lastImage: /img/nanox1_07.jpg
+lastImage: /img/210802_reebok-x-clack-studio_shot-12_2808.jpg
 ---
