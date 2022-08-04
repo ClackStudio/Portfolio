@@ -4,7 +4,7 @@ title: logo campaign
 client: labience
 date: 2022-08-02T07:47:07.090Z
 featuredproject: true
-featuredimage: /img/labience_logo_animation_medium.mp4
+featuredimage: /img/labience_bottle_new01.jpg
 centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: false
@@ -23,5 +23,5 @@ section:
     centeredFirstMobile: false
 tags:
   - art direction
-lastImage: /img/labience_logo_animation_medium.mp4
+lastImage: /img/labience_bottle_new01.jpg
 ---
