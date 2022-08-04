@@ -11,7 +11,7 @@ centeredLastImage: true
 centeredLastImageMobile: false
 section:
   - horizontal: false
-    src: /img/2022-03-02-15.53.55-kopie.jpg
+    src: /img/2022-03-03-13.45.09-kopie.jpg
     left: false
     secondImage: /img/2022-03-02-14.14.29-kopie.jpg
     centeredSecond: true
