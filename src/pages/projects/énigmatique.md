@@ -4,16 +4,16 @@ title: énigmatique
 client: labience
 date: 2022-07-18T10:36:53.432Z
 featuredproject: true
-featuredimage: /img/2022-03-02-14.14.29-kopie.jpg
+featuredimage: /img/2022-03-02-17.43.10-kopie.jpg
 centeredFirstImage: true
 centeredFirstImageMobile: false
 centeredLastImage: true
 centeredLastImageMobile: false
 section:
   - horizontal: false
-    src: /img/2022-03-02-15.53.55-kopie.jpg
+    src: ""
     left: false
-    secondImage: /img/2022-03-03-13.38.00-kopie.jpg
+    secondImage: ""
     centeredSecond: true
     centeredSecondMobile: false
     altTextSecond: ""
@@ -21,9 +21,9 @@ section:
     centeredFirst: true
     centeredFirstMobile: false
   - horizontal: false
-    src: /img/2022-03-02-17.39.47-kopie.jpg
+    src: ""
     left: false
-    secondImage: /img/2022-03-03-11.34.29-kopie.jpg
+    secondImage: ""
     centeredSecond: true
     centeredSecondMobile: false
     altTextSecond: ""
@@ -31,7 +31,7 @@ section:
     centeredFirst: true
     centeredFirstMobile: false
   - horizontal: true
-    src: /img/2022-03-03-11.27.12-kopie.jpg
+    src: ""
     left: false
     centeredSecond: false
     centeredSecondMobile: false
@@ -40,9 +40,9 @@ section:
     centeredFirst: true
     centeredFirstMobile: true
   - horizontal: false
-    src: /img/2022-03-03-13.53.52-kopie.jpg
+    src: ""
     left: false
-    secondImage: /img/2022-03-03-13.45.09-kopie.jpg
+    secondImage: ""
     centeredSecond: true
     centeredSecondMobile: false
     altTextSecond: ""
@@ -50,7 +50,7 @@ section:
     centeredFirst: true
     centeredFirstMobile: false
   - horizontal: true
-    src: /img/2022-03-02-16.09.51-kopie.jpg
+    src: ""
     left: false
     centeredSecond: false
     centeredSecondMobile: false
@@ -63,5 +63,5 @@ tags:
   - photography
   - 3D animation
   - production
-lastImage: /img/2022-03-03-13.12.54-kopie.jpg
+lastImage: ""
 ---
