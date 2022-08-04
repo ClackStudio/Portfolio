@@ -28,7 +28,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: false
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: false
     src: /img/2022-03-03-11.34.29-kopie.jpg
     left: false
@@ -46,7 +46,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
 tags:
   - creative direction
