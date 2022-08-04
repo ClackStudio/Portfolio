@@ -12,13 +12,14 @@ centeredLastImageMobile: false
 featuredVideo: /img/labience_logo_animation_medium.mp4
 section:
   - horizontal: false
-    src: /img/labience_bottle_new01.jpg
+    src: /img/labience_bottle_new02.jpg
     left: false
-    secondImage: /img/labience_bottle_new02.jpg
+    secondImage: ""
     centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
+    video: /img/labience_symbol_animation.mp4
     centeredFirst: false
     centeredFirstMobile: false
 tags:
