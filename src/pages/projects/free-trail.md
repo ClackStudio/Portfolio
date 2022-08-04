@@ -5,9 +5,9 @@ client: nike
 date: 2021-07-27T14:44:22.421Z
 featuredproject: true
 featuredimage: /img/free_trail08.jpg
-centeredFirstImage: false
+centeredFirstImage: true
 centeredFirstImageMobile: false
-centeredLastImage: false
+centeredLastImage: true
 centeredLastImageMobile: false
 section:
   - horizontal: true
