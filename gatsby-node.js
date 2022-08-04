@@ -124,11 +124,25 @@ exports.createSchemaCustomization = ({ actions }) => {
       centeredLastImageMobile: Boolean
       additionalData: [AdditionalData]
       section: [Section]
+      contactData: [ContactData]
+      socialLinks: [SocialLinks]
     }
 
     type AdditionalData {
       title: String
       data: String
     }
+
+    type ContactData {
+      title: String
+      data: String
+    }
+
+    type SocialLinks {
+      title: String
+      name: String
+      url: String
+    }
+
   `);
 };
