@@ -9,7 +9,7 @@ centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
-featuredVideo: ""
+featuredVideo: /img/labience_logo_animation_medium.mp4
 section:
   - horizontal: false
     src: /img/labience_bottle_new01.jpg
@@ -23,5 +23,5 @@ section:
     centeredFirstMobile: false
 tags:
   - art direction
-lastImage: /img/labience_symbol_animation.mp4
+lastImage: /img/labience_logo_animation_medium.mp4
 ---
