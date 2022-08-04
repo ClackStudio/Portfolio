@@ -13,13 +13,13 @@ featuredVideo: /img/labience_logo_animation_medium.mp4
 section:
   - horizontal: false
     src: /img/labience_bottle_new01.jpg
-    left: true
+    left: false
     secondImage: /img/labience_bottle_new02.jpg
-    centeredSecond: true
+    centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
+    centeredFirst: false
     centeredFirstMobile: false
 tags:
   - art direction
