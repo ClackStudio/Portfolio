@@ -5,54 +5,16 @@ client: labience
 date: 2022-07-18T10:36:53.432Z
 featuredproject: true
 featuredimage: /img/2022-03-02-17.43.10-kopie.jpg
-centeredFirstImage: true
+centeredFirstImage: false
 centeredFirstImageMobile: false
-centeredLastImage: true
+centeredLastImage: false
 centeredLastImageMobile: false
 section:
   - horizontal: false
-    src: ""
+    src: /img/2022-03-02-15.53.55-kopie.jpg
     left: false
-    secondImage: ""
+    secondImage: /img/2022-03-02-14.14.29-kopie.jpg
     centeredSecond: true
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: false
-  - horizontal: false
-    src: ""
-    left: false
-    secondImage: ""
-    centeredSecond: true
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: false
-  - horizontal: true
-    src: ""
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: true
-  - horizontal: false
-    src: ""
-    left: false
-    secondImage: ""
-    centeredSecond: true
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: false
-  - horizontal: true
-    src: ""
-    left: false
-    centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
@@ -63,5 +25,5 @@ tags:
   - photography
   - 3D animation
   - production
-lastImage: ""
+lastImage: /img/2022-03-02-17.39.47-kopie.jpg
 ---
