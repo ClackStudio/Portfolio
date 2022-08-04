@@ -7,7 +7,7 @@ featuredproject: true
 featuredimage: /img/2022-03-02-14.14.29-kopie.jpg
 centeredFirstImage: true
 centeredFirstImageMobile: false
-centeredLastImage: false
+centeredLastImage: true
 centeredLastImageMobile: false
 section:
   - horizontal: false
