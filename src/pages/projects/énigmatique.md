@@ -51,6 +51,5 @@ section:
 tags:
   - creative direction
   - photography
-  - production
 lastImage: /img/2022-03-03-13.12.54-kopie.jpg
 ---
