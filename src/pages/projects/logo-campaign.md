@@ -23,6 +23,7 @@ section:
     centeredFirst: false
     centeredFirstMobile: false
 tags:
-  - art direction
+  - creative direction
+  - 3D animation
 lastImage: /img/labience_bottle_new01.jpg
 ---
