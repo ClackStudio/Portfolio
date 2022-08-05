@@ -20,14 +20,14 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: false
+  - horizontal: true
     src: /img/2022-03-02-16.09.51-kopie.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: true
   - horizontal: false
     src: /img/2022-03-03-11.34.29-kopie.jpg
