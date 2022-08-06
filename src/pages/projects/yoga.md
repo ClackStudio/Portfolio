@@ -27,8 +27,8 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
-    centeredFirstMobile: false
+    centeredFirst: true
+    centeredFirstMobile: true
   - horizontal: false
     src: /img/210421_reebok_yoga_m1_147.jpg
     left: false
