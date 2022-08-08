@@ -163,47 +163,48 @@ export const ProjectPostTemplate = ({
   title,
   helmet,
   featuredImage,
+  featuredVideo,
   centeredFirstImage,
   centeredFirstImageMobile,
   centeredLastImage,
   centeredLastImageMobile,
   sections,
 }) => {
-  const PostContent = contentComponent || Content
-  const firstImage = featuredImage && (getImage(featuredImage) || featuredImage)
-  const lastSectionImage = lastImage && (getImage(lastImage) || lastImage)
-  const breakpoints = useBreakpoint()
-  const projectRef = React.useRef(null)
-  const isMobile = breakpoints.sm
-  const { setCurrentHoveredBar } = useBackgroundStore()
+  const PostContent = contentComponent || Content;
+  const firstImage =
+    featuredImage && (getImage(featuredImage) || featuredImage);
+  const lastSectionImage = lastImage && (getImage(lastImage) || lastImage);
+  const breakpoints = useBreakpoint();
+  const projectRef = React.useRef(null);
+  const isMobile = breakpoints.sm;
+  const { setCurrentHoveredBar } = useBackgroundStore();
 
   React.useEffect(() => {
     // reset hovered
-    setCurrentHoveredBar(null)
-  }, [])
+    setCurrentHoveredBar(null);
+  }, []);
 
   return (
     <>
       <Navbar></Navbar>
       <div
         ref={projectRef}
-        style={{ touchAction: 'pan-y' }}
-        className={`scroll-container ${
-          isMobile && 'mobile-scroll-container'
-        }`}
+        style={{ touchAction: "pan-y" }}
+        className={`scroll-container ${isMobile && "mobile-scroll-container"}`}
       >
-        <Seo description={`${client} ${title} ${date}`} featuredImage={firstImage}></Seo>
-        <SectionTemplate
-          innerClassName=" first-section"
-        >
+        <Seo
+          description={`${client} ${title} ${date}`}
+          featuredImage={firstImage}
+        ></Seo>
+        <SectionTemplate innerClassName=" first-section">
           <div className="columns fill-container project-info-wrapper">
             <div className="column fill-container ">
               <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container is-postion-relative project-info">
                 <div></div>
                 <ScrollArrow />
                 <TableLayout>
-                  <TableRowComponent leftData={'client'} rightData={client} />
-                  <TableRowComponent leftData={'project'} rightData={title} />
+                  <TableRowComponent leftData={"client"} rightData={client} />
+                  <TableRowComponent leftData={"project"} rightData={title} />
                   {additionalData &&
                     additionalData.map(({ title, data }, index) => (
                       <TableRowComponent
@@ -212,8 +213,8 @@ export const ProjectPostTemplate = ({
                         key={`key_add_data_${index}`}
                       />
                     ))}
-                  <TableRowComponent leftData={'date'} rightData={date} />
-                  {!isMobile && (<ServicesListTemplate services={tags} />)}
+                  <TableRowComponent leftData={"date"} rightData={date} />
+                  {!isMobile && <ServicesListTemplate services={tags} />}
                   {/* <TitleTemplate title={title} className={'pt-5'} ></TitleTemplate> */}
                 </TableLayout>
               </div>
@@ -221,11 +222,33 @@ export const ProjectPostTemplate = ({
 
             {/* <PostContent content={content} /> */}
           </div>
-          <div className={`column is-6 fill-container project-first-image
-            ${centeredFirstImage ? 'centered' : ''}
-            ${centeredFirstImageMobile? 'centered-mobile' : ''}
-          `}>
-            <BigImage img={firstImage} objectFit={(centeredFirstImage && !isMobile)  || (centeredFirstImageMobile && isMobile)  ? 'contain' : 'cover'}></BigImage>
+          <div
+            className={`column is-6 fill-container project-first-image
+            ${centeredFirstImage ? "centered" : ""}
+            ${centeredFirstImageMobile ? "centered-mobile" : ""}
+          `}
+          >
+            {featuredVideo ? (
+              <FillingVideo
+                src={featuredVideo.publicURL}
+                centered={
+                  (centeredFirstImage && !isMobile) ||
+                  (centeredFirstImageMobile && isMobile)
+                    ? true
+                    : false
+                }
+              ></FillingVideo>
+            ) : (
+              <BigImage
+                img={firstImage}
+                objectFit={
+                  (centeredFirstImage && !isMobile) ||
+                  (centeredFirstImageMobile && isMobile)
+                    ? "contain"
+                    : "cover"
+                }
+              ></BigImage>
+            )}
           </div>
         </SectionTemplate>
 
@@ -238,16 +261,26 @@ export const ProjectPostTemplate = ({
         {/* FINAL SECTION */}
         <SectionTemplate>
           <div className="columns fill-container mobile-flex-column">
-            <div className={`column is-6 fill-container last-section
-            ${centeredLastImage ? 'centered' : ''}
-            ${centeredLastImageMobile? 'centered-mobile' : ''}
-            `}>
-              <BigImage img={lastSectionImage} objectFit={(centeredLastImage && !isMobile)  || (centeredLastImageMobile && isMobile)  ? 'contain' : 'cover'}></BigImage>
+            <div
+              className={`column is-6 fill-container last-section
+            ${centeredLastImage ? "centered" : ""}
+            ${centeredLastImageMobile ? "centered-mobile" : ""}
+            `}
+            >
+              <BigImage
+                img={lastSectionImage}
+                objectFit={
+                  (centeredLastImage && !isMobile) ||
+                  (centeredLastImageMobile && isMobile)
+                    ? "contain"
+                    : "cover"
+                }
+              ></BigImage>
             </div>
             <div className="column is-6 is-flex is-flex-direction-column fill-container last-section-nav">
               <div
                 className="is-flex is-justify-content-space-between is-flex-direction-column"
-                style={{ height: '100%', overflow: 'hidden' }}
+                style={{ height: "100%", overflow: "hidden" }}
               >
                 <TableLayout>
                   <PostContent content={content} />
@@ -259,8 +292,8 @@ export const ProjectPostTemplate = ({
         </SectionTemplate>
       </div>
     </>
-  )
-}
+  );
+};
 
 ProjectPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
@@ -268,7 +301,7 @@ ProjectPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
-}
+};
 
 const ProjectPost = ({ data, location }) => {
   const { markdownRemark: post } = data;
@@ -284,7 +317,7 @@ const ProjectPost = ({ data, location }) => {
       client={post.frontmatter.client}
       additionalData={post.frontmatter.additionalData}
       featuredImage={post.frontmatter.featuredimage}
-      videoSrc={post.frontmatter.publicURL}
+      featuredVideo={post.frontmatter.featuredVideo}
       date={post.frontmatter.date}
       centeredFirstImage={post.frontmatter.centeredFirstImage}
       centeredLastImage={post.frontmatter.centeredLastImage}
