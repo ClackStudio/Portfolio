@@ -28,7 +28,7 @@ collections:
       - { label: "Client", name: "client", widget: string }
       - { label: "Publish Date", name: "date", widget: "datetime", hint: the year will be shown in the description }
       - { label: "Shown in Barcode", name: "featuredproject", widget: "boolean", default: true }
-      - { label: "Featured Image", name: "featuredimage", widget: image, hint: has to be 720x1080 pixel with a mximum size of 200kb (yes it is possible to have it even smaller and it still looks great) }
+      - { label: "Featured Image", name: "featuredimage", widget: image, hint: has to be 720x1080 pixel with a mximum size of 200kb (yes it is possible to have it even smaller and it still looks great), default: "/img/DoNotDeletePlaceholder.jpg" }
       - { label: "Centered first image", name: centeredFirstImage, widget: boolean, hint: give the start-image a padding, default: false }
       - { label: "Centered first Image on mobile", name: centeredFirstImageMobile, widget: boolean, hint: give the start-image a padding , default: false }
       - { label: "Centered last image", name: centeredLastImage, widget: boolean, hint: give the end-image a padding , default: false }
