@@ -45,8 +45,6 @@ module.exports = {
         name: "images",
       },
     },
-    "gatsby-remark-embed-video",
-    "gatsby-remark-responsive-iframe",
     `gatsby-plugin-image`,
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
