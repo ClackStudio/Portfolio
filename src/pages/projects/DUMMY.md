@@ -18,6 +18,9 @@ section:
     altText: dummy
     horizontal: true
     left: true
+  - embeddedVideo: https://vimeo.com/404559285
+    altText: just a video
+  - embeddedVideo: https://www.youtube.com/watch?v=J---aiyznGQ
   - src: /img/DoNotDeletePlaceholder.jpg
     altText: dummy
     secondImage: /img/DoNotDeletePlaceholder.jpg

@@ -6,6 +6,7 @@ import Content, { HTMLContent } from '../components/Content'
 import { TableLayout } from '../components/TableComponent'
 import SectionTemplate from '../components/SectionTemplate'
 import Seo from '../components/Seo'
+import "../components/all.sass";
 
 // eslint-disable-next-line
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
