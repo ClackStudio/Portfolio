@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import ReactPlayer from "react-player";
 
 const VideoIFrame = ({ url = "https://vimeo.com/404559285" }) => {
