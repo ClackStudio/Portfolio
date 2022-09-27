@@ -15,6 +15,7 @@ import './styles.sass'
 import { useBackgroundStore } from '../stores/BarCodeStore'
 import Seo from '../components/Seo'
 import { useScroll } from '@use-gesture/react'
+import VideoIFrame from "../components/VideoIframe";
 
 const ServicesListTemplate = ({ services }) => (
   <div className="columns">
@@ -36,118 +37,219 @@ const ServicesListTemplate = ({ services }) => (
 );
 
 const FillingVideo = ({ src, centered }) => (
-  <video muted autoPlay loop playsInline style={{objectFit: centered ? 'contain' : 'cover'}}>
-    <source type="video/mp4" src={src} ></source>
+  <video
+    muted
+    autoPlay
+    loop
+    playsInline
+    style={{ objectFit: centered ? "contain" : "cover" }}
+  >
+    <source type="video/mp4" src={src}></source>
   </video>
-)
+);
 
-const IndicatorDot = ({on, black}) => (
-  <div className={`
+const IndicatorDot = ({ on, black }) => (
+  <div
+    className={`
   indicator-dot
-  ${on ? 'active' : null }
-  `}> </div>
-)
-const ScrollIndicator = ({slideNumber, black}) => {
-
+  ${on ? "active" : null}
+  `}
+  >
+    {" "}
+  </div>
+);
+const ScrollIndicator = ({ slideNumber, black }) => {
   return (
-    <div className={`
+    <div
+      className={`
     scroll-indicator
-    ${black ? 'black' : 'white' }
-    `}>
-      <IndicatorDot on={slideNumber === 0}/>
-      <IndicatorDot on={slideNumber === 1}/>
-    </div> 
-  )
-}
+    ${black ? "black" : "white"}
+    `}
+    >
+      <IndicatorDot on={slideNumber === 0} />
+      <IndicatorDot on={slideNumber === 1} />
+    </div>
+  );
+};
 
-const MultiplePictureWrapper = ({children, slider, black}) => {
-  const [slideNumber, setSlideNumber] = useState(0)
-  const bind = useScroll(({values: [x,y]}) => {
-    const middle = 200
-    if (x > middle && slideNumber === 0) {
-      setSlideNumber(1)
+const MultiplePictureWrapper = ({ children, slider, black }) => {
+  const [slideNumber, setSlideNumber] = useState(0);
+  const bind = useScroll(
+    ({ values: [x, y] }) => {
+      const middle = 200;
+      if (x > middle && slideNumber === 0) {
+        setSlideNumber(1);
+      }
+      if (x < middle && slideNumber === 1) {
+        setSlideNumber(0);
+      }
+    },
+    {
+      axis: "x",
     }
-    if (x < middle && slideNumber === 1) {
-      setSlideNumber(0)
-    }
-}, {
-  axis: 'x'
-});
+  );
 
   return (
     <div {...bind()} className="columns fill-container">
-      {slider && <ScrollIndicator slideNumber={slideNumber} black={black}></ScrollIndicator>}
+      {slider && (
+        <ScrollIndicator
+          slideNumber={slideNumber}
+          black={black}
+        ></ScrollIndicator>
+      )}
       {children}
     </div>
-  )
-}
+  );
+};
 
 const Section = ({ data, className }) => {
-  const { 
-    src, 
+  const {
+    src,
     secondImage = null,
     video = null,
     left = false,
-    horizontal = false, 
+    horizontal = false,
     centeredFirst = false,
     centeredFirstMobile = false,
-    centeredSecond= false,
-    centeredSecondMobile= false,
-    altText = 'portfolio image',
-    altTextSecond = 'another portfolio image'
-    } = data
-
-  const firstImage = getImage(data.src) || data.src
-  const secondImageSrc = getImage(data.secondImage) || data.secondImage
+    centeredSecond = false,
+    centeredSecondMobile = false,
+    altText = "portfolio image",
+    altTextSecond = "another portfolio image",
+    embeddedVideo = false,
+  } = data;
+  console.log("dataatatatat", data);
+  const firstImage = getImage(data.src) || data.src;
+  const secondImageSrc = getImage(data.secondImage) || data.secondImage;
   // console.log("CENTERED", centerd)
   return (
-    <SectionTemplate className={`${className} ${(secondImage || left) && !horizontal ? 'mobile-flip-section' : ''}`}>
-      {horizontal ? (
+    <SectionTemplate
+      className={`${className} ${
+        (secondImage || left) && !horizontal && !embeddedVideo
+          ? "mobile-flip-section"
+          : ""
+      }`}
+    >
+      {horizontal || embeddedVideo ? (
         <div className="columns fill-container horizontal">
-          <div className={`column is-12 ${centeredFirstMobile ? 'centered-mobile' : ''} ${centeredFirst ? 'centered' : ''}`}>
-            {video ? (
-              <FillingVideo src={video.publicURL} altText={altText} centered={centeredFirst}></FillingVideo>
-            ) : (
-              <BigImage className="project-picture" img={firstImage} altText={altText} objectFit={centeredFirst ? 'contain' : 'cover'}></BigImage>
-            )}
-          </div>
+          {embeddedVideo ? (
+            <div className={`column is-12 centered`} style={{ margin: "auto" }}>
+              <VideoIFrame url={embeddedVideo}></VideoIFrame>
+            </div>
+          ) : (
+            <div
+              className={`column is-12 ${
+                centeredFirstMobile ? "centered-mobile" : ""
+              } ${centeredFirst ? "centered" : ""}`}
+            >
+              {video ? (
+                <FillingVideo
+                  src={video.publicURL}
+                  altText={altText}
+                  centered={centeredFirst}
+                ></FillingVideo>
+              ) : (
+                <BigImage
+                  className="project-picture"
+                  img={firstImage}
+                  altText={altText}
+                  objectFit={centeredFirst ? "contain" : "cover"}
+                ></BigImage>
+              )}
+            </div>
+          )}
         </div>
       ) : (
-        <MultiplePictureWrapper slider={secondImage && true} black={centeredFirst || centeredSecond}>
+        <MultiplePictureWrapper
+          slider={secondImage && true}
+          black={centeredFirst || centeredSecond}
+        >
           <div
             className={`column is-6 project-column 
-            ${centeredFirstMobile && (left || secondImage) ? 'centered-mobile' : ''}
-            ${centeredFirst && (left || secondImage) ? 'centered' : ''}
-            ${!left && !secondImage ? `hide-column-mobile` : 'not-hidden?'}
+            ${
+              centeredFirstMobile && (left || secondImage)
+                ? "centered-mobile"
+                : ""
+            }
+            ${centeredFirst && (left || secondImage) ? "centered" : ""}
+            ${!left && !secondImage ? `hide-column-mobile` : "not-hidden?"}
             `}
-            style={{ position: 'relative' }}
+            style={{ position: "relative" }}
           >
             {left && video && (
-              <FillingVideo src={video.publicURL} altText={altText} centered={centeredFirst}></FillingVideo>
+              <FillingVideo
+                src={video.publicURL}
+                altText={altText}
+                centered={centeredFirst}
+              ></FillingVideo>
             )}
-            {(left || secondImage) && !video && <BigImage className="project-picture" img={firstImage} altText={altText} objectFit={centeredSecond ? 'contain' : 'cover'}></BigImage>}
+            {(left || secondImage) && !video && (
+              <BigImage
+                className="project-picture"
+                img={firstImage}
+                altText={altText}
+                objectFit={centeredSecond ? "contain" : "cover"}
+              ></BigImage>
+            )}
           </div>
           <div
             className={`column is-6 project-column 
-            ${left && !video && !secondImage ? `hide-column-mobile` : 'not-hidden?'}
-            ${((secondImage || video) && centeredSecond) || (!secondImage && centeredFirst)  ? 'centered' : ''}
-            ${((secondImage || video) && centeredSecondMobile) || (!secondImage && centeredFirstMobile)  ? 'centered-mobile' : ''}
+            ${
+              left && !video && !secondImage
+                ? `hide-column-mobile`
+                : "not-hidden?"
+            }
+            ${
+              ((secondImage || video) && centeredSecond) ||
+              (!secondImage && centeredFirst)
+                ? "centered"
+                : ""
+            }
+            ${
+              ((secondImage || video) && centeredSecondMobile) ||
+              (!secondImage && centeredFirstMobile)
+                ? "centered-mobile"
+                : ""
+            }
             `}
-            style={{ position: 'relative' }}
+            style={{ position: "relative" }}
           >
             {!left && video && (
-              <FillingVideo src={video.publicURL} altText={altText} centered={centeredFirst}></FillingVideo>
+              <FillingVideo
+                src={video.publicURL}
+                altText={altText}
+                centered={centeredFirst}
+              ></FillingVideo>
             )}
-            {!left && !video && !secondImage && <BigImage className="project-picture" altText={altText} img={firstImage} objectFit={centeredSecond  || (!secondImage && centeredFirst)  ? 'contain' : 'cover'}></BigImage>}
+            {!left && !video && !secondImage && (
+              <BigImage
+                className="project-picture"
+                altText={altText}
+                img={firstImage}
+                objectFit={
+                  centeredSecond || (!secondImage && centeredFirst)
+                    ? "contain"
+                    : "cover"
+                }
+              ></BigImage>
+            )}
             {secondImage && !video && (
-              <BigImage  img={secondImageSrc} altText={altTextSecond}  className="second-image project-picture" objectFit={centeredSecond  || (!secondImage && centeredFirst)  ? 'contain' : 'cover'}></BigImage>
+              <BigImage
+                img={secondImageSrc}
+                altText={altTextSecond}
+                className="second-image project-picture"
+                objectFit={
+                  centeredSecond || (!secondImage && centeredFirst)
+                    ? "contain"
+                    : "cover"
+                }
+              ></BigImage>
             )}
           </div>
         </MultiplePictureWrapper>
       )}
     </SectionTemplate>
-  )
-}
+  );
+};
 
 // eslint-disable-next-line
 export const ProjectPostTemplate = ({
@@ -203,17 +305,30 @@ export const ProjectPostTemplate = ({
                 <div></div>
                 <ScrollArrow />
                 <TableLayout>
-                  <TableRowComponent leftData={"client"} rightData={client} />
-                  <TableRowComponent leftData={"project"} rightData={title} />
+                  <TableRowComponent
+                    noCrossLine
+                    leftData={"client"}
+                    rightData={client}
+                  />
+                  <TableRowComponent
+                    noCrossLine
+                    leftData={"project"}
+                    rightData={title}
+                  />
                   {additionalData &&
                     additionalData.map(({ title, data }, index) => (
                       <TableRowComponent
+                        noCrossLine
                         leftData={title}
                         rightData={data}
                         key={`key_add_data_${index}`}
                       />
                     ))}
-                  <TableRowComponent leftData={"date"} rightData={date} />
+                  <TableRowComponent
+                    noCrossLine
+                    leftData={"date"}
+                    rightData={date}
+                  />
                   {!isMobile && <ServicesListTemplate services={tags} />}
                   {/* <TitleTemplate title={title} className={'pt-5'} ></TitleTemplate> */}
                 </TableLayout>
@@ -323,6 +438,7 @@ const ProjectPost = ({ data, location }) => {
       centeredLastImage={post.frontmatter.centeredLastImage}
       centeredFirstImageMobile={post.frontmatter.centeredFirstImageMobile}
       centeredLastImageMobile={post.frontmatter.centeredLastImageMobile}
+      embeddedVideo={post.frontmatter.embeddedVideo}
       helmet={
         <Helmet titleTemplate="%s | Blog">
           <title>{`${post.frontmatter.title}`}</title>
@@ -403,6 +519,7 @@ export const pageQuery = graphql`
             publicURL
             relativePath
           }
+          embeddedVideo
         }
       }
     }

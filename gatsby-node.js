@@ -126,6 +126,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       section: [Section]
       contactData: [ContactData]
       socialLinks: [SocialLinks]
+      embeddedVideo: String
     }
 
     type AdditionalData {
