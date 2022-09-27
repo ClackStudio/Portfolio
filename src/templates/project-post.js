@@ -15,7 +15,7 @@ import './styles.sass'
 import { useBackgroundStore } from '../stores/BarCodeStore'
 import Seo from '../components/Seo'
 import { useScroll } from '@use-gesture/react'
-import VideoIFrame from "../components/VideoIframe";
+import VideoIFrame from "../components/VideoIFrame";
 
 const ServicesListTemplate = ({ services }) => (
   <div className="columns">
