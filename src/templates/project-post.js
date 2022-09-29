@@ -117,7 +117,6 @@ const Section = ({ data, className }) => {
     altTextSecond = "another portfolio image",
     embeddedVideo = false,
   } = data;
-  console.log("dataatatatat", data);
   const firstImage = getImage(data.src) || data.src;
   const secondImageSrc = getImage(data.secondImage) || data.secondImage;
   // console.log("CENTERED", centerd)
