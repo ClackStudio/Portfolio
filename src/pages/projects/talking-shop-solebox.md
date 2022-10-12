@@ -24,5 +24,5 @@ tags:
   - direction
   - copy
   - production
-lastImage: solebox_snippet-02.mp4
+lastImage: ""
 ---
