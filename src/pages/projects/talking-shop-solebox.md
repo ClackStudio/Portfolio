@@ -11,14 +11,15 @@ centeredLastImage: false
 centeredLastImageMobile: false
 featuredVideo: /img/solebox_snippet-01.mp4
 section:
-  - altText: ""
-    centeredFirst: false
-    centeredFirstMobile: false
+  - horizontal: false
     left: false
-    horizontal: false
-    altTextSecond: ""
     centeredSecond: false
     centeredSecondMobile: false
+    altTextSecond: ""
+    embeddedVideo: https://vimeo.com/manage/videos/759028421
+    altText: ""
+    centeredFirst: false
+    centeredFirstMobile: false
 tags:
   - direction
   - copy
