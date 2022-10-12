@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: bend
+title: bend - pop-ups
 client: birkenstock
 date: 2022-10-12T09:02:43.740Z
 featuredproject: true
