@@ -4,7 +4,7 @@ title: bend - retail campaign
 client: birkenstock
 date: 2022-10-12T09:02:43.740Z
 featuredproject: true
-featuredimage: /img/8652_birkenstock_bend_campaign_oberpollinger-10.jpg
+featuredimage: /img/8743_birkenstock_bend_campaign_bs-store-26.jpg
 centeredFirstImage: true
 centeredFirstImageMobile: false
 centeredLastImage: true
@@ -70,5 +70,5 @@ tags:
   - concept
   - art direction
   - production
-lastImage: /img/220901_birkenstock_bend_campaign_bs_store_v2-15.jpg
+lastImage: /img/8652_birkenstock_bend_campaign_oberpollinger-10.jpg
 ---
