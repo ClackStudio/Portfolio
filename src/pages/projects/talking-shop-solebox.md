@@ -16,7 +16,7 @@ section:
     centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
-    embeddedVideo: https://vimeo.com/manage/videos/759028421
+    embeddedVideo: https://vimeo.com/759028421
     altText: ""
     centeredFirst: false
     centeredFirstMobile: false
