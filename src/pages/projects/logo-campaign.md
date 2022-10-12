@@ -24,5 +24,5 @@ section:
 tags:
   - creative direction
   - 3D animation
-lastImage: /img/labience_symbol_animation.mp4
+lastImage: ""
 ---
