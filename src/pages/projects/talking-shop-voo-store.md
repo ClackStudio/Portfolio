@@ -9,7 +9,7 @@ centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
-featuredVideo: /img/voo-store_01.mp4
+featuredVideo: /img/voo-store_02.mp4
 section:
   - horizontal: false
     left: false
