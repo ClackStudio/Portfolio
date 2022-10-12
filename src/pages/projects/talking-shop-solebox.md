@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: talking shop solebox
+title: talking shop - solebox
 client: nike
 date: 2021-09-23T14:56:26.238Z
 featuredproject: true
