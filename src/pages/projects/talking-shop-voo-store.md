@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: talking shop voo store
+title: talking shop - voo store
 client: nike
 date: 2021-04-27T14:54:43.417Z
 featuredproject: true
