@@ -24,5 +24,5 @@ tags:
   - direction
   - copy
   - production
-lastImage: voo-store_02.mp4
+lastImage: ""
 ---
