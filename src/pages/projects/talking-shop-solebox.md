@@ -24,5 +24,5 @@ tags:
   - direction
   - copy
   - production
-lastImage: ""
+lastImage: /img/bildschirmfoto-2021-10-16-um-13.23.58.png
 ---
