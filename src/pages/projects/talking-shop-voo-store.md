@@ -24,5 +24,5 @@ tags:
   - direction
   - copy
   - production
-lastImage: /img/voostore_feedcard2_720x1080.jpg
+lastImage: /img/bildschirmfoto-2022-10-13-um-10.45.32.png
 ---
