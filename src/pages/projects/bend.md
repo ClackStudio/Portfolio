@@ -11,7 +11,7 @@ centeredLastImage: true
 centeredLastImageMobile: false
 additionalData: []
 section:
-  - horizontal: false
+  - horizontal: true
     src: /img/8576_birkenstock_bend_campaign_oberpollinger-11.jpg
     left: false
     centeredSecond: false
@@ -20,7 +20,7 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: false
+  - horizontal: true
     src: /img/8592_birkenstock_bend_campaign_oberpollinger-3.jpg
     left: false
     centeredSecond: false
@@ -29,7 +29,7 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: false
+  - horizontal: true
     src: /img/220912_birkenstock_bend_campaign_goertz_v2-1.jpg
     left: false
     centeredSecond: false
@@ -38,7 +38,7 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: false
+  - horizontal: true
     src: /img/8774_birkenstock_bend_campaign_bs-store-26.jpg
     left: false
     centeredSecond: false
@@ -57,7 +57,7 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: false
+  - horizontal: true
     src: /img/8611_birkenstock_bend_campaign_oberpollinger-4.jpg
     left: false
     centeredSecond: false
