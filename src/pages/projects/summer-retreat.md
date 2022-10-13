@@ -3,7 +3,7 @@ templateKey: project-post
 title: "summer retreat "
 client: reebok
 date: 2022-08-10T14:49:20.376Z
-featuredproject: true
+featuredproject: false
 featuredimage: /img/img_2591.jpg
 centeredFirstImage: false
 centeredFirstImageMobile: false
