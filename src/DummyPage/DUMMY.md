@@ -44,7 +44,7 @@ section:
     centeredSecondMobile: true
     centeredSecond: true
     secondImage: /img/DO NO DELETE – Placeholder.jpg
-  - video: /img/DoNotDeletePlaceholder.jpg
+  - video: /img/video/RebookVideo_RF37.mp4
     altText: dummyVideo
     centeredFirst: true
     horizontal: false

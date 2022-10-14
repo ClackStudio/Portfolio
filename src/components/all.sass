@@ -353,10 +353,11 @@ a
 
 .navbar
     position: fixed
-    background: transparent
-    color: white
+    background: rgba(0,0,0,0)
     mix-blend-mode: difference
-    filter: invert(1) grayscale(1) contrast(1) 
+    color: white
+    opacity: .999
+    background: transparent
     top:0
     display: flex
     align-items: center
@@ -380,6 +381,7 @@ a
   margin-right: 0
   padding-top: 0!important
   padding-bottom: 0!important
+  filter: invert(1) contrast(1)
   color: $black
   padding: $standard-padding
 
@@ -572,6 +574,7 @@ a
 .navbar-brand, .navbar-item.logo
   color: $black!important
   padding: 0
+  filter: invert(1) contrast(1)
   min-height: 0px!important
   margin-left: auto
 
@@ -695,12 +698,17 @@ video
 .player-wrapper
   position: relative
   padding-top: 56.25%
+  height: 100%
+  min-height: calc(var(--1dvh, 1vh) * 70)
+  max-height: calc(var(--1dvh, 1vh) * 86)
 
 .react-player
   position: absolute
   margin: auto
   top: 0
   left: 0
+  max-height: calc(var(--1dvh, 1vh) * 86)
+
 
 
 @import 'mobile-classes.sass'
