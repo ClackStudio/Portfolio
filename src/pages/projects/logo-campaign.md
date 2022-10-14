@@ -14,15 +14,24 @@ section:
   - horizontal: false
     src: /img/labience_bottle_new02.jpg
     left: true
-    secondImage: /img/labience_bottle_new01.jpg
+    secondImage: /img/labience_bottle_new03.png
     centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
     centeredFirst: false
     centeredFirstMobile: false
+  - horizontal: false
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    video: /img/labience_symbol_animation.mp4
+    centeredFirst: false
+    centeredFirstMobile: false
 tags:
   - creative direction
   - 3D animation
-lastImage: ""
+lastImage: /img/labience_bottle_new01.jpg
 ---
