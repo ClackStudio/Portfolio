@@ -5,9 +5,9 @@ client: labience
 date: 2022-07-18T10:36:53.432Z
 featuredproject: true
 featuredimage: /img/2022-03-02-15.53.55-kopie.jpg
-centeredFirstImage: false
+centeredFirstImage: true
 centeredFirstImageMobile: false
-centeredLastImage: false
+centeredLastImage: true
 centeredLastImageMobile: false
 section:
   - horizontal: false
