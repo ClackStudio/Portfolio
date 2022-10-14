@@ -27,7 +27,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    video: /img/labience_symbol_animation.mp4
+    video: ""
     centeredFirst: false
     centeredFirstMobile: false
 tags:
