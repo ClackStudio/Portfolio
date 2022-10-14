@@ -11,10 +11,10 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
     left: 47%
 .mobile-nav
   position: fixed
-    color: white
-    background: none
-    mix-blend-mode: difference
-    filter: invert(1) grayscale(0)
+    // color: white
+    // background: none
+    // mix-blend-mode: difference
+    // filter: invert(1) grayscale(0)
   .mobile-navbar-menu
     .navbar-item
       z-index: 12
@@ -29,7 +29,7 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
       padding-left: $standard-padding
       z-index: 10
       flex-direction: column
-      justify-content: end
+      justify-content: flex-end
       padding-bottom: $standard-padding
       &.open
         display: flex
@@ -44,6 +44,10 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
   color: $black
   mix-blend-mode: normal
   filter: none
+  .navbar-item, .navbar-brand
+    mix-blend-mode: normal
+    filter: none
+    color: $black
 .navbar-item
   @include breakpoint(mobile-only)
     padding-left: 0px!important

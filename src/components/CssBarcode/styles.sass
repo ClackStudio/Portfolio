@@ -71,7 +71,8 @@ $m-blur: .0px
                     box-shadow: 0px 2px $m-blur -1px $black, 0px -2px $m-blur -1px $black
         // remove white edge lines
         &.open
-
+            .css-stripe
+                display: none
             div:last-child
                 box-shadow: 2px 0px $d-blur -1px rgba(0,0,0,0)
                 @include breakpoint(mobile-only)
