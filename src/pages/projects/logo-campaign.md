@@ -21,7 +21,7 @@ section:
     altText: ""
     centeredFirst: false
     centeredFirstMobile: false
-  - horizontal: false
+  - horizontal: true
     left: false
     centeredSecond: false
     centeredSecondMobile: false
