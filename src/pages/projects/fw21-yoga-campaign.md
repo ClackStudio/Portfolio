@@ -5,9 +5,9 @@ client: reebok
 date: 2021-08-04T12:19:56.447Z
 featuredproject: true
 featuredimage: /img/210802_reebok-x-clack-studio_shot-10_1971.jpg
-centeredFirstImage: false
+centeredFirstImage: true
 centeredFirstImageMobile: false
-centeredLastImage: false
+centeredLastImage: true
 centeredLastImageMobile: false
 additionalData: []
 section:
