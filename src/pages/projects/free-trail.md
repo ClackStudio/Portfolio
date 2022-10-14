@@ -4,7 +4,7 @@ title: hyperlocal berlin
 client: nike
 date: 2021-07-27T14:44:22.421Z
 featuredproject: true
-featuredimage: /img/free_trail08.jpg
+featuredimage: /img/free_trail03.jpg
 centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: false
@@ -20,7 +20,7 @@ section:
     centeredFirst: true
     centeredFirstMobile: false
   - horizontal: false
-    src: /img/free_trail03.jpg
+    src: /img/free_trail08.jpg
     left: false
     secondImage: /img/free_trail02.jpg
     centeredSecond: true
