@@ -5,10 +5,10 @@ client: reebok
 date: 2022-08-10T14:49:20.376Z
 featuredproject: false
 featuredimage: /img/img_2591.jpg
-centeredFirstImage: false
+centeredFirstImage: true
 centeredFirstImageMobile: false
 centeredLastImage: false
-centeredLastImageMobile: false
+centeredLastImageMobile: true
 section:
   - horizontal: false
     src: /img/img_1695.jpg
