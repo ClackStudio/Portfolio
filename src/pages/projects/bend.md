@@ -61,7 +61,7 @@ section:
     src: /img/2020-01-10-22.54.png
     left: false
     secondImage: /img/2020-01-10-22.50.png
-    centeredSecond: false
+    centeredSecond: true
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
