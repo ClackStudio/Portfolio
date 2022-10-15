@@ -57,9 +57,10 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: true
-  - horizontal: true
-    src: /img/8611_birkenstock_bend_campaign_oberpollinger-4.jpg
+  - horizontal: false
+    src: /img/2020-01-10-22.54.png
     left: false
+    secondImage: /img/2020-01-10-22.50.png
     centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
