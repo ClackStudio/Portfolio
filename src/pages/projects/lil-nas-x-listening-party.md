@@ -9,7 +9,7 @@ centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
-featuredVideo: /img/lil-nas-x_short-1-.webm
+featuredVideo: /img/lil-nas-x_short.mp4
 section:
   - horizontal: false
     src: ""
