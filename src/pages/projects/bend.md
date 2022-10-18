@@ -30,15 +30,6 @@ section:
     centeredFirst: true
     centeredFirstMobile: true
   - horizontal: true
-    src: /img/220912_birkenstock_bend_campaign_goertz_v2-1.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: true
-  - horizontal: true
     src: /img/8774_birkenstock_bend_campaign_bs-store-26.jpg
     left: false
     centeredSecond: false
@@ -47,29 +38,18 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: true
-  - horizontal: false
-    src: /img/8646_birkenstock_bend_campaign_oberpollinger-9.jpg
-    left: true
-    secondImage: /img/8624_birkenstock_bend_campaign_oberpollinger-6.jpg
-    centeredSecond: true
-    centeredSecondMobile: true
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: true
-  - horizontal: false
+  - horizontal: true
     src: /img/2020-01-10-22.54.png
-    left: false
-    secondImage: /img/2020-01-10-22.50.png
-    centeredSecond: true
+    left: true
+    centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
     centeredFirst: true
-    centeredFirstMobile: true
+    centeredFirstMobile: false
 tags:
   - concept
   - art direction
   - production
-lastImage: /img/8652_birkenstock_bend_campaign_oberpollinger-10.jpg
+lastImage: /img/8743_birkenstock_bend_campaign_bs-store-26.jpg
 ---
