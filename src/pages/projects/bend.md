@@ -4,7 +4,7 @@ title: bend - retail campaign
 client: birkenstock
 date: 2022-10-12T09:02:43.740Z
 featuredproject: true
-featuredimage: /img/2020-01-10-22.50.png
+featuredimage: /img/8646_birkenstock_bend_campaign_oberpollinger-9.jpg
 centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: false
