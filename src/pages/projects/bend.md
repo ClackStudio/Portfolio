@@ -4,14 +4,14 @@ title: bend - retail campaign
 client: birkenstock
 date: 2022-10-12T09:02:43.740Z
 featuredproject: true
-featuredimage: /img/8646_birkenstock_bend_campaign_oberpollinger-9.jpg
+featuredimage: /img/8652_birkenstock_bend_campaign_oberpollinger-10.jpg
 centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
 additionalData: []
 section:
-  - horizontal: false
+  - horizontal: true
     src: /img/8576_birkenstock_bend_campaign_oberpollinger-11.jpg
     left: false
     centeredSecond: false
@@ -20,7 +20,7 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: false
+  - horizontal: true
     src: /img/8592_birkenstock_bend_campaign_oberpollinger-3.jpg
     left: false
     centeredSecond: false
@@ -29,7 +29,7 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: false
+  - horizontal: true
     src: /img/8774_birkenstock_bend_campaign_bs-store-26.jpg
     left: false
     centeredSecond: false
