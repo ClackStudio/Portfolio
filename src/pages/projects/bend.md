@@ -11,7 +11,7 @@ centeredLastImage: false
 centeredLastImageMobile: false
 additionalData: []
 section:
-  - horizontal: true
+  - horizontal: false
     src: /img/8576_birkenstock_bend_campaign_oberpollinger-11.jpg
     left: false
     centeredSecond: false
@@ -19,8 +19,8 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: true
-    centeredFirstMobile: true
-  - horizontal: true
+    centeredFirstMobile: false
+  - horizontal: false
     src: /img/8592_birkenstock_bend_campaign_oberpollinger-3.jpg
     left: false
     centeredSecond: false
@@ -28,8 +28,8 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: true
-    centeredFirstMobile: true
-  - horizontal: true
+    centeredFirstMobile: false
+  - horizontal: false
     src: /img/8774_birkenstock_bend_campaign_bs-store-26.jpg
     left: false
     centeredSecond: false
@@ -37,7 +37,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: true
-    centeredFirstMobile: true
+    centeredFirstMobile: false
   - horizontal: true
     src: /img/2020-01-10-22.54.png
     left: true
@@ -47,9 +47,19 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
+  - horizontal: false
+    src: /img/8617_birkenstock_bend_campaign_oberpollinger-5.jpg
+    left: false
+    secondImage: /img/2020-01-10-22.50.png
+    centeredSecond: true
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: true
+    centeredFirstMobile: false
 tags:
   - concept
   - art direction
   - production
-lastImage: /img/8743_birkenstock_bend_campaign_bs-store-26.jpg
+lastImage: /img/220901_birkenstock_bend_campaign_bs_store_v2-15.jpg
 ---
