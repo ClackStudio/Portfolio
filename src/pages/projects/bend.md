@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: bend - retail campaign
+title: "bend - retail installation "
 client: birkenstock
 date: 2022-10-12T09:02:43.740Z
 featuredproject: true
@@ -58,8 +58,7 @@ section:
     centeredFirst: true
     centeredFirstMobile: false
 tags:
-  - concept
-  - art direction
-  - production
+  - pop-up store design
+  - concept & production
 lastImage: /img/220901_birkenstock_bend_campaign_bs_store_v2-15.jpg
 ---
