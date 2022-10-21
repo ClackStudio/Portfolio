@@ -28,6 +28,3 @@ tags:
   - event production
 lastImage: /img/abends-lil-nas-x.00_00_32_18.standbild001.jpg
 ---
-video © laurent noichl
-
-set design - grace nicholas
