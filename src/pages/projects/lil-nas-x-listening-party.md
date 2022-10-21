@@ -11,20 +11,11 @@ centeredLastImage: false
 centeredLastImageMobile: false
 featuredVideo: /img/lil-nas-x_short.mp4
 additionalData:
-  - title: SET DESIGN
+  - title: videographer
+    data: laurent noichl
+  - title: set design
     data: grace nicholas
 section:
-  - horizontal: false
-    src: ""
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    embeddedVideo: https://vimeo.com/759817122
-    altText: ""
-    video: ""
-    centeredFirst: false
-    centeredFirstMobile: false
   - altText: ""
     centeredFirst: false
     centeredFirstMobile: false
