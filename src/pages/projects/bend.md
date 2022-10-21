@@ -5,7 +5,7 @@ client: birkenstock
 date: 2022-10-12T09:02:43.740Z
 featuredproject: true
 featuredimage: /img/220901_birkenstock_bend_campaign_bs_store_v2-2.jpg
-centeredFirstImage: true
+centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
