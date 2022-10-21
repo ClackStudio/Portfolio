@@ -10,6 +10,9 @@ centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
 featuredVideo: /img/lil-nas-x_short.mp4
+additionalData:
+  - title: SET DESIGN
+    data: grace nicholas
 section:
   - horizontal: false
     src: ""
@@ -22,6 +25,14 @@ section:
     video: ""
     centeredFirst: false
     centeredFirstMobile: false
+  - altText: ""
+    centeredFirst: false
+    centeredFirstMobile: false
+    left: false
+    horizontal: false
+    altTextSecond: ""
+    centeredSecond: false
+    centeredSecondMobile: false
 tags:
   - event production
 lastImage: /img/abends-lil-nas-x.00_00_32_18.standbild001.jpg
