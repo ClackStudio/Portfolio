@@ -15,15 +15,7 @@ additionalData:
     data: laurent noichl
   - title: set design
     data: grace nicholas
-section:
-  - altText: ""
-    centeredFirst: false
-    centeredFirstMobile: false
-    left: false
-    horizontal: false
-    altTextSecond: ""
-    centeredSecond: false
-    centeredSecondMobile: false
+section: []
 tags:
   - event production
 lastImage: /img/abends-lil-nas-x.00_00_32_18.standbild001.jpg
