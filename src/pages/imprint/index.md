@@ -36,7 +36,6 @@ Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wi
 Die auf der Website veröffentlichten Inhalte, Werke und bereitgestellten Informationen unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen. \
 \
 COPYRIGHT\
-\
 © 2022 Clack Studio. All rights reserved: Clack Studio GbR. This website and all of its content, including all text, graphics, video, and photos, are the copyrighted works of Clack Studio GbR and/or various third parties. The content is for your personal and non-commercial use only. You may not download our content for commercial purposes without prior written permission of Clack Studio GbR.\
 \
 PRIVACY POLICY\
@@ -66,14 +65,14 @@ The right of restriction.
 The right to data portability
 The right to withdraw consent\
 \
-*LOG FILES*
+*LOG FILES*\
 www.clack-studio.de follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
 
-*PRIVACY POLICIES* 
-You may consult this list to find the Privacy Policy for each of the advertising partners of www.clack-studio.de.
-
-Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on www.clack-studio.de, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.
-
+*PRIVACY POLICIES* \
+You may consult this list to find the Privacy Policy for each of the advertising partners of www.clack-studio.de.\
+\
+Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on www.clack-studio.de, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.\
+\
 Note that www.clack-studio.de has no access to or control over these cookies that are used by third-party advertisers.
 
 Third Party Privacy Policies
