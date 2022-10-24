@@ -34,7 +34,9 @@ Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wi
 \
 URHEBERRECHT\
 Die auf der Website veröffentlichten Inhalte, Werke und bereitgestellten Informationen unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
-\
+
+
+
 **COPYRIGHT**\
 \
 © 2022 Clack Studio. All rights reserved: Clack Studio GbR. This website and all of its content, including all text, graphics, video, and photos, are the copyrighted works of Clack Studio GbR and/or various third parties. The content is for your personal and non-commercial use only. You may not download our content for commercial purposes without prior written permission of Clack Studio GbR.\
