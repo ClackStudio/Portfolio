@@ -20,6 +20,16 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
+  - horizontal: false
+    src: /img/8646_birkenstock_bend_campaign_oberpollinger-9.jpg
+    left: false
+    secondImage: /img/8652_birkenstock_bend_campaign_oberpollinger-10.jpg
+    centeredSecond: true
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: true
+    centeredFirstMobile: false
 tags:
   - pop-up store design
   - concept & production
