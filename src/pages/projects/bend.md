@@ -19,7 +19,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: true
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: false
     src: /img/8646_birkenstock_bend_campaign_oberpollinger-9.jpg
     left: false
