@@ -29,7 +29,7 @@ section:
     altText: ""
     video: /img/labience_symbol_animation.mp4
     centeredFirst: false
-    centeredFirstMobile: false
+    centeredFirstMobile: true
 tags:
   - creative direction
   - 3D animation
