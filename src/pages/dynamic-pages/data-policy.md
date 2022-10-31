@@ -15,14 +15,14 @@ If you have additional questions or require more information about our Privacy P
 We are a Data Controller of your information.
 \
 \
-Clack Studio Gbr legal basis for collecting and using the personal information described in this Privacy Policy depends on the Personal Information we collect and the specific context in which we collect the information:
+Clack Studio GbR legal basis for collecting and using the personal information described in this Privacy Policy depends on the Personal Information we collect and the specific context in which we collect the information:
 \
 \
-Clack Studio Gbr needs to perform a contract with you
+Clack Studio GbR needs to perform a contract with you
 You have given Clack Studio Gbr permission to do so
 Processing your personal information is in Clack Studio Gbr legitimate interests
-Clack Studio Gbr needs to comply with the law
-Clack Studio Gbr will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies.
+Clack Studio GbR needs to comply with the law
+Clack Studio GbR will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies.
 \
 \
 If you are a resident of the European Economic Area (EEA), you have certain data protection rights. If you wish to be informed what Personal Information we hold about you and if you want it to be removed from our systems, please contact us.
@@ -31,8 +31,7 @@ If you are a resident of the European Economic Area (EEA), you have certain data
 In certain circumstances, you have the following data protection rights:
 \
 \
-The right to access, update or to delete the information we have on you.The right of rectification.The right to object.The right of restriction.The right to data portabilityThe right to withdraw consent\
-\
+The right to access, update or to delete the information we have on you. The right of rectification. The right to object. The right of restriction. The right to data portability. The right to withdraw consent\
 *\
 Log Files*
 \
@@ -75,7 +74,6 @@ www.clack-studio.de does not knowingly collect any Personal Identifiable Informa
 \
 Our Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in www.clack-studio.de. This policy is not applicable to any information collected offline or via channels other than this website.
 
-
 \
 *Consent*
 \
@@ -88,7 +86,9 @@ Auf unserer Internetseite verwenden wir aktive Java-Script-Inhalte von externen 
 \
 *Hosting*\
 \
-Wir hosten die Inhalte unserer Website bei folgendem Anbieter: Amazon Web Services (AWS). Anbieter ist die Amazon Web Services EMEA SARL, 38 Avenue John F. Kennedy, 1855 Luxemburg (nachfolgend AWS). Wenn Sie unsere Website besuchen, werden Ihre personenbezogenen Daten auf den Servern von AWS verarbeitet. Hierbei können auch personenbezogene Daten an das Mutterunternehmen von AWS in die USA übermittelt werden. Die Datenübertragung in die USA wird auf die EU-Standardvertragsklauseln gestützt. Details finden Sie hier: <https://aws.amazon.com/de/blogs/security/aws-gdpr-data-processing-addendum/>. Weitere Informationen entnehmen Sie der Datenschutzerklärung von AWS: https://aws.amazon.com/de/privacy/?nc1=f_pr. Die Verwendung von AWS erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. A DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TTDSG umfasst. Die Einwilligung ist jederzeit widerrufbar.
+Wir hosten die Inhalte unserer Website bei folgendem Anbieter: Amazon Web Services (AWS). Anbieter ist die Amazon Web Services EMEA SARL, 38 Avenue John F. Kennedy, 1855 Luxemburg (nachfolgend AWS). Wenn Sie unsere Website besuchen, werden Ihre personenbezogenen Daten auf den Servern von AWS verarbeitet. Hierbei können auch personenbezogene Daten an das Mutterunternehmen von AWS in die USA übermittelt werden. Die Datenübertragung in die USA wird auf die EU-Standardvertragsklauseln gestützt. Details finden Sie hier: <https://aws.amazon.com/de/blogs/security/aws-gdpr-data-processing-addendum/>. Weitere Informationen entnehmen Sie der Datenschutzerklärung von AWS: https://aws.amazon.com/de/privacy/?nc1=f_pr. 
+
+Die Verwendung von AWS erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. A DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TTDSG umfasst. Die Einwilligung ist jederzeit widerrufbar.
 
 *Amazon-Partnerprogramm Datenschutzerklärung*\
 \
