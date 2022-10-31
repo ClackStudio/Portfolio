@@ -101,9 +101,9 @@ Wir hosten die Inhalte unserer Website bei folgendem Anbieter:
 
 
 
-
-
 Amazon Web Services (AWS). 
+
+
 
 Anbieter ist die Amazon Web Services EMEA SARL, 38 Avenue John F. Kennedy, 1855 Luxemburg (nachfolgend AWS).
 
