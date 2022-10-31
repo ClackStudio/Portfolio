@@ -95,7 +95,13 @@ Auf unserer Internetseite verwenden wir aktive Java-Script-Inhalte von externen 
 
 *Hosting*
 
+
+
 Wir hosten die Inhalte unserer Website bei folgendem Anbieter:
+
+
+
+
 
 Amazon Web Services (AWS). 
 
@@ -111,7 +117,11 @@ Einwilligung ist jederzeit widerrufbar.
 
  
 
+
+
 *Amazon-Partnerprogramm Datenschutzerklärung*
+
+
 
 Wir verwenden auf unserer Website das Amazon-Partnerprogramm des Unternehmens Amazon.com, Inc. Die verantwortlichen Stellen im Sinne der Datenschutzerklärung sind die Amazon Europe Core S.à.r.l., die Amazon EU S.à.r.l, die Amazon Services Europe S.à.r.l. und die Amazon Media EU S.à.r.l., alle vier ansässig 5, Rue Plaetis, L-2338 Luxemburg sowie Amazon Instant Video Germany GmbH, Domagkstr. 28, 80807 München. Als Datenverarbeiter wird die Amazon Deutschland Services GmbH, Marcel-Breuer-Str. 12, 80807 München, tätig. Durch die Verwendung dieses Amazon-Partnerprogramms können Daten von Ihnen an Amazon übertragen, gespeichert und verarbeitet werden.
 
@@ -119,11 +129,15 @@ Wir verwenden auf unserer Website das Amazon-Partnerprogramm des Unternehmens Am
 
 *Vimeo Datenschutzerklärung*
 
+
+
 Wir verwenden auf unserer Website auch Videos der Firma Vimeo. Betrieben wird das Videoportal durch Vimeo LLC, 555 West 18th Street, New York, New York 10011, USA. Mit Hilfe eines Plug-Ins können wir Ihnen so interessantes Videomaterial direkt auf unserer Website anzeigen. Dabei können gewisse Daten von Ihnen an Vimeo übertragen werden.
 
 
 
 *Vimeo ohne Tracking (Do-Not-Track)*
+
+
 
 Diese Website nutzt Plugins des Videoportals Vimeo. Anbieter ist die Vimeo Inc., 555 West 18th Street, New York, New York 10011, USA. Wenn Sie eine unserer mit Vimeo-Videos ausgestatteten Seiten besuchen, wird eine Verbindung zu den Servern von Vimeo hergestellt. Dabei wird dem Vimeo-Server mitgeteilt, welche unserer Seiten Sie besucht haben. Zudem erlangt Vimeo Ihre IP-Adresse. Wir haben Vimeo jedoch so eingestellt, dass Vimeo Ihre Nutzeraktivitäten nicht nachverfolgen und keine Cookies setzen wird.
 
