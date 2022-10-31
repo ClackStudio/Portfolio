@@ -85,7 +85,6 @@ Our Privacy Policy applies only to our online activities and is valid for visito
 \
 By using our website, you hereby consent to our Privacy Policy and agree to its terms.\
 \
-\
 *Einbindung externer Webservices*\
 \
 Auf unserer Internetseite verwenden wir aktive Java-Script-Inhalte von externen Anbietern, sog. Webservices. Durch Aufruf unserer Internetseite erhalten diese externen Anbieter ggf. personenbezogene Informationen über Ihren Besuch auf unserer Internetseite. Hierbei ist ggf. eine Verarbeitung von Daten außerhalb der EU möglich. Sie können dies verhindern, indem Sie einen Java-Script-Blocker wie z.B. das Browser-Plug-In ‘NoScript’ installieren ([www.noscript.net](http://www.noscript.net/) ) oder Java-Script in Ihrem Browser deaktivieren. Hierdurch kann es zu Funktionseinschränkungen auf Internetseiten kommen, die Sie besuchen. Wir verwenden folgende externe Webservices:\
