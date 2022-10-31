@@ -31,12 +31,7 @@ If you are a resident of the European Economic Area (EEA), you have certain data
 In certain circumstances, you have the following data protection rights:
 \
 \
-*The right to access, update or to delete the information we have on you.\
-The right of rectification.\
-The right to object.\
-The right of restriction.\
-The right to data portability\
-The right to withdraw consent*\
+The right to access, update or to delete the information we have on you.The right of rectification.The right to object.The right of restriction.The right to data portabilityThe right to withdraw consent\
 \
 *\
 Log Files*
