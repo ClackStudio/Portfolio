@@ -19,8 +19,8 @@ Clack Studio GbR legal basis for collecting and using the personal information d
 \
 \
 Clack Studio GbR needs to perform a contract with you
-You have given Clack Studio Gbr permission to do so
-Processing your personal information is in Clack Studio Gbr legitimate interests
+You have given Clack Studio GbR permission to do so
+Processing your personal information is in Clack Studio GbR legitimate interests
 Clack Studio GbR needs to comply with the law
 Clack Studio GbR will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies.
 \
