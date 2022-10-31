@@ -36,7 +36,9 @@ The right of rectification.\
 The right to object.\
 The right of restriction.\
 The right to data portability\
-The right to withdraw consent\
+The right to withdraw consent*\
+\
+*\
 Log Files*
 \
 \
