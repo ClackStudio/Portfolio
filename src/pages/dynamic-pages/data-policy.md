@@ -85,9 +85,9 @@ Our Privacy Policy applies only to our online activities and is valid for visito
 \
 By using our website, you hereby consent to our Privacy Policy and agree to its terms.
 
+/
 
-
-*Einbindung externer Webservices* 
+*Einbindung externer Webservices/*
 
 Auf unserer Internetseite verwenden wir aktive Java-Script-Inhalte von externen Anbietern, sog. Webservices. Durch Aufruf unserer Internetseite erhalten diese externen Anbieter ggf. personenbezogene Informationen über Ihren Besuch auf unserer Internetseite. Hierbei ist ggf. eine Verarbeitung von Daten außerhalb der EU möglich. Sie können dies verhindern, indem Sie einen Java-Script-Blocker wie z.B. das Browser-Plug-In ‘NoScript’ installieren ([www.noscript.net](http://www.noscript.net/) ) oder Java-Script in Ihrem Browser deaktivieren. Hierdurch kann es zu Funktionseinschränkungen auf Internetseiten kommen, die Sie besuchen. Wir verwenden folgende externe Webservices:
 
@@ -97,21 +97,11 @@ Auf unserer Internetseite verwenden wir aktive Java-Script-Inhalte von externen 
 
 
 
-Wir hosten die Inhalte unserer Website bei folgendem Anbieter:
 
 
 
-Amazon Web Services (AWS). 
 
-
-
-Anbieter ist die Amazon Web Services EMEA SARL, 38 Avenue John F. Kennedy, 1855 Luxemburg (nachfolgend AWS).
-
-Wenn Sie unsere Website besuchen, werden Ihre personenbezogenen Daten auf den Servern von AWS verarbeitet. Hierbei können auch personenbezogene Daten an das Mutterunternehmen von AWS in die USA übermittelt werden. Die Datenübertragung in die USA wird auf die EU-Standardvertragsklauseln gestützt. Details finden Sie hier:
-
-<https://aws.amazon.com/de/blogs/security/aws-gdpr-data-processing-addendum/>. Weitere Informationen entnehmen Sie der Datenschutzerklärung von AWS: https://aws.amazon.com/de/privacy/?nc1=f_pr.
-
-Die Verwendung von AWS erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. A DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TTDSG umfasst. Die
+Wir hosten die Inhalte unserer Website bei folgendem Anbieter: Amazon Web Services (AWS). Anbieter ist die Amazon Web Services EMEA SARL, 38 Avenue John F. Kennedy, 1855 Luxemburg (nachfolgend AWS). Wenn Sie unsere Website besuchen, werden Ihre personenbezogenen Daten auf den Servern von AWS verarbeitet. Hierbei können auch personenbezogene Daten an das Mutterunternehmen von AWS in die USA übermittelt werden. Die Datenübertragung in die USA wird auf die EU-Standardvertragsklauseln gestützt. Details finden Sie hier: <https://aws.amazon.com/de/blogs/security/aws-gdpr-data-processing-addendum/>. Weitere Informationen entnehmen Sie der Datenschutzerklärung von AWS: https://aws.amazon.com/de/privacy/?nc1=f_pr. Die Verwendung von AWS erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. A DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TTDSG umfasst. Die
 
 Einwilligung ist jederzeit widerrufbar.
 
@@ -119,7 +109,13 @@ Einwilligung ist jederzeit widerrufbar.
 
 
 
+
+
 *Amazon-Partnerprogramm Datenschutzerklärung*
+
+
+
+
 
 
 
@@ -127,7 +123,13 @@ Wir verwenden auf unserer Website das Amazon-Partnerprogramm des Unternehmens Am
 
 
 
+
+
 *Vimeo Datenschutzerklärung*
+
+
+
+
 
 
 
@@ -135,13 +137,17 @@ Wir verwenden auf unserer Website auch Videos der Firma Vimeo. Betrieben wird da
 
 
 
+
+
+
+
 *Vimeo ohne Tracking (Do-Not-Track)*
 
 
 
-Diese Website nutzt Plugins des Videoportals Vimeo. Anbieter ist die Vimeo Inc., 555 West 18th Street, New York, New York 10011, USA. Wenn Sie eine unserer mit Vimeo-Videos ausgestatteten Seiten besuchen, wird eine Verbindung zu den Servern von Vimeo hergestellt. Dabei wird dem Vimeo-Server mitgeteilt, welche unserer Seiten Sie besucht haben. Zudem erlangt Vimeo Ihre IP-Adresse. Wir haben Vimeo jedoch so eingestellt, dass Vimeo Ihre Nutzeraktivitäten nicht nachverfolgen und keine Cookies setzen wird.
 
-Die Nutzung von Vimeo erfolgt im Interesse einer ansprechenden Darstellung unserer Online-Angebote. Dies stellt ein berechtigtes Interesse im Sinne des Art. 6 Abs. 1 lit. f DSGVO dar. Sofern eine entsprechende
 
-Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. A DSGVO; die Einwilligung ist jederzeit widerrufbar. Die Datenübertragung in die USA wird auf die Standardvertragsklauseln der EU-Kommission sowie nach Aussage von Vimeo auf „berechtigte Geschäftsinteressen“ gestützt. Details finden Sie hier: <https://vimeo.com/privacy>. \
+
+
+Diese Website nutzt Plugins des Videoportals Vimeo. Anbieter ist die Vimeo Inc., 555 West 18th Street, New York, New York 10011, USA. Wenn Sie eine unserer mit Vimeo-Videos ausgestatteten Seiten besuchen, wird eine Verbindung zu den Servern von Vimeo hergestellt. Dabei wird dem Vimeo-Server mitgeteilt, welche unserer Seiten Sie besucht haben. Zudem erlangt Vimeo Ihre IP-Adresse. Wir haben Vimeo jedoch so eingestellt, dass Vimeo Ihre Nutzeraktivitäten nicht nachverfolgen und keine Cookies setzen wird. Die Nutzung von Vimeo erfolgt im Interesse einer ansprechenden Darstellung unserer Online-Angebote. Dies stellt ein berechtigtes Interesse im Sinne des Art. 6 Abs. 1 lit. f DSGVO dar. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. A DSGVO; die Einwilligung ist jederzeit widerrufbar. Die Datenübertragung in die USA wird auf die Standardvertragsklauseln der EU-Kommission sowie nach Aussage von Vimeo auf „berechtigte Geschäftsinteressen“ gestützt. Details finden Sie hier: <https://vimeo.com/privacy>. \
 Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Vimeo unter: https://vimeo.com/privacy.
