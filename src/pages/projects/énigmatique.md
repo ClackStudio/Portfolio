@@ -21,7 +21,7 @@ section:
     centeredFirst: true
     centeredFirstMobile: false
   - horizontal: true
-    src: /img/2022-03-02-16.09.51-kopie.jpg
+    src: ""
     left: false
     centeredSecond: false
     centeredSecondMobile: false
