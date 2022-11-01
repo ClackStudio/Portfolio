@@ -10,4 +10,4 @@ clack <crossed> studio </crossed> is a berlin based creative agency founded by a
 creative & art direction, concept development, content & event production, event strategies, brand consultation, spatial design, set design, retail design, graphic design, branding, copy, photography, video & 3d animation.\
 \
 **clients**\
-birkenstock, nike, reebok, sony music, labience.
+birkenstock, labience, nike, reebok, sony music.
