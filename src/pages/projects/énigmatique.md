@@ -44,11 +44,11 @@ section:
     left: false
     secondImage: /img/2022-03-03-13.58.03-kopie.jpg
     centeredSecond: true
-    centeredSecondMobile: true
+    centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
     centeredFirst: true
-    centeredFirstMobile: true
+    centeredFirstMobile: false
 tags:
   - creative direction
   - photography
