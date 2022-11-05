@@ -240,8 +240,8 @@ const CssBarcode = (props) => {
                   featuredimage {
                     childImageSharp {
                       gatsbyImageData(
-                        width: 1080
                         quality: 100
+                        width: 1080
                         layout: CONSTRAINED
                       )
                     }
@@ -253,10 +253,10 @@ const CssBarcode = (props) => {
         }
       `}
       render={(data, count) => (
-        <CssBarcodeTemplate data={data} count={count} {...props}  />
+        <CssBarcodeTemplate data={data} count={count} {...props} />
       )}
     />
-  )
+  );
 }
 
 CssBarcode.propTypes = {}

@@ -92,11 +92,7 @@ const ProjectBarCode = ({ projectsIndex }) => {
                   featuredproject
                   featuredimage {
                     childImageSharp {
-                      gatsbyImageData(
-                        width: 1080
-                        quality: 100
-                        layout: CONSTRAINED
-                      )
+                      gatsbyImageData(width: 1080, layout: CONSTRAINED)
                     }
                   }
                 }
@@ -113,7 +109,7 @@ const ProjectBarCode = ({ projectsIndex }) => {
         />
       )}
     />
-  )
+  );
 }
 
 ProjectBarCode.propTypes = {}

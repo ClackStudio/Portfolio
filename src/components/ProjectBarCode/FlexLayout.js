@@ -61,7 +61,7 @@ const FlexLayout = ({ projects, projectsIndex, isMobile }) => {
       console.log('LOADING', project)
       if (project.node.frontmatter.featuredimage)
         return project.node.frontmatter.featuredimage.childImageSharp
-          .gatsbyImageData.images.fallback.src
+          .gatsbyImageData?.images?.fallback?.src;
     })
   )
 

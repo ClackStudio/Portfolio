@@ -37,56 +37,56 @@ export default function Seo(props) {
   const metas = [
     // basic seo
     {
-      name: 'description',
+      name: "description",
       content: description,
     },
     {
-      name: 'og:image',
-      content: ogImage ?? ogImage.images.fallback.src,
+      name: "og:image",
+      content: ogImage ?? ogImage.images?.fallback.src,
     },
     {
-      name: 'og:image:width',
+      name: "og:image:width",
       content: `${ogImage.width}`,
     },
     {
-      name: 'og:image:height',
+      name: "og:image:height",
       content: `${ogImage.height}`,
     },
     {
-      name: 'og:type',
-      content: 'website',
+      name: "og:type",
+      content: "website",
     },
     {
-      name: 'og:title',
+      name: "og:title",
       content: title,
     },
     {
-      name: 'og:description',
+      name: "og:description",
       content: description,
     },
     {
-      name: 'og:site_name',
+      name: "og:site_name",
       content: title,
     },
     {
-      name: 'og:url',
+      name: "og:url",
       content: `${site?.siteMetadata?.siteUrl}${location.pathname}`,
     },
     {
-      name: 'twitter:card',
-      content: 'summary_large_image',
+      name: "twitter:card",
+      content: "summary_large_image",
     },
     {
-      name: 'twitter:description',
+      name: "twitter:description",
       content: description,
     },
     {
-      name: 'twitter:title',
+      name: "twitter:title",
       content: title,
     },
     {
-      name: 'twitter:image',
-      content: ogImage ?? ogImage.images.fallback.src,
+      name: "twitter:image",
+      content: ogImage ?? ogImage.images?.fallback.src,
     },
   ];
   // If we have keywords, then add it
