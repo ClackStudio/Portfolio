@@ -32,7 +32,7 @@ $m-blur: .0px
     justify-content: space-between
     padding: 0 calc(#{$standard-padding} + 2px)
     touch-action: none
-    @include breakpoint(mobile-only)
+    @include breakpoint(tablet)
         padding: 0 calc(#{$standard-padding} + 0px)
         flex-direction: column
         min-height: calc(#{$dvh} - #{$navbar-height} - #{$barcode-numbers-height})
@@ -48,7 +48,7 @@ $m-blur: .0px
         display: flex
         transition: flex ease-in-out .5s
         position: relative
-        @include breakpoint(mobile-only)
+        @include breakpoint(tablet)
             width: 100%
             min-height: 2vh
             flex-direction: column
@@ -58,7 +58,7 @@ $m-blur: .0px
         .css-stripe
             height: 100%
             // transform: scaleX(1.09)
-            @include breakpoint(mobile-only)
+            @include breakpoint(tablet)
                 height: auto
             flex: 1
             transition: flex ease-in-out .5s
@@ -67,7 +67,7 @@ $m-blur: .0px
                 //transform: scaleX(1.2)
                 background: $black
                 box-shadow: 2px 0px $d-blur -1px $black, -2px 0px $d-blur -1px $black
-                @include breakpoint(mobile-only)
+                @include breakpoint(tablet)
                     box-shadow: 0px 2px $m-blur -1px $black, 0px -2px $m-blur -1px $black
         // remove white edge lines
         &.open
@@ -75,14 +75,14 @@ $m-blur: .0px
                 display: none
             div:last-child
                 box-shadow: 2px 0px $d-blur -1px rgba(0,0,0,0)
-                @include breakpoint(mobile-only)
+                @include breakpoint(tablet)
                     box-shadow: 0px 2px $m-blur -1px rgba(0,0,0,0)
             div:nth-child(2)
                 box-shadow: -2px 0px $d-blur -1px rgba(0,0,0,0)
-                @include breakpoint(mobile-only)
+                @include breakpoint(tablet)
                     box-shadow: 0px -2px $m-blur -1px rgba(0,0,0,0)
             div
-                @include breakpoint(mobile-only)
+                @include breakpoint(tablet)
                     box-shadow: inset 0px 0px $m-blur 2px #FFFFFF
         .css-bar-picture
             z-index: 1

@@ -7,7 +7,7 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
   height: $dvh
 
 .scroll-arrow-wrapper
-  @include breakpoint(mobile-only)
+  @include breakpoint(tablet)
     left: 47%
 .mobile-nav
   position: fixed
@@ -49,7 +49,7 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
     filter: none
     color: $black
 .navbar-item
-  @include breakpoint(mobile-only)
+  @include breakpoint(tablet)
     padding-left: 0px!important
     padding-right: 0px!important
 
@@ -58,7 +58,7 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
 
 
 .mobile-scroll-container
-  @include breakpoint(mobile-only)
+  @include breakpoint(tablet)
     position: fixed
     top: 0
     left: 0
@@ -73,14 +73,14 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
         overflow: auto
 
 .centered
-  @include breakpoint(mobile-only)
+  @include breakpoint(tablet)
     padding: 0
 .horizontal
-  @include breakpoint(mobile-only)
+  @include breakpoint(tablet)
     display: flex
     
 .meta-table
-    @include breakpoint(mobile-only)
+    @include breakpoint(tablet)
         margin-top: auto
         width: 100%
         background: $background
@@ -112,13 +112,13 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
 
 
 .project-column
-    @include breakpoint(mobile-only)
+    @include breakpoint(tablet)
         display: block
         min-height: $dvh
         width: 100%
 
 .first-section
-    @include breakpoint(mobile-only)
+    @include breakpoint(tablet)
         // margin-top: $navbar-height
         .project-info-wrapper
           z-index: 2
@@ -134,41 +134,41 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
             height: 90%
 .last-section
   &.fill-container
-    @include breakpoint(mobile-only)
+    @include breakpoint(tablet)
       min-height: 90%
       height: 90%
       position: absolute
 .last-section-nav
   &.fill-container
-    @include breakpoint(mobile-only)
+    @include breakpoint(tablet)
       min-height: auto
       height: auto
 .force-flex
-    @include breakpoint(mobile-only)
+    @include breakpoint(tablet)
         display: flex!important
 .projects-index-barcode-column
-    @include breakpoint(mobile-only)
+    @include breakpoint(tablet)
         display: none
 .project-index-wrapper, .single-page-wrapper
-    @include breakpoint(mobile-only)
+    @include breakpoint(tablet)
         // margin-top: $navbar-height
 
 .fullscreen-animation-wrapper
-    @include breakpoint(mobile-only)
+    @include breakpoint(tablet)
         height: $barcode-height
 
 .mobile-flex-column
-  @include breakpoint(mobile-only)
+  @include breakpoint(tablet)
     display: flex
     flex-direction: column
 
 .minus-navbar
-  @include breakpoint(mobile-only)
+  @include breakpoint(tablet)
     height: $dvh!important
 
 
 .mobile-flip-section
-  @include breakpoint(mobile-only)
+  @include breakpoint(tablet)
     .columns::-webkit-scrollbar
         display: none
     .columns
@@ -186,7 +186,7 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
 
 
 .project-column
-  @include breakpoint(mobile-only)
+  @include breakpoint(tablet)
     display: flex
     justify-content: center
     align-items: center
@@ -194,19 +194,19 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
       min-height: $dvh!important
 
 .last-section-nav
-  @include breakpoint(mobile-only)
+  @include breakpoint(tablet)
     .project-navigation
       z-index: 1
       background: $background
  
 .centered
-  @include breakpoint(mobile-only)
+  @include breakpoint(tablet)
     padding: 0
     img
       object-fit: cover!important
 
 .centered-mobile
-  @include breakpoint(mobile-only)
+  @include breakpoint(tablet)
     padding: calc(#{$standard-padding} * 3 )
     max-height: $dvh
     img
@@ -214,5 +214,5 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
 
 
 .hide-column-mobile
-  @include breakpoint(mobile-only)
+  @include breakpoint(tablet)
     display: none

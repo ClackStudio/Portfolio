@@ -84,12 +84,10 @@ div::selection
   -webkit-overflow-scrolling: touch
   height: 100vh
   height: $dvh
-// RESPONSIVE
-.show-only-desktop
+// RESPONSIVEtablet-desktop
   @include until($desktop)
     display: none!important
-
-.show-only-mobile
+tablet-mobile
   @include from($desktop)
     display: none!important
 
@@ -199,14 +197,14 @@ a
     @include breakpoint(desktop)
         left: 48px
         width: 53px
-    @include breakpoint(mobile-only)
+    @include breakpoint(tablet)
         bottom: 43%!important
   &:hover
     .crossed-line
       width: 90px
       left: -2px
       transition: $fast-transition
-      @include breakpoint(mobile-only)
+      @include breakpoint(tablet)
         width: 85px
       @include breakpoint(desktop)
         left: -2px
@@ -499,7 +497,7 @@ a
   @include breakpoint(desktop)
     font-size: $font-size-1
     margin-bottom: 0px
-  @include breakpoint(mobile-only)
+  @include breakpoint(tablet)
     margin-bottom: 6px
 
   &.animate
@@ -655,7 +653,7 @@ video
 
 .scroll-indicator
   display: none
-  @include breakpoint(mobile-only)
+  @include breakpoint(tablet)
     display: flex
     flex-direction: row
     justify-content: center
