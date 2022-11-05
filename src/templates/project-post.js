@@ -280,6 +280,7 @@ export const ProjectPostTemplate = ({
   const isMobile = breakpoints.sm;
   const { setCurrentHoveredBar } = useBackgroundStore();
 
+  console.log(featuredImage);
   React.useEffect(() => {
     // reset hovered
     setCurrentHoveredBar(null);
@@ -483,7 +484,7 @@ export const pageQuery = graphql`
         tags
         featuredimage {
           childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
         featuredVideo {
@@ -492,7 +493,7 @@ export const pageQuery = graphql`
         }
         lastImage {
           childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
         section {
@@ -506,12 +507,12 @@ export const pageQuery = graphql`
           centeredSecondMobile
           src {
             childImageSharp {
-              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
           secondImage {
             childImageSharp {
-              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
           video {

@@ -9,7 +9,7 @@ centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
-featuredVideo: /img/lil-nas-x_short.mp4
+featuredVideo: /img/lil-nas-x_short.webm
 additionalData:
   - title: videographer
     data: laurent noichl
