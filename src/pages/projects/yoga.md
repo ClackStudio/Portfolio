@@ -5,9 +5,9 @@ client: reebok
 date: 2021-06-23T14:47:38.445Z
 featuredproject: true
 featuredimage: /img/210421_reebok_yoga_m6_150.jpg
-centeredFirstImage: false
+centeredFirstImage: true
 centeredFirstImageMobile: false
-centeredLastImage: false
+centeredLastImage: true
 centeredLastImageMobile: false
 section:
   - horizontal: false

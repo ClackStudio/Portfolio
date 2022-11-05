@@ -10,18 +10,12 @@ centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
 featuredVideo: /img/lil-nas-x_short.webm
-section:
-  - horizontal: false
-    src: ""
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    embeddedVideo: https://vimeo.com/759817122
-    altText: ""
-    video: ""
-    centeredFirst: false
-    centeredFirstMobile: false
+additionalData:
+  - title: videographer
+    data: laurent noichl
+  - title: set design
+    data: grace nicholas
+section: []
 tags:
   - event production
 lastImage: /img/abends-lil-nas-x.00_00_32_18.standbild001.jpg

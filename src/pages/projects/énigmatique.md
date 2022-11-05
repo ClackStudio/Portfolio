@@ -20,15 +20,6 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: true
-    src: /img/2022-03-02-16.09.51-kopie.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: true
   - horizontal: false
     src: /img/2022-03-03-11.34.29-kopie.jpg
     left: false
@@ -48,6 +39,16 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: true
+  - horizontal: false
+    src: /img/2022-03-03-13.38.00-kopie.jpg
+    left: false
+    secondImage: /img/2022-03-03-13.58.03-kopie.jpg
+    centeredSecond: true
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: true
+    centeredFirstMobile: false
 tags:
   - creative direction
   - photography
