@@ -42,6 +42,13 @@ $dvh: calc(var(--1dvh, 1vh) * 100)
       // box-shadow: 0px 0.35px #000000
       bottom: 44%
 
+@mixin crossedMobileMenu
+  bottom: 42%
+  height: 5px
+  position: absolute
+  background: $black
+  width: 100%
+
 
 @mixin breakpoint($point)
   @if $point == desktop
