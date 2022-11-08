@@ -33,12 +33,31 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
       padding-bottom: $standard-padding
       &.open
         display: flex
+        flex-direction: column
       .mobile-nav-item
+        position: relative
+        display: flex
+        height: 60px
+
         .mobile-nav-link
           font-size: $mobile-huge-font-size
           line-height: 120%
+          position: relative
+          &::after
+              transition: $fast-transition
+              position: absolute
+              content: ""
+              display: block
+              @include crossedMobileMenu
+              width: 0px
+              &:hover
+                width: 100%
           &.active
-            color: $dark-gray
+            &::after
+              width: 100%
+
+
+              
 .no-filter
   background: $background
   color: $black
