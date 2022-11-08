@@ -49,9 +49,10 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
               content: ""
               display: block
               @include crossedMobileMenu
-              width: 0px
-              &:hover
-                width: 100%!important
+              width: 0px  
+          &:hover
+            &::after
+              width: 100%!important
           &.active
             &::after
               width: 100%!important
