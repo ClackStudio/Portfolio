@@ -6,9 +6,9 @@ date: 2022-08-02T07:47:07.090Z
 featuredproject: true
 featuredimage: /img/2022-03-02-14.14.29-kopie.jpg
 centeredFirstImage: false
-centeredFirstImageMobile: false
+centeredFirstImageMobile: true
 centeredLastImage: false
-centeredLastImageMobile: false
+centeredLastImageMobile: true
 featuredVideo: /img/labience_logo_animation_medium.mp4
 section:
   - horizontal: false
@@ -21,7 +21,7 @@ section:
     altText: ""
     centeredFirst: false
     centeredFirstMobile: false
-  - horizontal: true
+  - horizontal: false
     left: false
     centeredSecond: false
     centeredSecondMobile: false
@@ -29,7 +29,7 @@ section:
     altText: ""
     video: /img/labience_symbol_animation.mp4
     centeredFirst: false
-    centeredFirstMobile: false
+    centeredFirstMobile: true
 tags:
   - creative direction
   - 3D animation
