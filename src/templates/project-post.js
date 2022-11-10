@@ -17,19 +17,27 @@ import Seo from '../components/Seo'
 import { useScroll } from '@use-gesture/react'
 import VideoIFrame from "../components/VideoIFrame";
 
-const ServicesListTemplate = ({ services }) => (
+const ServicesListTemplate = ({ services, limit }) => (
   <div className="columns">
     <div className="column is-6 meta-title">services</div>
     <div className="column is-6 meta-data">
       {services && services.length ? (
         <ul className="services-list">
-          {services.map(
-            (service, index) =>
-              service + `${index !== services.length - 1 ? ", " : ""}`
-            // <li className="meta-data-point" key={service + `services`}>
-            //   {service}
-            // </li>
-          )}
+          {services.map((service, index) => {
+            if (!limit || index < limit) {
+              return (
+                service +
+                `${
+                  index !== services.length - 1 && index !== limit - 1
+                    ? ", "
+                    : ""
+                }`
+              );
+              // <li className="meta-data-point" key={service + `services`}>
+              //   {service}
+              // </li>
+            }
+          })}
         </ul>
       ) : null}
     </div>
@@ -280,7 +288,6 @@ export const ProjectPostTemplate = ({
   const isMobile = breakpoints.sm;
   const { setCurrentHoveredBar } = useBackgroundStore();
 
-  console.log(featuredImage);
   React.useEffect(() => {
     // reset hovered
     setCurrentHoveredBar(null);
@@ -324,12 +331,17 @@ export const ProjectPostTemplate = ({
                         key={`key_add_data_${index}`}
                       />
                     ))}
-                  <TableRowComponent
-                    noCrossLine
-                    leftData={"date"}
-                    rightData={date}
+                  {!isMobile && (
+                    <TableRowComponent
+                      noCrossLine
+                      leftData={"date"}
+                      rightData={date}
+                    />
+                  )}
+                  <ServicesListTemplate
+                    // limit={isMobile ? 2 : false}
+                    services={tags}
                   />
-                  {!isMobile && <ServicesListTemplate services={tags} />}
                   {/* <TitleTemplate title={title} className={'pt-5'} ></TitleTemplate> */}
                 </TableLayout>
               </div>
