@@ -105,13 +105,19 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
         width: 100%
         background: $background
         z-index: 1
+        &.project-info-table
+          padding-bottom: 2.5rem
+          .meta-data ,.services-list
+            padding-left: 10px
+
         .table-cross-line
           transition: none
 
         
         .columns
             display: flex
-
+            .column
+              flex-basis: unset
             &:hover
               .table-cross-line
                   width: 0
