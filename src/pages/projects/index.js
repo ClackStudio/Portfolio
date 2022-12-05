@@ -42,7 +42,6 @@ const ProjectIndexPageTemplate = ({ edges }) => {
     navigate(slug);
   };
 
-  
   // Folowing logic is fpor scrolling through projects with the finger
   const saved = useRef(0);
 
@@ -105,7 +104,7 @@ const ProjectIndexPageTemplate = ({ edges }) => {
               <div style={{ touchAction: "none" }}>
                 <TableLayout>
                   {edges.map(({ node }, index) => (
-                    <div {...bind(index)}>
+                    <div {...bind(index)} style={{ touchAction: "none" }}>
                       <TableRowComponent
                         leftData={node.frontmatter.client}
                         rightData={node.frontmatter.title}
