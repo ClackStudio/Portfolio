@@ -14,10 +14,12 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
 
   return (
     <SectionTemplate className="single-page-wrapper">
-      <Seo></Seo>
+      <Seo title={"About us"}></Seo>
       <div className="columns fill-container">
         <div className="column is-flex fill-container">
-          <div className={`is-12 is-flex is-flex-direction-column is-justify-content-flex-end fill-container bigger-font extra-top-padding`}>
+          <div
+            className={`is-12 is-flex is-flex-direction-column is-justify-content-flex-end fill-container bigger-font extra-top-padding`}
+          >
             {/* <HalfPageNavbar /> */}
             {/* date */}
             <TableLayout>
@@ -31,7 +33,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
         {/* <BigImage counter={counter.current} img={sideImage} ></BigImage> */}
       </div>
     </SectionTemplate>
-  )
+  );
 }
 
 AboutPageTemplate.propTypes = {
