@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: pop-up installation europe-wide
+title: pop-up installation eu-wide
 client: birkenstock
 date: 2022-10-12T09:02:43.740Z
 featuredproject: true
