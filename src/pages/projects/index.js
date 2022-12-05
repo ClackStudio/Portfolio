@@ -1,42 +1,95 @@
-import React from 'react'
-import SectionTemplate from '../../components/SectionTemplate'
-import { TableLayout, TableRowComponent } from '../../components/TableComponent'
-import Navbar from '../../components/Navbar'
-import { graphql, StaticQuery, navigate } from 'gatsby'
-import '../../components/all.sass'
-import { useBackgroundStore } from '../../stores/BarCodeStore'
-import CssBarcode from '../../components/CssBarcode/CssBarcode'
-import Seo from '../../components/Seo'
-import { useBreakpoint } from 'gatsby-plugin-breakpoints'
+import React, { useRef } from "react";
+import SectionTemplate from "../../components/SectionTemplate";
+import {
+  TableLayout,
+  TableRowComponent,
+} from "../../components/TableComponent";
+import Navbar from "../../components/Navbar";
+import { graphql, StaticQuery, navigate } from "gatsby";
+import "../../components/all.sass";
+import { useBackgroundStore } from "../../stores/BarCodeStore";
+import CssBarcode from "../../components/CssBarcode/CssBarcode";
+import Seo from "../../components/Seo";
+import { useBreakpoint } from "gatsby-plugin-breakpoints";
+import { useDrag } from "@use-gesture/react";
 
 const ProjectIndexPageTemplate = ({ edges }) => {
-  const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore()
-  const breakpoints = useBreakpoint()
-  const isMobile = breakpoints.sm
+  const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore();
+  const breakpoints = useBreakpoint();
+  const isMobile = breakpoints.sm;
 
   const onMouseEnter = (index) => {
     if (!isMobile) {
       if (currentHoveredBar !== index && !isMobile) {
-        setCurrentHoveredBar(index)
+        setCurrentHoveredBar(index);
       }
     }
 
     // haltInterval.current = true
     // setSideImage(getImage(featuredimage) || featuredimage)
-  }
+  };
 
   const onMouseLeave = () => {
     if (!isMobile) {
       if (currentHoveredBar !== null && !isMobile) {
-        setCurrentHoveredBar(null)
+        setCurrentHoveredBar(null);
       }
     }
     // haltInterval.current = false
-  }
+  };
 
   const navigateToProject = (slug) => {
-    navigate(slug)
-  }
+    navigate(slug);
+  };
+
+  
+  // Folowing logic is fpor scrolling through projects with the finger
+  const saved = useRef(0);
+
+  const bind = useDrag(
+    ({
+      first,
+      last,
+      elapsedTime,
+      movement: [mx, my],
+      velocity: [vx, vy],
+      direction: [dx, dy],
+      args: [index],
+    }) => {
+      if (isMobile) {
+        if (currentHoveredBar !== index && first) {
+          setCurrentHoveredBar(index);
+        }
+        const isFirst = currentHoveredBar === 0;
+        const isLast = currentHoveredBar === edges.length - 1;
+
+        const directionalAdd = () => {
+          if (dy > 0) {
+            if (!isLast) {
+              return 1;
+            }
+          } else {
+            if (!isFirst) {
+              return -1;
+            }
+          }
+          return 0;
+        };
+        const velocityCalc = (velocity) => {
+          saved.current = saved.current + velocity;
+          if (saved.current > 1 && elapsedTime > 100) {
+            setCurrentHoveredBar(currentHoveredBar + directionalAdd());
+            saved.current = 0;
+          }
+          if (last) {
+            navigateToProject(edges[currentHoveredBar]?.node?.fields?.slug);
+          }
+        };
+
+        velocityCalc(vy);
+      }
+    }
+  );
 
   return (
     <>
@@ -49,22 +102,26 @@ const ProjectIndexPageTemplate = ({ edges }) => {
               {/* <HalfPageNavbar /> */}
               {/* date */}
               <div></div>
-              <TableLayout>
-                {edges.map(({ node }, index) => (
-                  <TableRowComponent
-                    leftData={node.frontmatter.client}
-                    rightData={node.frontmatter.title}
-                    onClick={() => navigateToProject(node.fields.slug)}
-                    onMouseLeave={onMouseLeave}
-                    onMouseEnter={() => onMouseEnter(index)}
-                    key={node.id}
-                    leftMaxWidth={isMobile ? '40%' : '50%'}
-                    className={`crossed ${
-                      index === currentHoveredBar && !isMobile ? 'active' : ''
-                    }`}
-                  />
-                ))}
-              </TableLayout>
+              <div style={{ touchAction: "none" }}>
+                <TableLayout>
+                  {edges.map(({ node }, index) => (
+                    <div {...bind(index)}>
+                      <TableRowComponent
+                        leftData={node.frontmatter.client}
+                        rightData={node.frontmatter.title}
+                        onClick={() => navigateToProject(node.fields.slug)}
+                        onMouseLeave={onMouseLeave}
+                        onMouseEnter={() => onMouseEnter(index)}
+                        key={node.id}
+                        leftMaxWidth={isMobile ? "40%" : "50%"}
+                        className={`crossed ${
+                          index === currentHoveredBar ? "active" : ""
+                        } ${isMobile ? "faster-hover" : ""}`}
+                      />
+                    </div>
+                  ))}
+                </TableLayout>
+              </div>
             </div>
           </div>
           {/* <PostContent content={content} /> */}
@@ -75,8 +132,8 @@ const ProjectIndexPageTemplate = ({ edges }) => {
         </div>
       </SectionTemplate>
     </>
-  )
-}
+  );
+};
 
 const ProjectIndexPage = () => {
   return (
@@ -114,7 +171,7 @@ const ProjectIndexPage = () => {
         />
       )}
     />
-  )
-}
+  );
+};
 
-export default ProjectIndexPage
+export default ProjectIndexPage;

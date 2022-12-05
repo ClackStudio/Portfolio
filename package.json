@@ -31,7 +31,7 @@
     "gatsby-transformer-sharp": "^4.17.0",
     "glsl-noise": "^0.0.0",
     "glslify": "^7.1.1",
-    "immer": "^9.0.12",
+    "immer": "^9.0.16",
     "large-small-dynamic-viewport-units-polyfill": "^0.0.4",
     "leva": "^0.9.18",
     "lodash": "^4.17.15",
