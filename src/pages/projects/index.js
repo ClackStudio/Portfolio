@@ -104,7 +104,11 @@ const ProjectIndexPageTemplate = ({ edges }) => {
               <div style={{ touchAction: "none" }}>
                 <TableLayout>
                   {edges.map(({ node }, index) => (
-                    <div {...bind(index)} style={{ touchAction: "none" }}>
+                    <div
+                      {...bind(index)}
+                      key={`AnimationWrapperDiv__${index}`}
+                      style={{ touchAction: "none" }}
+                    >
                       <TableRowComponent
                         leftData={node.frontmatter.client}
                         rightData={node.frontmatter.title}

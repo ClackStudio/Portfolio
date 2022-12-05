@@ -311,7 +311,7 @@ export const ProjectPostTemplate = ({
               <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container is-postion-relative project-info">
                 <div></div>
                 <ScrollArrow />
-                <TableLayout>
+                <TableLayout className={"project-info-table"}>
                   <TableRowComponent
                     noCrossLine
                     leftData={"client"}
