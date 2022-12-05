@@ -92,7 +92,7 @@ const ProjectIndexPageTemplate = ({ edges }) => {
 
   return (
     <>
-      <Seo></Seo>
+      <Seo title="Projects"></Seo>
       <Navbar></Navbar>
       <SectionTemplate className="minus-navbar project-index-wrapper">
         <div className="columns fill-container">

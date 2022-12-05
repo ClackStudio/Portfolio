@@ -302,7 +302,7 @@ export const ProjectPostTemplate = ({
         className={`scroll-container ${isMobile && "mobile-scroll-container"}`}
       >
         <Seo
-          description={`${client} ${title} ${date}`}
+          description={`${client} ${title}`}
           featuredImage={firstImage}
         ></Seo>
         <SectionTemplate innerClassName=" first-section">

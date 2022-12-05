@@ -25,6 +25,7 @@ export default function Seo(props) {
       }
     }
   `);
+
   // determine the featured image from props
   const ogImage =
     props.featuredImage ?? featuredImage?.childImageSharp?.gatsbyImageData;

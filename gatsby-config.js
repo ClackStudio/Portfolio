@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `clack studio`,
     siteUrl: `https://www.clackstudio.com`,
-    description: "creative studio based in berlin",
+    description:
+      "clack studio is a berlin based creative agency founded by a female friends duo in 2021. sharing the same vision and being linked by the belief that anything is possible, the studio develops concepts that reflect the current zeitgeist, brings impactful stories to life and creates experiences that resonate and push boundaries.",
     image: "/og-image.jpg", // Path to the image placed in the 'static' folder, in the project's root directory.
   },
   plugins: [
