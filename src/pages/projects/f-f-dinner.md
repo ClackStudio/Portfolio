@@ -7,7 +7,7 @@ featuredproject: true
 featuredimage: /img/4d863480-ca44-42b7-8a8d-9b212b2b301b_1_201_a.jpg
 centeredFirstImage: false
 centeredFirstImageMobile: false
-centeredLastImage: true
+centeredLastImage: false
 centeredLastImageMobile: false
 section:
   - horizontal: true
