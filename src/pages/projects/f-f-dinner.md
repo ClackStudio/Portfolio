@@ -5,47 +5,47 @@ client: reebok
 date: 2022-12-12T11:18:01.744Z
 featuredproject: true
 featuredimage: /img/01_lobby.jpg
-centeredFirstImage: false
+centeredFirstImage: true
 centeredFirstImageMobile: false
-centeredLastImage: false
+centeredLastImage: true
 centeredLastImageMobile: false
 section:
-  - horizontal: true
+  - horizontal: false
     src: /img/2020-04-13-02.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: true
+  - horizontal: false
     src: /img/2020-04-13-022.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
   - horizontal: false
     src: /img/2020-04-13-03.34.jpg
     left: true
     secondImage: /img/2020-04-12-06.062.jpg
-    centeredSecond: false
+    centeredSecond: true
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: true
+  - horizontal: false
     src: /img/2020-04-12-06.03.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
 tags:
   - concept
