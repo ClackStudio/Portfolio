@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: f&f dinner
+title: friends&family dinner
 client: reebok
 date: 2022-12-12T11:18:01.744Z
 featuredproject: true
