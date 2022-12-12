@@ -4,7 +4,7 @@ title: friends&family dinner
 client: reebok
 date: 2022-12-12T11:18:01.744Z
 featuredproject: true
-featuredimage: /img/4d863480-ca44-42b7-8a8d-9b212b2b301b_1_201_a.jpg
+featuredimage: /img/2020-04-12-06.062.jpg
 centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: false
@@ -12,15 +12,6 @@ centeredLastImageMobile: false
 section:
   - horizontal: true
     src: /img/2020-04-13-02.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: false
-  - horizontal: true
-    src: /img/2020-04-13-022.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
@@ -41,7 +32,7 @@ section:
   - horizontal: false
     src: /img/2020-04-13-03.34.jpg
     left: true
-    secondImage: /img/2020-04-12-06.062.jpg
+    secondImage: /img/img_7915.jpg
     centeredSecond: true
     centeredSecondMobile: false
     altTextSecond: ""
@@ -59,6 +50,6 @@ section:
     centeredFirstMobile: false
 tags:
   - concept
-  - production
+  - event production
 lastImage: /img/reebok_invitation_mock-up_final_02-website.jpg
 ---
