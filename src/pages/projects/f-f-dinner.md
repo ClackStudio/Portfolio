@@ -32,7 +32,7 @@ section:
   - horizontal: false
     src: /img/2020-04-13-03.34.jpg
     left: true
-    secondImage: /img/img_7915.jpg
+    secondImage: /img/2020-04-12-06.062.jpg
     centeredSecond: true
     centeredSecondMobile: false
     altTextSecond: ""
