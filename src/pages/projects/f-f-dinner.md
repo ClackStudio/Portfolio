@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: friends&family dinner
+title: friends & family dinner
 client: reebok
 date: 2022-12-12T11:18:01.744Z
 featuredproject: true
@@ -18,7 +18,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: true
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: false
     src: /img/2020-04-13-00.43.jpg
     left: false
@@ -47,7 +47,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: false
-    centeredFirstMobile: false
+    centeredFirstMobile: true
 tags:
   - concept
   - event production
