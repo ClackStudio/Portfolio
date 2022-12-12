@@ -10,7 +10,7 @@ centeredFirstImageMobile: false
 centeredLastImage: true
 centeredLastImageMobile: false
 section:
-  - horizontal: false
+  - horizontal: true
     src: /img/2020-04-13-02.jpg
     left: false
     centeredSecond: false
@@ -19,7 +19,7 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: false
+  - horizontal: true
     src: /img/2020-04-13-022.jpg
     left: false
     centeredSecond: false
@@ -38,7 +38,7 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: false
+  - horizontal: true
     src: /img/2020-04-12-06.03.jpg
     left: false
     centeredSecond: false
