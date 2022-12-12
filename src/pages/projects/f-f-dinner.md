@@ -4,7 +4,7 @@ title: f&f dinner
 client: reebok
 date: 2022-12-12T11:18:01.744Z
 featuredproject: true
-featuredimage: /img/01_lobby.jpg
+featuredimage: /img/2020-04-12-06.062.jpg
 centeredFirstImage: true
 centeredFirstImageMobile: false
 centeredLastImage: true
@@ -29,6 +29,16 @@ section:
     centeredFirst: true
     centeredFirstMobile: false
   - horizontal: false
+    src: /img/2020-04-13-00.43.jpg
+    left: false
+    secondImage: /img/2020-04-13-00.41.jpg
+    centeredSecond: true
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: true
+    centeredFirstMobile: false
+  - horizontal: false
     src: /img/2020-04-13-03.34.jpg
     left: true
     secondImage: /img/2020-04-12-06.062.jpg
@@ -45,7 +55,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
+    centeredFirst: false
     centeredFirstMobile: false
 tags:
   - concept
