@@ -60,5 +60,5 @@ section:
 tags:
   - concept
   - production
-lastImage: /img/2020-04-13-03.jpg
+lastImage: /img/2020-04-13-03-2.jpg
 ---
