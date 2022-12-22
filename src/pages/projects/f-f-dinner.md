@@ -10,15 +10,6 @@ centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
 section:
-  - horizontal: true
-    src: /img/2020-04-13-02.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: true
   - horizontal: false
     src: /img/2020-04-13-00.43.jpg
     left: false
