@@ -54,44 +54,42 @@ const CssBar = ({
   barcodePattern,
   small,
 }) => {
-  const breakpoints = useBreakpoint()
-  const isMobile = breakpoints.sm
-  const barRef = useRef()
-  const isFeaturedVideo = project.node.frontmatter.featuredVideo
-
+  const breakpoints = useBreakpoint();
+  const isMobile = breakpoints.sm;
+  const barRef = useRef();
+  const isFeaturedVideo = project.node.frontmatter.featuredVideo;
 
   const flex = {
     mobile: 4,
     desktop: 2.3,
-    closed: 1
-  }
+    closed: 1,
+  };
 
   // const timeoutRef = useRef(null)
 
-  const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore()
-  const { getNormalisedImageWidth } = useBarCodeStore()
+  const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore();
+  const { getNormalisedImageWidth } = useBarCodeStore();
 
   const stripePattern = useMemoOne(
     () =>
       !small && barcodePattern
         ? barcodePattern
-        : createBarcodePattern(index, numberOfBars),
+        : createBarcodePattern(index, numberOfBars, small),
     [small, barcodePattern]
-  )
-
-  const slug = project.node.fields.slug
-  const isHovering = currentHoveredBar === index
+  );
+  const slug = project.node.fields.slug;
+  const isHovering = currentHoveredBar === index;
   const handleClick = () => {
     // clearTimeout(timeoutRef.current)
     // timeoutRef.current = setTimeout(setCurrentHoveredBar(null),500)
-    
-    navigate(slug)
-  }
-  const handleHover = (index) => setCurrentHoveredBar(index)
+
+    navigate(slug);
+  };
+  const handleHover = (index) => setCurrentHoveredBar(index);
   useEffect(() => {
     // console.log(flexGrowCa t, projects, normalisedImageWidth))
-    getNormalisedImageWidth(barRef.current.clientHeight, isMobile)
-  }, [project, isMobile, getNormalisedImageWidth])
+    getNormalisedImageWidth(barRef.current.clientHeight, isMobile);
+  }, [project, isMobile, getNormalisedImageWidth]);
 
   // const flexGrowCalc = (barcode, projects, normalisedImageWidth) => {
   //   const flexElements = projects.length
@@ -101,16 +99,22 @@ const CssBar = ({
   // }
   return (
     <div
-      className={`css-bar ${currentHoveredBar === index ? 'open' : ''}`}
+      className={`css-bar ${currentHoveredBar === index ? "open" : ""}`}
       ref={barRef}
       onClick={handleClick}
       onPointerOver={(e) => (e.stopPropagation(), handleHover(index))}
       onPointerOut={(e) => {
         // the last touched element shall stay open, on desktop it resets
-        if (!isMobile) handleHover(null)
+        if (!isMobile) handleHover(null);
       }}
       // style={{width: isHovering ? normalisedImageWidth + "px" : "auto", maxWidth: isHovering ? normalisedImageWidth + "px" : "auto",flex: isHovering ? "1 1 auto" : "1 1 auto"}}
-      style={{ flex: isHovering ? (isMobile ? flex.mobile : flex.desktop ) : flex.closed }}
+      style={{
+        flex: isHovering
+          ? isMobile
+            ? flex.mobile
+            : flex.desktop
+          : flex.closed,
+      }}
     >
       {isFeaturedVideo ? (
         <CssBarVideo
@@ -125,72 +129,77 @@ const CssBar = ({
       )}
 
       {stripePattern.map((value, i) => (
-        <Stripe key={index + 'stripe' + i} black={value === 1}></Stripe>
+        <Stripe key={index + "stripe" + i} black={value === 1}></Stripe>
       ))}
     </div>
-  )
-}
+  );
+};
 
 const CssBarcodeTemplate = ({ data, small, wrapperStyle }) => {
-  const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore()
-  const { barcodePattern, requestBarcodePattern } = useBarCodeStore()
-  const breakpoints = useBreakpoint()
-  const isMobile = breakpoints.sm
-  const saved = useRef(0)
+  const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore();
+  const { barcodePattern, requestBarcodePattern, smallBarCodePattern } =
+    useBarCodeStore();
+  const breakpoints = useBreakpoint();
+  const isMobile = breakpoints.sm;
+  const saved = useRef(0);
 
-  const barcodeRef = useRef()
-  const { edges: projects } = data.allMarkdownRemark
+  const barcodeRef = useRef();
+  const { edges: projects } = data.allMarkdownRemark;
   const onlyFeaturedProjects = small
     ? projects
-    : projects.filter((project) => project.node.frontmatter.featuredproject)
+    : projects.filter((project) => project.node.frontmatter.featuredproject);
   useMemoOne(
     () => requestBarcodePattern(onlyFeaturedProjects.length),
     [onlyFeaturedProjects.length]
-  )
+  );
 
   const bind = useDrag(
     ({ down, movement: [mx, my], velocity: [vx, vy], direction: [dx, dy] }) => {
       if (isMobile) {
-        const isFirst = currentHoveredBar === 0
-        const isLast = currentHoveredBar === onlyFeaturedProjects.length - 1
+        const isFirst = currentHoveredBar === 0;
+        const isLast = currentHoveredBar === onlyFeaturedProjects.length - 1;
 
         const directionalAdd = () => {
           if (dy > 0) {
             if (!isLast) {
-              return 1
+              return 1;
             }
           } else {
             if (!isFirst) {
-              return -1
+              return -1;
             }
           }
-          return 0
-        }
+          return 0;
+        };
         const velocityCalc = (velocity) => {
-          saved.current = saved.current + velocity
+          saved.current = saved.current + velocity;
           if (saved.current > 2) {
-            setCurrentHoveredBar(currentHoveredBar + directionalAdd())
-            saved.current = 0
+            setCurrentHoveredBar(currentHoveredBar + directionalAdd());
+            saved.current = 0;
           }
-        }
+        };
         // const movementThreshold = 40
         // const velocityThreshold = 0
 
-        velocityCalc(vy)
+        velocityCalc(vy);
         // if (my > movementThreshold && vy > velocityThreshold) {
 
         //   setCurrentHoveredBar(currentHoveredBar + directionalAdd())
         // }
         // console.log("VELOCITY", vy)
       }
-    },
-  )
+    }
+  );
   // home page
   return (
-    <div className={`css-barcode-wrapper ${small ? `small` : ``}`} style={wrapperStyle} {...bind()}>
+    <div
+      className={`css-barcode-wrapper ${small ? `small` : ``}`}
+      style={wrapperStyle}
+      {...bind()}
+    >
       <div
         className={`css-barcode ${small ? `small` : ``}  ${
-          breakpoints.sm && 'mobile-css-barcode'
+          breakpoints.sm && "mobile-css-barcode"
         }`}
         ref={barcodeRef}
       >
@@ -210,8 +219,8 @@ const CssBarcodeTemplate = ({ data, small, wrapperStyle }) => {
         <BarcodeNumbers projects={onlyFeaturedProjects}></BarcodeNumbers>
       )}
     </div>
-  )
-}
+  );
+};
 const CssBarcode = (props) => {
   return (
     <StaticQuery

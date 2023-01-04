@@ -41,12 +41,15 @@ $m-blur: .0px
         padding-left: 0
     .css-bar
         flex: 1 1 auto
+        will-change: flex, flex-grow
         width: 10%
-        max-width: 100%
-        min-height: 100%
         max-height: 100%
+        min-height: 100%
         display: flex
-        transition: flex ease-in-out .5s
+        transition: flex-grow ease-in-out 0.5s
+        // STATIC FLICKER ON MOBILE
+        @include breakpoint(tablet)
+            transition: flex-grow ease-in-out 0s
         position: relative
         @include breakpoint(tablet)
             width: 100%
@@ -57,7 +60,8 @@ $m-blur: .0px
         //     flex: 400px
         .css-stripe
             height: 100%
-            // transform: scaleX(1.09)
+            will-change: flex-grow, flex
+            transition: flex ease-in-out .5s
             @include breakpoint(tablet)
                 height: auto
             flex: 1
