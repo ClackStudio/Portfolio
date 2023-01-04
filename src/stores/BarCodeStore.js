@@ -6,17 +6,22 @@ import { createCompleteBarcodePattern } from '../components/CssBarcode/createBar
 const barCodeStore = (state) => ({
   normalisedImageWidth: 0,
   barcodePattern: [],
+  smallBarCodePattern: [],
   getNormalisedImageWidth: (height, isMobile) => {
-    const normalisedImageWidth = getNormalisedWidth(height, isMobile)
+    const normalisedImageWidth = getNormalisedWidth(height, isMobile);
     if (normalisedImageWidth !== state.normalisedImageWidth)
-      state.normalisedImageWidth = normalisedImageWidth
+      state.normalisedImageWidth = normalisedImageWidth;
   },
   requestBarcodePattern: (numberOfBars) => {
     if (state.barcodePattern.length === 0) {
-      state.barcodePattern = createCompleteBarcodePattern(numberOfBars)
+      state.barcodePattern = createCompleteBarcodePattern(numberOfBars);
+      state.smallBarCodePattern = createCompleteBarcodePattern(
+        numberOfBars,
+        true
+      );
     }
   },
-})
+});
 
 const backgroundStore = (state) => ({
   animating: false,
