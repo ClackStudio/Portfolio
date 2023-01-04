@@ -101,13 +101,13 @@ const CssBar = ({
   // }
   return (
     <div
-      className={`css-bar ${currentHoveredBar === index ? 'open' : ''}`}
+      className={`css-bar ${currentHoveredBar === index ? "open" : ""}`}
       ref={barRef}
       onClick={handleClick}
       onPointerOver={(e) => (e.stopPropagation(), handleHover(index))}
       onPointerOut={(e) => {
         // the last touched element shall stay open, on desktop it resets
-        if (!isMobile) handleHover(null)
+        if (!isMobile) handleHover(null);
       }}
       // style={{width: isHovering ? normalisedImageWidth + "px" : "auto", maxWidth: isHovering ? normalisedImageWidth + "px" : "auto",flex: isHovering ? "1 1 auto" : "1 1 auto"}}
       style={{ flex: isHovering ? (isMobile ? flex.mobile : flex.desktop ) : flex.closed }}
@@ -125,10 +125,10 @@ const CssBar = ({
       )}
 
       {stripePattern.map((value, i) => (
-        <Stripe key={index + 'stripe' + i} black={value === 1}></Stripe>
+        <Stripe key={index + "stripe" + i} black={value === 1}></Stripe>
       ))}
     </div>
-  )
+  );
 }
 
 const CssBarcodeTemplate = ({ data, small, wrapperStyle }) => {
