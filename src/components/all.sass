@@ -32,6 +32,9 @@
   font-display: swap
 
 
+*
+  box-sizing: border-box
+
 html, body
   font-family: 'ABC Diatype', 'Helvetica Neue', sans-serif
   font-weight: 400
@@ -269,6 +272,8 @@ a
     font-size: $font-size-1
     @include breakpoint(desktop)
       font-size: $font-size-2
+    @include breakpoint(super-small)
+      font-size: $font-size-0
     &.limit-width
       max-width: 700px
     
@@ -434,7 +439,7 @@ a
   align-items: flex-end
 
   &.barcode-numbers-wrapper
-    margin-top: 0
+    margin-top: auto
 
   button
     border: none
@@ -445,6 +450,8 @@ a
     font-size: $huge-font-size
     @include touch-device()
       font-size: $mobile-huge-font-size
+    @include breakpoint(super-small)
+      font-size: $small-mobile-huge-font-size
     max-height: 100%
     cursor: pointer
     .project-number

@@ -409,9 +409,12 @@ export const ProjectPostTemplate = ({
                 className="is-flex is-justify-content-space-between is-flex-direction-column"
                 style={{ height: "100%", overflow: "hidden" }}
               >
-                <TableLayout>
-                  <PostContent content={content} />
-                </TableLayout>
+                {console.log("content", content)}
+                {content && content !== "" && (
+                  <TableLayout>
+                    <PostContent content={content} />
+                  </TableLayout>
+                )}
                 <NewProjectNavigation ref={projectRef} currentProjectId={id} />
               </div>
             </div>
