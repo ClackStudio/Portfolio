@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: friends & family dinner
+title: BB 4000 II Dinner dinner
 client: reebok
 date: 2022-12-12T11:18:01.744Z
 featuredproject: true
