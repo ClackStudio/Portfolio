@@ -19,7 +19,7 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: false
+  - horizontal: true
     src: /img/2020-04-13-02.48.32.jpg
     left: false
     secondImage: ""
@@ -32,7 +32,7 @@ section:
   - horizontal: false
     src: /img/2020-04-13-03.34.jpg
     left: false
-    secondImage: /img/this.jpg
+    secondImage: ""
     centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
