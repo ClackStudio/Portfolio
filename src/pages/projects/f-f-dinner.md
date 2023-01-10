@@ -14,7 +14,7 @@ section:
     src: /img/2020-04-13-03.34.jpg
     left: false
     secondImage: /img/this.jpg
-    centeredSecond: true
+    centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
