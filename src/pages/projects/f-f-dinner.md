@@ -11,7 +11,7 @@ centeredLastImage: false
 centeredLastImageMobile: false
 section:
   - horizontal: false
-    src: /img/2020-04-13-00.43.jpg
+    src: /img/2020-04-13-02.48.32.jpg
     left: false
     secondImage: /img/2020-04-13-00.43-neu.jpg
     centeredSecond: true
@@ -42,5 +42,5 @@ section:
 tags:
   - concept
   - event production
-lastImage: /img/reebok_invitation_mock-up_final_02-website.jpg
+lastImage: ""
 ---
