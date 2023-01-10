@@ -6,8 +6,8 @@ date: 2022-12-12T11:18:01.744Z
 featuredproject: true
 featuredimage: /img/2020-04-12-06.062.jpg
 centeredFirstImage: false
-centeredFirstImageMobile: false
-centeredLastImage: false
+centeredFirstImageMobile: true
+centeredLastImage: true
 centeredLastImageMobile: false
 section:
   - horizontal: false
@@ -27,9 +27,9 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
-    centeredFirstMobile: true
-  - horizontal: false
+    centeredFirst: true
+    centeredFirstMobile: false
+  - horizontal: true
     src: /img/2020-04-13-02.48.32.jpg
     left: false
     secondImage: ""
