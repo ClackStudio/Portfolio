@@ -12,13 +12,13 @@ centeredLastImageMobile: false
 section:
   - horizontal: false
     src: /img/2020-04-13-03.34.jpg
-    left: true
-    secondImage: ""
+    left: false
+    secondImage: /img/this.jpg
     centeredSecond: true
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
+    centeredFirst: false
     centeredFirstMobile: false
   - horizontal: true
     src: /img/2020-04-12-06.03.jpg
@@ -29,7 +29,7 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: false
-  - horizontal: true
+  - horizontal: false
     src: /img/2020-04-13-02.48.32.jpg
     left: false
     secondImage: ""
@@ -37,8 +37,8 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
-    centeredFirstMobile: false
+    centeredFirst: false
+    centeredFirstMobile: true
 tags:
   - concept
   - event production
