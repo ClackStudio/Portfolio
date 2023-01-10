@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: lil nas x - montero
+title: lil nas x - album release
 client: sony music
 date: 2022-10-13T09:01:30.436Z
 featuredproject: true
