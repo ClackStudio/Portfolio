@@ -7,7 +7,7 @@ featuredproject: true
 featuredimage: /img/2020-04-12-06.062.jpg
 centeredFirstImage: false
 centeredFirstImageMobile: false
-centeredLastImage: false
+centeredLastImage: true
 centeredLastImageMobile: false
 section:
   - horizontal: true
