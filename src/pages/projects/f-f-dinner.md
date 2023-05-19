@@ -5,7 +5,7 @@ client: reebok
 date: 2022-12-12T11:18:01.744Z
 featuredproject: true
 featuredimage: /img/2020-04-12-06.062.jpg
-centeredFirstImage: false
+centeredFirstImage: true
 centeredFirstImageMobile: false
 centeredLastImage: true
 centeredLastImageMobile: false
