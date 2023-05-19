@@ -48,7 +48,7 @@ section:
     centeredFirst: true
     centeredFirstMobile: false
   - horizontal: true
-    src: /img/birkenstocklonneal_hr01.jpg
+    src: /img/birkenstockwien_hr02.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
@@ -57,7 +57,7 @@ section:
     centeredFirst: true
     centeredFirstMobile: false
   - horizontal: true
-    src: /img/birkenstockwien_hr02.jpg
+    src: /img/birkenstocklonneal_hr01.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
@@ -71,7 +71,7 @@ section:
     centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
-    altText: ""
+    altText: galeries lafayettes, champs-élysées, paris
     centeredFirst: true
     centeredFirstMobile: false
 tags:
