@@ -66,24 +66,6 @@ section:
     centeredFirst: true
     centeredFirstMobile: false
   - horizontal: true
-    src: /img/birkenstockparispopup_hr04_retuschiert2.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: false
-  - horizontal: true
-    src: /img/birkenstockparispopup_hr01_retuschiert2.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: false
-  - horizontal: true
     src: /img/birkenstock_wholesale_ce_hr04.jpg
     left: false
     centeredSecond: false
