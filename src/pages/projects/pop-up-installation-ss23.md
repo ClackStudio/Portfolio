@@ -5,9 +5,9 @@ client: birkenstock
 date: 2023-05-19T15:46:12.195Z
 featuredproject: true
 featuredimage: /img/birkenstockhh_hr03.jpg
-centeredFirstImage: false
+centeredFirstImage: true
 centeredFirstImageMobile: false
-centeredLastImage: false
+centeredLastImage: true
 centeredLastImageMobile: false
 additionalData: []
 section:
