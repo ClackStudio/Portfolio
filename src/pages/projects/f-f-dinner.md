@@ -17,7 +17,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: true
   - horizontal: true
     src: /img/2020-04-13-02.48-neu.jpg
@@ -27,7 +27,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: true
 tags:
   - concept
