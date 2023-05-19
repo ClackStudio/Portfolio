@@ -19,7 +19,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: true
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: true
     src: /img/birkenstockhh_hr02.jpg
     left: false
@@ -28,7 +28,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: true
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: true
     src: /img/birkenstockloncarnaby_hr05.jpg
     left: false
@@ -37,7 +37,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: true
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: true
     src: /img/birkenstockkop_hr01.jpg
     left: false
@@ -46,7 +46,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: true
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: true
     src: /img/birkenstockwien_hr02.jpg
     left: false
@@ -55,7 +55,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: true
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: true
     src: /img/birkenstocklonneal_hr01.jpg
     left: false
@@ -64,7 +64,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: true
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: true
     src: /img/birkenstock_wholesale_ce_hr04.jpg
     left: false
@@ -73,7 +73,7 @@ section:
     altTextSecond: ""
     altText: galeries lafayettes, champs-élysées, paris
     centeredFirst: true
-    centeredFirstMobile: false
+    centeredFirstMobile: true
 tags:
   - retail design
   - concept
