@@ -93,7 +93,7 @@ section:
     centeredFirst: true
     centeredFirstMobile: false
 tags:
-  - retaildesign
+  - retail design
   - concept
   - production
 lastImage: /img/birkenstockhh_hr05.jpg
