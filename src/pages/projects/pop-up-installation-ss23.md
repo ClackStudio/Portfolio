@@ -66,6 +66,33 @@ section:
     centeredFirst: true
     centeredFirstMobile: true
   - horizontal: true
+    src: /img/birkenstockparispopup_hr01_retuschiert.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: true
+    centeredFirstMobile: true
+  - horizontal: true
+    src: /img/birkenstockparispopup_hr02_bearbeitet.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: true
+    centeredFirstMobile: true
+  - horizontal: true
+    src: /img/birkenstockparispopup_hr04_retuschiert.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: true
+    centeredFirstMobile: true
+  - horizontal: true
     src: /img/birkenstock_wholesale_ce_hr04.jpg
     left: false
     centeredSecond: false
