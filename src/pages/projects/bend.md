@@ -9,7 +9,10 @@ centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
-additionalData: []
+additionalData:
+  - title: key cities
+    data: paris, london, vienna, rome, madrid, barcelona, copenhagen, munich,
+      hamburg, dusseldorf
 section:
   - horizontal: true
     src: /img/8576_birkenstock_bend_campaign_oberpollinger-11.jpg
