@@ -20,7 +20,7 @@ section:
     centeredFirst: true
     centeredFirstMobile: true
   - horizontal: true
-    src: /img/2020-04-13-02.48-neu.jpg
+    src: /img/2020-04-13-02.48.jpg
     left: false
     secondImage: ""
     centeredSecond: false
