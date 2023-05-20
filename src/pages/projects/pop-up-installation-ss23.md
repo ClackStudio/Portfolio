@@ -9,7 +9,9 @@ centeredFirstImage: true
 centeredFirstImageMobile: false
 centeredLastImage: true
 centeredLastImageMobile: false
-additionalData: []
+additionalData:
+  - title: key cities
+    data: paris, london, vienna, copenhagen, munich, hamburg
 section:
   - horizontal: true
     src: /img/birkenstockmuch_hr04.jpg
