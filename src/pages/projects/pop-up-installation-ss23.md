@@ -107,5 +107,5 @@ tags:
   - retail design
   - concept
   - production
-lastImage: /img/birkenstockhh_hr05.jpg
+lastImage: /img/birkenstock_wholesale_haussman_hr06.jpg
 ---
