@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" width="1319.61619mm" height="294.84109mm" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3740.64437 835.77002">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        stroke: #1d1d1b;
+        stroke-width: 65px;
+      }
+
+      .cls-6 {
+        letter-spacing: -.04699em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.057em;
+      }
+
+      .cls-8 {
+        fill: #1d1d1b;
+        font-family: EduDiatype-Light, 'Edu Diatype';
+        font-size: 743.57324px;
+        font-weight: 300;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x="1934.55769" y="431.89219" width="1806.08668" height="43.32069"/>
+    </clipPath>
+  </defs>
+  <text class="cls-8" transform="translate(-.00016 632.03021)"><tspan class="cls-3" x="0" y="0">clac</tspan><tspan class="cls-7" x="1209.76172" y="0">k</tspan><tspan class="cls-5" x="1529.49902" y="0" xml:space="preserve">  </tspan><tspan class="cls-6" x="1901.28564" y="0">s</tspan><tspan class="cls-3" x="2223.25879" y="0">tudio</tspan></text>
+  <g class="cls-4">
+    <line class="cls-2" x1="1934.55769" y1="453.55254" x2="3740.64437" y2="453.55254"/>
+  </g>
+</svg>
