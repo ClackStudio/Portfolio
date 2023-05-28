@@ -721,6 +721,26 @@ video
   left: 0
   max-height: calc(var(--1dvh, 1vh) * 86)
 
+.top-content-block
+  margin-top: 50px
+  @include breakpoint(tablet)
+    display: none
+  p 
+    max-width: none
 
-
+.svg-navbar-logo
+  padding-top: 3px
+  padding-bottom: 5px
+  @include breakpoint(phablet)
+    padding-top: 2px
+    padding-bottom: 6px
+  @include breakpoint(laptop)
+    padding-top: 3.5px
+    padding-bottom: 4px
+  @include breakpoint(desktop)
+    padding-top: 3px
+    padding-bottom: 5px
+  @include breakpoint(mobile-only)
+    padding-top: 2px
+    padding-bottom: 4.5px
 @import 'mobile-classes.sass'

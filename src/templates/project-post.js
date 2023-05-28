@@ -1,20 +1,20 @@
-import React, {useState} from 'react'
-import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet'
-import { graphql } from 'gatsby'
-import { useBreakpoint } from 'gatsby-plugin-breakpoints'
-import Navbar from '../components/Navbar'
-import NewProjectNavigation from '../components/NewProjectNavigation'
-import BigImage from '../components/BigImage'
-import ScrollArrow from '../components/ScrollArrow'
-import Content, { HTMLContent } from '../components/Content'
-import { getImage } from 'gatsby-plugin-image'
-import { TableLayout, TableRowComponent } from '../components/TableComponent'
-import SectionTemplate from '../components/SectionTemplate'
-import './styles.sass'
-import { useBackgroundStore } from '../stores/BarCodeStore'
-import Seo from '../components/Seo'
-import { useScroll } from '@use-gesture/react'
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { graphql } from "gatsby";
+import { useBreakpoint } from "gatsby-plugin-breakpoints";
+import Navbar from "../components/Navbar";
+import NewProjectNavigation from "../components/NewProjectNavigation";
+import BigImage from "../components/BigImage";
+import ScrollArrow from "../components/ScrollArrow";
+import Content, { HTMLContent } from "../components/Content";
+import { getImage } from "gatsby-plugin-image";
+import { TableLayout, TableRowComponent } from "../components/TableComponent";
+import SectionTemplate from "../components/SectionTemplate";
+import "./styles.sass";
+import { useBackgroundStore } from "../stores/BarCodeStore";
+import Seo from "../components/Seo";
+import { useScroll } from "@use-gesture/react";
 import VideoIFrame from "../components/VideoIFrame";
 
 const ServicesListTemplate = ({ services, limit }) => (
@@ -309,7 +309,16 @@ export const ProjectPostTemplate = ({
           <div className="columns fill-container project-info-wrapper">
             <div className="column fill-container ">
               <div className="is-12 is-flex is-flex-direction-column is-justify-content-space-between fill-container is-postion-relative project-info">
-                <div></div>
+                {/* <div></div> */}
+                {content && content !== "" ? (
+                  <div className="top-content-block">
+                    <TableLayout>
+                      <PostContent content={content} />
+                    </TableLayout>
+                  </div>
+                ) : (
+                  <div></div>
+                )}
                 <ScrollArrow />
                 <TableLayout className={"project-info-table"}>
                   <TableRowComponent
@@ -409,12 +418,6 @@ export const ProjectPostTemplate = ({
                 className="is-flex is-justify-content-space-between is-flex-direction-column"
                 style={{ height: "100%", overflow: "hidden" }}
               >
-                {console.log("content", content)}
-                {content && content !== "" && (
-                  <TableLayout>
-                    <PostContent content={content} />
-                  </TableLayout>
-                )}
                 <NewProjectNavigation ref={projectRef} currentProjectId={id} />
               </div>
             </div>

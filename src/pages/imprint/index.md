@@ -3,6 +3,7 @@ templateKey: about-page
 path: /about
 title: imprint
 ---
+
 Clack Studio GbR \
 \
 Vertreten durch: \
@@ -99,5 +100,5 @@ QUESTIONS TO THE DATA PROTECTION OFFICER\
 If you have questions about privacy, please contact us by e-mail via hello@clackstudio.com\
 \
 \
-Website: [Zweihundertkilo](https://www.200kilo.com)\
+Website: [Zweihundertkilo](https://www.200kilo.com) ([Theodor Hillmann](https://www.theodorhillmann.de), Kiril Nagy) \
 Typeface: Diatype, [abcdinamo](https://abcdinamo.com/)

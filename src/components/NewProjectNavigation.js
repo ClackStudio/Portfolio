@@ -1,94 +1,102 @@
-import React, { useState, useRef } from 'react'
-import { graphql, StaticQuery, navigate } from 'gatsby'
-import { useDrag } from '@use-gesture/react'
-import { useBreakpoint } from 'gatsby-plugin-breakpoints'
-import { ProjectNumber } from './BarcodeNumbers/BarcodeNumbers'
-import { useBackgroundStore } from '../stores/BarCodeStore'
+import React, { useState, useRef, useMemo } from "react";
+import { graphql, StaticQuery, navigate } from "gatsby";
+import { useDrag } from "@use-gesture/react";
+import { useBreakpoint } from "gatsby-plugin-breakpoints";
+import { ProjectNumber } from "./BarcodeNumbers/BarcodeNumbers";
+import { useBackgroundStore } from "../stores/BarCodeStore";
 
 const ProjectNavigationTemplate = React.forwardRef(
   ({ projects, currentProjectId }, ref) => {
-    const { setCurrentClickedNumber, currentHoveredBar, setCurrentHoveredBar } = useBackgroundStore()
-    const breakpoints = useBreakpoint()
-    const isMobile = breakpoints.sm
-    const filteredProjects = projects.filter(
-      (project) => project.node.frontmatter.featuredproject
-    )
-    const count = filteredProjects.length
+    const { setCurrentClickedNumber, currentHoveredBar, setCurrentHoveredBar } =
+      useBackgroundStore();
+    const breakpoints = useBreakpoint();
+    const isMobile = breakpoints.sm;
+    const filteredProjects = useMemo(
+      () =>
+        projects.filter((project) => project.node.frontmatter.featuredproject),
+      [projects]
+    );
+    console.log("filteredProjects", filteredProjects);
+    const count = filteredProjects.length;
     const activeProject = filteredProjects.find(
       ({ node }, index) => node.id === currentProjectId
-    )
-    const activeProjectIndex = filteredProjects.indexOf(activeProject)
-    const isFirstProject = activeProjectIndex === 0
-    const isLastProject = activeProjectIndex === count - 1
+    );
+    const activeProjectIndex = filteredProjects.indexOf(activeProject);
+    const isFirstProject = activeProjectIndex === 0;
+    const isLastProject = activeProjectIndex === count - 1;
     const previousProject = !isFirstProject
       ? activeProjectIndex - 1
-      : activeProjectIndex
+      : activeProjectIndex;
     const nextProject = !isLastProject
       ? activeProjectIndex + 1
-      : activeProjectIndex
+      : activeProjectIndex;
 
-    const saved = useRef(0)
+    const saved = useRef(0);
 
     const bind = useDrag(
-      ({ initial, down, last, elapsedTime, movement: [mx, my], velocity: [vx, vy], direction: [dx, dy] }) => {
+      ({
+        initial,
+        down,
+        last,
+        elapsedTime,
+        movement: [mx, my],
+        velocity: [vx, vy],
+        direction: [dx, dy],
+      }) => {
         if (isMobile) {
+          const isFirst = currentHoveredBar === 0;
+          const isLast = currentHoveredBar === projects.length - 1;
 
-          const isFirst = currentHoveredBar === 0
-          const isLast = currentHoveredBar === projects.length - 1
-  
           const directionalAdd = () => {
             if (dx > 0) {
               if (!isLast) {
-                return 1
+                return 1;
               }
             } else {
               if (!isFirst) {
-                return -1
+                return -1;
               }
             }
-            return 0
-          }
+            return 0;
+          };
           const velocityCalc = (velocity) => {
-
-            saved.current = saved.current + velocity
+            saved.current = saved.current + velocity;
             if (saved.current > 0.1 && elapsedTime > 300) {
-              setCurrentHoveredBar(currentHoveredBar + directionalAdd())
+              setCurrentHoveredBar(currentHoveredBar + directionalAdd());
               // setCurrentClickedNumber(currentHoveredBar + directionalAdd())
-              saved.current = 0
+              saved.current = 0;
             }
             if (last) {
-              setCurrentClickedNumber(currentHoveredBar)
+              setCurrentClickedNumber(currentHoveredBar);
             }
-          }
-          velocityCalc(vy)
+          };
+          velocityCalc(vy);
         }
       }
-    )
+    );
     return (
-      <div 
-      className="project-navigation barcode-numbers-wrapper is-flex is-flex-direction-row is-justify-content-center"
-      >
+      <div className="project-navigation barcode-numbers-wrapper is-flex is-flex-direction-row is-justify-content-center">
         {/* <CrossButton className="project-navigation-link" onClick={() => goToPreviousProject()}>{!isFirstProject && ("prev")}</CrossButton> */}
 
         <div
-        className="project-navigation-numbers is-flex is-flex-direction-row"
-        {...bind()}
-      >
-        {projects.map(({ node }, index) => (
-          <ProjectNumber
-            project={node}
-            index={index}
-            key={`barNum_` + node.id}
-            isMobile={isMobile}
-          ></ProjectNumber>
-        ))}
-      </div>
+          className="project-navigation-numbers is-flex is-flex-direction-row"
+          {...bind()}
+        >
+          {filteredProjects.map(({ node }, index) => (
+            <ProjectNumber
+              project={node}
+              index={index}
+              key={`barNum_` + node.id}
+              isMobile={isMobile}
+            ></ProjectNumber>
+          ))}
+        </div>
 
         {/* <CrossButton className="project-navigation-link" onClick={() => goToNextProject()} >{!isLastProject && ("next")}</CrossButton> */}
       </div>
-    )
+    );
   }
-)
+);
 
 // TODO: save this query in cache
 
@@ -125,7 +133,7 @@ const NewProjectNavigatio = React.forwardRef((props, ref) => {
         />
       )}
     />
-  )
-})
+  );
+});
 
-export default NewProjectNavigatio
+export default NewProjectNavigatio;
