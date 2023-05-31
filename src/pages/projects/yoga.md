@@ -44,10 +44,3 @@ tags:
   - production
 lastImage: /img/210421_reebok_yoga_m1_087.jpg
 ---
-
-
-
-
-For this project, our team of talented designers and creative minds dove deep into the world of yoga, exploring its essence, philosophy, and the connection between body, mind, and soul. We recognized the need for yoga wear that not only performs flawlessly but also reflects the spirit and authenticity of this ancient practice.
-
-Drawing inspiration from the serene beauty of nature and the fluidity of movement, we crafted a visual narrative that seamlessly merged Reebok's cutting-edge technology with the tranquility of yoga. Our aim was to evoke a sense of harmony, balance, and self-expression, encouraging individuals to embrace their inner strength and embark on a transformative journey.
