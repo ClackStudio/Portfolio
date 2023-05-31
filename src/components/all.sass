@@ -729,21 +729,26 @@ video
     max-width: none
 
 .svg-navbar-logo
-  padding-top: 5px
+  padding-top: 7px
   padding-bottom: 10px
+  // transform: scale(0.48) translateY(-2px) translateX(-53%)
   // @include breakpoint(phablet)
   //   padding-top: 2px
   //   padding-bottom: 6px
   // @include breakpoint(laptop)
   //   padding-top: 3.5px
   //   padding-bottom: 4px
+  transform: translateY(1px)
 
   @include breakpoint(desktop)
-    padding-top: 6px
-    padding-bottom: 9px
+    padding-top: 6.5px
+    padding-bottom: 9.5px
+    transform: translateY(-1px)
     // padding-top: 6px
     // padding-bottom: 9px
-  // @include breakpoint(mobile-only)
-  //   padding-top: 2px
-  //   padding-bottom: 4.5px
+  @include breakpoint(mobile-only)
+    padding-top: 6px
+    padding-bottom: 9px
+    transform: translateY(-1px)
+
 @import 'mobile-classes.sass'
