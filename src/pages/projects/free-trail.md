@@ -3,7 +3,7 @@ templateKey: project-post
 title: hyperlocal berlin
 client: nike
 date: 2021-07-27T14:44:22.421Z
-featuredproject: true
+featuredproject: false
 featuredimage: /img/free_trail03.jpg
 centeredFirstImage: false
 centeredFirstImageMobile: false
