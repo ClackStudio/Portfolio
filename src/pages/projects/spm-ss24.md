@@ -48,7 +48,7 @@ section:
     centeredFirst: false
     centeredFirstMobile: false
 tags:
-  - concept
   - production
+  - concept
 lastImage: /img/2023-birkenstock-spm-ibiza-006-2.jpg
 ---
