@@ -19,7 +19,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: false
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: true
     src: /img/2023-birkenstock-spm-ibiza-008.jpg
     left: false
@@ -28,7 +28,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: false
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: true
     src: /img/2023-birkenstock-spm-ibiza-010.jpg
     left: false
@@ -37,7 +37,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: false
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: true
     src: /img/2023-birkenstock-spm-ibiza-011.jpg
     left: false
@@ -46,7 +46,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: false
-    centeredFirstMobile: false
+    centeredFirstMobile: true
 tags:
   - production
   - concept
