@@ -4,7 +4,7 @@ title: spm SS24
 client: birkenstock
 date: 2023-06-12T13:46:43.823Z
 featuredproject: true
-featuredimage: /img/2023-birkenstock-spm-ibiza-006.jpg
+featuredimage: /img/2023-birkenstock-spm-ibiza-006-1.jpg
 centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: false
