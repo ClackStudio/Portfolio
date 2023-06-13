@@ -3,14 +3,13 @@ templateKey: about-page
 path: /about
 title: imprint
 ---
-
 Clack Studio GbR \
 \
 Vertreten durch: \
 Hélène Marie Camille Mohrbutter & Mana Zarindast\
 \
-Flughafenstraße 49\
-12053 Berlin\
+Invalidenstraße 102\
+10115 Berlin\
 Germany\
 \
 hello@clackstudio.com\
