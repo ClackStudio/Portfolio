@@ -12,7 +12,7 @@ centeredLastImageMobile: false
 additionalData: []
 section:
   - horizontal: true
-    src: /img/2023-birkenstock-spm-ibiza-007.jpg
+    src: /img/2023-birkenstock-spm-ibiza-007-small.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
@@ -21,7 +21,7 @@ section:
     centeredFirst: false
     centeredFirstMobile: true
   - horizontal: true
-    src: /img/2023-birkenstock-spm-ibiza-008.jpg
+    src: /img/2023-birkenstock-spm-ibiza-008-small.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
@@ -30,7 +30,7 @@ section:
     centeredFirst: false
     centeredFirstMobile: true
   - horizontal: true
-    src: /img/2023-birkenstock-spm-ibiza-010.jpg
+    src: /img/2023-birkenstock-spm-ibiza-010-small.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
@@ -39,7 +39,7 @@ section:
     centeredFirst: false
     centeredFirstMobile: true
   - horizontal: true
-    src: /img/2023-birkenstock-spm-ibiza-011.jpg
+    src: /img/2023-birkenstock-spm-ibiza-011-small.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
