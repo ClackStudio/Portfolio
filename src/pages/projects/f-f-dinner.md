@@ -29,6 +29,15 @@ section:
     altText: ""
     centeredFirst: true
     centeredFirstMobile: true
+  - horizontal: false
+    src: /img/2020-04-13-02.50.38-edit.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: false
+    centeredFirstMobile: false
 tags:
   - concept
   - event production
