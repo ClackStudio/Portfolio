@@ -21,6 +21,15 @@ section:
     centeredFirst: false
     centeredFirstMobile: true
   - horizontal: true
+    src: /img/spm23_01_26-3.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: false
+    centeredFirstMobile: true
+  - horizontal: true
     src: /img/2023-birkenstock-spm-ibiza-008-small.jpg
     left: false
     centeredSecond: false
@@ -39,6 +48,15 @@ section:
     centeredFirst: false
     centeredFirstMobile: true
   - horizontal: true
+    src: /img/spm23_01_26-2.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: false
+    centeredFirstMobile: true
+  - horizontal: true
     src: /img/2023-birkenstock-spm-ibiza-011-small.jpg
     left: false
     centeredSecond: false
@@ -46,6 +64,16 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: false
+    centeredFirstMobile: true
+  - horizontal: true
+    src: /img/spm23_01_26.jpg
+    left: false
+    secondImage: ""
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: true
     centeredFirstMobile: true
 tags:
   - concept
