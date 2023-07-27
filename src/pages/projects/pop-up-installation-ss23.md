@@ -50,16 +50,7 @@ section:
     centeredFirst: false
     centeredFirstMobile: true
   - horizontal: true
-    src: /img/birkenstockparispopup_hr01_retuschiert.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: false
-    centeredFirstMobile: true
-  - horizontal: true
-    src: /img/birkenstockparispopup_hr02_bearbeitet.jpg
+    src: /img/birkenstockparispopup_hr04_retuschiert.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
@@ -77,7 +68,7 @@ section:
     centeredFirst: false
     centeredFirstMobile: true
   - horizontal: true
-    src: /img/birkenstockparispopup_hr04_retuschiert.jpg
+    src: /img/birkenstockparispopup_hr02_bearbeitet.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
