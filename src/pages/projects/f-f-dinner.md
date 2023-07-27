@@ -17,8 +17,17 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
+    centeredFirst: false
     centeredFirstMobile: true
+  - horizontal: false
+    src: /img/02_lobby-and-intermedtiate_space.png
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: false
+    centeredFirstMobile: false
   - horizontal: true
     src: /img/2020-04-13-02.48.jpg
     left: false
@@ -27,7 +36,16 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
+    centeredFirst: false
+    centeredFirstMobile: true
+  - horizontal: false
+    src: /img/05_dinner_room.png
+    left: true
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: false
     centeredFirstMobile: true
   - horizontal: true
     src: /img/2020-04-13-02.50.38-edit.jpg
@@ -36,7 +54,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
+    centeredFirst: false
     centeredFirstMobile: true
   - horizontal: false
     src: /img/2020-04-13-00.432.jpg
