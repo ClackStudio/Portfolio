@@ -19,7 +19,7 @@ section:
     altText: ""
     centeredFirst: false
     centeredFirstMobile: true
-  - horizontal: false
+  - horizontal: true
     src: /img/02_lobby-and-intermedtiate_space.png
     left: false
     centeredSecond: false
@@ -27,7 +27,7 @@ section:
     altTextSecond: ""
     altText: ""
     centeredFirst: false
-    centeredFirstMobile: false
+    centeredFirstMobile: true
   - horizontal: true
     src: /img/2020-04-13-02.48.jpg
     left: false
@@ -38,9 +38,9 @@ section:
     altText: ""
     centeredFirst: false
     centeredFirstMobile: true
-  - horizontal: false
+  - horizontal: true
     src: /img/05_dinner_room.png
-    left: true
+    left: false
     centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
