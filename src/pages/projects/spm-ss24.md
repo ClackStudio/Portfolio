@@ -39,15 +39,6 @@ section:
     centeredFirst: false
     centeredFirstMobile: true
   - horizontal: true
-    src: /img/2023-birkenstock-spm-ibiza-010-small.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: false
-    centeredFirstMobile: true
-  - horizontal: true
     src: /img/spm23_01_26-2.jpg
     left: false
     centeredSecond: false
@@ -57,7 +48,7 @@ section:
     centeredFirst: false
     centeredFirstMobile: true
   - horizontal: true
-    src: /img/2023-birkenstock-spm-ibiza-011-small.jpg
+    src: /img/2023-birkenstock-spm-ibiza-010-small.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
