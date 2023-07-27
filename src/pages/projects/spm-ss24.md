@@ -64,7 +64,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
+    centeredFirst: false
     centeredFirstMobile: true
 tags:
   - concept
