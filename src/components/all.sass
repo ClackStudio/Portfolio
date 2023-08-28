@@ -60,7 +60,8 @@ html::-webkit-scrollbar, .scroll-container::-webkit-scrollbar, .meta-table::-web
   display: none
 
 section
-  scroll-snap-align: start
+  @include breakpoint(desktop)
+    scroll-snap-align: start
   
 // yes poor handicapped peeps
 *:focus

@@ -143,6 +143,7 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
         display: block
         min-height: $dvh
         width: 100%
+        min-height: unset !important
 
 .first-section
     @include breakpoint(tablet)
@@ -196,21 +197,50 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
 
 .mobile-flip-section
   @include breakpoint(tablet)
+    .container
+      max-height: unset!important
     .columns::-webkit-scrollbar
-        display: none
+        // display: none
     .columns
-      overflow-y: hidden
-      overflow-x: scroll
-      scroll-snap-type: x mandatory
-      -ms-overflow-style: none  /* IE and Edge */
-      scrollbar-width: none  /* Firefox */
-      -webkit-overflow-scrolling: touch
+      // overflow-y: hidden
+      // overflow-x: scroll
+      // scroll-snap-type: x mandatory
+      // -ms-overflow-style: none  /* IE and Edge */
+      // scrollbar-width: none  /* Firefox */
+      // -webkit-overflow-scrolling: touch
       display: flex
-      flex-direction: row
+      flex-direction: column
       .column
-        min-width: 100vw
-        scroll-snap-align: start
+        // min-width: 100vw
+        // scroll-snap-align: start
 
+.middle-section
+  @include breakpoint(tablet)
+    min-height: 0!important
+    .container
+      min-height: 0!important
+      .columns
+        min-height: 0!important
+    .column
+      min-height: none
+      padding: 0
+      .project-picture
+        display: flex !important
+        justify-content: center !important
+        align-items: center !important
+        height: auto !important
+        min-height: unset!important
+        img, picture
+          max-width: 100%
+          height: auto
+          display: block
+        .gatsby-image-wrapper
+          display: flex !important
+          justify-content: center !important
+          align-items: center !important
+          height: auto !important
+          min-height: none
+          width: 100%!important
 
 .project-column
   @include breakpoint(tablet)
@@ -243,3 +273,12 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
 .hide-column-mobile
   @include breakpoint(tablet)
     display: none
+
+.gatsby-image-wrapper
+    @include breakpoint(tablet)
+      width: 100%!important
+
+.embedded-video
+  @include breakpoint(tablet)
+    padding: 4% !important
+    
