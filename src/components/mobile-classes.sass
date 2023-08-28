@@ -277,6 +277,8 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
 .gatsby-image-wrapper
     @include breakpoint(tablet)
       width: 100%!important
+      // hack to hide white line between close pictures on safari
+      transform: scale(1.1)
 
 .embedded-video
   @include breakpoint(tablet)

@@ -55,14 +55,17 @@ export default function BigImage(props) {
             image={img}
             objectFit={objectFit}
             objectPosition={imgPosition}
-            imgStyle={{ background: "black" }}
+            imgStyle={{
+              // hack safari scaling bug
+              willChange: "unset",
+              transform: "unset",
+            }}
             style={{
               gridArea: "1/1",
               // You can set a maximum height for the image, if you wish.
               height: "100%",
               width: "100%",
               maxHeight: height,
-              backgroundColor: "black",
               ...(flexImage ? flexImageStyles : {}),
             }}
             layout="fullWidth"
