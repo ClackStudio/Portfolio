@@ -41,6 +41,7 @@ export default function BigImage(props) {
               // You can set a maximum height for the image, if you wish.
               height: height,
               width: "100%",
+              backgroundColor: "black",
               ...(flexImage ? flexImageStyles : {}),
             }}
             // You can optionally force an aspect ratio for the generated image
@@ -54,12 +55,14 @@ export default function BigImage(props) {
             image={img}
             objectFit={objectFit}
             objectPosition={imgPosition}
+            imgStyle={{ background: "black" }}
             style={{
               gridArea: "1/1",
               // You can set a maximum height for the image, if you wish.
               height: "100%",
               width: "100%",
               maxHeight: height,
+              backgroundColor: "black",
               ...(flexImage ? flexImageStyles : {}),
             }}
             layout="fullWidth"
