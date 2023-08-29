@@ -127,7 +127,8 @@ const Section = ({ data, className }) => {
   } = data;
   const firstImage = getImage(data.src) || data.src;
   const secondImageSrc = getImage(data.secondImage) || data.secondImage;
-  // console.log("CENTERED", centerd)
+  const breakpoints = useBreakpoint();
+  const isMobile = breakpoints.sm;
   return (
     <SectionTemplate
       className={`${className} ${
@@ -139,7 +140,10 @@ const Section = ({ data, className }) => {
       {horizontal || embeddedVideo ? (
         <div className="columns fill-container horizontal">
           {embeddedVideo ? (
-            <div className={`column is-12 centered`} style={{ margin: "auto" }}>
+            <div
+              className={`column is-12 centered embedded-video`}
+              style={{ margin: "auto" }}
+            >
               <VideoIFrame url={embeddedVideo}></VideoIFrame>
             </div>
           ) : (
@@ -153,6 +157,7 @@ const Section = ({ data, className }) => {
                   src={video.publicURL}
                   altText={altText}
                   centered={centeredFirst}
+                  flexImage={isMobile}
                 ></FillingVideo>
               ) : (
                 <BigImage
@@ -160,6 +165,7 @@ const Section = ({ data, className }) => {
                   img={firstImage}
                   altText={altText}
                   objectFit={centeredFirst ? "contain" : "cover"}
+                  flexImage={isMobile}
                 ></BigImage>
               )}
             </div>
@@ -167,7 +173,7 @@ const Section = ({ data, className }) => {
         </div>
       ) : (
         <MultiplePictureWrapper
-          slider={secondImage && true}
+          slider={false}
           black={centeredFirst || centeredSecond}
         >
           <div
@@ -187,6 +193,7 @@ const Section = ({ data, className }) => {
                 src={video.publicURL}
                 altText={altText}
                 centered={centeredFirst}
+                flexImage={isMobile}
               ></FillingVideo>
             )}
             {(left || secondImage) && !video && (
@@ -195,6 +202,7 @@ const Section = ({ data, className }) => {
                 img={firstImage}
                 altText={altText}
                 objectFit={centeredSecond ? "contain" : "cover"}
+                flexImage={isMobile}
               ></BigImage>
             )}
           </div>
@@ -225,6 +233,7 @@ const Section = ({ data, className }) => {
                 src={video.publicURL}
                 altText={altText}
                 centered={centeredFirst}
+                flexImage={isMobile}
               ></FillingVideo>
             )}
             {!left && !video && !secondImage && (
@@ -237,6 +246,7 @@ const Section = ({ data, className }) => {
                     ? "contain"
                     : "cover"
                 }
+                flexImage={isMobile}
               ></BigImage>
             )}
             {secondImage && !video && (
@@ -249,6 +259,7 @@ const Section = ({ data, className }) => {
                     ? "contain"
                     : "cover"
                 }
+                flexImage={isMobile}
               ></BigImage>
             )}
           </div>
@@ -284,8 +295,9 @@ export const ProjectPostTemplate = ({
     featuredImage && (getImage(featuredImage) || featuredImage);
   const lastSectionImage = lastImage && (getImage(lastImage) || lastImage);
   const breakpoints = useBreakpoint();
-  const projectRef = React.useRef(null);
   const isMobile = breakpoints.sm;
+
+  const projectRef = React.useRef(null);
   const { setCurrentHoveredBar } = useBackgroundStore();
 
   React.useEffect(() => {
@@ -390,7 +402,11 @@ export const ProjectPostTemplate = ({
 
         {sections && sections.length
           ? sections.map((section, index) => (
-              <Section data={section} key={`section_${index}`}></Section>
+              <Section
+                data={section}
+                key={`section_${index}`}
+                className={"middle-section"}
+              ></Section>
             ))
           : null}
 

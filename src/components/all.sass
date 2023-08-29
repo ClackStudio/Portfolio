@@ -60,7 +60,8 @@ html::-webkit-scrollbar, .scroll-container::-webkit-scrollbar, .meta-table::-web
   display: none
 
 section
-  scroll-snap-align: start
+  @include breakpoint(desktop)
+    scroll-snap-align: start
   
 // yes poor handicapped peeps
 *:focus
@@ -84,7 +85,8 @@ div::selection
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none  /* IE and Edge */
   scrollbar-width: none  /* Firefox */
-  -webkit-overflow-scrolling: touch
+  // this created some visual bugs on ios safari
+  // -webkit-overflow-scrolling: touch
   height: 100vh
   height: $dvh
 // RESPONSIVEtablet-desktop
@@ -710,9 +712,13 @@ video
 .player-wrapper
   position: relative
   padding-top: 56.25%
-  height: 100%
+  height: auto
+  width: 100%
   min-height: calc(var(--1dvh, 1vh) * 70)
   max-height: calc(var(--1dvh, 1vh) * 86)
+  @include breakpoint(tablet)
+    padding-top: unset
+    max-height: unset
 
 .react-player
   position: absolute
@@ -720,6 +726,9 @@ video
   top: 0
   left: 0
   max-height: calc(var(--1dvh, 1vh) * 86)
+  @include breakpoint(tablet)
+    max-height: unset
+    position: static
 
 .top-content-block
   margin-top: 50px

@@ -16,7 +16,6 @@ const ProjectNavigationTemplate = React.forwardRef(
         projects.filter((project) => project.node.frontmatter.featuredproject),
       [projects]
     );
-    console.log("filteredProjects", filteredProjects);
     const count = filteredProjects.length;
     const activeProject = filteredProjects.find(
       ({ node }, index) => node.id === currentProjectId
