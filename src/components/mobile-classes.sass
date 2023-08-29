@@ -84,14 +84,14 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
     left: 0
     height: $dvh
     width: 100vw
-    transform: scale(1.01)
+    // transform: scale(1.01)
     // scroll-snap-type: none
 
     .fill-container
         min-height: $dvh
         height: auto
         // this is really important to prevent flickering on IOs
-        overflow: auto
+        overflow: hidden
 
 .centered
   @include breakpoint(tablet)
@@ -282,5 +282,5 @@ $barcode-height: calc(#{$dvh} - #{$bottom-space} - #{$standard-padding} * 2 - 36
 
 .embedded-video
   @include breakpoint(tablet)
-    padding: 4% !important
+    // padding: 4% !important
     
