@@ -59,6 +59,7 @@ export default function BigImage(props) {
               // hack safari scaling bug
               willChange: "unset",
               transform: "unset",
+              top: "unset",
             }}
             style={{
               gridArea: "1/1",
