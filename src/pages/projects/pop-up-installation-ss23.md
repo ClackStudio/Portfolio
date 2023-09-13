@@ -103,9 +103,27 @@ section:
     altText: ""
     centeredFirst: false
     centeredFirstMobile: true
+  - horizontal: true
+    src: /img/2021-01-07-21.13.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: true
+    centeredFirstMobile: false
+  - horizontal: true
+    src: /img/2021-01-07-21.36.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: true
+    centeredFirstMobile: false
 tags:
   - retail design
   - concept
   - production
-lastImage: /img/birkenstock_wholesale_haussman_hr06.jpg
+lastImage: /img/2021-01-07-21.17.jpg
 ---
