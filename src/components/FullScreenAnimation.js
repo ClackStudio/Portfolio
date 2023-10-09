@@ -29,9 +29,10 @@ const FullScreenAnimation = ({ data }) => {
   springApi.start();
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       setAnimated1(true);
     }, 400);
+    return () => clearTimeout(timeoutId);
   }, [animated1]);
 
   return (
