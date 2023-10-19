@@ -1,0 +1,41 @@
+---
+templateKey: project-post
+title: pop-up installation AW23
+client: birkenstock
+date: 2023-10-19T08:48:30.020Z
+featuredproject: true
+featuredimage: /img/birkenstock-copenhagen-dsc05255.jpg
+centeredFirstImage: false
+centeredFirstImageMobile: false
+centeredLastImage: false
+centeredLastImageMobile: false
+additionalData:
+  - title: key cities
+    data: paris, london, vienna, copenhagen, munich, hamburg
+  - title: date
+    data: "2023"
+section:
+  - horizontal: true
+    src: /img/birkenstock-copenhagen-dsc05048.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: false
+    centeredFirstMobile: false
+  - horizontal: true
+    src: /img/birkenstock_corduroy_campaign_munich_15.jpeg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: false
+    centeredFirstMobile: false
+tags:
+  - retail design
+  - concept
+  - production
+lastImage: /img/birkenstock_corduroy_campaign_munich_21.jpeg
+---
