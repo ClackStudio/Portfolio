@@ -12,8 +12,6 @@ centeredLastImageMobile: false
 additionalData:
   - title: key cities
     data: paris, london, vienna, copenhagen, munich, hamburg
-  - title: date
-    data: "2023"
 section:
   - horizontal: true
     src: /img/birkenstock-copenhagen-dsc05048.jpg
