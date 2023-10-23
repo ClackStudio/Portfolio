@@ -31,6 +31,24 @@ section:
     altText: ""
     centeredFirst: false
     centeredFirstMobile: false
+  - horizontal: true
+    src: /img/20231017_clackstudio_birkenstock_ooh_paris_hd-adrienozouf-28.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: false
+    centeredFirstMobile: false
+  - horizontal: true
+    src: /img/20231017_clackstudio_birkenstock_ooh_paris_hd-adrienozouf-19.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: false
+    centeredFirstMobile: false
 tags:
   - retail design
   - concept
