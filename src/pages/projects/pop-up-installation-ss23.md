@@ -20,8 +20,8 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
-    centeredFirstMobile: true
+    centeredFirst: false
+    centeredFirstMobile: false
   - horizontal: true
     src: /img/bend_ss23_10022023_munich_01.jpg
     left: false
@@ -29,8 +29,8 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
-    centeredFirstMobile: true
+    centeredFirst: false
+    centeredFirstMobile: false
   - horizontal: true
     src: /img/birkenstockhh_hr02.jpg
     left: false
@@ -38,35 +38,8 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
-    centeredFirstMobile: true
-  - horizontal: true
-    src: /img/birkenstockloncarnaby_hr05.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: true
-  - horizontal: true
-    src: /img/birkenstockparispopup_hr04_retuschiert.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: true
-  - horizontal: true
-    src: /img/bend_ss23_10022023_04.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: true
+    centeredFirst: false
+    centeredFirstMobile: false
   - horizontal: true
     src: /img/birkenstockparispopup_hr02_bearbeitet.jpg
     left: false
@@ -78,24 +51,6 @@ section:
     centeredFirstMobile: true
   - horizontal: true
     src: /img/bend_ss23_10022023_05.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: true
-    centeredFirstMobile: true
-  - horizontal: true
-    src: /img/birkenstock_wholesale_ce_hr04.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: galeries lafayettes, champs-élysées, paris
-    centeredFirst: true
-    centeredFirstMobile: true
-  - horizontal: true
-    src: /img/bend_ss23_14022023_01.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
