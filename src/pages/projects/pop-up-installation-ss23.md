@@ -20,7 +20,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
+    centeredFirst: false
     centeredFirstMobile: false
   - horizontal: true
     src: /img/bend_ss23_10022023_munich_01.jpg
@@ -29,7 +29,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
+    centeredFirst: false
     centeredFirstMobile: false
   - horizontal: true
     src: /img/birkenstockhh_hr02.jpg
@@ -38,7 +38,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
+    centeredFirst: false
     centeredFirstMobile: false
   - horizontal: true
     src: /img/birkenstockparispopup_hr02_bearbeitet.jpg
@@ -47,7 +47,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
+    centeredFirst: false
     centeredFirstMobile: false
   - horizontal: true
     src: /img/bend_ss23_10022023_05.jpg
@@ -56,7 +56,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: true
+    centeredFirst: false
     centeredFirstMobile: false
 tags:
   - retail design
