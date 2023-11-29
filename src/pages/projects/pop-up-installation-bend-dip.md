@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: pop-up installation - bend dip
+title: pop-up installation - bend dip AW23
 client: birkenstock
 date: 2023-11-29T15:04:16.591Z
 featuredproject: true
