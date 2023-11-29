@@ -9,6 +9,9 @@ centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
+additionalData:
+  - title: key cities
+    data: london, vienna, copenhagen, munich, hamburg, berlin
 section:
   - horizontal: true
     src: /img/birkenstock_bend_dip_campaign_munich_1neu.jpeg
