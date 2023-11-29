@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: pop-up installation - bend
+title: pop-up installation - bend AW22
 client: birkenstock
 date: 2022-10-12T09:02:43.740Z
 featuredproject: false
