@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: pop-up installation SS23
+title: pop-up installation - bend SS23
 client: birkenstock
 date: 2023-05-19T15:46:12.195Z
 featuredproject: true
