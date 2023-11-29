@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: pop-up installation AW23
+title: pop-up installation - corduroy
 client: birkenstock
 date: 2023-10-19T08:48:30.020Z
 featuredproject: true
