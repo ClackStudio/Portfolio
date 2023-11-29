@@ -20,6 +20,7 @@ section:
     centeredFirst: false
     centeredFirstMobile: false
 tags:
+  - retail design
   - concept
   - production
 lastImage: /img/birkenstock_bend_dip_campaign_munich_2neu.jpeg
