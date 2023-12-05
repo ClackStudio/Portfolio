@@ -11,7 +11,7 @@ centeredLastImage: false
 centeredLastImageMobile: false
 additionalData:
   - title: key cities
-    data: paris, london, vienna, copenhagen, munich, hamburg
+    data: paris, london, vienna, copenhagen, berlin, munich, hamburg
 section:
   - horizontal: true
     src: /img/birkenstock-copenhagen-dsc05048.jpg
