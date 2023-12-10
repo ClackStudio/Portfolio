@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: pop-up installation - bend dip AW23
+title: retail installation - bend dip AW23
 client: birkenstock
 date: 2023-11-29T15:04:16.591Z
 featuredproject: true
@@ -10,8 +10,8 @@ centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
 additionalData:
-  - title: key cities
-    data: london, vienna, copenhagen, munich, hamburg, berlin
+  - title: cities
+    data: 6 cities across europe
 section:
   - horizontal: true
     src: /img/birkenstock_bend_dip_campaign_munich_1neu.jpeg
