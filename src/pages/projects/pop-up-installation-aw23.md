@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: retail installation - corduroy AW23
+title: retail installation - corduroy
 client: birkenstock
 date: 2023-10-19T08:48:30.020Z
 featuredproject: true
