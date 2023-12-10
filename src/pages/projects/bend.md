@@ -33,8 +33,8 @@ section:
     centeredFirst: true
     centeredFirstMobile: false
 tags:
-  - retail design
   - concept
+  - design
   - production
 lastImage: /img/8584_birkenstock_bend_campaign_oberpollinger-2.jpg
 ---
