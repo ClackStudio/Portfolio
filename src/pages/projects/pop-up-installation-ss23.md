@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: pop-up installation - bend SS23
+title: retail installation - bend SS23
 client: birkenstock
 date: 2023-05-19T15:46:12.195Z
 featuredproject: true
@@ -10,8 +10,8 @@ centeredFirstImageMobile: false
 centeredLastImage: true
 centeredLastImageMobile: false
 additionalData:
-  - title: key cities
-    data: paris, london, vienna, copenhagen, munich, hamburg
+  - title: cities
+    data: 6 cities across europe
 section:
   - horizontal: true
     src: /img/birkenstockmuch_hr04.jpg
