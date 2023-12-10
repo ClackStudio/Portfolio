@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: retail installation - bend dip AW23
+title: retail installation - bend dip
 client: birkenstock
 date: 2023-11-29T15:04:16.591Z
 featuredproject: true
