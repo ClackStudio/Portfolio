@@ -9,7 +9,9 @@ centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
-additionalData: []
+additionalData:
+  - title: city
+    data: ibiza
 section:
   - horizontal: true
     src: /img/2023-birkenstock-spm-ibiza-007-small.jpg
