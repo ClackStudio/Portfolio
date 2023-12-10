@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: retail installation - bend AW22
+title: retail installation - bend
 client: birkenstock
 date: 2022-10-12T09:02:43.740Z
 featuredproject: false
