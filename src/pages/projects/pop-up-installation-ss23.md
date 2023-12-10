@@ -59,8 +59,8 @@ section:
     centeredFirst: false
     centeredFirstMobile: false
 tags:
-  - retail design
   - concept
+  - design
   - production
 lastImage: /img/birkenstock_wholesale_haussman_hr06.jpg
 ---
