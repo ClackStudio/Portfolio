@@ -84,6 +84,7 @@ collections:
               default: "about-page",
             }
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string", default: "contact via mail, phone or instagram"}
           - { label: "Body", name: "body", required: false, widget: "markdown" }
       - file: "src/pages/imprint/index.md"
         label: "Imprint"
@@ -108,6 +109,7 @@ collections:
               default: "contact-page",
             }
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string", default: "clack studio is a berlin based creative agency founded by a female friends duo in 2021"}
           - { label: "Body", name: "body", required: false, widget: "markdown" }
           - {
               label: Contact Data,

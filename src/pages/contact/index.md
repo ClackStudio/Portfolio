@@ -2,6 +2,7 @@
 templateKey: contact-page
 path: /contact
 title: contact
+description: contact via mail, phone or instagram
 contactData: []
 socialLinks:
   - title: mail
