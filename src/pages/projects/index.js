@@ -92,7 +92,10 @@ const ProjectIndexPageTemplate = ({ edges }) => {
 
   return (
     <>
-      <Seo title="Projects"></Seo>
+      <Seo
+        title="Projects"
+        description="our services: creative & art direction, concept development, content & event production, event strategies, brand consultation, spatial design, set design, retail design, graphic design, branding, copy, photography, video & 3d animation."
+      ></Seo>
       <Navbar></Navbar>
       <SectionTemplate className="minus-navbar project-index-wrapper">
         <div className="columns fill-container">
