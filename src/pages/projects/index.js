@@ -13,7 +13,7 @@ import Seo from "../../components/Seo";
 import { useBreakpoint } from "gatsby-plugin-breakpoints";
 import { useDrag } from "@use-gesture/react";
 
-const ProjectIndexPageTemplate = ({ edges }) => {
+const ProjectIndexPageTemplate = ({ edges, descriptionprojects }) => {
   const { setCurrentHoveredBar, currentHoveredBar } = useBackgroundStore();
   const breakpoints = useBreakpoint();
   const isMobile = breakpoints.sm;
@@ -92,10 +92,7 @@ const ProjectIndexPageTemplate = ({ edges }) => {
 
   return (
     <>
-      <Seo
-        title="Projects"
-        description="our services: creative & art direction, concept development, content & event production, event strategies, brand consultation, spatial design, set design, retail design, graphic design, branding, copy, photography, video & 3d animation."
-      ></Seo>
+      <Seo title={"projects"} description={descriptionprojects}></Seo>
       <Navbar></Navbar>
       <SectionTemplate className="minus-navbar project-index-wrapper">
         <div className="columns fill-container">
@@ -167,6 +164,15 @@ const ProjectIndexPage = () => {
             }
             totalCount
           }
+          about: markdownRemark(fields: { slug: { eq: "/about/" } }) {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              descriptionprojects
+            }
+          }
         }
       `}
       render={(data, count) => (
@@ -174,6 +180,7 @@ const ProjectIndexPage = () => {
           totalCount={data.allMarkdownRemark.totalCount}
           edges={data.allMarkdownRemark.edges}
           count={count}
+          descriptionprojects={data.about.frontmatter.descriptionprojects}
         />
       )}
     />
