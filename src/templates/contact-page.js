@@ -1,15 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
-import { TableLayout, TableRowComponent } from '../components/TableComponent'
-import SectionTemplate from '../components/SectionTemplate'
-import Seo from '../components/Seo'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import Content, { HTMLContent } from "../components/Content";
+import { TableLayout, TableRowComponent } from "../components/TableComponent";
+import SectionTemplate from "../components/SectionTemplate";
+import Seo from "../components/Seo";
 
 // eslint-disable-next-line
 export const ContactPageTemplate = ({
   title,
+  description,
   content,
   contentComponent,
   socialLinks,
@@ -18,7 +19,7 @@ export const ContactPageTemplate = ({
   // const PageContent = contentComponent || Content;
   return (
     <SectionTemplate className="single-page-wrapper">
-      <Seo title="Contact"></Seo>
+      <Seo title={"contact"} description={description}></Seo>
       <div className="columns fill-container">
         <div className="column fill-container fill-complete-height">
           <div className="is-12 is-flex is-flex-direction-column is-justify-content-flex-end fill-container bigger-font">
@@ -52,36 +53,36 @@ export const ContactPageTemplate = ({
         {/* <BigImage counter={counter.current} img={sideImage} ></BigImage> */}
       </div>
     </SectionTemplate>
-  )
-}
+  );
+};
 
 ContactPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
-}
+};
 
 const ContactPage = ({ data, location }) => {
-  const { markdownRemark: post } = data
-
+  const { markdownRemark: post } = data;
   return (
     <Layout location={location}>
       <ContactPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
+        description={post.frontmatter.description}
         content={post.html}
         socialLinks={post.frontmatter.socialLinks}
         contactData={post.frontmatter.contactData}
       />
     </Layout>
-  )
-}
+  );
+};
 
 ContactPage.propTypes = {
   data: PropTypes.object.isRequired,
-}
+};
 
-export default ContactPage
+export default ContactPage;
 
 export const contactPageQuery = graphql`
   query ContactPage($id: String!) {
@@ -89,6 +90,7 @@ export const contactPageQuery = graphql`
       html
       frontmatter {
         title
+        description
         contactData {
           title
           data
@@ -101,4 +103,4 @@ export const contactPageQuery = graphql`
       }
     }
   }
-`
+`;

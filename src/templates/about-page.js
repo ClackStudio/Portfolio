@@ -1,20 +1,25 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
-import { TableLayout } from '../components/TableComponent'
-import SectionTemplate from '../components/SectionTemplate'
-import Seo from '../components/Seo'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import Content, { HTMLContent } from "../components/Content";
+import { TableLayout } from "../components/TableComponent";
+import SectionTemplate from "../components/SectionTemplate";
+import Seo from "../components/Seo";
 import "../components/all.sass";
 
 // eslint-disable-next-line
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
+export const AboutPageTemplate = ({
+  title,
+  content,
+  contentComponent,
+  description,
+}) => {
+  const PageContent = contentComponent || Content;
 
   return (
     <SectionTemplate className="single-page-wrapper">
-      <Seo title={"About us"}></Seo>
+      <Seo title={"about us"} description={description}></Seo>
       <div className="columns fill-container">
         <div className="column is-flex fill-container">
           <div
@@ -34,16 +39,17 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
       </div>
     </SectionTemplate>
   );
-}
+};
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
-}
+  description: PropTypes.string,
+};
 
 const AboutPage = ({ data, location }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
 
   return (
     <Layout location={location}>
@@ -51,16 +57,17 @@ const AboutPage = ({ data, location }) => {
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
+        description={post.frontmatter.description}
       />
     </Layout>
-  )
-}
+  );
+};
 
 AboutPage.propTypes = {
   data: PropTypes.object.isRequired,
-}
+};
 
-export default AboutPage
+export default AboutPage;
 
 export const aboutPageQuery = graphql`
   query AboutPage($id: String!) {
@@ -68,7 +75,8 @@ export const aboutPageQuery = graphql`
       html
       frontmatter {
         title
+        description
       }
     }
   }
-`
+`;
