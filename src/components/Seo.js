@@ -1,7 +1,7 @@
-import { useStaticQuery, graphql } from 'gatsby';
-import * as React from 'react';
-import { Helmet } from 'react-helmet';
-import { useLocation } from '@reach/router';
+import { useStaticQuery, graphql } from "gatsby";
+import * as React from "react";
+import { Helmet } from "react-helmet";
+import { useLocation } from "@reach/router";
 
 // https://www.wpeform.io/blog/add-open-graph-site-url-to-gatsbyjs/
 
@@ -16,9 +16,7 @@ export default function Seo(props) {
           siteUrl
         }
       }
-      featuredImage: file(
-        absolutePath: { glob: "**/src/img/og-image.jpg" }
-      ) {
+      featuredImage: file(absolutePath: { glob: "**/src/img/og-image.jpg" }) {
         childImageSharp {
           gatsbyImageData(layout: FIXED, width: 1200)
         }
@@ -89,11 +87,15 @@ export default function Seo(props) {
       name: "twitter:image",
       content: ogImage ?? ogImage.images?.fallback.src,
     },
+    {
+      name: "google-site-verification",
+      content: "2iLCrxvd2vYI2vY2ChASYAbz8PwISke_CVg-wa_gtIs",
+    },
   ];
   // If we have keywords, then add it
   if (props.keywords) {
     metas.push({
-      name: 'keywords',
+      name: "keywords",
       content: props.keywords,
     });
   }
@@ -102,7 +104,7 @@ export default function Seo(props) {
       <html lang="en" />
       <meta charSet="utf-8" />
       <title>{title}</title>
-      {metas.map(meta => (
+      {metas.map((meta) => (
         <meta key={meta.name} name={meta.name} content={meta.content} />
       ))}
     </Helmet>
