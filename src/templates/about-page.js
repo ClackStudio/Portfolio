@@ -19,7 +19,7 @@ export const AboutPageTemplate = ({
 
   return (
     <SectionTemplate className="single-page-wrapper">
-      <Seo title={"about us"} description={description}></Seo>
+      <Seo title={title} description={description}></Seo>
       <div className="columns fill-container">
         <div className="column is-flex fill-container">
           <div
