@@ -2,7 +2,7 @@
 templateKey: contact-page
 path: /contact
 title: contact
-description: contact via mail, phone or instagram
+description: you can contact us via mail at hello@clackstudio.com, phone or instagram
 contactData: []
 socialLinks:
   - title: mail
