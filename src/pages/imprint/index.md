@@ -2,7 +2,7 @@
 templateKey: about-page
 path: /imprint
 title: imprint
-description: Clack Studio GbR Vertreten durch Hélène Marie Camille Mohrbutter & Mana Zarindast
+description: Clack Studio GbR
 ---
 Clack Studio GbR \
 \
