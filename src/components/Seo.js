@@ -87,10 +87,6 @@ export default function Seo(props) {
       name: "twitter:image",
       content: ogImage ?? ogImage.images?.fallback.src,
     },
-    {
-      name: "google-site-verification",
-      content: "2iLCrxvd2vYI2vY2ChASYAbz8PwISke_CVg-wa_gtIs",
-    },
   ];
   // If we have keywords, then add it
   if (props.keywords) {
