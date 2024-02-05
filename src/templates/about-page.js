@@ -14,12 +14,17 @@ export const AboutPageTemplate = ({
   content,
   contentComponent,
   description,
+  blockSearch,
 }) => {
   const PageContent = contentComponent || Content;
 
   return (
     <SectionTemplate className="single-page-wrapper">
-      <Seo title={title} description={description}></Seo>
+      <Seo
+        title={title}
+        description={description}
+        blockSearch={blockSearch}
+      ></Seo>
       <div className="columns fill-container">
         <div className="column is-flex fill-container">
           <div
@@ -46,11 +51,11 @@ AboutPageTemplate.propTypes = {
   content: PropTypes.string,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
+  blockSearch: PropTypes.bool,
 };
 
 const AboutPage = ({ data, location }) => {
   const { markdownRemark: post } = data;
-
   return (
     <Layout location={location}>
       <AboutPageTemplate
@@ -58,6 +63,7 @@ const AboutPage = ({ data, location }) => {
         title={post.frontmatter.title}
         content={post.html}
         description={post.frontmatter.description}
+        blockSearch={post.frontmatter.blockSearch ?? false}
       />
     </Layout>
   );
@@ -76,6 +82,7 @@ export const aboutPageQuery = graphql`
       frontmatter {
         title
         description
+        blockSearch
       }
     }
   }
