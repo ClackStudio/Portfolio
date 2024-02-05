@@ -15,11 +15,16 @@ export const ContactPageTemplate = ({
   contentComponent,
   socialLinks,
   contactData,
+  blockSearch,
 }) => {
   // const PageContent = contentComponent || Content;
   return (
     <SectionTemplate className="single-page-wrapper">
-      <Seo title={"contact"} description={description}></Seo>
+      <Seo
+        title={title}
+        description={description}
+        blockSearch={blockSearch}
+      ></Seo>
       <div className="columns fill-container">
         <div className="column fill-container fill-complete-height">
           <div className="is-12 is-flex is-flex-direction-column is-justify-content-flex-end fill-container bigger-font">
@@ -59,7 +64,9 @@ export const ContactPageTemplate = ({
 ContactPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
+  description: PropTypes.string,
   contentComponent: PropTypes.func,
+  blockSearch: PropTypes.bool,
 };
 
 const ContactPage = ({ data, location }) => {
@@ -73,6 +80,7 @@ const ContactPage = ({ data, location }) => {
         content={post.html}
         socialLinks={post.frontmatter.socialLinks}
         contactData={post.frontmatter.contactData}
+        blockSearch={post.frontmatter.blockSearch}
       />
     </Layout>
   );
@@ -91,6 +99,7 @@ export const contactPageQuery = graphql`
       frontmatter {
         title
         description
+        blockSearch
         contactData {
           title
           data

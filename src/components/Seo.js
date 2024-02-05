@@ -95,6 +95,15 @@ export default function Seo(props) {
       content: props.keywords,
     });
   }
+  //if site should not be indexed, add label
+  const blockSearch = props.blockSearch ?? false;
+  //console.log("block in search:", title, blockSearch);
+  if (blockSearch) {
+    metas.push({
+      name: "robots",
+      content: "noindex",
+    });
+  }
   return (
     <Helmet>
       <html lang="en" />

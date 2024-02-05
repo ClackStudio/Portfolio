@@ -44,7 +44,7 @@ collections:
               { label: Title, name: title, widget: string },
               { label: Data, name: data, widget: string }
            ]
-        }
+        } 
       - {
             label: Section,
             name: section,
@@ -84,7 +84,7 @@ collections:
               default: "about-page",
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "SEO Description About Page", name: "description", widget: "string", default: "contact via mail, phone or instagram" }
+          - { label: "SEO Description About Page", name: "description", widget: "string", default: "clack studio is a berlin based creative agency founded by a female friends duo in 2021" }
           - { label: "SEO Description Projects Page", name: "descriptionprojects", widget: "string", default: "contact via mail, phone or instagram" }
           - { label: "Body", name: "body", required: false, widget: "markdown" }
       - file: "src/pages/imprint/index.md"
@@ -99,6 +99,7 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "SEO Description", name: "description", widget: "string", default: "Clack Studio GbR Vertreten durch: Hélène Marie Camille Mohrbutter & Mana Zarindast" }
+          - { label: "Block in Google search", name: "blockSearch", widget: "boolean", default: false, required: false, hint: if this box is checked, the page and the content of the site can not be accessed with google search }
           - { label: "Body", name: "body", required: false, widget: "markdown" }
       - file: "src/pages/contact/index.md"
         label: "Contact"
@@ -111,7 +112,8 @@ collections:
               default: "contact-page",
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "SEO Description", name: "description", widget: "string", default: "clack studio is a berlin based creative agency founded by a female friends duo in 2021" }
+          - { label: "SEO Description", name: "description", widget: "string", default: "contact via mail, phone or instagram" }
+          - { label: "Block in Google search", name: "blockSearch", widget: "boolean", default: false, required: false, hint: if this box is checked, the page and the content of the site can not be accessed with google search }
           - { label: "Body", name: "body", required: false, widget: "markdown" }
           - {
               label: Contact Data,
@@ -149,4 +151,5 @@ collections:
           default: "about-page",
         }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Block in Google search", name: "blockSearch", widget: "boolean", default: false, required: false, hint: if this box is checked, the page and the content of the site can not be accessed with google search }
       - { label: "Body", name: "body", required: false, widget: "markdown" }
