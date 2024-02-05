@@ -4,6 +4,7 @@ path: /contact
 title: contact
 description: " "
 contactData: []
+blockSearch: false
 socialLinks:
   - title: mail
     name: hello@clackstudio.com

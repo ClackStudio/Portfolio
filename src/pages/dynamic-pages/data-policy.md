@@ -5,6 +5,7 @@ description: At www.clack-studio.de, accessible from www.clack-studio.de, one of
   our main priorities is the privacy of our visitors. This Privacy Policy
   document contains types of information that is collected and recorded by
   www.clack-studio.de and how we use it.
+blockSearch: true
 ---
 \
 At www.clackstudio.com, accessible from www.clackstudio.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by www.clack-studio.de and how we use it.
