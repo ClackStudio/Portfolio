@@ -99,7 +99,7 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "SEO Description", name: "description", widget: "string", default: "Clack Studio GbR Vertreten durch: Hélène Marie Camille Mohrbutter & Mana Zarindast" }
-          - { label: "Block in Google search", name: "blockSearch", widget: "boolean", default: false, required: false, hint: if this box is checked, the page and the content of the site can not be accessed with google search }
+          - { label: "Block in Google search", name: "blockSearch", widget: "boolean", default: false, required: false, hint: hide content from search results }
           - { label: "Body", name: "body", required: false, widget: "markdown" }
       - file: "src/pages/contact/index.md"
         label: "Contact"
@@ -113,7 +113,7 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "SEO Description", name: "description", widget: "string", default: "contact via mail, phone or instagram" }
-          - { label: "Block in Google search", name: "blockSearch", widget: "boolean", default: false, required: false, hint: if this box is checked, the page and the content of the site can not be accessed with google search }
+          - { label: "Block in Google search", name: "blockSearch", widget: "boolean", default: false, required: false, hint: hide content from search results }
           - { label: "Body", name: "body", required: false, widget: "markdown" }
           - {
               label: Contact Data,
@@ -151,5 +151,5 @@ collections:
           default: "about-page",
         }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Block in Google search", name: "blockSearch", widget: "boolean", default: false, required: false, hint: if this box is checked, the page and the content of the site can not be accessed with google search }
+      - { label: "Block in Google search", name: "blockSearch", widget: "boolean", default: false, required: false, hint: hide content from search results }
       - { label: "Body", name: "body", required: false, widget: "markdown" }
