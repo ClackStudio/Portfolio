@@ -7,7 +7,7 @@ import CrossButton from "./CrossButton";
 import { globalHistory } from "@reach/router";
 import { useBackgroundStore } from "../stores/BarCodeStore";
 import logo from "../img/clack-studio_logo_Nav.svg";
-import boldLogo from "../img/Website_SVG_old.svg";
+import boldLogo from "../img/Website_SVG.svg";
 
 const NavbarLogo = () => {
   return (
@@ -16,7 +16,11 @@ const NavbarLogo = () => {
         <Link to="/" className="navbar-item navbar-logo" title="Logo">
           {/* clack studio
           <div className="crossed-line logo"></div> */}
-          <img src={logo} className="svg-navbar-logo" alt="clack studio logo" />
+          <img
+            src={boldLogo}
+            className="svg-navbar-logo"
+            alt="clack studio logo"
+          />
         </Link>
       </div>
     </div>
