@@ -3,7 +3,7 @@ templateKey: about-page
 path: /imprint
 title: imprint
 description: Clack Studio GbR
-blockSearch: true
+blockSearch: false
 ---
 Clack Studio GbR \
 \
