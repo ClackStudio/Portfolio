@@ -3,8 +3,8 @@ templateKey: contact-page
 path: /contact
 title: contact
 description: " "
+blockSearch: true
 contactData: []
-blockSearch: false
 socialLinks:
   - title: mail
     name: hello@clackstudio.com
