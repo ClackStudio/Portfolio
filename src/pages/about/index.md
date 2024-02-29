@@ -6,9 +6,7 @@ description: services include creative & art direction, concept development,
   content & event production, event strategies, brand consultation, spatial
   design, set design, retail design, graphic design, branding, copy,
   photography, video & 3d animation.
-descriptionprojects: birkenstock - retail installation - corduroy, nike -
-  talking shop - solebox, sony music - lil nas x - album release, reebok - bb
-  4000 II dinner
+descriptionprojects: birkenstock, nike, sony music, reebok, labience
 ---
 
 **about**\
