@@ -3,7 +3,7 @@ templateKey: project-post
 title: retail installation - bend dip
 client: birkenstock
 date: 2023-11-29T15:04:16.591Z
-featuredproject: true
+featuredproject: false
 featuredimage: /img/birkenstock_bend_dip_campaign_munich_3neu.jpeg
 centeredFirstImage: false
 centeredFirstImageMobile: false
