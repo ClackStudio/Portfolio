@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: visual merchandising
+title: visual merchandising strategy
 client: birkenstock
 date: 2024-04-02T13:21:44.921Z
 featuredproject: false
