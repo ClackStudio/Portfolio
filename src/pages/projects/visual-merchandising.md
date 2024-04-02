@@ -46,15 +46,6 @@ section:
     altText: ""
     centeredFirst: false
     centeredFirstMobile: false
-  - horizontal: true
-    src: /img/2021-06-06-01.09.28.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: false
-    centeredFirstMobile: false
 tags:
   - strategy
   - concept
