@@ -56,8 +56,10 @@ section:
     centeredFirst: false
     centeredFirstMobile: false
 tags:
+  - strategy
   - concept
   - design
   - production
+  - workshop
 lastImage: /img/idea1_cubes_originalcolor_011123_view1_empty.png
 ---
