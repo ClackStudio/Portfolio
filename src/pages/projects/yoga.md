@@ -40,7 +40,7 @@ section:
     centeredFirst: true
     centeredFirstMobile: false
 tags:
-  - art direction
+  - concept
   - production
 lastImage: /img/210421_reebok_yoga_m1_087.jpg
 ---
