@@ -52,4 +52,3 @@ tags:
   - production
 lastImage: /img/2021-06-06-00.53.58-2.jpg
 ---
-VM strategy, design & production of branding and furniture elements across Europe & UK.
