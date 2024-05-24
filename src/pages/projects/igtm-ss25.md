@@ -38,7 +38,7 @@ section:
     centeredFirst: false
     centeredFirstMobile: false
   - horizontal: true
-    src: /img/dscf3658-1.jpg
+    src: /img/dscf3522.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
