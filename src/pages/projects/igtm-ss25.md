@@ -20,7 +20,7 @@ section:
     centeredFirst: false
     centeredFirstMobile: false
   - horizontal: true
-    src: /img/dscf3655-1.jpg
+    src: /img/dscf3637.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
