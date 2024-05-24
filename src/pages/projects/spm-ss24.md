@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: spm - SS24
+title: SPM - SS24
 client: birkenstock
 date: 2023-06-12T13:46:43.823Z
 featuredproject: false
