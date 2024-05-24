@@ -20,24 +20,6 @@ section:
     centeredFirst: false
     centeredFirstMobile: false
   - horizontal: true
-    src: /img/right-space01.png
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: false
-    centeredFirstMobile: false
-  - horizontal: true
-    src: /img/left-space01.png
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: false
-    centeredFirstMobile: false
-  - horizontal: true
     src: /img/dscf3655-1.jpg
     left: false
     centeredSecond: false
