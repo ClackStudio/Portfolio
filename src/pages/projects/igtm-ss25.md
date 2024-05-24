@@ -20,15 +20,6 @@ section:
     centeredFirst: false
     centeredFirstMobile: false
   - horizontal: true
-    src: /img/dscf3655-1.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: false
-    centeredFirstMobile: false
-  - horizontal: true
     src: /img/right-space01.png
     left: false
     centeredSecond: false
@@ -38,7 +29,7 @@ section:
     centeredFirst: false
     centeredFirstMobile: false
   - horizontal: true
-    src: /img/dscf3522.jpg
+    src: /img/left-space01.png
     left: false
     centeredSecond: false
     centeredSecondMobile: false
@@ -47,7 +38,16 @@ section:
     centeredFirst: false
     centeredFirstMobile: false
   - horizontal: true
-    src: /img/left-space02.png
+    src: /img/dscf3655-1.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: false
+    centeredFirstMobile: false
+  - horizontal: true
+    src: /img/dscf3522.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
