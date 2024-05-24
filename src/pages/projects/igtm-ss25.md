@@ -4,7 +4,7 @@ title: IGTM - SS25
 client: birkenstock
 date: 2024-05-24T09:57:12.258Z
 featuredproject: true
-featuredimage: /img/left-space01-kopie-2.jpg
+featuredimage: /img/left-space01-kopie-3.jpg
 centeredFirstImage: false
 centeredFirstImageMobile: false
 centeredLastImage: false
