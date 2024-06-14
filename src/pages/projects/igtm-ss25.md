@@ -1,6 +1,6 @@
 ---
 templateKey: project-post
-title: igtm - SS25
+title: IGTM - SS25
 client: birkenstock
 date: 2024-05-24T09:57:12.258Z
 featuredproject: true
