@@ -3,7 +3,7 @@ templateKey: project-post
 title: retail installation - corduroy
 client: birkenstock
 date: 2023-10-19T08:48:30.020Z
-featuredproject: true
+featuredproject: false
 featuredimage: /img/birkenstock-copenhagen-dsc05255.jpg
 centeredFirstImage: false
 centeredFirstImageMobile: false
