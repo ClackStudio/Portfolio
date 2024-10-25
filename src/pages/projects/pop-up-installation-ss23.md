@@ -3,7 +3,7 @@ templateKey: project-post
 title: retail installation - bend
 client: birkenstock
 date: 2023-05-19T15:46:12.195Z
-featuredproject: true
+featuredproject: false
 featuredimage: /img/birkenstockhh_hr03.jpg
 centeredFirstImage: true
 centeredFirstImageMobile: false
