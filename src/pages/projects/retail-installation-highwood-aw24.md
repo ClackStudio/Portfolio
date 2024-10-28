@@ -23,11 +23,11 @@ section:
     src: /img/20241018_clack_studio_birkenstock_popup_gl_paris_hdv2-adrienozouf-6.jpg
     left: true
     secondImage: /img/20241018_clack_studio_birkenstock_popup_gl_paris_hdv2-adrienozouf-1.jpg
-    centeredSecond: false
+    centeredSecond: true
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
   - horizontal: true
     src: /img/20241018_clack_studio_birkenstock_popup_gl_paris_hdv2-adrienozouf-3.jpg
