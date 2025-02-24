@@ -3,7 +3,7 @@ templateKey: project-post
 title: "yoga campaign "
 client: reebok
 date: 2021-06-23T14:47:38.445Z
-featuredproject: true
+featuredproject: false
 featuredimage: /img/210421_reebok_yoga_m6_150.jpg
 centeredFirstImage: true
 centeredFirstImageMobile: false
