@@ -28,15 +28,6 @@ section:
     altText: ""
     centeredFirst: false
     centeredFirstMobile: false
-  - horizontal: true
-    src: /img/20250203_clackstudio_birkenstock_paris_hd-4-2.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: false
-    centeredFirstMobile: false
 tags:
   - concept
   - design
