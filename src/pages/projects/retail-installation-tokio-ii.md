@@ -10,16 +10,36 @@ centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
 section:
-  - altText: ""
-    centeredFirst: false
-    centeredFirstMobile: false
+  - horizontal: true
+    src: /img/04022025_pd_birkenstock-kronprinsensgade-0296.jpg
     left: false
-    horizontal: false
-    altTextSecond: ""
     centeredSecond: false
     centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: false
+    centeredFirstMobile: false
+  - horizontal: true
+    src: /img/birkenstock-carnaby-street-3-2.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: false
+    centeredFirstMobile: false
+  - horizontal: true
+    src: /img/20250203_clackstudio_birkenstock_paris_hd-4-2.jpg
+    left: false
+    centeredSecond: false
+    centeredSecondMobile: false
+    altTextSecond: ""
+    altText: ""
+    centeredFirst: false
+    centeredFirstMobile: false
 tags:
   - concept
   - design
   - production
+lastImage: /img/04022025_pd_birkenstock-kronprinsensgade-0201.jpg
 ---
