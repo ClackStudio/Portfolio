@@ -5,9 +5,9 @@ client: birkenstock
 date: 2025-02-24T09:48:08.747Z
 featuredproject: true
 featuredimage: /img/20250203_clackstudio_birkenstock_paris_hd-1-2.jpg
-centeredFirstImage: false
+centeredFirstImage: true
 centeredFirstImageMobile: false
-centeredLastImage: false
+centeredLastImage: true
 centeredLastImageMobile: false
 section:
   - horizontal: true
@@ -17,7 +17,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
   - horizontal: true
     src: /img/birkenstock-carnaby-street-3-2.jpg
@@ -26,7 +26,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
   - horizontal: true
     src: /img/20250203_clackstudio_birkenstock_paris_hd-4-2.jpg
@@ -35,7 +35,7 @@ section:
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
-    centeredFirst: false
+    centeredFirst: true
     centeredFirstMobile: false
 tags:
   - concept
