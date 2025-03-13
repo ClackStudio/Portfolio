@@ -3,7 +3,7 @@ templateKey: project-post
 title: visual merchandising strategy
 client: birkenstock
 date: 2024-04-02T13:21:44.921Z
-featuredproject: true
+featuredproject: false
 featuredimage: /img/idea1_cubes_originalcolor_011123_view1.png
 centeredFirstImage: false
 centeredFirstImageMobile: false
