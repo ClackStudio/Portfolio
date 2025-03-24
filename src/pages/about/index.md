@@ -1,18 +1,18 @@
 ---
 templateKey: about-page
 path: /about
-title: about us
-description: services include creative & art direction, concept development,
-  content & event production, event strategies, brand consultation, spatial
-  design, set design, retail design, graphic design, branding, copy,
-  photography, video & 3d animation.
+title: about
+description: Branding, Concept Development, Graphic Design, Retail Design,
+  Pop-Up Design, Typography, Motion Design, Copywriting, Photography,
+  Videography, 3D Animation, Event Production, Sourcing, Installation,
+  Prototyping, Exhibitions & Installations
 descriptionprojects: birkenstock, nike, sony music, reebok, labience
 ---
 **about**\
-clack <crossed> studio </crossed> is a berlin based creative agency founded by a female friends duo in 2021. sharing the same vision and being linked by the belief that anything is possible, the studio develops concepts that reflect the current zeitgeist, brings impactful stories to life and creates experiences that resonate and push boundaries.\
+clack <crossed> studio </crossed> is a Berlin-based creative agency, founded in 2021. Rooted in the belief that ideas shape culture, we craft concepts that are both contemporary and pioneering. With a sharp eye on the now and a vision for what’s next, we blend creativity with strategy to deliver results that resonate, inspire and leave a lasting impression.\
 \
 **services**\
-creative & art direction, concept development, content & event production, event strategies, brand consultation, retail design, pop-up design, graphic design, branding, copy, photography, video & 3d animation.\
+Branding, Concept Development, Graphic Design, Retail Design, Pop-Up Design, Typography, Motion Design, Copywriting, Photography, Videography, 3D Animation, Event Production, Sourcing, Installation, Prototyping, Exhibitions & Installations\
 \
 **clients**\
 birkenstock, labience, nike, reebok, sony music.
