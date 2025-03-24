@@ -2,13 +2,13 @@
 templateKey: about-page
 path: /imprint
 title: imprint
-description: Clack Studio GbR
+description: Clack Studio
 blockSearch: false
 ---
-Clack Studio GbR \
+Clack Studio \
 \
 Vertreten durch: \
-Hélène Marie Camille Mohrbutter & Mana Zarindast\
+Mana Zarindast\
 \
 Invalidenstraße 102\
 10115 Berlin\
@@ -18,7 +18,7 @@ hello@clackstudio.com\
 +49 176 48 23 12 54\
 \
 INHALTLICH VERANTWORTLICH GEMÄSS §5 TMG sind \
-Hélène Marie Camille Mohrbutter & Mana Zarindast\
+Mana Zarindast\
 \
 [Link to data-policy](/dynamic-pages/data-policy)\
 \
@@ -39,7 +39,7 @@ Die auf der Website veröffentlichten Inhalte, Werke und bereitgestellten Inform
 \
 **COPYRIGHT**\
 \
-© 2022 Clack Studio. All rights reserved: Clack Studio GbR. This website and all of its content, including all text, graphics, video, and photos, are the copyrighted works of Clack Studio GbR and/or various third parties. The content is for your personal and non-commercial use only. You may not download our content for commercial purposes without prior written permission of Clack Studio GbR.\
+© 2025 Clack Studio. All rights reserved: Clack Studio. This website and all of its content, including all text, graphics, video, and photos, are the copyrighted works of Clack Studio and/or various third parties. The content is for your personal and non-commercial use only. You may not download our content for commercial purposes without prior written permission of Clack Studio.\
 \
 **PRIVACY POLICY**\
 \
@@ -50,12 +50,12 @@ If you have additional questions or require more information about our Privacy P
 General Data Protection Regulation (GDPR)\
 We are a Data Controller of your information.\
 \
-Clack Studio Gbr legal basis for collecting and using the personal information described in this Privacy Policy depends on the Personal Information we collect and the specific context in which we collect the information. \
-Clack Studio Gbr needs to perform a contract with you. You have given Clack Studio Gbr permission to do so. \
-Processing your personal information is in Clack Studio Gbr legitimate interests.\
+Clack Studio legal basis for collecting and using the personal information described in this Privacy Policy depends on the Personal Information we collect and the specific context in which we collect the information. \
+Clack Studio needs to perform a contract with you. You have given Clack Studio permission to do so. \
+Processing your personal information is in Clack Studio legitimate interests.\
 \
-Clack Studio Gbr needs to comply with the law.\
-Clack Studio Gbr will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies.\
+Clack Studio needs to comply with the law.\
+Clack Studio will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies.\
 \
 If you are a resident of the European Economic Area (EEA), you have certain data protection rights. If you wish to be informed what Personal Information we hold about you and if you want it to be removed from our systems, please contact us.\
 \
