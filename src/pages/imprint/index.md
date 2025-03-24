@@ -17,7 +17,7 @@ Germany\
 hello@clackstudio.com\
 +49 176 48 23 12 54\
 \
-INHALTLICH VERANTWORTLICH GEMÄSS §5 TMG sind \
+INHALTLICH VERANTWORTLICH GEMÄSS §5 TMG ist \
 Mana Zarindast\
 \
 [Link to data-policy](/dynamic-pages/data-policy)\
