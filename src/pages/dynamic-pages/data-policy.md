@@ -20,14 +20,14 @@ If you have additional questions or require more information about our Privacy P
 We are a Data Controller of your information.
 \
 \
-Clack Studio GbR legal basis for collecting and using the personal information described in this Privacy Policy depends on the Personal Information we collect and the specific context in which we collect the information:
+Clack Studio legal basis for collecting and using the personal information described in this Privacy Policy depends on the Personal Information we collect and the specific context in which we collect the information:
 \
 \
-Clack Studio GbR needs to perform a contract with you
-You have given Clack Studio GbR permission to do so
-Processing your personal information is in Clack Studio GbR legitimate interests
-Clack Studio GbR needs to comply with the law
-Clack Studio GbR will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies.
+Clack Studio needs to perform a contract with you
+You have given Clack Studio permission to do so
+Processing your personal information is in Clack Studio legitimate interests
+Clack Studio needs to comply with the law
+Clack Studio will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies.
 \
 \
 If you are a resident of the European Economic Area (EEA), you have certain data protection rights. If you wish to be informed what Personal Information we hold about you and if you want it to be removed from our systems, please contact us.
