@@ -5,7 +5,7 @@ title: imprint
 description: Clack Studio
 blockSearch: false
 ---
-Clack Studio \
+Clack Studio e.K.\
 \
 Vertreten durch: \
 Mana Zarindast\
