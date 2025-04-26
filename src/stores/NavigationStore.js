@@ -20,7 +20,7 @@ const navigationStore = (state) => ({
       shownOnHome: true,
     },
     {
-      name: 'about us',
+      name: 'about',
       slug: '/about',
       shownInProjects: true,
       shownOnHome: true,
