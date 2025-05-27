@@ -1,6 +1,6 @@
 ---
 templateKey: about-page
-title: Data policy
+title: Privacy Policy
 description: At www.clack-studio.de, accessible from www.clack-studio.de, one of
   our main priorities is the privacy of our visitors. This Privacy Policy
   document contains types of information that is collected and recorded by
