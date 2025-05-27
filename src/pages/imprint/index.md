@@ -9,12 +9,12 @@ In accordance with § 5 TMG and § 55 RStV, the operator of this website and the
 
 \
 Clack Studio e.K.\
+Represented by: Mana Zarindast\
 Invalidenstraße 102\
 10115 Berlin\
 Germany
 
 \
-CEO: Mana Zarindast\
 Amtsgericht Charlottenburg\
 Sitz der Gesellschaft: Berlin\
 Handelsregister-Nr.: HRA 64165 B\
@@ -23,10 +23,7 @@ VAT ID: DE327244323
 \
 Contact:\
 Phone: +49 176 48 23 12 54\
-Email: hello@clackstudio.com\
-\
-hello@clackstudio.com\
-+49 176 48 23 12 54
+Email: hello@clackstudio.com
 
 \
 \
@@ -40,7 +37,7 @@ Our website contains links to external websites of third parties over whose cont
 \
 **COPYRIGHT**\
 \
-© 2025 Clack Studio. All rights reserved: Clack Studio. This website and all of its content, including all text, graphics, video, and photos, are the copyrighted works of Clack Studio and/or various third parties. Reproduction, processing, distribution, or any form of commercialization of such material beyond the scope of copyright law requires prior written consent from the respective author or creator. Downloads and copies of this site are permitted for private, non-commercial use only. Content created by third parties is marked accordingly. \
+© 2025 Clack Studio. All rights reserved. This website and all of its content, including all text, graphics, video, and photos, are the copyrighted works of Clack Studio and/or various third parties. Reproduction, processing, distribution, or any form of commercialization of such material beyond the scope of copyright law requires prior written consent from the respective author or creator. Downloads and copies of this site are permitted for private, non-commercial use only. Content created by third parties is marked accordingly. \
 \
 **PRIVACY POLICY**\
 \
