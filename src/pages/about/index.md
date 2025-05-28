@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 path: /about
-title: about us
+title: about
 description: Branding, Concept Development, Graphic Design, Retail Design,
   Pop-Up Design, Typography, Motion Design, Copywriting, Photography,
   Videography, 3D Animation, Event Production, Sourcing, Installation,
