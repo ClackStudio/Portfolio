@@ -14,15 +14,6 @@ additionalData:
     data: ibiza
 section:
   - horizontal: true
-    src: /img/2-edit-edit-edit-edit-edit.jpg
-    left: false
-    centeredSecond: false
-    centeredSecondMobile: false
-    altTextSecond: ""
-    altText: ""
-    centeredFirst: false
-    centeredFirstMobile: true
-  - horizontal: true
     src: /img/spm23_01_26-3.jpg
     left: false
     centeredSecond: false
@@ -72,5 +63,5 @@ tags:
   - concept
   - design
   - production
-lastImage: /img/2023-birkenstock-spm-ibiza-006-2.jpg
+lastImage: /img/2-edit-edit-edit-edit-edit.jpg
 ---
