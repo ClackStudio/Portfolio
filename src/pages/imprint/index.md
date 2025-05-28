@@ -9,7 +9,7 @@ In accordance with § 5 TMG and § 55 RStV, the operator of this website and the
 
 \
 Clack Studio e.K.\
-Represented by: Mana Zarindast\
+Vertreten durch: Mana Zarindast\
 Invalidenstraße 102\
 10115 Berlin\
 Germany
