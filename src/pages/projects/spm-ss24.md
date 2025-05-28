@@ -14,7 +14,7 @@ additionalData:
     data: ibiza
 section:
   - horizontal: true
-    src: /img/2023-birkenstock-spm-ibiza-007-small.jpg
+    src: /img/2-edit-edit-edit-edit-edit.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
@@ -32,7 +32,7 @@ section:
     centeredFirst: false
     centeredFirstMobile: true
   - horizontal: true
-    src: /img/2023-birkenstock-spm-ibiza-008-small.jpg
+    src: /img/3-edit-edit-edit-edit.jpg
     left: false
     centeredSecond: false
     centeredSecondMobile: false
