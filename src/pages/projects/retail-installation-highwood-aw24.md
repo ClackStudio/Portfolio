@@ -3,7 +3,7 @@ templateKey: project-post
 title: retail installation - highwood AW24
 client: birkenstock
 date: 2024-10-25T08:40:43.742Z
-featuredproject: true
+featuredproject: false
 featuredimage: /img/20241018_clack_studio_birkenstock_popup_gl_paris_hdv2-adrienozouf-2.jpg
 centeredFirstImage: false
 centeredFirstImageMobile: false
