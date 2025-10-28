@@ -12,7 +12,7 @@ descriptionprojects: birkenstock, nike, sony music, reebok, labience
 clack <crossed> studio </crossed> is a Berlin-based creative agency, founded in 2021. Rooted in the belief that ideas shape culture, we craft concepts that are both contemporary and pioneering. With a sharp eye on the now and a vision for what’s next, we blend creativity with strategy to deliver results that resonate, inspire and leave a lasting impression.\
 \
 **services**\
-Branding, Concept Development, Graphic Design, Retail Design, Pop-Up Design, Typography, Motion Design, Copywriting, Photography, Videography, 3D Animation, Event Production, Sourcing, Installation, Prototyping, Exhibitions & Installations\
+Branding, Concept Development, Graphic Design, Retail Design, Pop-Up Design, Typography, Motion Design, Copywriting, Photography, Videography, 3D Animation, Event Production, Sourcing, Prototyping, Exhibitions & Installations\
 \
 **clients**\
 birkenstock, labience, nike, reebok, sony music.
