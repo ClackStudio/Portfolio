@@ -37,7 +37,7 @@ Our website contains links to external websites of third parties over whose cont
 \
 **COPYRIGHT**\
 \
-© 2025 Clack Studio. All rights reserved. This website and all of its content, including all text, graphics, video, and photos, are the copyrighted works of Clack Studio and/or various third parties. Reproduction, processing, distribution, or any form of commercialization of such material beyond the scope of copyright law requires prior written consent from the respective author or creator. Downloads and copies of this site are permitted for private, non-commercial use only. Content created by third parties is marked accordingly. \
+© 2026 Clack Studio. All rights reserved. This website and all of its content, including all text, graphics, video, and photos, are the copyrighted works of Clack Studio and/or various third parties. Reproduction, processing, distribution, or any form of commercialization of such material beyond the scope of copyright law requires prior written consent from the respective author or creator. Downloads and copies of this site are permitted for private, non-commercial use only. Content created by third parties is marked accordingly. \
 \
 **PRIVACY POLICY**\
 \
