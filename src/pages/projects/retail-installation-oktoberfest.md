@@ -6,13 +6,13 @@ date: 2026-01-13T11:05:04.112Z
 featuredproject: true
 featuredimage: /img/birkenstock-munich-3-ki-.jpg
 centeredFirstImage: false
-centeredFirstImageMobile: true
+centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
 section:
   - horizontal: false
     src: /img/birkenstock-munich-2.jpg
-    left: false
+    left: true
     centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
