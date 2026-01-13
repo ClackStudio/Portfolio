@@ -10,16 +10,16 @@ centeredFirstImageMobile: false
 centeredLastImage: false
 centeredLastImageMobile: false
 section:
-  - horizontal: false
+  - horizontal: true
     src: /img/birkenstock-munich-2.jpg
-    left: true
+    left: false
     centeredSecond: false
     centeredSecondMobile: false
     altTextSecond: ""
     altText: ""
     centeredFirst: false
     centeredFirstMobile: false
-  - horizontal: false
+  - horizontal: true
     src: /img/birkenstock-munich-4.jpg
     left: false
     centeredSecond: false
